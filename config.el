@@ -15,6 +15,9 @@
 (setq display-line-numbers-type nil)
 (display-time-mode 1)                           ;; display time in modeline
 
+;; Remember and restore the last cursor location of opened files
+(save-place-mode 1)
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
