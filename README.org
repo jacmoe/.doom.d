@@ -1,0 +1,8 @@
+* doom.d
+My Emacs configuration, optimized for creative writing.
+
+My Hotel California, so to speak.
+
+Solidly planted on top of Doom-Emacs.
+
+This succeeds my old emacs.d configuration, or it tries to.
