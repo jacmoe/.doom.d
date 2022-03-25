@@ -4,3 +4,5 @@
 (package! spacemacs-theme)
 
 (package! boon)
+
+(package! ctrlf)

@@ -18,14 +18,6 @@
 ;; Remember and restore the last cursor location of opened files
 (save-place-mode 1)
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-(after! org (setq org-hide-emphasis-markers t))
-
-(add-hook! org-mode :append
-           #'variable-pitch-mode)
-
 ;; hack because Doom doesn't seem to care about my frame size when restoring sessions ...
 (setq initial-frame-alist '((top . 50) (left . 160) (width . 114) (height . 32)))
 
@@ -37,6 +29,29 @@
 (defvar my-use-boon t)
 (defvar my-theme-shade "dark")
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Org-mode
+;;
+;; https://orgmode.org/
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; A GNU Emacs major mode for keeping notes, authoring documents, computational notebooks,
+;; literate programming, maintaining to-do lists, planning projects, and more — in a fast and effective plain text system.
+(setq org-directory "~/org/")
+(after! org (setq org-hide-emphasis-markers t))
+
+(add-hook! org-mode :append
+           #'variable-pitch-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Boon
+;;
+;; https://github.com/jyp/boon
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; An Ergonomic Command Mode for Emacs
+;; Run tutorial with M-x boon-tutorial
 (use-package! boon
   :init
   (require 'boon-qwerty)
@@ -61,3 +76,34 @@
   ("C-c e" . turn-off-boon-mode)
   ("C-;" . boon-set-command-state); used to quit insert mode
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; CtrlF
+;;
+;; https://github.com/raxod502/ctrlf
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! ctrlf
+  :config
+  (ctrlf-mode t)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Transparency
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Toggles background transparency
+(defun toggle-transparency ()
+  (interactive)
+  (let ((alpha (frame-parameter nil 'alpha)))
+    (set-frame-parameter
+     nil 'alpha
+     (if (eql (cond ((numberp alpha) alpha)
+                    ((numberp (cdr alpha)) (cdr alpha))
+                    ;; Also handle undocumented (<active> <inactive>) form.
+                    ((numberp (cadr alpha)) (cadr alpha)))
+              100)
+         '(90 . 50) '(100 . 100)))))
+
+(map! "C-c t t" #'toggle-transparency)
