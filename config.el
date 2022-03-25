@@ -40,8 +40,8 @@
 
 ;; Theme
 
-(setq doom-theme 'doom-opera)
-;; (setq doom-theme 'doom-ayu-mirage)
+;; (setq doom-theme 'doom-opera)
+(setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-nord)
 
 ;; Setting initial size and position of frame
@@ -59,8 +59,7 @@
 ;; Global keybindings
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(map! "<f8>" #'doom-big-font-mode)          ; Toggle big font mode
-(map! "<f9>" #'+zen/toggle-fullscreen)   ; Toggle fullscreen zen mode
+(map! "<f9>" #'doom-big-font-mode)          ; Toggle big font mode
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -74,12 +73,14 @@
 (after! org (setq org-hide-emphasis-markers t))
 
 (add-hook! org-mode :append
+           #'visual-line-mode
            #'variable-pitch-mode)
 
 (add-hook! org-mode :append
-           #'variable-pitch-mode)
+           #'solaire-mode)
 
 (add-hook! org-mode (hl-line-mode -1))
+(add-hook! org-mode (org-indent-mode -1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
