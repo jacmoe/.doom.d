@@ -39,7 +39,10 @@
       doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
 
 ;; Theme
-(setq doom-theme 'spacemacs-dark)
+
+(setq doom-theme 'doom-opera)
+;; (setq doom-theme 'doom-ayu-mirage)
+;; (setq doom-theme 'doom-nord)
 
 ;; Setting initial size and position of frame
 ;; It is a necessary hack because Doom doesn't seem to care about my frame size when restoring sessions ...
@@ -72,6 +75,11 @@
 
 (add-hook! org-mode :append
            #'variable-pitch-mode)
+
+(add-hook! org-mode :append
+           #'variable-pitch-mode)
+
+(add-hook! org-mode (hl-line-mode -1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -169,12 +177,12 @@
 ;;
 ;; https://github.com/manuel-uberti/flymake-proselint
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! flymake-proselint
-  :init
-  (add-hook! #'text-mode-hook (lambda ()
-                              (flymake-mode)
-                              (flymake-proselint-setup)))
-  )
+;; (use-package! flymake-proselint
+;;   :init
+;;   (add-hook! #'text-mode-hook (lambda ()
+;;                               (flymake-mode)
+;;                               (flymake-proselint-setup)))
+;;   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
