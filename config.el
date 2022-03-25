@@ -1,5 +1,28 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Variables
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar my-use-boon t)
+(defvar my-theme-shade "dark")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; General settings
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Remember and restore the last cursor location of opened files
+(save-place-mode 1)
+;; Yes, I really want to quit.
+(setq confirm-kill-emacs nil)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Visual settings
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (let ((alternatives '("doom-emacs-color2.svg"
                       "doom-emacs-color2.png"
                       "doom-emacs-color.png")))
@@ -15,20 +38,18 @@
 (setq display-line-numbers-type nil)
 (display-time-mode 1)                           ;; display time in modeline
 
-;; Remember and restore the last cursor location of opened files
-(save-place-mode 1)
-
 ;; hack because Doom doesn't seem to care about my frame size when restoring sessions ...
 (setq initial-frame-alist '((top . 50) (left . 160) (width . 114) (height . 32)))
 
 (fringe-mode '(80 . 80))                         ; Show vertical fringes
 
-;; Yes, I really want to quit.
-(setq confirm-kill-emacs nil)
-
-(defvar my-use-boon t)
-(defvar my-theme-shade "dark")
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Global keybindings
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(map! "<f9>" #'+zen/toggle)
+(map! "S-<f9>" #'+zen/toggle-fullscreen)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
