@@ -23,7 +23,7 @@
 ;; Visual settings
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Fancy splashscreen
+;; Fancy splash screen
 (let ((alternatives '("doom-emacs-color2.svg"
                       "doom-emacs-color2.png"
                       "doom-emacs-color.png")))
@@ -31,9 +31,12 @@
         (concat doom-private-dir "splash/"
                 (nth (random (length alternatives)) alternatives))))
 
+;; Remove all but the first menu entry on the splash screen
+(setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
+
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family "Arial" :size 24)
-      doom-variable-pitch-font (font-spec :family "ETBembo" :size 28))
+(setq doom-font (font-spec :family "Arial" :size 26)
+      doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
 
 ;; Theme
 (setq doom-theme 'spacemacs-dark)
@@ -44,17 +47,18 @@
 
 ;; Misc settings
 (setq display-line-numbers-type nil) ; do not show line numbers
-(display-time-mode 1)                ; display time in modeline
-(fringe-mode '(80 . 80))             ; Show vertical fringes
-(blink-cursor-mode t)                ; Enable/disable the cursor blinking
+(display-time-mode 1)                       ; display time in modeline
+(fringe-mode '(80 . 80))                     ; show vertical fringes
+(blink-cursor-mode t)                        ; the cursor should blink
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Global keybindings
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(map! "<f9>" #'+zen/toggle)
-(map! "S-<f9>" #'+zen/toggle-fullscreen)
+(map! "<f8>" #'doom-big-font-mode)          ; Toggle big font mode
+(map! "<f9>" #'+zen/toggle)                        ; Toggle zen mode
+(map! "S-<f9>" #'+zen/toggle-fullscreen)   ; Toggle fullscreen zen mode
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
