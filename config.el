@@ -12,11 +12,11 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+(after! org (setq org-hide-emphasis-markers t))
 
 ;; hack because Doom doesn't seem to care about my frame size when restoring sessions ...
 (setq initial-frame-alist '((top . 50) (left . 160) (width . 114) (height . 32)))
 
-;; this doesn't work
 (fringe-mode '(80 . 80))                         ; Show vertical fringes
 
 ;; Yes, I really want to quit.
