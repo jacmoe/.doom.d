@@ -5,3 +5,5 @@ My =Doom-Emacs= configuration, optimized for creative writing.
 My Hotel California, so to speak.
 
 This succeeds my [[https://github.com/jacmoe/emacs.d][old emacs.d configuration]], or it tries to.
+
+I am not sure if this is going to work, but I will try and see what happens. And I think I will add some extra linespacing to my configuration, so that it will be easier to read.
