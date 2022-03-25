@@ -3,6 +3,4 @@
 
 (package! spacemacs-theme)
 
-(package! spaceline)
-
 (package! boon)

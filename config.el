@@ -1,11 +1,12 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq doom-font (font-spec :family "Arial" :size 24)
-      doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
+      doom-variable-pitch-font (font-spec :family "ETBembo" :size 28))
 
 (setq doom-theme 'spacemacs-dark)
 
 (setq display-line-numbers-type nil)
+(display-time-mode 1)                           ;; display time in modeline
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -23,11 +24,6 @@
 ;; Yes, I really want to quit.
 (setq confirm-kill-emacs nil)
 
-(use-package! spaceline
-  :config
-  (spaceline-emacs-theme)
-  (setq powerline-arrow-shape 'arrow))
-
 (defvar my-use-boon t)
 (defvar my-theme-shade "dark")
 
@@ -35,27 +31,20 @@
   :init
   (require 'boon-qwerty)
   (require 'boon-tutorial)
-  (require 'boon-powerline)
   :config
   (if (eq my-use-boon t)
       (progn
         (boon-mode)
-        (boon-powerline-theme)
         (setq boon-insert-cursor-color "orange")
         (if (equal my-theme-shade "dark")
             (progn
               (setq boon-default-cursor-color "white")
-              (set-face-attribute 'boon-modeline-ins nil :background "orange" :foreground "black")
               )
           (setq boon-default-cursor-color "black")
-          (set-face-attribute 'boon-modeline-ins nil :background "orange" :foreground "white")
           )
-        (set-face-attribute 'boon-modeline-cmd nil :background "LightSkyBlue1" :foreground "black")
         (define-key boon-command-map "L" 'forward-sentence)
         (define-key boon-command-map "K" 'backward-sentence)
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
-        (add-hook 'dired-hook-mode 'turn-off-boon-mode)
-        (add-hook 'recentf-dialog-mode-hook 'turn-off-boon-mode)
         ))
   :bind
   ("C-c b" . turn-on-boon-mode)
