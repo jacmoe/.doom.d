@@ -6,3 +6,5 @@
 (package! boon)
 
 (package! ctrlf)
+
+(package! move-text)
