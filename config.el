@@ -1,5 +1,12 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(let ((alternatives '("doom-emacs-color2.svg"
+                      "doom-emacs-color2.png"
+                      "doom-emacs-color.png")))
+  (setq fancy-splash-image
+        (concat doom-private-dir "splash/"
+                (nth (random (length alternatives)) alternatives))))
+
 (setq doom-font (font-spec :family "Arial" :size 24)
       doom-variable-pitch-font (font-spec :family "ETBembo" :size 28))
 
