@@ -8,3 +8,5 @@
 (package! ctrlf)
 
 (package! move-text)
+
+(package! flymake-proselint)

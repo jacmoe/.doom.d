@@ -7,3 +7,6 @@ My Hotel California, so to speak.
 This succeeds my [[https://github.com/jacmoe/emacs.d][old emacs.d configuration]], or it tries to.
 
 [[file:./doomd.png]]
+
+
+#  LocalWords:  emacs
