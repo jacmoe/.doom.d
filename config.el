@@ -1,12 +1,16 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
+;; This is
 ;;         __                           __
 ;;    ____/ /___  ____  ____ ___   ____/ /
 ;;   / __  / __ \/ __ \/ __ `__ \ / __  /
 ;; _/ /_/ / /_/ / /_/ / / / / / // /_/ /
 ;;(_)__,_/\____/\____/_/ /_/ /_(_)__,_/
 ;;
+;; My Emacs configuration, optimized for creative writing
+;; Copyright (C) 2017-2022 Jacob Moen
+;; Author: Jacob Moen <jacmoe.dk@gmail.com>
+;; Homepage: https://github.com/jacmoe/.doom.d
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
