@@ -47,7 +47,7 @@
 (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family "Andale Mono" :size 26)
+(setq doom-font (font-spec :family "Lucida Console" :size 26)
       doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
 
 ;; Theme
