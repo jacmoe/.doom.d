@@ -1,8 +1,8 @@
 * doom.d
 
-My =Doom-Emacs= configuration, optimized for creative writing.
+My =Doom-Emacs= configuration.
 
-My Hotel California of creative writing, so to speak.
+My Hotel California of creative writing.
 
 [[file:./doomd.png]]
 
