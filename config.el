@@ -50,8 +50,12 @@
 (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family "Lucida Console" :size 26)
-      doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
+(if (eq system-type 'windows-nt)
+    (setq doom-font (font-spec :family "Lucida Console" :size 26)
+          doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
+  (setq doom-font (font-spec :family "Andale Mono" :size 26)
+        doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
+  )
 
 ;; Theme
 ;; (setq doom-theme 'doom-opera)
@@ -61,7 +65,10 @@
 ;; Setting initial size and position of frame
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
-(setq initial-frame-alist '((top . 45) (left . 76) (width . 100) (height . 35)))
+(if (eq system-type 'windows-nt)
+    (setq initial-frame-alist '((top . 45) (left . 76) (width . 100) (height . 35)))
+  (setq initial-frame-alist '((top . 45) (left . 76) (width . 100) (height . 30)))
+  )
 
 ;; Misc settings
 (setq display-line-numbers-type nil) ; do not show line numbers
