@@ -36,12 +36,15 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Fancy splash screen
-(let ((alternatives '("doom-emacs-color2.svg"
-                      "doom-emacs-color2.png"
-                      "doom-emacs-color.png")))
-  (setq fancy-splash-image
-        (concat doom-private-dir "splash/"
-                (nth (random (length alternatives)) alternatives))))
+(unless (eq system-type 'windows-nt)
+  (progn
+    (let ((alternatives '("doom-emacs-color2.svg"
+                          "doom-emacs-color2.png"
+                          "doom-emacs-color.png")))
+      (setq fancy-splash-image
+            (concat doom-private-dir "splash/"
+                    (nth (random (length alternatives)) alternatives))))
+    ))
 
 ;; Remove all but the first menu entry on the splash screen
 (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
@@ -58,7 +61,7 @@
 ;; Setting initial size and position of frame
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
-(setq initial-frame-alist '((top . 50) (left . 100) (width . 100) (height . 30)))
+(setq initial-frame-alist '((top . 45) (left . 76) (width . 100) (height . 35)))
 
 ;; Misc settings
 (setq display-line-numbers-type nil) ; do not show line numbers
