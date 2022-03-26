@@ -7,3 +7,4 @@
 
 (package! move-text)
 
+(package! flymake-proselint)

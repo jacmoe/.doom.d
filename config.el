@@ -178,12 +178,12 @@
 ;;
 ;; https://github.com/manuel-uberti/flymake-proselint
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (use-package! flymake-proselint
-;;   :init
-;;   (add-hook! #'text-mode-hook (lambda ()
-;;                               (flymake-mode)
-;;                               (flymake-proselint-setup)))
-;;   )
+(use-package! flymake-proselint
+  :init
+  (add-hook! #'text-mode-hook (lambda ()
+                              (flymake-mode)
+                              (flymake-proselint-setup)))
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
