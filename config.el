@@ -185,6 +185,36 @@
                               (flymake-proselint-setup)))
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Mw-thesaurus
+;;
+;; https://github.com/agzam/mw-thesaurus.el
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! mw-thesaurus
+  :init
+  (if (boundp 'my-mw-api-key)
+      (setq mw-thesaurus--api-key my-mw-api-key))
+  :bind
+  ("<f8>" . mw-thesaurus-lookup-dwim)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Emacs-powerthesaurus
+;;
+;; https://github.com/SavchenkoValeriy/emacs-powerthesaurus
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! powerthesaurus
+  :bind
+  ;; ("C-c p d" . powerthesaurus-lookup-definitions-dwim)
+  ;; ("C-c p t" . powerthesaurus-lookup-sentences-dwim)
+  ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
+  ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
+  )
+(defalias 'pt-deft 'powerthesaurus-lookup-definitions-dwim)
+(defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Miscellaneous

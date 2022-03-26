@@ -8,3 +8,7 @@
 (package! move-text)
 
 (package! flymake-proselint)
+
+(package! mw-thesaurus)
+
+(package! powerthesaurus)
