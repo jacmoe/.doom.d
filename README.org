@@ -2,7 +2,7 @@
 
 My =Doom-Emacs= configuration, optimized for creative writing.
 
-My Hotel California, so to speak.
+My Hotel California of creative writing, so to speak.
 
 [[file:./doomd.png]]
 
