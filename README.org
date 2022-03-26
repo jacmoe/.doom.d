@@ -10,9 +10,9 @@ This succeeds my [[https://github.com/jacmoe/emacs.d][old emacs.d configuration]
 
 ** Screenshots
 
-
-#  LocalWords:  emacs
-
-*** Looking up words in dictionaries
+**** Looking up words in dictionaries
 The window on the right shows the entry in Merriam-Webster for the word "ancient", while the menu on the bottom shows a list of synonyms. There are also lists of antonyms and example sentences.
 [[file:screenshots/lookup.png]]
+
+
+#  LocalWords:  emacs

@@ -125,8 +125,8 @@
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
         ))
   :bind
-  ("C-c b" . turn-on-boon-mode)
-  ("C-c e" . turn-off-boon-mode)
+  ("<f6>" . turn-on-boon-mode)
+  ("<f7>" . turn-off-boon-mode)
   ("C-;" . boon-set-command-state); used to quit insert mode
   )
 
