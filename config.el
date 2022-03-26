@@ -51,7 +51,6 @@
       doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
 
 ;; Theme
-
 ;; (setq doom-theme 'doom-opera)
 (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-nord)
