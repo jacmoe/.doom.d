@@ -7,7 +7,8 @@
 ;; _/ /_/ / /_/ / /_/ / / / / / // /_/ /
 ;;(_)__,_/\____/\____/_/ /_/ /_(_)__,_/
 ;;
-;; My Emacs configuration, optimized for creative writing
+;; My Emacs configuration.
+;; My Hotel California of creative writing.
 ;; Copyright (C) 2017-2022 Jacob Moen
 ;; Author: Jacob Moen <jacmoe.dk@gmail.com>
 ;; Homepage: https://github.com/jacmoe/.doom.d
@@ -51,9 +52,9 @@
 
 ;; Fonts - ordinary and variable pitch
 (if (eq system-type 'windows-nt)
-    (setq doom-font (font-spec :family "Lucida Console" :size 26)
+    (setq doom-font (font-spec :family "Lucida Console" :size 26) ; Windows font
           doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
-  (setq doom-font (font-spec :family "Andale Mono" :size 26)
+  (setq doom-font (font-spec :family "Andale Mono" :size 26) ; Linux font
         doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
   )
 
@@ -98,6 +99,7 @@
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Miscellaneous
+;; Browse-kill-ring
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -252,6 +254,17 @@
   )
 (defalias 'pt-deft 'powerthesaurus-lookup-definitions-dwim)
 (defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Browse-kill-ring
+;;
+;; https://github.com/browse-kill-ring/browse-kill-ring
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! browse-kill-ring
+  :bind
+  ("M-y" . 'browse-kill-ring)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

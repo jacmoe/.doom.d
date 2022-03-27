@@ -12,3 +12,5 @@
 (package! mw-thesaurus)
 
 (package! powerthesaurus)
+
+(package! browse-kill-ring)
