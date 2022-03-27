@@ -16,3 +16,5 @@
 (package! browse-kill-ring)
 
 (package! dimmer)
+
+(package! ox-hugo)
