@@ -176,6 +176,7 @@
         (define-key boon-command-map "L" 'forward-sentence)
         (define-key boon-command-map "K" 'backward-sentence)
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
+        (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
         ))
   :bind
   ("<f6>" . turn-on-boon-mode)
