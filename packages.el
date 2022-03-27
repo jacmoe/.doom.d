@@ -14,3 +14,5 @@
 (package! powerthesaurus)
 
 (package! browse-kill-ring)
+
+(package! dimmer)
