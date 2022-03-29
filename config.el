@@ -37,16 +37,7 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Fancy splash screen
-(unless (eq system-type 'windows-nt)
-  (progn
-    (let ((alternatives '("doom-emacs-color2.svg"
-                          "doom-emacs-color2.png"
-                          "doom-emacs-color.png")))
-      (setq fancy-splash-image
-            (concat doom-private-dir "splash/"
-                    (nth (random (length alternatives)) alternatives))))
-    ))
-
+(setq fancy-splash-image (expand-file-name "splash/emacs.png" doom-private-dir))
 ;; Remove all but the first menu entry on the splash screen
 (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
 
