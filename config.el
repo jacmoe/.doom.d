@@ -291,14 +291,13 @@
   (interactive)
   (call-process-shell-command "setxkbmap" nil nil nil "dk")
   )
+(map! "C-c k" #'my/kbdk)
 
 ;; switch to American keyboard layout
 (defun my/kbus ()
   (interactive)
   (call-process-shell-command "setxkbmap" nil nil nil "us")
   )
-
-(map! "C-c k" #'my/kbdk)
 (map! "C-c u" #'my/kbus)
 
 ;; kill current buffer, without confirmation
@@ -306,7 +305,6 @@
                                         ; deletes the current buffer
   (interactive)
   (kill-buffer (current-buffer)))
-
 (map! "C-x k" #'delete-current-buffer)
 
 ;; align comments
