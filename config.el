@@ -23,13 +23,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
+;; Personal Information
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq user-full-name "Jacob Moena"
+      user-mail-address "jacmoe.dk@gmail.com")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;; General settings
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Remember and restore the last cursor location of opened files
-(save-place-mode 1)
-;; Yes, I really want to quit.
-(setq confirm-kill-emacs nil)
+(save-place-mode 1)           ; Remember and restore the last cursor location of opened files
+(setq confirm-kill-emacs nil) ; Yes, I really want to quit.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -54,6 +60,10 @@
 (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-nord)
 
+;; Make the modified file name in the modeline orange instead of red
+(custom-set-faces!
+  '(doom-modeline-buffer-modified :foreground "orange"))
+
 ;; Setting initial size and position of frame
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
@@ -73,7 +83,12 @@
 ;; Global keybindings
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(map! "<f9>" #'doom-big-font-mode)          ; Toggle big font mode
+(map! "<f9>" #'doom-big-font-mode)   ; Toggle big font mode
+(map!"C-<down>" #'enlarge-window)
+(map!"C-<up>" #'shrink-window)
+(map!"C-<left>" #'enlarge-window-horizontally)
+(map!"C-<right>" #'shrink-window-horizontally)
+(map! "C-`" #'diff-buffer-with-file) ; view what is modified
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
