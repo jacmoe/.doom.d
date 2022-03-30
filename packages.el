@@ -17,3 +17,4 @@
 
 (package! dimmer)
 
+(package! annotate)
