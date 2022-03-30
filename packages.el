@@ -19,3 +19,5 @@
 
 (package! annotate)
 
+(package! org-appear :recipe (:host github :repo "awth13/org-appear")
+  :pin "303fcc8d5d85a4ebff2798dab50b2ccc0255ea5f")
