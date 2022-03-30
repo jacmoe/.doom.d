@@ -98,6 +98,7 @@
 ;; Org-mode
 ;; Annotate
 ;; ISpell
+;; Abbrev
 ;; Boon
 ;; CtrlF
 ;; Transparency
@@ -105,10 +106,9 @@
 ;; Flymake-proselint
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
-;; Miscellaneous
 ;; Browse-kill-ring
 ;; Dimmer
-
+;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -155,6 +155,20 @@
   (add-to-list 'ispell-skip-region-alist '("^# {{{" . "^# }}}"))
   :bind (("<f12>" . ispell-buffer)
          ("S-<f12>" . ispell-word)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Abbrev
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Auto-text for Emacs
+;; stop asking whether to save newly added abbrev when quitting emacs
+(setq save-abbrevs 'silently)
+;; one abbrev file for all modes
+(add-hook 'doom-first-buffer-hook
+          (defun +abbrev-file-name ()
+            (setq-default abbrev-mode t)
+            (setq abbrev-file-name (expand-file-name "abbrev.el" doom-private-dir))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
