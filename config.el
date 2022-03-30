@@ -108,23 +108,12 @@
 
 (add-hook! org-mode :append
            #'visual-line-mode
+           #'solaire-mode
            #'variable-pitch-mode)
 
-(add-hook! org-mode :append
-           #'solaire-mode)
 
 (add-hook! org-mode (hl-line-mode -1))
 (add-hook! org-mode (org-indent-mode -1))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Ox-hugo
-;;
-;; https://github.com/kaushalmodi/ox-hugo
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; A carefully crafted Org exporter back-end for Hugo
-(use-package! ox-hugo
-  :after ox)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

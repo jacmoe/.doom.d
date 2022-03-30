@@ -17,6 +17,3 @@
 
 (package! dimmer)
 
-(package! ox-hugo)
-
-(package! annotate)
