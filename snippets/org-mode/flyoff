@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: flyoff
+# key: flyoff
+# --
+# Local Variables:
+# flycheck-disabled-checkers: (proselint)
+# End:
+$0
