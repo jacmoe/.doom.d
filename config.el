@@ -23,6 +23,7 @@
 (defvar my-theme-shade "light") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
+(defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -204,6 +205,7 @@
 (use-package! ispell
   :config
   (setq ispell-dictionary "en")
+  (setq ispell-personal-dictionary my-personal-dictionary)
   (add-to-list 'ispell-skip-region-alist '(":\\(PROPERTIES\\|LOGBOOK\\):" . ":END:"))
   (add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_SRC" . "#\\+END_SRC"))
   (add-to-list 'ispell-skip-region-alist '("^# {{{" . "^# }}}"))
