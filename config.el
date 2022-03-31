@@ -55,7 +55,7 @@
     (setq doom-font (font-spec :family "Lucida Console" :size 26) ; Windows font
           doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
   (setq doom-font (font-spec :family "Andale Mono" :size 26) ; Linux font
-        doom-variable-pitch-font (font-spec :family "ETBembo" :size 36))
+        doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
   )
 
 ;; Theme
@@ -72,13 +72,13 @@
 ;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
     (setq initial-frame-alist '((top . 45) (left . 76) (width . 100) (height . 35)))
-  (setq initial-frame-alist '((top . 45) (left . 76) (width . 100) (height . 30)))
+  (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 30)))
   )
 
 ;; Misc settings
 (setq display-line-numbers-type nil)        ; do not show line numbers
 (display-time-mode 1)                       ; display time in modeline
-(fringe-mode '(80 . 80))                    ; show vertical fringes
+(fringe-mode '(160 . 160))                  ; show vertical fringes
 (blink-cursor-mode t)                       ; the cursor should blink
 (setq-default line-spacing my-line-spacing) ; The amount of space between lines in pixels
 
