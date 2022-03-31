@@ -97,6 +97,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org-mode
+;; Org-tracktable                                                                   ;;
 ;; Org-appear
 ;; Org-ol-tree
 ;; Annotate
@@ -134,6 +135,20 @@
 
 (add-hook! org-mode (hl-line-mode -1))
 (add-hook! org-mode (org-indent-mode -1))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-tracktable                                                                   ;;
+;;                                                                                  ;;
+;; https://github.com/tty-tourist/org-tracktable                                    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; an emacs/org-mode package for tracking your writing progress in an org-table.
+(use-package! org-tracktable
+  :config
+  (setq org-tracktable-daily-goal my-org-tracktable-daily-goal))
+(defalias 'tti 'org-tracktable-insert-table)
+(defalias 'ttw 'org-tracktable-write)
+(defalias 'tts 'org-tracktable-status)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
