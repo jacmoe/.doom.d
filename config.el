@@ -19,8 +19,8 @@
 ;; Variables                                                                        ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar my-use-boon t)
-(defvar my-theme-shade "dark")
+(defvar my-use-boon t)         ; use Boon-mode, or not
+(defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -196,10 +196,9 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Auto-text for Emacs
-;; stop asking whether to save newly added abbrev when quitting emacs
-(setq save-abbrevs 'silently)
-;; one abbrev file for all modes
-(add-hook 'doom-first-buffer-hook
+(setq save-abbrevs 'silently)     ; stop asking whether to save newly added abbrev when quitting emacs
+
+(add-hook 'doom-first-buffer-hook ; one abbrev file for all modes
           (defun +abbrev-file-name ()
             (setq-default abbrev-mode t)
             (setq abbrev-file-name (expand-file-name "abbrev.el" doom-private-dir))))
@@ -386,8 +385,6 @@
   (let (indent-tabs-mode align-to-tab-stop)
     (align-regexp beginning end (concat "\\(\\s-*\\)"
                                         (regexp-quote comment-start)))))
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; better comment box                                                               ;;
