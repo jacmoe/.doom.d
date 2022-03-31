@@ -1,6 +1,8 @@
 # name : header
 # key : header
 # --
+# {{{
+:HEADER:
 #+TITLE: $1
 #+AUTHOR: $2
 #+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
@@ -12,4 +14,6 @@
 #+LANGUAGE: ${3:en}
 #+SELECT_TAGS: export
 #+STARTUP: showeverything
+:END:
+# }}}
 $0

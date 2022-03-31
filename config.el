@@ -21,6 +21,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-use-boon t)         ; use Boon-mode, or not
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
+(defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

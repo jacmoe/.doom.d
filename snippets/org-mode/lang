@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: lang
+# key: lang
+# --
+
+:SPELLING:
+# <!-- Local IspellDict: ${1:dansk} -->
+# <!-- Local IspellPersDict: ${2:~/.aspell-dansk} -->
+:END:
+$0
