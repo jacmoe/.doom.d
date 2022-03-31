@@ -22,6 +22,7 @@
 (defvar my-use-boon t)         ; use Boon-mode, or not
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
+(defvar my-line-spacing 8) ; how much space between the lines?
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -54,7 +55,7 @@
     (setq doom-font (font-spec :family "Lucida Console" :size 26) ; Windows font
           doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
   (setq doom-font (font-spec :family "Andale Mono" :size 26) ; Linux font
-        doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
+        doom-variable-pitch-font (font-spec :family "ETBembo" :size 36))
   )
 
 ;; Theme
@@ -75,10 +76,11 @@
   )
 
 ;; Misc settings
-(setq display-line-numbers-type nil) ; do not show line numbers
-(display-time-mode 1)                ; display time in modeline
-(fringe-mode '(80 . 80))             ; show vertical fringes
-(blink-cursor-mode t)                ; the cursor should blink
+(setq display-line-numbers-type nil)        ; do not show line numbers
+(display-time-mode 1)                       ; display time in modeline
+(fringe-mode '(80 . 80))                    ; show vertical fringes
+(blink-cursor-mode t)                       ; the cursor should blink
+(setq-default line-spacing my-line-spacing) ; The amount of space between lines in pixels
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
