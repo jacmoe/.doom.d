@@ -20,7 +20,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-use-boon t)         ; use Boon-mode, or not
-(defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
+(defvar my-theme-shade "light") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
 
@@ -59,9 +59,11 @@
   )
 
 ;; Theme
+;; (setq doom-theme 'doom-ayu-mirage)
+(setq doom-theme 'doom-solarized-light)
 ;; (setq doom-theme 'doom-opera)
-(setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-nord)
+;; (setq doom-theme 'doom-nord-light)
 
 ;; Make the modified file name in the modeline orange instead of red
 (custom-set-faces!
@@ -71,7 +73,7 @@
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
-    (setq initial-frame-alist '((top . 45) (left . 76) (width . 100) (height . 35)))
+    (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 35)))
   (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 30)))
   )
 
