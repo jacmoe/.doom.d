@@ -28,3 +28,5 @@
 (package! org-tracktable)
 
 (package! nov)
+
+(package! hide-mode-line)

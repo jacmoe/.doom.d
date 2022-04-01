@@ -98,6 +98,7 @@
 (map!"C-<left>" #'enlarge-window-horizontally)
 (map!"C-<right>" #'shrink-window-horizontally)
 (map! "C-`" #'diff-buffer-with-file) ; view what is modified
+(map! "C-c t m" #'hide-mode-line-mode) ; hide the mode-line
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
