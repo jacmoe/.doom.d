@@ -320,6 +320,7 @@
         (define-key boon-command-map "L" 'forward-sentence)
         (define-key boon-command-map "K" 'backward-sentence)
         (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
+        (define-key boon-command-map "n" 'writing-header-line-mode)
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
         (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
         ))
@@ -520,3 +521,32 @@ comment box."
                      scroll-margin))
       (kill-local-variable `,local)))
   )
+
+
+;; Writing header mode-line minor mode
+(defvar writing-header--default-format header-line-format
+  "Storage for the default `mode-line-format'.
+So it can be restored when 'writer-header-line-mode' is disabled.")
+
+(defvar writing-modeline--default-format mode-line-format)
+
+(define-minor-mode writing-header-line-mode
+  "Adds a bar with the same color as the fringe as the header-line.
+Imitates the look of wordprocessors a bit."
+  :init-value nil
+  :global nil
+  (if writing-header-line-mode
+      (progn
+      (setq header-line-format
+            (concat
+             (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe)
+             (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
+             (propertize " " 'display (list 'space :width 'text) 'face (list (list :height 400) 'default))
+             ;(propertize (format " %dW" (count-words (point-min) (point-max))) 'face 'default)
+             (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
+    ;;(propertize (format " %dW" (count-words (point-min) (point-max))) 'face 'fringe)
+   ;; '("" mode-line-misc-info)
+             (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe))) ;
+        (setq mode-line-format header-line-format))
+    (setq header-line-format writing-header--default-format
+          mode-line-format writing-modeline--default-format)))
