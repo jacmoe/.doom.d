@@ -26,3 +26,5 @@
   :pin "207c748aa5fea8626be619e8c55bdb1c16118c25")
 
 (package! org-tracktable)
+
+(package! nov)
