@@ -319,6 +319,7 @@
           )
         (define-key boon-command-map "L" 'forward-sentence)
         (define-key boon-command-map "K" 'backward-sentence)
+        (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
         (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
         ))
@@ -502,3 +503,20 @@ comment box."
     (comment-box b e 1)
     (goto-char e)
     (set-marker e nil)))
+
+;; center scroll minor mode
+(define-minor-mode prot/scroll-center-cursor-mode
+  "Toggle centred cursor scrolling behavior"
+  :init-value nil
+  :lighter " S="
+  :global nil
+  (if prot/scroll-center-cursor-mode
+      (setq-local scroll-margin (* (frame-height) 2)
+                  scroll-conservatively 0
+                  maximum-scroll-margin 0.5)
+    (dolist (local '(scroll-preserve-screen-position
+                     scroll-conservatively
+                     maximum-scroll-margin
+                     scroll-margin))
+      (kill-local-variable `,local)))
+  )
