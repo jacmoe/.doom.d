@@ -270,6 +270,7 @@
         (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
         (define-key boon-command-map "N" 'writing-header-line-mode)
         (define-key boon-command-map "M" 'doom-modeline-mode)
+        (define-key boon-command-map "w" 'org-tracktable-status)
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
         (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
         ))
