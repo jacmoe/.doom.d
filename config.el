@@ -49,7 +49,7 @@
 ;; Fancy splash screen
 (setq fancy-splash-image (expand-file-name "splash/emacs.png" doom-private-dir))
 ;; Remove all but the first menu entry on the splash screen
-(setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
+;; (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
 ;; Set the title
 (setq frame-title-format '("%b – Hotel California of Creative Writing"))
 
@@ -524,6 +524,9 @@ comment box."
 
 
 ;; Writing header mode-line minor mode
+;; A bug causes the doom mode-line to disappear when this
+;; minor mode is toggled off.
+;; Run M-x doom-modeline-mode twice to fix the missing modeline
 (defvar writing-header--default-format header-line-format
   "Storage for the default `mode-line-format'.
 So it can be restored when 'writer-header-line-mode' is disabled.")
