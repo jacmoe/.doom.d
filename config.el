@@ -134,6 +134,8 @@
 ;; literate programming, maintaining to-do lists, planning projects,
 ;; and more — in a fast and effective plain text system.
 (setq org-directory "~/Dropbox/org/")
+
+;; Don't pollute the text with markers
 (after! org (setq org-hide-emphasis-markers t))
 
 (add-hook! org-mode :append
@@ -141,75 +143,21 @@
            #'solaire-mode
            #'variable-pitch-mode)
 
+;; use :ignore: tags to ignore the heading, but keep the content
+(use-package! ox-extra
+  :after org
+  :config
+  (ox-extras-activate '(ignore-headlines))
+  )
+
+;; We want to log the time when the TODO is closed
+(setq org-log-done "time"
+      org-log-done-with-time 't)
 
 (add-hook! org-mode (hl-line-mode -1))
 (add-hook! org-mode (org-indent-mode -1))
 
-(setq org-todo-keywords
-        '((sequence "TODO" "IN PROGRESS" "|" "DONE")))
-
- ; GTD means capturing ideas quickly. I don't want to think about where to refile
- ; Everything captured is a TODO, to be refiled later
-  (setq org-capture-templates
-        (quote (("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Captured")
-                 "** TODO %?"))))
-
-  (setq org-agenda-custom-commands
-        '(("p" "Project Overview"
-           ((todo "TODO"
-                  ((org-agenda-overriding-header "Todo:")))
-            (todo "IN PROGRESS"
-                  ((org-agenda-overriding-header "In Progress:")))))
-
-          ("P" "Level 1 Overview"
-           ((tags-todo  "LEVEL=1+TODO=\"TODO\""
-                        ((org-agenda-overriding-header "Level 1 Todos:")))
-            (tags-todo  "LEVEL=1+TODO=\"IN PROGRESS\""
-                        ((org-agenda-overriding-header "Level 1 In Progress:")))))
-
-          ))
-
-  (setq org-agenda-category-icon-alist
-        `(("gtd" ,(list (all-the-icons-material "star")) nil nil :ascent center)
-          ("Person" ,(list (all-the-icons-material "person")) nil nil :ascent center)
-          ("Planner" ,(list (all-the-icons-faicon "calendar")) nil nil :ascent center)
-          ("Refile" ,(list (all-the-icons-material "move_to_inbox")) nil nil :ascent center)
-          ("School" ,(list (all-the-icons-material "school")) nil nil :ascent center)
-          ("Tech" ,(list (all-the-icons-material "laptop_mac")) nil nil :ascent center)
-          ("Writing" ,(list (all-the-icons-material "edit")) nil nil :ascent center)
-          ))
-
-  (defun tb/agenda-restrict-this-buffer ()
-    "Call projects agenda restricted to this buffer"
-    (interactive)
-    (org-agenda nil "p" "<"))
-
-  (defun tb/agenda-restrict-this-project ()
-    "Restrict agenda to current project"
-    (interactive)
-    (let ((org-agenda-files (list (projectile-project-root))))
-      (org-agenda)))
-
-  (defun tb/capture ()
-    "Capture to do without options"
-    (interactive)
-    (org-capture nil "t"))
-
-  (defun tb/capture-to-this-buffer ()
-    "Capture note to this buffer"
-    (interactive)
-    (cond  ((not  (eq major-mode 'org-mode))
-            (message "Can't capture to non org-mode buffer"))
-           (t
-            (let* ((this-file buffer-file-name)
-                   (org-capture-templates
-                    `(("t" "Todo" entry (file+headline ,this-file "Captured")
-                       "** TODO %?"))))
-              (org-capture)))))
-
 (setq org-startup-folded t)
-;; (map! :desc "Quick capture" "C-c C-c" #'tb/capture)
-;; (map! :desc "Capture this buffer" "C-c C-S-c" #'tb/capture-to-this-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
