@@ -34,5 +34,3 @@
 (package! poet-theme)
 
 (package! modus-themes)
-
-(package! spacemacs-theme)

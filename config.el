@@ -115,7 +115,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org-mode
-;; Org-tracktable                                                                   ;;
+;; Org-tracktable
 ;; Org-appear
 ;; Org-ol-tree
 ;; Annotate
