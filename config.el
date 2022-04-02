@@ -122,6 +122,7 @@
 ;; Flymake-proselint
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
+;; Lexic
 ;; Browse-kill-ring
 ;; Dimmer
 ;; Yasnippet
@@ -304,6 +305,7 @@
         (define-key boon-command-map "N" 'writing-header-line-mode)
         (define-key boon-command-map "M" 'doom-modeline-mode)
         (define-key boon-command-map "w" 'org-tracktable-status)
+        (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
         (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
         ))
@@ -395,6 +397,41 @@
   )
 (defalias 'pt-deft 'powerthesaurus-lookup-definitions-dwim)
 (defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Lexic                                                                            ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! lexic
+  :commands lexic-search lexic-list-dictionary
+  :config
+  (map! :map lexic-mode-map
+        :n "q" #'lexic-return-from-lexic
+        :nv "RET" #'lexic-search-word-at-point
+        :n "a" #'outline-show-all
+        :n "h" (cmd! (outline-hide-sublevels 3))
+        :n "o" #'lexic-toggle-entry
+        :n "n" #'lexic-next-entry
+        :n "N" (cmd! (lexic-next-entry t))
+        :n "p" #'lexic-previous-entry
+        :n "P" (cmd! (lexic-previous-entry t))
+        :n "E" (cmd! (lexic-return-from-lexic) ; expand
+                     (switch-to-buffer (lexic-get-buffer)))
+        :n "M" (cmd! (lexic-return-from-lexic) ; minimise
+                     (lexic-goto-lexic))
+        :n "C-p" #'lexic-search-history-backwards
+        :n "C-n" #'lexic-search-history-forwards
+        :n "/" (cmd! (call-interactively #'lexic-search))))
+
+(defadvice! +lookup/dictionary-definition-lexic (identifier &optional arg)
+  "Look up the definition of the word at point (or selection) using `lexic-search'."
+  :override #'+lookup/dictionary-definition
+  (interactive
+   (list (or (doom-thing-at-point-or-region 'word)
+             (read-string "Look up in dictionary: "))
+         current-prefix-arg))
+  (lexic-search identifier nil nil t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
