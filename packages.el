@@ -30,3 +30,5 @@
 (package! nov)
 
 (package! hide-mode-line)
+
+(package! poet-theme)
