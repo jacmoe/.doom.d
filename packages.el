@@ -32,5 +32,3 @@
 (package! hide-mode-line)
 
 (package! poet-theme)
-
-(package! modus-themes)

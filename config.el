@@ -68,7 +68,6 @@
 ;; Theme
 (setq doom-theme 'poet)
 ;; (setq doom-theme 'doom-nord)
-;; (modus-themes-load-operandi)
 ;; (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-solarized-light)
 ;; (setq doom-theme 'doom-opera)
@@ -132,7 +131,6 @@
 ;; Dimmer
 ;; Yasnippet
 ;; Nov.el
-;; Modus-themes
 ;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -440,24 +438,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; Modus-themes                                                                     ;;
-;;                                                                                  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! modus-themes
-  :init
-  ;; Add all your customizations prior to loading the themes
-  (setq modus-themes-italic-constructs t
-        modus-themes-bold-constructs nil
-        modus-themes-region '(bg-only no-extend))
-
-  ;; Load the theme files before enabling a theme
-  (modus-themes-load-themes)
-  :config
-  (setq modus-themes-mixed-fonts t)
-)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
 ;; Miscellaneous                                                                    ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -564,7 +544,6 @@ Imitates the look of wordprocessors a bit."
 ;; (load-theme 'poet-dark-monochrome t)
 ;; (load-theme 'doom-ayu-mirage t)
 ;; (load-theme 'doom-solarized-dark t)
-;; (modus-themes-load-vivendi)
 )
 
 ;; turn on light theme
@@ -575,7 +554,6 @@ Imitates the look of wordprocessors a bit."
 (load-theme 'poet t)
 ;; (load-theme 'doom-solarized-light t)
 ;; (load-theme 'doom-nord-light t)
-;; (modus-themes-load-operandi)
 )
 
 ;; switch between light and dark theme
