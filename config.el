@@ -20,7 +20,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-use-boon t)         ; use Boon-mode, or not
-(defvar my-theme-shade "light") ; can be light or dark. Used to color the Boon-mode cursor
+(defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
 (defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en")
