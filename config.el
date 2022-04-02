@@ -40,12 +40,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (save-place-mode 1)           ; Remember and restore the last cursor location of opened files
 (setq confirm-kill-emacs nil) ; Yes, I really want to quit.
+(setq custom-file (make-temp-file "emacs-custom")) ; prevent custom from preserving state
+(setq inhibit-compacting-font-caches t) ; for performance reasons
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Visual settings                                                                  ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; convince Emacs to trust themes so that we can install them
+(setq custom-safe-themes t)
 ;; Fancy splash screen
 (setq fancy-splash-image (expand-file-name "splash/emacs.png" doom-private-dir))
 ;; Remove all but the first menu entry on the splash screen
@@ -511,14 +515,19 @@ Imitates the look of wordprocessors a bit."
 (interactive)
 (setq boon-default-cursor-color "white")
 (setq my-theme-shade "dark")
-(load-theme 'doom-ayu-mirage t))
+;; (load-theme 'doom-ayu-mirage t)
+;; (load-theme 'doom-nord t)
+(load-theme 'doom-solarized-dark t)
+)
 
 ;; turn on light theme
 (defun go-light-theme ()
 (interactive)
 (setq boon-default-cursor-color "black")
 (setq my-theme-shade "light")
-(load-theme 'doom-solarized-light t))
+(load-theme 'doom-solarized-light t)
+;; (load-theme 'doom-nord-light t)
+)
 
 ;; switch between light and dark theme
 (defun switch-theme ()
