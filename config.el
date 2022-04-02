@@ -66,8 +66,9 @@
   )
 
 ;; Theme
-;; (setq doom-theme 'doom-ayu-mirage)
 (setq doom-theme 'poet)
+;; (modus-themes-load-operandi)
+;; (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-solarized-light)
 ;; (setq doom-theme 'doom-opera)
 ;; (setq doom-theme 'doom-nord)
@@ -91,6 +92,8 @@
 (fringe-mode '(160 . 160))                  ; show vertical fringes
 (blink-cursor-mode t)                       ; the cursor should blink
 (setq-default line-spacing my-line-spacing) ; The amount of space between lines in pixels
+;; Do not highlight current line
+(remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -129,6 +132,7 @@
 ;; Dimmer
 ;; Yasnippet
 ;; Nov.el
+;; Modus-themes
 ;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -161,8 +165,7 @@
 (setq org-log-done "time"
       org-log-done-with-time 't)
 
-(add-hook! org-mode (hl-line-mode -1))
-(add-hook! org-mode (org-indent-mode -1))
+;; (add-hook! org-mode (org-indent-mode -1))
 
 (setq org-startup-folded t)
 
@@ -437,6 +440,24 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
+;; Modus-themes                                                                     ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! modus-themes
+  :init
+  ;; Add all your customizations prior to loading the themes
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil
+        modus-themes-region '(bg-only no-extend))
+
+  ;; Load the theme files before enabling a theme
+  (modus-themes-load-themes)
+  :config
+  (setq modus-themes-mixed-fonts t)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
 ;; Miscellaneous                                                                    ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -541,8 +562,9 @@ Imitates the look of wordprocessors a bit."
 (setq my-theme-shade "dark")
 ;; (load-theme 'poet-dark-monochrome t)
 ;; (load-theme 'doom-ayu-mirage t)
-(load-theme 'doom-nord t)
+;; (load-theme 'doom-nord t)
 ;; (load-theme 'doom-solarized-dark t)
+(modus-themes-load-vivendi)
 )
 
 ;; turn on light theme
@@ -553,6 +575,7 @@ Imitates the look of wordprocessors a bit."
 (load-theme 'poet t)
 ;; (load-theme 'doom-solarized-light t)
 ;; (load-theme 'doom-nord-light t)
+;; (modus-themes-load-operandi)
 )
 
 ;; switch between light and dark theme
