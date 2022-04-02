@@ -67,11 +67,11 @@
 
 ;; Theme
 (setq doom-theme 'poet)
+;; (setq doom-theme 'doom-nord)
 ;; (modus-themes-load-operandi)
 ;; (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-solarized-light)
 ;; (setq doom-theme 'doom-opera)
-;; (setq doom-theme 'doom-nord)
 ;; (setq doom-theme 'doom-nord-light)
 
 ;; Make the modified file name in the modeline orange instead of red
@@ -560,11 +560,11 @@ Imitates the look of wordprocessors a bit."
 (interactive)
 (setq boon-default-cursor-color "white")
 (setq my-theme-shade "dark")
+(load-theme 'doom-nord t)
 ;; (load-theme 'poet-dark-monochrome t)
 ;; (load-theme 'doom-ayu-mirage t)
-;; (load-theme 'doom-nord t)
 ;; (load-theme 'doom-solarized-dark t)
-(modus-themes-load-vivendi)
+;; (modus-themes-load-vivendi)
 )
 
 ;; turn on light theme
