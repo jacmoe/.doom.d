@@ -66,8 +66,8 @@
   )
 
 ;; Theme
-(setq doom-theme 'poet)
-;; (setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-nord)
+;; (setq doom-theme 'poet)
 ;; (setq doom-theme 'doom-ayu-mirage)
 ;; (setq doom-theme 'doom-solarized-light)
 ;; (setq doom-theme 'doom-opera)
