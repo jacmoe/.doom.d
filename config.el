@@ -165,6 +165,26 @@
 
 (setq org-startup-folded t)
 
+(after! org
+(custom-set-faces!
+  '((org-block) :background nil)
+  )
+  (defface redd
+    '((((class color) (min-colors 88) (background light))
+      :foreground "red"))
+    "Red."
+    :group 'basic-faces)
+  (custom-set-faces!
+    ;'(org-document-title :height 1.6 :weight bold)
+    '(org-level-1 :height 1.3 :weight extrabold :slant normal)
+    '(org-level-2 :height 1.2 :weight bold :slant normal)
+    '(org-level-3 :height 1.1 :weight regular :slant normal)
+    ;'(org-document-info  :inherit 'nano-face-faded)
+    '(org-document-title   ;:foreground ,(doom-color 'black)
+                           :family "Roboto"
+                           :height 250
+                           :weight medium)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Org-tracktable                                                                   ;;
