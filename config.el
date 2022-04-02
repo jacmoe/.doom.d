@@ -99,6 +99,7 @@
 (map!"C-<right>" #'shrink-window-horizontally)
 (map! "C-`" #'diff-buffer-with-file) ; view what is modified
 (map! "C-c t m" #'hide-mode-line-mode) ; hide the mode-line
+(map! "C-c t d" #'switch-theme) ; use dark theme
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -504,3 +505,26 @@ Imitates the look of wordprocessors a bit."
         (setq mode-line-format header-line-format))
     (setq header-line-format writing-header--default-format
           mode-line-format writing-modeline--default-format)))
+
+;; turn on dark theme
+(defun go-dark-theme ()
+(interactive)
+(setq boon-default-cursor-color "white")
+(setq my-theme-shade "dark")
+(load-theme 'doom-ayu-mirage t))
+
+;; turn on light theme
+(defun go-light-theme ()
+(interactive)
+(setq boon-default-cursor-color "black")
+(setq my-theme-shade "light")
+(load-theme 'doom-solarized-light t))
+
+;; switch between light and dark theme
+(defun switch-theme ()
+(interactive)
+(if (equal my-theme-shade "light")
+(go-dark-theme)
+(go-light-theme)
+)
+)
