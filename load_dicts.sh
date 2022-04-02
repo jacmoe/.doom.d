@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIC_FOLDER=/home/jacmoe/stardict/dic
+DIC_FOLDER=~/stardict/dic
 if [ ! -d "$DIC_FOLDER" ]; then
     TMP="$(mktemp -d /tmp/dict-XXX)"
     cd "$TMP"
