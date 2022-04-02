@@ -67,11 +67,6 @@
 
 ;; Theme
 (setq doom-theme 'doom-nord)
-;; (setq doom-theme 'poet)
-;; (setq doom-theme 'doom-ayu-mirage)
-;; (setq doom-theme 'doom-solarized-light)
-;; (setq doom-theme 'doom-opera)
-;; (setq doom-theme 'doom-nord-light)
 
 ;; Make the modified file name in the modeline orange instead of red
 (custom-set-faces!
@@ -164,6 +159,13 @@
       org-log-done-with-time 't)
 
 ;; (add-hook! org-mode (org-indent-mode -1))
+(setq org-indent-identation-per-level 1)
+(setq org-adapt-indentation 'headline-data)
+
+(customize-set-variable 'org-blank-before-new-entry
+                        '((heading . nil)
+                        (plain-list-item . nil)))
+(setq org-cycle-separator-lines 1)
 
 (setq org-startup-folded t)
 
@@ -537,30 +539,25 @@ Imitates the look of wordprocessors a bit."
 
 ;; turn on dark theme
 (defun go-dark-theme ()
-(interactive)
-(setq boon-default-cursor-color "white")
-(setq my-theme-shade "dark")
-(load-theme 'doom-nord t)
-;; (load-theme 'poet-dark-monochrome t)
-;; (load-theme 'doom-ayu-mirage t)
-;; (load-theme 'doom-solarized-dark t)
-)
+  (interactive)
+  (setq boon-default-cursor-color "white")
+  (setq my-theme-shade "dark")
+  (load-theme 'doom-nord t)
+  )
 
 ;; turn on light theme
 (defun go-light-theme ()
-(interactive)
-(setq boon-default-cursor-color "black")
-(setq my-theme-shade "light")
-(load-theme 'poet t)
-;; (load-theme 'doom-solarized-light t)
-;; (load-theme 'doom-nord-light t)
-)
+  (interactive)
+  (setq boon-default-cursor-color "black")
+  (setq my-theme-shade "light")
+  (load-theme 'poet t)
+  )
 
 ;; switch between light and dark theme
 (defun switch-theme ()
-(interactive)
-(if (equal my-theme-shade "light")
-(go-dark-theme)
-(go-light-theme)
-)
-)
+  (interactive)
+  (if (equal my-theme-shade "light")
+      (go-dark-theme)
+    (go-light-theme)
+    )
+  )
