@@ -150,9 +150,6 @@
 ;; literate programming, maintaining to-do lists, planning projects,
 ;; and more — in a fast and effective plain text system.
 
-;; Don't pollute the text with markers
-(after! org (setq org-hide-emphasis-markers t))
-
 (add-hook! org-mode :append
            #'visual-line-mode
            #'solaire-mode
@@ -165,13 +162,8 @@
   (ox-extras-activate '(ignore-headlines))
   )
 
-;; We want to log the time when the TODO is closed
-(setq org-log-done "time"
-      org-log-done-with-time 't)
 
-;; (add-hook! org-mode (org-indent-mode -1))
-(setq org-indent-identation-per-level 1)
-(setq org-adapt-indentation 'headline-data)
+(add-hook! org-mode (org-indent-mode -1))
 
 (customize-set-variable 'org-blank-before-new-entry
                         '((heading . nil)
@@ -194,29 +186,29 @@
     '(org-level-3 :height 1.1 :weight regular :slant normal)
     ;'(org-document-info  :inherit 'nano-face-faded)
     '(org-document-title   ;:foreground ,(doom-color 'black)
-                           :family "Roboto"
+                           :family "ETBembo"
                            :height 250
                            :weight medium)))
 
 (after! org
   (setq org-startup-folded 'show2levels
-        org-ellipsis " [...] "
-        ;; My org/org-roam capture templates
+        org-enforce-todo-dependencies t
+        org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-capture-templates
-        '(("t" "todo" entry (file+headline "todo.org" "Unsorted")
-           "* [ ] %?\n%i\n%a"
-           :prepend t)
-          ("d" "deadline" entry (file+headline "todo.org" "Schedule")
-           "* [ ] %?\nDEADLINE: <%(org-read-date)>\n\n%i\n%a"
-           :prepend t)
-          ("s" "schedule" entry (file+headline "todo.org" "Schedule")
-           "* [ ] %?\nSCHEDULED: <%(org-read-date)>\n\n%i\n%a"
-           :prepend t)
-          ("c" "check out later" entry (file+headline "todo.org" "Check out later")
-           "* [ ] %?\n%i\n%a"
-           :prepend t)
-          ("l" "ledger" plain (file "ledger.gpg")
-           "%(+beancount/clone-transaction)"))))
+                '(("n" "Note" entry (file+headline "notes.org" "Notes") "* %?\n %a"))
+        org-ellipsis " [...] "
+        org-tag-faces '(("ignore" . (:foreground "grey")))
+        org-todo-keyword-faces
+                '(("todo" . org-warning) ("idea" . "goldenrod1")
+                ("draft" . "goldenrod1") ("revise" . "OliveDrab4")
+                "|" ("done" . "SeaGreen4"))
+        org-todo-keywords
+                '((sequence "draft(t)" "revise(r)" "|" "done(d)"))
+        ;; Don't pollute the text with markers
+        org-hide-emphasis-markers t
+        ;; We want to log the time when the TODO is closed
+        org-log-done "time" org-log-done-with-time 't
+))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -298,9 +290,9 @@
 (use-package! org-tracktable
   :config
   (setq org-tracktable-daily-goal my-org-tracktable-daily-goal))
-(defalias 'tti 'org-tracktable-insert-table)
-(defalias 'ttw 'org-tracktable-write)
-(defalias 'tts 'org-tracktable-status)
+(defalias 'tt-insert 'org-tracktable-insert-table)
+(defalias 'tt-update 'org-tracktable-write)
+(defalias 'tt-status 'org-tracktable-status)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
