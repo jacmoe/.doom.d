@@ -4,7 +4,7 @@ My =Doom-Emacs= configuration.
 
 My Hotel California of creative writing.
 
-[[file:./doomd.png]]
+[[file:splash/emacs.png]]
 
 ** Screenshots
 
