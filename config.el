@@ -196,12 +196,10 @@
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-capture-templates
                 '(("n" "Note" entry (file+headline "notes.org" "Notes") "* %?\n %a"))
-        org-ellipsis " [...] "
-        org-tag-faces '(("ignore" . (:foreground "grey")))
         org-todo-keyword-faces
                 '(("todo" . org-warning) ("idea" . "goldenrod1")
-                ("draft" . "goldenrod1") ("revise" . "OliveDrab4")
-                "|" ("done" . "SeaGreen4"))
+                ("draft" . "coral2") ("revise" . "PaleGreen4")
+                "|" ("done" . "DarkOrchid3"))
         org-todo-keywords
                 '((sequence "draft(t)" "revise(r)" "|" "done(d)"))
         ;; Don't pollute the text with markers
