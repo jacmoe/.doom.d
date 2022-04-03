@@ -24,7 +24,8 @@
 ;; (defvar my-theme-shade "light") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
-(defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en")
+(defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en") ; store personal dictionary here
+(setq bookmark-default-file "~/Dropbox/skriv/bookmarks") ; Where to save the bookmarks file
 ;; Org Directories
 (setq +org-roam-auto-backlinks-buffer t
       org-directory "~/org/"
@@ -51,6 +52,7 @@
 (setq confirm-kill-emacs nil) ; Yes, I really want to quit.
 (setq custom-file (make-temp-file "emacs-custom")) ; prevent custom from preserving state
 (setq inhibit-compacting-font-caches t) ; for performance reasons
+(setq bookmark-save-flag 1) ; Save bookmarks each time it changes, not only on exit
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -215,16 +217,16 @@
 (after! org-roam
   (setq org-roam-capture-templates
         `(("n" "note" plain
-           ,(format "#+title: ${title}\n%%" org-roam-directory)
+           "%?"
            :target (file "note/%<%Y%m%d%H%M%S>-${slug}.org")
            :unnarrowed t)
-          ("r" "thought" plain
-           ,(format "#+title: ${title}\n%%" org-roam-directory)
-           :target (file "thought/%<%Y%m%d%H%M%S>-${slug}.org")
-           :unnarrowed t)
           ("t" "topic" plain
-           ,(format "#+title: ${title}\n%%" org-roam-directory)
+           "%?"
            :target (file "topic/%<%Y%m%d%H%M%S>-${slug}.org")
+           :unnarrowed t)
+          ("w" "worldbuilding" plain
+           "%?"
+           :target (file "world/%<%Y%m%d%H%M%S>-${slug}.org")
            :unnarrowed t))
         ;; Use human readable dates for dailies titles
         org-roam-dailies-capture-templates
