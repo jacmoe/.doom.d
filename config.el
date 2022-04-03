@@ -194,8 +194,6 @@
   (setq org-startup-folded 'show2levels
         org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
-        org-capture-templates
-                '(("n" "Note" entry (file+headline "notes.org" "Notes") "* %?\n %a"))
         org-todo-keyword-faces
                 '(("todo" . org-warning) ("idea" . "goldenrod1")
                 ("draft" . "coral2") ("revise" . "PaleGreen4")
@@ -207,6 +205,8 @@
         ;; We want to log the time when the TODO is closed
         org-log-done "time" org-log-done-with-time 't
         org-fontify-done-headline nil ; don't color the headline grey when done
+        org-capture-templates
+                '(("n" "Note" entry (file+headline "notes.org" "Notes") "* %?\n %a\n"))
 ))
 
 (defun tb/capture-to-this-buffer ()
@@ -369,6 +369,7 @@
   ("<f6>" . turn-on-boon-mode)
   ("<f7>" . turn-off-boon-mode)
   ("C-;" . boon-set-command-state); used to quit insert mode
+  ("C-æ" . boon-set-command-state); used to quit insert mode - Danish version
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
