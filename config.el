@@ -21,6 +21,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-use-boon t)         ; use Boon-mode, or not
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
+;; (defvar my-theme-shade "light") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
 (defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en")
@@ -61,7 +62,7 @@
 ;; Fancy splash screen
 (setq fancy-splash-image (expand-file-name "splash/emacs.png" doom-private-dir))
 ;; Remove all but the first menu entry on the splash screen
-;; (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
+(setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
 ;; Set the title
 (setq frame-title-format '("%b – Hotel California of Creative Writing"))
 
@@ -74,6 +75,7 @@
   )
 
 ;; Theme
+;; (setq doom-theme 'poet)
 (setq doom-theme 'doom-nord)
 
 ;; Make the modified file name in the modeline orange instead of red
