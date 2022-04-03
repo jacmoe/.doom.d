@@ -180,11 +180,9 @@
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
-    ;'(org-document-title :height 1.6 :weight bold)
-    '(org-level-1 :height 1.3 :weight extrabold :slant normal)
-    '(org-level-2 :height 1.2 :weight bold :slant normal)
-    '(org-level-3 :height 1.1 :weight regular :slant normal)
-    ;'(org-document-info  :inherit 'nano-face-faded)
+    '(org-level-1 :height 1.3 :weight medium :slant normal)
+    '(org-level-2 :height 1.2 :weight medium :slant normal)
+    '(org-level-3 :height 1.1 :weight medium :slant normal)
     '(org-document-title   ;:foreground ,(doom-color 'black)
                            :family "ETBembo"
                            :height 250
@@ -206,6 +204,7 @@
         org-hide-emphasis-markers t
         ;; We want to log the time when the TODO is closed
         org-log-done "time" org-log-done-with-time 't
+        org-fontify-done-headline nil ; don't color the headline grey when done
 ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
