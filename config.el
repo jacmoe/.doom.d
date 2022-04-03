@@ -209,6 +209,19 @@
         org-fontify-done-headline nil ; don't color the headline grey when done
 ))
 
+(defun tb/capture-to-this-buffer ()
+  "Capture note to this buffer"
+  (interactive)
+  (cond  ((not  (eq major-mode 'org-mode))
+          (message "Can't capture to non org-mode buffer"))
+         (t
+          (let* ((this-file buffer-file-name)
+                 (org-capture-templates
+                  `(("n" "Note" entry (file+headline ,this-file "Captured")
+                     "** %?\n %a\n"))))
+            (org-capture)))))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Org-Roam                                                                         ;;
