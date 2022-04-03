@@ -383,12 +383,13 @@ Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want
    | C-c C-x e |      | end timer              |
 
 
-# {{{
 :DIRECTIVES:
 #  LocalWords:  tp num arg SPC modeline Draftmode Yasnippet wc sb sbtree sbt Mx
-#  LocalWords:  sbtreet tracktable tti ttw tts nowc noexport subtree RET
+#  LocalWords:  sbtreet tracktable tti ttw tts nowc noexport subtree RET dired
+#  LocalWords:  whitespace ispell Writeroom Magit
 # Local Variables:
 # flycheck-disabled-checkers: (proselint)
 # End:
 :END:
+# {{{
 # }}}
