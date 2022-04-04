@@ -76,7 +76,7 @@
   )
 
 ;; Theme
-;; (setq doom-theme 'poet)
+;; (setq doom-theme 'poet-monochrome)
 (setq doom-theme 'doom-nord)
 
 ;; Make the modified file name in the modeline orange instead of red
@@ -330,7 +330,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Typopunct                                                                        ;;
-;; https://github.com/emacsmirror/typopunct                                                                                 ;;
+;; https://github.com/emacsmirror/typopunct                                         ;;
+;; https://www.emacswiki.org/emacs/TypographicalPunctuationMarks                    ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Automatic typographical punctuation marks
 (use-package! typopunct
@@ -339,8 +340,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; Smart-quotes                                                                        ;;
-;; https://github.com/gareth-rees/smart-quotes                                                                                 ;;
+;; Smart-quotes                                                                     ;;
+;; https://github.com/gareth-rees/smart-quotes                                      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Only used for the "smart-quotes-smarten" function
 (use-package! smart-quotes
@@ -524,7 +525,7 @@
 ;;                                                                                  ;;
 ;; Nov.el                                                                           ;;
 ;;                                                                                  ;;
-;; https://depp.brause.cc/nov.el/                                                                                 ;;
+;; https://depp.brause.cc/nov.el/                                                   ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! nov
 :config
@@ -642,7 +643,7 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "black")
   (setq my-theme-shade "light")
-  (load-theme 'poet t)
+  (load-theme 'poet-monochrome t)
   )
 
 ;; switch between light and dark theme
