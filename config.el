@@ -357,6 +357,7 @@
         (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
         (add-hook 'ibuffer-hook 'turn-off-boon-mode)
         (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
+        (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
         ))
   :bind
   ("<f6>" . turn-on-boon-mode)
