@@ -112,7 +112,7 @@
 (map!"C-<right>" #'shrink-window-horizontally)
 (map! "C-`" #'diff-buffer-with-file) ; view what is modified
 (map! "C-c t m" #'hide-mode-line-mode) ; hide the mode-line
-(map! "C-c t d" #'switch-theme) ; use dark theme
+(map! "C-c t d" #'switch-theme) ; switch theme
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -308,7 +308,7 @@
   (add-to-list 'ispell-skip-region-alist '(org-property-drawer-re))
   (add-to-list 'ispell-skip-region-alist '("~" "~"))
   (add-to-list 'ispell-skip-region-alist '("=" "="))
-  (add-to-list 'ispell-skip-region-alist '(":\\(PROPERTIES\\|LOGBOOK\\):" . ":END:"))
+  (add-to-list 'ispell-skip-region-alist '(":\\(PROPERTIES\\|LOGBOOK\\|HEADER\\|SPELLING\\):" . ":END:"))
   (add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_SRC" . "#\\+END_SRC"))
   (add-to-list 'ispell-skip-region-alist '("^# {{{" . "^# }}}"))
   :bind (("<f12>" . ispell-buffer)

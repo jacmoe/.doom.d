@@ -1,7 +1,6 @@
 # name : header
 # key : header
 # --
-# {{{
 :HEADER:
 #+TITLE: $1
 #+AUTHOR: ${2:`user-full-name`}
@@ -15,5 +14,4 @@
 #+LANGUAGE: ${4:en}
 #+SELECT_TAGS: export
 :END:
-# }}}
 $0
