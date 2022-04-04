@@ -156,6 +156,7 @@
 (add-hook! org-mode :append
            #'visual-line-mode
            #'solaire-mode
+           #'typopunct-mode
            #'variable-pitch-mode)
 
 ;; use :ignore: tags to ignore the heading, but keep the content
