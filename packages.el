@@ -36,3 +36,5 @@
 (package! lexic)
 
 (package! typopunct)
+
+(package! smart-quotes)

@@ -129,6 +129,7 @@
 ;; ISpell
 ;; Abbrev
 ;; Typopunct
+;; Smart-quotes
 ;; Boon
 ;; CtrlF
 ;; Transparency
@@ -333,9 +334,20 @@
 ;; https://github.com/emacsmirror/typopunct                                                                                 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Automatic typographical punctuation marks
-(use-package typopunct
+(use-package! typopunct
   :config
   (typopunct-change-language 'english t))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Smart-quotes                                                                        ;;
+;; https://github.com/gareth-rees/smart-quotes                                                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Only used for the "smart-quotes-smarten" function
+(use-package! smart-quotes
+  :init
+        (defalias 'fix-quotes 'smart-quotes-smarten)
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
