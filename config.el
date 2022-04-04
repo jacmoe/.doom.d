@@ -219,7 +219,7 @@
           (let* ((this-file buffer-file-name)
                  (org-capture-templates
                   `(("n" "Note" entry (file+headline ,this-file "Captured")
-                     "** %?\n"))))
+                     "** %?\n "))))
             (org-capture nil "n")))))
 
 (defun jethro/org-capture-slipbox ()
