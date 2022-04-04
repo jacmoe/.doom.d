@@ -206,7 +206,8 @@
         org-log-done "time" org-log-done-with-time 't
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
-                '(("n" "Note" entry (file+headline "notes.org" "Notes") "* %?\n %a\n"))
+        '(("s" "Slipbox" entry  (file "inbox.org")
+       "* %?\n"))
 ))
 
 (defun tb/capture-to-this-buffer ()
@@ -218,9 +219,12 @@
           (let* ((this-file buffer-file-name)
                  (org-capture-templates
                   `(("n" "Note" entry (file+headline ,this-file "Captured")
-                     "** %?\n %a\n"))))
-            (org-capture)))))
+                     "** %?\n"))))
+            (org-capture nil "n")))))
 
+(defun jethro/org-capture-slipbox ()
+  (interactive)
+  (org-capture nil "s"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -230,16 +234,8 @@
 (after! org-roam
   (setq org-roam-capture-templates
         `(("n" "note" plain
-           "%?"
+           ,(format "#+title: ${title}\n%%[%s/template/note.org]" org-roam-directory)
            :target (file "note/%<%Y%m%d%H%M%S>-${slug}.org")
-           :unnarrowed t)
-          ("t" "topic" plain
-           "%?"
-           :target (file "topic/%<%Y%m%d%H%M%S>-${slug}.org")
-           :unnarrowed t)
-          ("w" "worldbuilding" plain
-           "%?"
-           :target (file "world/%<%Y%m%d%H%M%S>-${slug}.org")
            :unnarrowed t))
         ;; Use human readable dates for dailies titles
         org-roam-dailies-capture-templates
