@@ -32,8 +32,8 @@
       org-roam-db-location (concat org-directory ".org-roam.db")
       org-roam-dailies-directory "journal/"
       org-archive-location (concat org-directory ".archive/%s::")
-      org-agenda-files org-directory)
-
+      ;; org-agenda-files org-directory
+)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Personal Information                                                             ;;
@@ -124,6 +124,7 @@
 ;; Org-tracktable
 ;; Org-appear
 ;; Org-ol-tree
+;; Org-pomodoro
 ;; Annotate
 ;; ISpell
 ;; Abbrev
@@ -284,6 +285,19 @@
 (map! :map org-mode-map
       :after org
       "C-c t o" #'org-ol-tree)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-pomodoro                                                                     ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! org-pomodoro
+  :config
+  (setq
+   org-pomodoro-length 20
+   org-pomodoro-short-break-length 5
+alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil)))
+))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
