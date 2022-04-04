@@ -201,7 +201,7 @@
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
-       "* %?\n"))
+       "* %?\n%t\n%i\n%a"))
 ))
 
 (defun tb/capture-to-this-buffer ()
@@ -213,7 +213,7 @@
           (let* ((this-file buffer-file-name)
                  (org-capture-templates
                   `(("n" "Note" entry (file+headline ,this-file "Captured")
-                     "** %?\n "))))
+                     "** %?\n%t\n %a"))))
             (org-capture nil "n")))))
 
 (defun jethro/org-capture-slipbox ()
