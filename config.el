@@ -69,9 +69,9 @@
 
 ;; Fonts - ordinary and variable pitch
 (if (eq system-type 'windows-nt)
-    (setq doom-font (font-spec :family "Lucida Console" :size 26) ; Windows font
+    (setq doom-font (font-spec :family "Lucida Console" :size 20) ; Windows font
           doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
-  (setq doom-font (font-spec :family "Andale Mono" :size 26) ; Linux font
+  (setq doom-font (font-spec :family "Andale Mono" :size 20) ; Linux font
         doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
   )
 
@@ -87,8 +87,8 @@
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
-    (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 35)))
-  (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 30)))
+    (setq initial-frame-alist '((top . 45) (left . 76) (width . 120) (height . 35)))
+  (setq initial-frame-alist '((top . 45) (left . 76) (width . 120) (height . 40)))
   )
 
 ;; Misc settings
