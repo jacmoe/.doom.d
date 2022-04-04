@@ -128,6 +128,7 @@
 ;; Annotate
 ;; ISpell
 ;; Abbrev
+;; Typopunct
 ;; Boon
 ;; CtrlF
 ;; Transparency
@@ -324,6 +325,16 @@
           (defun +abbrev-file-name ()
             (setq-default abbrev-mode t)
             (setq abbrev-file-name (expand-file-name "abbrev.el" doom-private-dir))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Typopunct                                                                        ;;
+;; https://github.com/emacsmirror/typopunct                                                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Automatic typographical punctuation marks
+(use-package typopunct
+  :config
+  (typopunct-change-language 'english t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

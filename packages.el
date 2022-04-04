@@ -34,3 +34,5 @@
 (package! poet-theme)
 
 (package! lexic)
+
+(package! typopunct)
