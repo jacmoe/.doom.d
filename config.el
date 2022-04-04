@@ -226,6 +226,8 @@
   (interactive)
   (org-capture nil "s"))
 
+(defalias 'slip 'jethro/org-capture-slipbox)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Org-Roam                                                                         ;;
