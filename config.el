@@ -19,7 +19,6 @@
 ;; Variables                                                                        ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar my-use-boon t)         ; use Boon-mode, or not
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 ;; (defvar my-theme-shade "light") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
@@ -362,27 +361,24 @@
   (require 'boon-qwerty)
   (require 'boon-tutorial)
   :config
-  (if (eq my-use-boon t)
+  (boon-mode)
+  (setq boon-insert-cursor-color "orange")
+  (if (equal my-theme-shade "dark")
       (progn
-        (boon-mode)
-        (setq boon-insert-cursor-color "orange")
-        (if (equal my-theme-shade "dark")
-            (progn
-              (setq boon-default-cursor-color "white")
-              )
-          (setq boon-default-cursor-color "black")
-          )
-        (define-key boon-command-map "L" 'forward-sentence)
-        (define-key boon-command-map "K" 'backward-sentence)
-        (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
-        (define-key boon-command-map "N" 'writing-header-line-mode)
-        (define-key boon-command-map "M" 'doom-modeline-mode)
-        (define-key boon-command-map "w" 'org-tracktable-status)
-        (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
-        (add-hook 'ibuffer-hook 'turn-off-boon-mode)
-        (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
-        (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
-        ))
+        (setq boon-default-cursor-color "white")
+        )
+    (setq boon-default-cursor-color "black")
+    )
+  (define-key boon-command-map "L" 'forward-sentence)
+  (define-key boon-command-map "K" 'backward-sentence)
+  (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
+  (define-key boon-command-map "N" 'writing-header-line-mode)
+  (define-key boon-command-map "M" 'doom-modeline-mode)
+  (define-key boon-command-map "w" 'org-tracktable-status)
+  (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
+  (add-hook 'ibuffer-hook 'turn-off-boon-mode)
+  (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
+  (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
   :bind
   ("<f6>" . turn-on-boon-mode)
   ("<f7>" . turn-off-boon-mode)
