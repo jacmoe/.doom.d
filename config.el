@@ -164,13 +164,7 @@
   (ox-extras-activate '(ignore-headlines))
   )
 
-
 (add-hook! org-mode (org-indent-mode -1))
-
-(customize-set-variable 'org-blank-before-new-entry
-                        '((heading . nil)
-                        (plain-list-item . nil)))
-(setq org-cycle-separator-lines 1)
 
 (after! org
 (custom-set-faces!
@@ -226,6 +220,7 @@
   (interactive)
   (org-capture nil "s"))
 
+(defalias 'note 'tb/capture-to-this-buffer)
 (defalias 'slip 'jethro/org-capture-slipbox)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
