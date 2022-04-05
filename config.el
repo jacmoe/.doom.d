@@ -66,6 +66,8 @@
 (setq custom-file (make-temp-file "emacs-custom")) ; prevent custom from preserving state
 (setq inhibit-compacting-font-caches t) ; for performance reasons
 (setq bookmark-save-flag 1) ; Save bookmarks each time it changes, not only on exit
+(require 'zone)             ; Emacs "screensaver"
+(zone-when-idle 300)        ; Zone out when idle for five minutes.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -146,6 +148,7 @@
 ;; Smart-quotes
 ;; Boon
 ;; CtrlF
+;; Back-button
 ;; Transparency
 ;; Move-text
 ;; Flymake-proselint
@@ -425,6 +428,19 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 (use-package! ctrlf
   :config
   (ctrlf-mode t)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Back-button                                                                      ;;
+;;                                                                                  ;;
+;; https://github.com/rolandwalker/back-button                                      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Back-button provides an alternative method for navigation by analogy with the "back" button in a web browser.
+;; Uses the mark-ring
+(use-package! back-button
+  :init
+  (back-button-mode 1)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
