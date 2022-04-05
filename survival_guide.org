@@ -383,6 +383,9 @@ Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want
    | C-c C-x e |      | end timer              |
 
 
+# C-c C-x TAB : org-clock-in
+# C-c C-x C-o : org-clock-out
+
 :DIRECTIVES:
 #  LocalWords:  tp num arg SPC modeline Draftmode Yasnippet wc sb sbtree sbt Mx
 #  LocalWords:  sbtreet tracktable tti ttw tts nowc noexport subtree RET dired

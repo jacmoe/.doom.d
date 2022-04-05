@@ -62,7 +62,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (save-place-mode 1)           ; Remember and restore the last cursor location of opened files
-(setq confirm-kill-emacs nil) ; Yes, I really want to quit.
+;; (setq confirm-kill-emacs nil) ; Yes, I really want to quit.
 (setq custom-file (make-temp-file "emacs-custom")) ; prevent custom from preserving state
 (setq inhibit-compacting-font-caches t) ; for performance reasons
 (setq bookmark-save-flag 1) ; Save bookmarks each time it changes, not only on exit
@@ -218,6 +218,10 @@
         org-hide-emphasis-markers t
         ;; We want to log the time when the TODO is closed
         org-log-done "time" org-log-done-with-time 't
+        ;; If idle for more than 10 minutes, resolve the things
+        ;; by asking what to do with the clock time
+        (setq org-clock-idle-time 10)
+
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
@@ -676,10 +680,7 @@ Imitates the look of wordprocessors a bit."
              (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe)
              (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
              (propertize " " 'display (list 'space :width 'text) 'face (list (list :height 400) 'default))
-             ;(propertize (format " %dW" (count-words (point-min) (point-max))) 'face 'default)
              (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
-    ;;(propertize (format " %dW" (count-words (point-min) (point-max))) 'face 'fringe)
-   ;; '("" mode-line-misc-info)
              (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe))) ;
         (setq mode-line-format header-line-format))
     (setq header-line-format writing-header--default-format
