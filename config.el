@@ -135,6 +135,7 @@
 ;; Transparency
 ;; Move-text
 ;; Flymake-proselint
+;; Smog
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Lexic
@@ -455,6 +456,16 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
                               (flymake-mode)
                               (flymake-proselint-setup)))
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Smog                                                                             ;;
+;;                                                                                  ;;
+;; https://github.com/zzkt/smog                                                     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Smog means "Simple Measure Of Gobbledygook". Checks buffer for readability
+(use-package smog
+ :config (setq smog-command "style -L en"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

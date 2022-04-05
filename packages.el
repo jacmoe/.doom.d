@@ -38,3 +38,5 @@
 (package! typopunct)
 
 (package! smart-quotes)
+
+(package! smog)
