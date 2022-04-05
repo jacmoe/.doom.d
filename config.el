@@ -29,11 +29,10 @@
 (setq +org-roam-auto-backlinks-buffer t
       org-directory "~/org/"
       org-roam-directory org-directory
-      org-roam-db-location (concat org-directory ".org-roam.db")
       org-roam-dailies-directory "journal/"
       org-archive-location (concat org-directory ".archive/%s::")
-      ;; org-agenda-files org-directory
 )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Personal Information                                                             ;;
