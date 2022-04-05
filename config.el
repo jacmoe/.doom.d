@@ -49,9 +49,9 @@
 ;; Load secret settings from .secret.el which needs to be created.
 ;; Can be API keys, login information, etc.
 ;; See secret.el.example
-(let ((.secret.el (expand-file-name ".secret.el" doom-private-dir)))
-  (when (file-exists-p .secret.el)
-    (load .secret.el)))
+(setq secret-file (expand-file-name ".secret.el" doom-private-dir))
+(when (file-exists-p secret-file)
+  (load secret-file))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -503,7 +503,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
   ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
   ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
   )
-(defalias 'pt-deft 'powerthesaurus-lookup-definitions-dwim)
+(defalias 'pt-defs 'powerthesaurus-lookup-definitions-dwim)
 (defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
