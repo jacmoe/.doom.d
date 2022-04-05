@@ -92,7 +92,6 @@
   )
 
 ;; Theme
-;; (setq doom-theme 'poet-monochrome)
 (setq doom-theme 'doom-nord)
 
 ;; Make the modified file name in the modeline orange instead of red
@@ -197,13 +196,13 @@
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
-    '(org-level-1 :height 1.3 :weight medium :slant normal)
-    '(org-level-2 :height 1.2 :weight medium :slant normal)
-    '(org-level-3 :height 1.1 :weight medium :slant normal)
+    '(org-level-1 :height 1.2 :weight bold :slant normal)
+    '(org-level-2 :height 1.1 :weight bold :slant normal)
+    '(org-level-3 :height 1.0 :weight bold :slant normal)
     '(org-document-title   ;:foreground ,(doom-color 'black)
                            :family "ETBembo"
                            :height 250
-                           :weight medium)))
+                           :weight bold)))
 
 (after! org
   (setq org-startup-folded 'show2levels
@@ -699,7 +698,15 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "black")
   (setq my-theme-shade "light")
-  (load-theme 'poet-monochrome t)
+  (load-theme 'doom-solarized-light)
+  )
+
+;; turn on poet theme
+(defun poet-theme ()
+  (interactive)
+  (setq boon-default-cursor-color "black")
+  (setq my-theme-shade "light")
+  (load-theme 'poet t)
   )
 
 ;; switch between light and dark theme
