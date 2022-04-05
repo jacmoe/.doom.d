@@ -464,6 +464,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;; https://github.com/zzkt/smog                                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smog means "Simple Measure Of Gobbledygook". Checks buffer for readability
+;; Prerequisite: apt install diction on Ubunbu
 (use-package smog
  :config (setq smog-command "style -L en"))
 
