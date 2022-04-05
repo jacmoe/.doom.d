@@ -29,7 +29,7 @@
 (setq +org-roam-auto-backlinks-buffer t
       org-directory "~/org/"
       org-roam-directory org-directory
-      org-roam-dailies-directory "journal/"
+      org-roam-dailies-directory (concat org-directory "journal/")
       org-archive-location (concat org-directory ".archive/%s::")
 )
 
@@ -40,6 +40,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq user-full-name "Jacob Moena"
       user-mail-address "jacmoe.dk@gmail.com")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Secret Information                                                               ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Load secret settings from .secret.el which needs to be created.
+;; Can be API keys, login information, etc.
+;; See secret.el.example
+(let ((.secret.el (expand-file-name ".secret.el" doom-private-dir)))
+  (when (file-exists-p .secret.el)
+    (load .secret.el)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
