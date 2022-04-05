@@ -31,6 +31,9 @@
       org-roam-directory org-directory
       org-roam-dailies-directory (concat org-directory "journal/")
       org-archive-location (concat org-directory ".archive/%s::")
+      org-agenda-files (list "~/org/"
+                             "~/Dropbox/skriv/"
+                             "~/enestaaende/enestaaende.org")
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
