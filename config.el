@@ -61,13 +61,15 @@
 ;; General settings                                                                 ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(save-place-mode 1)           ; Remember and restore the last cursor location of opened files
-(setq confirm-kill-emacs nil) ; Yes, I really want to quit.
+(save-place-mode 1)                                ; Remember and restore the last cursor location of opened files
+(setq confirm-kill-emacs nil)                      ; Yes, I really want to quit.
 (setq custom-file (make-temp-file "emacs-custom")) ; prevent custom from preserving state
-(setq inhibit-compacting-font-caches t) ; for performance reasons
-(setq bookmark-save-flag 1) ; Save bookmarks each time it changes, not only on exit
-(require 'zone)             ; Emacs "screensaver"
-(zone-when-idle 300)        ; Zone out when idle for five minutes.
+(setq inhibit-compacting-font-caches t)            ; for performance reasons
+(setq bookmark-save-flag 1)                        ; Save bookmarks each time it changes, not only on exit
+(require 'zone)                                    ; Emacs "screensaver"
+(zone-when-idle 300)                               ; Zone out when idle for five minutes.
+(setq enable-local-eval t)                         ; Define safe local variables
+(setq mouse-avoidance-mode 'banish)                ; Showe the mouse pointer out of  the way
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
