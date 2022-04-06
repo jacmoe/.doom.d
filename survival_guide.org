@@ -10,7 +10,7 @@
 #+STARTUP: showeverything
 :END:
 * Emacs Survival Guide
-
+
 Notation:
 
 ~C~ means ~Control~, ~S~ means ~SHIFT~, ~M~ means ~Alt~ (Meta)
@@ -71,7 +71,9 @@ For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
    | M-- M-c |      | Convert last word to lower case with capital initial.          |
    | C-x C-u |      | uppercase region                                               |
    | C-x C-l |      | lowercase region                                               |
-
+#+begin_export LaTeX
+\pagebreak
+#+end_export
 *** Search and replace
    | normal | boon | action             |
    |--------+------+--------------------|
