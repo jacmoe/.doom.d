@@ -220,7 +220,7 @@
         org-log-done "time" org-log-done-with-time 't
         ;; If idle for more than 10 minutes, resolve the things
         ;; by asking what to do with the clock time
-        (setq org-clock-idle-time 10)
+        org-clock-idle-time 10
 
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
