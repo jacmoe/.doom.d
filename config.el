@@ -70,6 +70,8 @@
 (zone-when-idle 300)                                   ; Zone out when idle for five minutes.
 (setq enable-local-eval t)                             ; Define safe local variables
 (if (display-mouse-p) (mouse-avoidance-mode 'banish))  ; Shove the mouse pointer out of  the way
+(after! gcmh
+  (setq gcmh-high-cons-threshold 33554432))  ; 32mb, or 64mb, or *maybe* 128mb, BUT NOT 512mb
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -746,3 +748,11 @@ Imitates the look of wordprocessors a bit."
     (go-light-theme)
     )
   )
+(defun my-minibuffer-setup-hook ()
+  (setq gc-cons-threshold most-positive-fixnum))
+
+(defun my-minibuffer-exit-hook ()
+  (setq gc-cons-threshold 800000))
+
+(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
