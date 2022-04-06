@@ -75,96 +75,95 @@ For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
 *** Search and replace
    | normal | boon | action             |
    |--------+------+--------------------|
-   | M-%    |      | Search and replace |
+   | M-%    | -”-  | Search and replace |
 
 ** Frames and Windows
-   | normal          | boon | action                                |
-   |-----------------+------+---------------------------------------|
-   | C-x 1           |      | delete other windows                  |
-   | C-x 2           |      | split window, above and below         |
-   | C-x 3           |      | split window, side by side            |
-   | C-M-v           |      | scroll other window                   |
-   | C-x o           |      | switch cursor to another window       |
-   | C-x 4 b         |      | select buffer in other window         |
-   | C-x 4 C-o       |      | display buffer in other window        |
-   | C-x 4 f         |      | find file in other window             |
-   | C-x 4 d         |      | run dired in other window             |
-   | C-RIGHT         |      | grow window narrower                  |
-   | C-LEFT          |      | grow window wider                     |
-   | C-DOWN          |      | make window taller                    |
-   | C-UP            |      | make window smaller                   |
-   | M-x follow-mode |      | toggle follow mode                    |
-   | C-x 4 0         |      | kill current buffer and delete window |
+   | normal          | boon    | action                                |
+   |-----------------+---------+---------------------------------------|
+   | C-x 1           | x 1     | delete other windows                  |
+   | C-x 2           | x 2     | split window, above and below         |
+   | C-x 3           | x 3     | split window, side by side            |
+   | C-M-v           | -”-     | scroll other window                   |
+   | C-x o           | x o     | switch cursor to another window       |
+   | C-x 4 b         | x 4 b   | select buffer in other window         |
+   | C-x 4 C-o       | x 4 C-o | display buffer in other window        |
+   | C-x 4 f         | x 4 f   | find file in other window             |
+   | C-x 4 d         | x 4 d   | run dired in other window             |
+   | C-RIGHT         | -”-     | grow window narrower                  |
+   | C-LEFT          | -”-     | grow window wider                     |
+   | C-DOWN          | -”-     | make window taller                    |
+   | C-UP            | -”-     | make window smaller                   |
+   | M-x follow-mode | -”-     | toggle follow mode                    |
+   | C-x 4 0         | x 4 0   | kill current buffer and delete window |
 
 ** Other
 *** Transposing
-   | normal  | boon | action                   |
-   |---------+------+--------------------------|
-   | C-t     |      | transpose two characters |
-   | M-t     |      | transpose two words      |
-   | C-x C-t |      | transpose two lines      |
-   | M-x ts  |      | transpose sentences      |
-   | M-x tp  |      | transpose paragraphs     |
+   | normal  | boon  | action                   |
+   |---------+-------+--------------------------|
+   | C-t     | -”-   | transpose two characters |
+   | M-t     | -”-   | transpose two words      |
+   | C-x C-t | x C-t | transpose two lines      |
+   | M-x ts  |       | transpose sentences      |
+   | M-x tp  |       | transpose paragraphs     |
 
 *** Read-only mode
-   | normal  | boon | action                |
-   |---------+------+-----------------------|
-   | C-x C-q |      | Toggle read-only mode |
+   | normal  | boon  | action                |
+   |---------+-------+-----------------------|
+   | C-x C-q | x C-q | Toggle read-only mode |
 
 *** Numeric argument
    | normal  | boon | action                                 |
    |---------+------+----------------------------------------|
-   | C-u num |      | repeat following instruction num times |
+   | C-u num | num  | repeat following instruction num times |
 
 *** Abbrevs
-   | normal  | boon | action            |
-   |---------+------+-------------------|
-   | C-x a g |      | Add global abbrev |
+   | normal  | boon  | action            |
+   |---------+-------+-------------------|
+   | C-x a g | x a g | Add global abbrev |
 
 *** Spell check
    | normal                       | boon | action                                        |
    |------------------------------+------+-----------------------------------------------|
-   | F12                          |      | spellcheck buffer                             |
-   | S-F12                        |      | spellcheck word                               |
-   | i                            |      | add word to private dictionary                |
-   | r                            |      | change word                                   |
-   | a                            |      | skip word for this session                    |
-   | SPACE                        |      | skip word                                     |
-   | x                            |      | end spellchecking session                     |
-   | q                            |      | abort spell checking session                  |
-   | C-h                          |      | show options screen for spellchecking session |
-   | M-x ispell-change-dictionary |      | change current dictionary                     |
+   | F12                          | -”-  | spellcheck buffer                             |
+   | S-F12                        | -”-  | spellcheck word                               |
+   | i                            | -”-  | add word to private dictionary                |
+   | r                            | -”-  | change word                                   |
+   | a                            | -”-  | skip word for this session                    |
+   | SPACE                        | -”-  | skip word                                     |
+   | x                            | -”-  | end spellchecking session                     |
+   | q                            | -”-  | abort spell checking session                  |
+   | C-h                          | -”-  | show options screen for spellchecking session |
+   | M-x ispell-change-dictionary | -”-  | change current dictionary                     |
 
 *** Tabs
    | normal | boon | action                                      |
    |--------+------+---------------------------------------------|
-   | C-j    |      | perform ENTER followed by TAB               |
-   | M-i    |      | indent from the point to the next TAB-point |
+   | C-j    | -”-  | perform ENTER followed by TAB               |
+   | M-i    | -”-  | indent from the point to the next TAB-point |
 
 *** Killing and deleting
    | normal   | boon | action                                                |
    |----------+------+-------------------------------------------------------|
-   | C-w      |      | kill region                                           |
-   | M-w      |      | copy region to kill buffer                            |
-   | C-y      |      | yank back last thing killed                           |
-   | M-y      |      | replace last yank with previous kill, cycle kill ring |
-   | M-z char |      | zap to char                                           |
+   | C-w      | d    | kill region                                           |
+   | M-w      | -”-  | copy region to kill buffer                            |
+   | C-y      | -”-  | yank back last thing killed                           |
+   | M-y      | -”-  | replace last yank with previous kill, cycle kill ring |
+   | M-z char | -”-  | zap to char                                           |
 
 *** Marking
    | normal        | boon | action                  |
    |---------------+------+-------------------------|
-   | C-@ / C-SPACE |      | set mark here           |
-   | C-x C-x       |      | Exchange mark and point |
-   | M-@           |      | mark arg words away     |
-   | M-h           |      | mark paragraph          |
-   | C-x h         |      | mark entire buffer      |
+   | C-@ / C-SPACE | -”-  | set mark here           |
+   | C-x C-x       | -”-  | Exchange mark and point |
+   | M-@           | -”-  | mark arg words away     |
+   | M-h           | -”-  | mark paragraph          |
+   | C-x h         | x h  | mark entire buffer      |
 
 *** Narrowing
-   | normal  | boon | action           |
-   |---------+------+------------------|
-   | C-x n n |      | narrow to region |
-   | C-x n p |      | narrow to page   |
-   | C-x n w |      | widen view       |
+   | normal  | boon  | action            |
+   |---------+-------+-------------------|
+   | C-x n b | x n b | narrow to block   |
+   | C-x n e | x n e | narrow to element |
 
 *** Undo / Redo
    | normal            | boon | action                                 |
@@ -173,104 +172,73 @@ For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
    | C-g C-x u         |      | redo                                   |
    | C-/               |      | undo                                   |
    | C-g C-/           |      | redo                                   |
-   | M-x revert-buffer |      | revert buffer to its original contents |
+   | M-x revert-buffer | -”-  | revert buffer to its original contents |
 
 *** Registers
-   | normal      | boon | action                               |
-   |-------------+------+--------------------------------------|
-   | C-x r s     |      | save region in register              |
-   | C-x r i     |      | insert register contents into buffer |
-   | C-x r SPACE |      | save value of point in register      |
-   | C-x r j     |      | jump to point saved in register      |
+   | normal      | boon      | action                               |
+   |-------------+-----------+--------------------------------------|
+   | C-x r s     | x r s     | save region in register              |
+   | C-x r i     | x r i     | insert register contents into buffer |
+   | C-x r SPACE | x r SPACE | save value of point in register      |
+   | C-x r j     | x r j     | jump to point saved in register      |
+   | C-x r m     | x r m     | set bookmark                         |
+   | C-x r b     | x r b     | jump to bookmark                     |
 
 *** Keyboard Macros
    | normal | boon | action                                         |
    |--------+------+------------------------------------------------|
-   | F3     |      | record keyboard macro                          |
-   | F4     |      | end record keyboard macro / run keyboard macro |
-
-*** Bookmarks
-   | normal | boon | action         |
-   |--------+------+----------------|
-   | C-F5   |      | Bookmark set   |
-   | S-F5   |      | List bookmarks |
-   | F5     |      | Bookmark jump  |
+   | F3     | -”-  | record keyboard macro                          |
+   | F4     | -”-  | end record keyboard macro / run keyboard macro |
 
 *** Counting words
-   | normal  | boon | action                      |
-   |---------+------+-----------------------------|
-   | M-=     |      | count words in region       |
-   | C-u M-= |      | count words in whole buffer |
+   | normal                 | boon | action                      |
+   |------------------------+------+-----------------------------|
+   | M-x count-words        | -”-  | count words in region       |
+   | M-x count-words-region | -”-  | count words in whole buffer |
 
 *** Mark-ring
-   | normal          | boon | action                                           |
-   |-----------------+------+--------------------------------------------------|
-   | C-<SPC> C-<SPC> |      | set the mark to the mark ring                    |
-   | C-u C-<SPC>     |      | move point to where the mark was                 |
-   | <f7>            |      | push current position to the mark ring           |
-   | M-<f7>          |      | jump to last position in the mark ring (go back) |
-
-*** Whitespace
-   | normal              | boon | action                           |
-   |---------------------+------+----------------------------------|
-   | M-x whitespace-mode |      | toggles rendering of white space |
-
-*** Winner-mode
-   | normal            | boon | action                         |
-   |-------------------+------+--------------------------------|
-   | C-c  left / right |      | redo/undo window configuration |
-
-*** Writeroom
-   | normal | boon | action          |
-   |--------+------+-----------------|
-   | F9     |      | Writeroom mode  |
-   | S-F9   |      | modeline toggle |
-   | C->    |      | Increase width  |
-   | C-<    |      | Decrease width  |
+   | normal          | boon    | action                                           |
+   |-----------------+---------+--------------------------------------------------|
+   | C-<SPC> C-<SPC> | C-<SPC> | set the mark to the mark ring                    |
+   | C-u C-<SPC>     |         | move point to where the mark was                 |
+   | <f7>            |         | push current position to the mark ring           |
+   | M-<f7>          |         | jump to last position in the mark ring (go back) |
 
 *** Magit
    | normal  | boon | action                                                  |
    |---------+------+---------------------------------------------------------|
-   | C-x g   |      | run Magit                                               |
-   | s       |      | stage                                                   |
-   | c       |      | commit                                                  |
-   | C-c C-c |      | Execute commit, after having written the commit message |
-   | P       |      | push                                                    |
-   | F       |      | pull                                                    |
-   | h       |      | show Magit keyboard commands                            |
-   | q       |      | exit Magit                                              |
+   | C-x g   | -”-  | run Magit                                               |
+   | s       | -”-  | stage                                                   |
+   | c       | -”-  | commit                                                  |
+   | C-c C-c | c c  | Execute commit, after having written the commit message |
+   | P       | -”-  | push                                                    |
+   | F       | -”-  | pull                                                    |
+   | h       | -”-  | show Magit keyboard commands                            |
+   | q       | -”-  | exit Magit                                              |
 
 *** Draftmode
    | normal         | boon | action             |
    |----------------+------+--------------------|
-   | M-x draft-mode |      | Turn on draft-mode |
+   | M-x draft-mode | -”-  | Turn on draft-mode |
 
 *** Yasnippet
-   | normal  | boon | action             |
-   |---------+------+--------------------|
-   | TAB     |      | expand snippet     |
-   | C-c s n |      | new snippet        |
-   | C-c s v |      | visit snippet file |
+   | normal    | boon | action             |
+   |-----------+------+--------------------|
+   | TAB       | -”-  | expand snippet     |
+   | C-c & n   | -”-  | new snippet        |
+   | C-c & C-v | -”-  | visit snippet file |
 
 *** Transparency
-   | normal | boon | action              |
-   |--------+------+---------------------|
-   | C-c t  |      | toggle transparency |
-
-*** wc-mode
-   | normal       | boon | action                |
-   |--------------+------+-----------------------|
-   | C-c w        |      | Turn on wc-mode       |
-   | M-x wc       |      | count words in buffer |
-   | M-x wc-reset |      | Reset wc-mode         |
-   | C-c C-w w    |      | set word goal         |
+   | normal  | boon | action              |
+   |---------+------+---------------------|
+   | C-c t s | -”-  | toggle transparency |
 
 *** Zoom
    | normal  | boon | action                           |
    |---------+------+----------------------------------|
-   | C-x C-+ |      | Zoom in / make the text larger   |
-   | C-x C-- |      | Zoom out / make the text smaller |
-   | C-x C-0 |      | Reset zoom level                 |
+   | C-x C-+ | -”-  | Zoom in / make the text larger   |
+   | C-x C-- | -”-  | Zoom out / make the text smaller |
+   | C-x C-0 | -”-  | Reset zoom level                 |
 
 *** Org-roam
    | normal  | boon | action                                       |
@@ -283,45 +251,36 @@ For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
    | C-c n b |      | capture inbox                                |
    | C-c n d |      | roam dailies                                 |
 
-*** Org-sidebar
-   | normal      | boon | action              |
-   |-------------+------+---------------------|
-   | M-x sb      |      | show sidebar        |
-   | M-x sbtree  |      | show tree sidebar   |
-   | M-x sbt     |      | toggle sidebar      |
-   | M-x sbtreet |      | toggle tree sidebar |
-Hint: use ~C-x n w~ to widen the view of the main org-mode buffer if needed.
-
 *** Org-tracktable
-   | normal  | boon | action                     |
-   |---------+------+----------------------------|
-   | M-x tti |      | insert tracktable          |
-   | Mx-ttw  |      | write new tracktable entry |
-   | M-x tts |      | show tracktable status     |
+   | normal        | boon | action                     |
+   |---------------+------+----------------------------|
+   | M-x tt-insert | -”-  | insert tracktable          |
+   | Mx-tt-update  | -”-  | write new tracktable entry |
+   | M-x tt-status | w    | show tracktable status     |
 Hint: use ~C-c &~ to get back to where you were prior to updating the tracktable.
 Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want to be counted by the tracktable.
 
 *** Deft
    | normal  | boon | action    |
    |---------+------+-----------|
-   | C-c d   |      | run deft  |
-   | C-c C-q |      | quit deft |
+   | C-c n d | -”-  | run deft  |
+   | C-c C-q | -”-  | quit deft |
 
 * Org-mode
 ** Visibility
-   | normal      | boon | action                                |
-   |-------------+------+---------------------------------------|
-   | TAB         |      | rotate current subtree between states |
-   | S-TAB       |      | rotate entire buffer between states   |
-   | C-c C-x C-v |      | toggle visibility of inline images    |
+   | normal      | boon  | action                                |
+   |-------------+-------+---------------------------------------|
+   | TAB         | -”-   | rotate current subtree between states |
+   | S-TAB       | -”-   | rotate entire buffer between states   |
+   | C-c C-x C-v | c TAB | toggle visibility of inline images    |
 
 ** Navigate
-   | normal    | boon | action                            |
-   |-----------+------+-----------------------------------|
-   | C-c C-n/p |      | next/previous heading             |
-   | C-c C-f/b |      | next/previous heading, same level |
-   | C-c C-u   |      | backward to higher level heading  |
-   | C-c C-j   |      | jump to another place in document |
+   | normal    | boon  | action                            |
+   |-----------+-------+-----------------------------------|
+   | C-c C-n/p | c n/p | next/previous heading             |
+   | C-c C-f/b | c f/b | next/previous heading, same level |
+   | C-c C-u   | c u   | backward to higher level heading  |
+   | C-c C-j   |       | jump to another place in document |
 
 ** Edit
    | normal             | boon | action                                   |
