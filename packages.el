@@ -42,3 +42,5 @@
 (package! smog)
 
 (package! back-button)
+
+(package! page-break-lines)

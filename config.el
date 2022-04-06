@@ -106,13 +106,13 @@
   )
 
 ;; Misc settings
-(setq display-line-numbers-type nil)        ; do not show line numbers
-(display-time-mode 1)                       ; display time in modeline
-(fringe-mode '(160 . 160))                  ; show vertical fringes
-(blink-cursor-mode t)                       ; the cursor should blink
-(setq-default line-spacing my-line-spacing) ; The amount of space between lines in pixels
-;; Do not highlight current line
-(remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
+(setq display-line-numbers-type nil)                        ; do not show line numbers
+(display-time-mode 1)                                       ; display time in modeline
+(fringe-mode '(160 . 160))                                  ; show vertical fringes
+(blink-cursor-mode t)                                       ; the cursor should blink
+(setq-default line-spacing my-line-spacing)                 ; The amount of space between lines in pixels
+(remove-hook 'doom-first-buffer-hook #'global-hl-line-mode) ; Do not highlight current line
+(setq global-page-break-lines-mode t)                       ; Pretty page breaks everywhere
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -221,7 +221,7 @@
         ;; If idle for more than 10 minutes, resolve the things
         ;; by asking what to do with the clock time
         org-clock-idle-time 10
-
+        org-latex-toc-command "\\tableofcontents \\clearpage" ; Force page break after TOC for PDF exports
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
