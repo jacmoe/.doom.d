@@ -29,10 +29,11 @@
       org-directory "~/org/"
       org-roam-directory org-directory
       org-roam-dailies-directory (concat org-directory "journal/")
-      org-archive-location (concat org-directory ".archive/%s::")
+      ;; org-archive-location (concat org-directory ".archive/%s::")
       org-agenda-files (list "~/org/"
-                             "~/Dropbox/skriv/"
-                             "~/enestaaende/enestaaende.org")
+                             ;; "~/Dropbox/skriv/"
+                             "~/enestaaende/enestaaende.org"
+                             )
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -61,7 +62,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (save-place-mode 1)           ; Remember and restore the last cursor location of opened files
-;; (setq confirm-kill-emacs nil) ; Yes, I really want to quit.
+(setq confirm-kill-emacs nil) ; Yes, I really want to quit.
 (setq custom-file (make-temp-file "emacs-custom")) ; prevent custom from preserving state
 (setq inhibit-compacting-font-caches t) ; for performance reasons
 (setq bookmark-save-flag 1) ; Save bookmarks each time it changes, not only on exit
@@ -91,7 +92,7 @@
   )
 
 ;; Theme
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'misterioso)
 
 ;; Make the modified file name in the modeline orange instead of red
 (custom-set-faces!
@@ -716,7 +717,7 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "white")
   (setq my-theme-shade "dark")
-  (load-theme 'doom-nord t)
+  (load-theme 'misterioso t)
   )
 
 ;; turn on light theme
@@ -724,7 +725,7 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "black")
   (setq my-theme-shade "light")
-  (load-theme 'doom-solarized-light)
+  (load-theme 'tango)
   )
 
 ;; turn on poet theme
