@@ -223,12 +223,13 @@
         org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-todo-keyword-faces
-                '(("fixme" . "goldenrod1") ("idea" . "goldenrod1")
+                '(("todo" . "goldenrod1") ("fixme" . "goldenrod1") ("idea" . "goldenrod1")
                 ("draft" . "coral2") ("revise" . "PaleGreen4")
                 "|" ("done" . "DarkOrchid3"))
         org-todo-keywords
                 '((sequence "draft(t)" "revise(r)" "|" "done(d)")
-                (sequence "fixme" "|" "fixed"))
+                (sequence "fixme" "|" "fixed")
+                (sequence "todo" "|" "done"))
         ;; Don't pollute the text with markers
         org-hide-emphasis-markers t
         org-return-follows-link t ; hitting RETURN follows the link
