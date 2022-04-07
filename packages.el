@@ -44,3 +44,5 @@
 (package! back-button)
 
 (package! page-break-lines)
+
+(package! draft-mode)
