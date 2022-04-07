@@ -182,6 +182,15 @@
            #'typopunct-mode
            #'variable-pitch-mode)
 
+;; Org-habit
+(use-package! org-habit
+  :after org
+  :config
+  (setq org-habit-following-days 7
+        org-habit-preceding-days 35
+        org-habit-show-habits t)
+  )
+
 ;; use :ignore: tags to ignore the heading, but keep the content
 (use-package! ox-extra
   :after org
@@ -234,6 +243,27 @@
         '(("s" "Slipbox" entry  (file "inbox.org")
        "* %?\n%t\n%i\n%a"))
 ))
+
+(defun org-habit-streak-count ()
+  (goto-char (point-min))
+  (while (not (eobp))
+    ;;on habit line?
+    (when (get-text-property (point) 'org-habit-p)
+      (let ((streak 0)
+            (counter (+ org-habit-graph-column (- org-habit-preceding-days org-habit-following-days)))
+            )
+        (move-to-column counter)
+        ;;until end of line
+        (while (= (char-after (point)) org-habit-completed-glyph)
+          (setq streak (+ streak 1))
+          (setq counter (- counter 1))
+          (backward-char 1))
+        (end-of-line)
+        (insert (number-to-string streak))))
+    (forward-line 1)))
+
+(after! org
+        (add-hook 'org-agenda-finalize-hook 'org-habit-streak-count))
 
 (defun tb/capture-to-this-buffer ()
   "Capture note to this buffer"
