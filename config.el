@@ -91,8 +91,8 @@
 (if (eq system-type 'windows-nt)
     (setq doom-font (font-spec :family "Lucida Console" :size 20) ; Windows font
           doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
-  (setq doom-font (font-spec :family "Andale Mono" :size 20) ; Linux font
-        doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
+  (setq doom-font (font-spec :family "Overpass Mono" :size 24) ; Linux font
+        doom-variable-pitch-font (font-spec :family "Alegreya" :size 32))
   )
 
 ;; Theme
@@ -107,7 +107,7 @@
 ;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
     (setq initial-frame-alist '((top . 45) (left . 76) (width . 120) (height . 45)))
-  (setq initial-frame-alist '((top . 45) (left . 76) (width . 120) (height . 40)))
+  (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 30)))
   )
 
 ;; Misc settings
@@ -115,7 +115,7 @@
 (display-time-mode 1)                                       ; display time in modeline
 (fringe-mode '(160 . 160))                                  ; show vertical fringes
 (blink-cursor-mode t)                                       ; the cursor should blink
-(setq-default line-spacing my-line-spacing)                 ; The amount of space between lines in pixels
+;; (setq-default line-spacing my-line-spacing)                 ; The amount of space between lines in pixels
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode) ; Do not highlight current line
 (setq global-page-break-lines-mode t)                       ; Pretty page breaks everywhere
 
@@ -490,7 +490,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! flymake-proselint
   :init
-  (add-hook! #'text-mode-hook (lambda ()
+  (add-hook! #'org-mode-hook (lambda ()
                               (flymake-mode)
                               (flymake-proselint-setup)))
   )
