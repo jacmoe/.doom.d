@@ -142,7 +142,6 @@
 ;; Org-Roam
 ;; Org-tracktable
 ;; Org-appear
-;; Org-ol-tree
 ;; Org-pomodoro
 ;; Annotate
 ;; ISpell
@@ -159,6 +158,7 @@
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Lexic
+;; Wwg - Writer Word Goals
 ;; Browse-kill-ring
 ;; Dimmer
 ;; Yasnippet
@@ -257,6 +257,7 @@
 ;;                                                                                  ;;
 ;; Org-Roam                                                                         ;;
 ;;                                                                                  ;;
+;; https://github.com/org-roam/org-roam                                             ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (after! org-roam
   (setq org-roam-capture-templates
@@ -302,21 +303,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; Org-ol-tree                                                                      ;;
-;;                                                                                  ;;
-;; https://github.com/Townk/org-ol-tree                                             ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; This package offers an Org mode outline window that does not use indirect buffers.
-(use-package! org-ol-tree
-  :commands org-ol-tree)
-(map! :map org-mode-map
-      :after org
-      "C-c t o" #'org-ol-tree)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
 ;; Org-pomodoro                                                                     ;;
 ;;                                                                                  ;;
+;; https://github.com/marcinkoziej/org-pomodoro                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! org-pomodoro
   :config
@@ -371,6 +360,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Typopunct                                                                        ;;
+;;                                                                                  ;;
 ;; https://github.com/emacsmirror/typopunct                                         ;;
 ;; https://www.emacswiki.org/emacs/TypographicalPunctuationMarks                    ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -382,6 +372,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Smart-quotes                                                                     ;;
+;;                                                                                  ;;
 ;; https://github.com/gareth-rees/smart-quotes                                      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Only used for the "smart-quotes-smarten" function
@@ -538,6 +529,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;                                                                                  ;;
 ;; Lexic                                                                            ;;
 ;;                                                                                  ;;
+;; https://github.com/tecosaur/lexic                                                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! lexic
   :bind
@@ -553,6 +545,15 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
              (read-string "Look up in dictionary: "))
          current-prefix-arg))
   (lexic-search identifier nil nil t))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Wwg - Writer Word Goals                                                          ;;
+;;                                                                                  ;;
+;; https://github.com/ag91/writer-word-goals                                        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defalias 'wwg-goal 'wwg/set-goal-current-buffer)
+(defalias 'wwg-1k 'wwg/set-1k-goal-current-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -581,6 +582,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;                                                                                  ;;
 ;; Yasnippet                                                                        ;;
 ;;                                                                                  ;;
+;; https://github.com/joaotavora/yasnippet                                          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! yasnippet
 :bind
