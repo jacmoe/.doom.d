@@ -221,6 +221,7 @@
                 '((sequence "draft(t)" "revise(r)" "|" "done(d)"))
         ;; Don't pollute the text with markers
         org-hide-emphasis-markers t
+        org-return-follows-link t ; hitting RETURN follows the link
         ;; We want to log the time when the TODO is closed
         org-log-done "time" org-log-done-with-time 't
         ;; If idle for more than 10 minutes, resolve the things
