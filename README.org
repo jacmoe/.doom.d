@@ -31,9 +31,11 @@ Before you install anything, you need to make sure that there isn’t a ~.emacs.
 
 To install Doom-Emacs, clone it into ~.emacs.d~ , and run the Doom-Emacs installation script:
 
-=git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d=
+#+BEGIN_SRC
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 
-=~/.emacs.d/bin/doom install=
+~/.emacs.d/bin/doom install
+#+END_SRC
 
 Try running Emacs now to make sure that Doom-Emacs is up and running.
 
@@ -93,7 +95,7 @@ You need to tell the Stardict command-line tool where to find the dictionaries b
 On Linux:
 
 #+BEGIN_SRC
-STARDICT_DATA_DIR="~~/stardict"
+STARDICT_DATA_DIR="~/stardict"
 export STARDICT_DATA_DIR
 #+END_SRC
 
