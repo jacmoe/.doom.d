@@ -17,7 +17,7 @@ Then I am using =d= to delete, =q= to insert a character, and =t= to change a ch
 
 Pressing =v= will bring you into Insert mode, where you can write. When you want to switch to Command mode, you press =C-;= (Control-;) or Escape. I have chosen to steal the =C-;= keyboard shortcut from flyspell. It is much more ergonomic to use =C-;= than =Esc=.
 
-With Boon, you can use all the regular Emacs keyboard commands, with a few exceptions, so it is not intruding too much on what you already know (unlike Evil mode).
+With Boon, you can use all the regular Emacs keyboard commands, with a few exceptions, so it is not intruding too much on what you already know (unlike Evil mode). Some times, Boon conflicts with a particular mode, so I have bound F7 to turn Boon off, and F6 to turn it on again. Also, Boon is disabled in iBuffer and other places.
 
 Boon works in concert with Org-mode and Org-roam to provide an excellent environment for creative writing.
 
@@ -42,15 +42,7 @@ If you run into issues, where Doom-Emacs has a hiccup, a simple restart usually 
 Once Doom-Emacs is up and running, it’s time to prepare the installation of Hotel California.
 
 *** Additional Requirements
-
-**** Paths
-You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
-
-**** Fonts
-This configuration uses two fonts, =Overpass Mono= and =Alegreya=, the first is mono–spaced and the second is a variable width font that’s great for reading/writing.
-
-If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
-
+This configuration uses the following packages that have dependencies:
 **** Org-Roam
 
 =org-roam= uses a custom SQLite binary to store its database, and it will compile it when it installs. So there must be a C compiler available to Emacs.
@@ -96,11 +88,13 @@ You need to install the Stardict command-line tool:
 
 =sudo apt install sdcv=
 **** Smog
-https://github.com/zzkt/smog
+[[https://github.com/zzkt/smog][Smog]] stands for Simple Measure of Gobbledygook and uses =diction= or =style= command-line tools to analyse the writing style, word use and readability of the prose.
 
 =sudo apt install diction=
 
 **** Hugo
+I use Hugo to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
+
 *** Installation
 Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
 
@@ -116,7 +110,15 @@ Before running Emacs again, check with the Doom-Emacs doctor that everything is 
 
 =~./.emacs.d/bin doom doctor=
 
-If it doesn’t find any errors, you should be able to successfully run this Emacs configuration.
+If it doesn’t find any errors, you should be able to successfully run this Emacs configuration. But before you do, you need to adjust the configuration a bit:
+**** Paths
+You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
+**** Fonts
+This configuration uses two fonts, =Overpass Mono= and =Alegreya=, the first is mono–spaced and the second is a variable width font that’s great for reading/writing.
+
+If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
+
+
 
 ** Features Overview
 ** Usage Notes
