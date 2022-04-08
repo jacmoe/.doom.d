@@ -264,7 +264,16 @@
     (forward-line 1)))
 
 (after! org
-        (add-hook 'org-agenda-finalize-hook 'org-habit-streak-count))
+  (add-hook 'org-agenda-finalize-hook 'org-habit-streak-count)
+  (setq org-agenda-custom-commands
+        '(("h" "Daily habits"
+           ((agenda ""))
+           ((org-agenda-show-log t)
+            (org-agenda-ndays 7)
+            (org-agenda-log-mode-items '(state))
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":DAILY:"))))
+          ))
+  )
 
 (defun tb/capture-to-this-buffer ()
   "Capture note to this buffer"
