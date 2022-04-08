@@ -89,8 +89,8 @@
 
 ;; Fonts - ordinary and variable pitch
 (if (eq system-type 'windows-nt)
-    (setq doom-font (font-spec :family "Lucida Console" :size 20) ; Windows font
-          doom-variable-pitch-font (font-spec :family "ETBembo" :size 32))
+    (setq doom-font (font-spec :family "Overpass Mono" :size 20) ; Windows font
+          doom-variable-pitch-font (font-spec :family "Alegreya" :size 32))
   (setq doom-font (font-spec :family "Overpass Mono" :size 24) ; Linux font
         doom-variable-pitch-font (font-spec :family "Alegreya" :size 32))
   )
@@ -447,7 +447,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
   (define-key boon-command-map "K" 'backward-sentence)
   (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
   (define-key boon-command-map "n" 'org-narrow-to-subtree)
-  (define-key boon-command-map "N" 'writing-header-line-mode)
+  (define-key boon-command-map "N" 'widen)
   (define-key boon-command-map "M" 'doom-modeline-mode)
   (define-key boon-command-map "w" 'org-tracktable-status)
   (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
@@ -760,6 +760,8 @@ Imitates the look of wordprocessors a bit."
         (setq mode-line-format header-line-format))
     (setq header-line-format writing-header--default-format
           mode-line-format writing-modeline--default-format)))
+
+(defalias 'whmode 'writing-header-line-mode)
 
 ;; turn on dark theme
 (defun go-dark-theme ()
