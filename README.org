@@ -28,7 +28,7 @@ Boon works in concert with Org-mode and Org-roam to provide an excellent environ
 
 I have then proceeded  to add dictionaries, thesauruses, and a host of other features, all aimed at creative writing.
 
-** Prerequisites and Installation
+** Prerequisites
 First, make sure that you have at least Emacs 27.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
 *** Doom-Emacs
@@ -112,7 +112,7 @@ export STARDICT_DATA_DIR
 **** Hugo
 I use Hugo to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
 
-*** Installation
+** Installation
 Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
 
 Clone the Hotel California repository into =~/.doom.d=, like this:
@@ -128,13 +128,12 @@ Before running Emacs again, check with the Doom-Emacs doctor that everything is 
 =~./.emacs.d/bin doom doctor=
 
 If it doesn’t find any errors, you should be able to successfully run this Emacs configuration. But before you do, you need to adjust the configuration a bit:
-**** Paths
+*** Paths
 You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
-**** Fonts
-This configuration uses two fonts, =Overpass Mono= and =Alegreya=, the first is mono–spaced and the second is a variable width font that’s great for reading/writing.
+*** Fonts
+This configuration uses two fonts, [[https://github.com/RedHatOfficial/Overpass][Overpass Mono]] and [[https://www.1001freefonts.com/alegreya.font][Alegreya]], the first is mono–spaced and the second is a variable width font that’s great for reading/writing. Install those on your system so that Emacs can use them.
 
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
-
 
 
 ** Features Overview
