@@ -92,9 +92,10 @@ You need to tell the Stardict command-line tool where to find the dictionaries b
 
 On Linux:
 
-~STARDICT_DATA_DIR="~~/stardict"~
-
-~export STARDICT_DATA_DIR~
+#+BEGIN_SRC
+STARDICT_DATA_DIR="~~/stardict"
+export STARDICT_DATA_DIR
+#+END_SRC
 
 **** Smog
 [[https://github.com/zzkt/smog][Smog]] stands for Simple Measure of Gobbledygook and uses =diction= or =style= command-line tools to analyse the writing style, word use and readability of the prose.
