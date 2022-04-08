@@ -6,21 +6,46 @@ My =Doom-Emacs= configuration.
 
 ** Introduction and Notable Features
 ** Prerequisites and Installation
-First, make sure that you have at least Emacs 27.1 installed, and have made sure that Git and the other prerequites of Doom-Emacs are satisfied:
-[[https://github.com/hlissner/doom-emacs#prerequisites]]
+First, make sure that you have at least Emacs 27.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
+[[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
 *** Doom-Emacs
 Before you install anything, you need to make sure that there isn’t a ~.emacs.d~ directory on your machine. If you are running Emacs, there is, so you need to either delete or rename it.
 
 To install Doom-Emacs, clone it into ~.emacs.d~ , and run the Doom-Emacs installation script:
+
 =git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d=
+
 =~/.emacs.d/bin/doom install=
 
 Try running Emacs now to make sure that Doom-Emacs is up and running.
 
-If you run into issues, where Doom-Emacs has a hickup, a simple restart usually fixes it.
+If you run into issues, where Doom-Emacs has a hiccup, a simple restart usually fixes it.
 
-*** Additonal Requirements
+Once Doom-Emacs is up and running, it’s time to prepare the installation of Hotel California.
+
+*** Additional Requirements
+**** Org-Roam
+We are using Org-Roam 2, and often requires a C compiler installed on the system for the ~emacs-sqlite~ requirement. If you don’t have a C compiler installed, and you get an error from Doom-Emacs Doctor, see this section of the Org-Roam manual:
+
+[[https://www.orgroam.com/manual.html#C-Compiler][Org-Roam manual - Installation - Compiler]]
+
 *** Installation
+Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
+
+Clone the Hotel California repository into =~/.doom.d=, like this:
+
+=git clone https://github.com/jacmoe/.doom.d ~/.doom.d=
+
+Now run the Doom-Emacs ~sync~ command:
+
+=~/.emacs.d/bin/doom sync=
+
+Before running Emacs again, check with the Doom-Emacs doctor that everything is alright:
+
+=~./.emacs.d/bin doom doctor=
+
+If it doesn’t find any errors, you should be able to successfully run this Emacs configuration.
+
 ** Features Overview
 ** Usage Notes
 ** How do I?
