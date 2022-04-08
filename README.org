@@ -92,7 +92,7 @@ You need to tell the Stardict command-line tool where to find the dictionaries b
 
 On Linux:
 
-~STARDICT_DATA_DIR="/home/jacmoe/stardict"~
+~STARDICT_DATA_DIR="~~/stardict"~
 
 ~export STARDICT_DATA_DIR~
 
