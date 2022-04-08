@@ -19,7 +19,12 @@ Pressing =v= will bring you into Insert mode, where you can write. When you want
 
 With Boon, you can use all the regular Emacs keyboard commands, with a few exceptions, so it is not intruding too much on what you already know (unlike Evil mode). Some times, Boon conflicts with a particular mode, so I have bound F7 to turn Boon off, and F6 to turn it on again. Also, Boon is disabled in iBuffer and other places.
 
-Boon works in concert with Org-mode and Org-roam to provide an excellent environment for creative writing.
+Here’s the general idea, taken from the manual:
+#+Begin_quote
+“C-x and C-c shortcuts. Any 'C-x ' command is available via 'x '. (drop the 1st "Control"). Thus 'x s' will save all buffers, etc. C-c C- shortcuts are now typed simply as "c ". This means that no special configuration is required when you start using a new major or minor mode.”
+#+End_quote
+
+Boon works in concert with Org-mode and Org-roam to provide an excellent environment for creative writing. Mainly because it is so ergonomic, longer writing sessions are more enjoyable than they would be using standard Emacs keychords.
 
 I have then proceeded  to add dictionaries, thesauruses, and a host of other features, all aimed at creative writing.
 
