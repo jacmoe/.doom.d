@@ -142,7 +142,6 @@ This configuration uses two fonts, [[https://github.com/RedHatOfficial/Overpass]
 
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
 
-
 ** Features Overview
 ** Usage Notes
 ** How do I?
