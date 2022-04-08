@@ -110,7 +110,7 @@ export STARDICT_DATA_DIR
 =sudo apt install diction=
 
 **** Hugo
-I use Hugo to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
+I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
 
 ** Installation
 Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
@@ -128,7 +128,7 @@ Before running Emacs again, check with the Doom-Emacs doctor that everything is 
 =~./.emacs.d/bin doom doctor=
 
 If it doesn’t find any errors, you should be able to successfully run this Emacs configuration. But before you do, you need to adjust the configuration a bit:
-*** Paths
+*** Paths and Personal Info
 You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
 *** Fonts
 This configuration uses two fonts, [[https://github.com/RedHatOfficial/Overpass][Overpass Mono]] and [[https://www.1001freefonts.com/alegreya.font][Alegreya]], the first is mono–spaced and the second is a variable width font that’s great for reading/writing. Install those on your system so that Emacs can use them.
