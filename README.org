@@ -24,10 +24,45 @@ If you run into issues, where Doom-Emacs has a hiccup, a simple restart usually 
 Once Doom-Emacs is up and running, it’s time to prepare the installation of Hotel California.
 
 *** Additional Requirements
-**** Org-Roam
-We are using Org-Roam 2, and often requires a C compiler installed on the system for the ~emacs-sqlite~ requirement. If you don’t have a C compiler installed, and you get an error from Doom-Emacs Doctor, see this section of the Org-Roam manual:
 
-[[https://www.orgroam.com/manual.html#C-Compiler][Org-Roam manual - Installation - Compiler]]
+**** Org-Roam
+
+=org-roam= uses a custom SQLite binary to store its database, and it will compile it when it installs. So there must be a C compiler available to Emacs.
+
+On Linux, there are very likely to be a C compiler installed, but Windows is different.
+
+One option is to use MSYS2, which is Linux distribution for Windows. Follow the instructions on [[https://www.msys2.org/][MSYS2 home page]]. Be sure to install the full mingw-w64 GCC software collection.
+
+Make sure that you add the =bin= directory of you MSYS2 installation to your system path, so that Emacs can find it.
+
+On my machine, I had to add =C:\msys64\mingw64\bin=
+
+**** Aspell
+***** Linux
+
+If Aspell is not installed, install =aspell= using your package manager.
+
+***** Windows
+
+Assuming that you installed MSYS2, including the mingw compiler suite, you can simply open up a MSYS2 command line and run:
+
+=pacman -Ss aspell=
+
+That will give you a list of aspell related packages to install.
+
+Here's the packages that I installed:
+
+=pacman -S mingw-w64-x86_64-aspell=
+
+=pacman -S mingw-w64-x86_64-aspell-en=
+
+If you followed the guide for how to install the C compiler, then Emacs will be able to find =aspell=, and all should be well.
+
+**** Proselint
+Proselint is required by the on-the-fly language checker.
+
+Simply follow the [[https://github.com/amperser/proselint#installation][Proselint installation instructions]] and make sure to, if on Windows, to add the location of the Proselint binary to your PATH. The message you get from Python's pip installation procedure reminds you of what exact path you need to add.
+
 
 *** Installation
 Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
