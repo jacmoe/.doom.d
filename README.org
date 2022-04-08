@@ -82,11 +82,20 @@ Proselint is required by the on-the-fly language checker.
 Simply follow the [[https://github.com/amperser/proselint#installation][Proselint installation instructions]] and make sure to, if on Windows, to add the location of the Proselint binary to your PATH. The message you get from Python's pip installation procedure reminds you of what exact path you need to add.
 
 **** Lexic
-https://github.com/tecosaur/lexic
-
-You need to install the Stardict command-line tool:
+[[https://github.com/tecosaur/lexic][Lexic]] looks up words in local dictionaries, as opposed to online dictionaries. It requires you to install the Stardict command-line tool:
 
 =sudo apt install sdcv=
+
+Then, create a directory in your home directory named “stardict” to store the dictionaries, and run the =loaddicts.sh= script to download, unpack and install Stardict dictionaries into your newly created directory.
+
+You need to tell the Stardict command-line tool where to find the dictionaries by setting the =STARDICT_DATA_DIR= variable.
+
+On Linux:
+
+~STARDICT_DATA_DIR="/home/jacmoe/stardict"~
+
+~export STARDICT_DATA_DIR~
+
 **** Smog
 [[https://github.com/zzkt/smog][Smog]] stands for Simple Measure of Gobbledygook and uses =diction= or =style= command-line tools to analyse the writing style, word use and readability of the prose.
 
