@@ -5,6 +5,24 @@ My =Doom-Emacs= configuration.
 [[file:splash/emacs.png]]
 
 ** Introduction and Notable Features
+This configuration is based around [[https://github.com/jyp/boon][Boon]], which is An Ergonomic Command Mode for Emacs.
+
+It is more ergonomic and intuitive than Evil, which is the default modal editing mode in Doom-Emacs.
+
+Fortunately, Doom-Emacs works rather well with Evil turned off.
+
+In Command mode, you use the right hand to move around the text, using =jkl;= to move backward by word, backward by character, forward by character, and forward by word. =uiop= is backward by paragraph, up a line, down a line, and forward by paragraph. I have bound =KL= to be backward by sentence, and forward by sentence. All in all, an extremely ergonomic way of navigating a document.
+
+Then I am using =d= to delete, =q= to insert a character, and =t= to change a character.
+
+Pressing =v= will bring you into Insert mode, where you can write. When you want to switch to Command mode, you press =C-;= (Control-;) or Escape. I have chosen to steal the =C-;= keyboard shortcut from flyspell. It is much more ergonomic to use =C-;= than =Esc=.
+
+With Boon, you can use all the regular Emacs keyboard commands, with a few exceptions, so it is not intruding too much on what you already know (unlike Evil mode).
+
+Boon works in concert with Org-mode and Org-roam to provide an excellent environment for creative writing.
+
+I have then proceeded  to add dictionaries, thesauruses, and a host of other features, all aimed at creative writing.
+
 ** Prerequisites and Installation
 First, make sure that you have at least Emacs 27.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
@@ -25,11 +43,19 @@ Once Doom-Emacs is up and running, it’s time to prepare the installation of Ho
 
 *** Additional Requirements
 
+**** Paths
+You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
+
+**** Fonts
+This configuration uses two fonts, =Overpass Mono= and =Alegreya=, the first is mono–spaced and the second is a variable width font that’s great for reading/writing.
+
+If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
+
 **** Org-Roam
 
 =org-roam= uses a custom SQLite binary to store its database, and it will compile it when it installs. So there must be a C compiler available to Emacs.
 
-On Linux, there are very likely to be a C compiler installed, but Windows is different.
+On Linux, there are likely to be a C compiler installed, but Windows is different.
 
 One option is to use MSYS2, which is Linux distribution for Windows. Follow the instructions on [[https://www.msys2.org/][MSYS2 home page]]. Be sure to install the full mingw-w64 GCC software collection.
 
@@ -63,7 +89,18 @@ Proselint is required by the on-the-fly language checker.
 
 Simply follow the [[https://github.com/amperser/proselint#installation][Proselint installation instructions]] and make sure to, if on Windows, to add the location of the Proselint binary to your PATH. The message you get from Python's pip installation procedure reminds you of what exact path you need to add.
 
+**** Lexic
+https://github.com/tecosaur/lexic
 
+You need to install the Stardict command-line tool:
+
+=sudo apt install sdcv=
+**** Smog
+https://github.com/zzkt/smog
+
+=sudo apt install diction=
+
+**** Hugo
 *** Installation
 Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
 
@@ -90,4 +127,4 @@ The window on the right shows the entry in Merriam-Webster for the word “ancie
 [[file:screenshots/lookup.png]]
 
 
-#  LocalWords:  emacs
+#  LocalWords:  emacs MSYS mingw aspell Proselint Lexic Stardict flyspell
