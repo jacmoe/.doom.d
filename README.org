@@ -86,6 +86,10 @@ If you followed the guide for how to install the C compiler, then Emacs will be 
 **** Proselint
 Proselint is required by the on-the-fly language checker.
 
+#+Begin_quote
+“Proselint places the world's greatest writers and editors by your side, where they whisper suggestions on how to improve your prose. You’ll be guided by advice inspired by Bryan Garner, David Foster Wallace, Chuck Palahniuk, Steve Pinker, Mary Norris, Mark Twain, Elmore Leonard, George Orwell, Matthew Butterick, William Strunk, Elwyn White, Philip Corbett, Ernest Gowers, and the editorial staff of the world’s finest literary magazines and newspapers, among others. Our goal is to aggregate knowledge about best practices in writing and to make that knowledge immediately accessible to all authors in the form of a linter for prose; all in a neat command-line utility that you can integrate into other tools, scripts, and workflows.”
+#+End_quote
+
 Simply follow the [[https://github.com/amperser/proselint#installation][Proselint installation instructions]] and make sure to, if on Windows, to add the location of the Proselint binary to your PATH. The message you get from Python's pip installation procedure reminds you of what exact path you need to add.
 
 **** Lexic
