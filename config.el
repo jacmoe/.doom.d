@@ -24,6 +24,7 @@
 (defvar my-line-spacing 8) ; how much space between the lines?
 (defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en") ; store personal dictionary here
 (setq bookmark-default-file "~/Dropbox/skriv/bookmarks") ; Where to save the bookmarks file
+(setq annotate-file "~/Dropbox/skriv/annotations")
 ;; Org Directories
 (setq +org-roam-auto-backlinks-buffer t
       org-directory "~/org/"
@@ -461,6 +462,8 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; add annotations to arbitrary files without changing the files themselves.
 (use-package! annotate
+  :config
+  (setq annotate-database-confirm-deletion t)
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
