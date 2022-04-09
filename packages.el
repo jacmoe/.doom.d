@@ -53,3 +53,6 @@
 ;; (package! orgdiff :recipe (:host github :repo "tecosaur/orgdiff"))
 
 (package! org-transclusion)
+
+(unpin! org-roam)
+(package! org-roam-ui)
