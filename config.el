@@ -111,13 +111,14 @@
   )
 
 ;; Misc settings
-(setq display-line-numbers-type nil)                        ; do not show line numbers
-(display-time-mode 1)                                       ; display time in modeline
-(fringe-mode '(160 . 160))                                  ; show vertical fringes
-(blink-cursor-mode t)                                       ; the cursor should blink
-;; (setq-default line-spacing my-line-spacing)                 ; The amount of space between lines in pixels
+(setq display-line-numbers-type nil)                        ; Do not show line numbers
+(display-time-mode 1)                                       ; Display time in modeline
+(fringe-mode '(160 . 160))                                  ; Show vertical fringes
+(blink-cursor-mode t)                                       ; The cursor should blink
+(setq-default line-spacing my-line-spacing)                 ; The amount of space between lines in pixels
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode) ; Do not highlight current line
 (setq global-page-break-lines-mode t)                       ; Pretty page breaks everywhere
+(setq confirm-kill-processes nil)                           ; Don't ask to kill running processes when exiting Emacs.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

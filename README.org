@@ -13,7 +13,7 @@ Fortunately, Doom-Emacs works rather well with Evil turned off.
 
 In Command mode, you use the right hand to move around the text, using =jkl;= to move backward by word, backward by character, forward by character, and forward by word. =uiop= is backward by paragraph, up a line, down a line, and forward by paragraph. I have bound =KL= to be backward by sentence, and forward by sentence. All in all, an extremely ergonomic way of navigating a document.
 
-Then I am using =d= to delete, =q= to insert a character, and =t= to change a character.
+Then I am using =d= to delete, =q= to insert a character, and =t= to change a character. The =`= key will toggle the case of the word the cursor is in, or in a selected region, to capital-case, uppercase, or lowercase.
 
 Pressing =v= will bring you into Insert mode, where you can write. When you want to switch to Command mode, you press =C-;= (Control-;) or Escape. I have chosen to steal the =C-;= keyboard shortcut from flyspell. It is much more ergonomic to use =C-;= than =Esc=.
 
@@ -24,7 +24,7 @@ Here’s the general idea, taken from the manual:
 “C-x and C-c shortcuts. Any 'C-x ' command is available via 'x '. (drop the 1st "Control"). Thus 'x s' will save all buffers, etc. C-c C- shortcuts are now typed simply as "c ". This means that no special configuration is required when you start using a new major or minor mode.”
 #+End_quote
 
-Boon works in concert with Org-mode and Org-roam to provide an excellent environment for creative writing. Mainly because it is so ergonomic, longer writing sessions are more enjoyable than they would be using standard Emacs keychords.
+Boon works in concert with Org-mode and Org-roam to provide an excellent environment for creative writing. Mainly because it is so ergonomic, longer writing sessions are more enjoyable than they would be using standard Emacs key-chords.
 
 I have then proceeded  to add dictionaries, thesauruses, and a host of other features, all aimed at creative writing.
 
@@ -63,7 +63,7 @@ Make sure that you add the =bin= directory of you MSYS2 installation to your sys
 On my machine, I had to add =C:\msys64\mingw64\bin=
 
 **** Aspell
-We use =Aspell= for spellchecking, instead of other options, because I think it works better, and because it, unlike =hunspell=, allows me to make use of the =C-;= keychord (usually reserverd for =flyspell=)
+We use =Aspell= for spellchecking, instead of other options, because I think it works better, and because it, unlike =hunspell=, allows me to make use of the =C-;= key-chord (usually reserved for =flyspell=)
 ***** Linux
 
 If Aspell is not installed, install =aspell= using your package manager.
@@ -151,4 +151,6 @@ The window on the right shows the entry in Merriam-Webster for the word “ancie
 [[file:screenshots/lookup.png]]
 
 
-#  LocalWords:  emacs MSYS mingw aspell Proselint Lexic Stardict flyspell
+#  LocalWords:  emacs MSYS mingw aspell Proselint Lexic Stardict flyspell Elwyn
+#  LocalWords:  iBuffer Palahniuk Elmore Butterick Strunk Corbett Gowers
+#  LocalWords:  stardict Latexdiff Alegreya
