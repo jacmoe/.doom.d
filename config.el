@@ -426,7 +426,8 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;                                                                                  ;;
 ;; https://github.com/nobiot/org-transclusion                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! org-transclusion)
+(use-package! org-transclusion
+:after org)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
