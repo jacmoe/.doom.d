@@ -17,6 +17,43 @@ Notation:
 
 For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
 
+* Boon
+** Command-mode
+| command           | action                                                                |
+|-------------------+-----------------------------------------------------------------------|
+| v                 | Switch to Insert-mode                                                 |
+| j                 | move by word to the left                                              |
+| ;                 | move by word to the right                                             |
+| k                 | move by character backward                                            |
+| l                 | move by character forward                                             |
+| i                 | move up by line                                                       |
+| o                 | move down by line                                                     |
+| u                 | start of line                                                         |
+| p                 | end of line                                                           |
+| K                 | move bacward by sentence                                              |
+| L                 | move forward by sentence                                              |
+| I                 | move backward by paragraph                                            |
+| O                 | move forward by paragraph                                             |
+| d l               | delete character to the right                                         |
+| d k               | delete character to the left                                          |
+| d j               | delete word to the right                                              |
+| d ;               | delete word to the left                                               |
+| d SPACE           | delete line                                                           |
+| d region          | delete region                                                         |
+| d <number> action | delete times action, i.e. =d 4 l= delete four character to the left     |
+| `                 | toggle case between Capitalcase and lowercase. Works with regions     |
+| q <character>     | insert character                                                      |
+| t <character>     | change character under cursor to character                            |
+| w                 | show word-count, and—if tracktable present—words written towards goal |
+| n                 | narrow to subtree                                                     |
+| N                 | widen view (un-narrow)                                                |
+| M                 | toggle Doom modeline                                                  |
+| s                 | toggle centered writing-mode where the cursor stays in the middle     |
+** Insert-mode
+| command           | action                                                                |
+|-------------------+-----------------------------------------------------------------------|
+| C-;               | Switch to Command-mode                                                |
+
 * Regular
 ** Navigate
    | normal        | boon   | action                                                  |
