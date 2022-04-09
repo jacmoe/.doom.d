@@ -163,6 +163,8 @@
 ;; Org-tracktable
 ;; Org-appear
 ;; Org-pomodoro
+;; Org-super-agenda
+;; Orgdiff
 ;; Annotate
 ;; ISpell
 ;; Abbrev
@@ -369,6 +371,53 @@
    org-pomodoro-short-break-length 5
 alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil)))
 ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-super-agenda                                                                 ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! org-super-agenda
+  :after org-agenda
+  :init
+  (setq org-super-agenda-groups '((:name "Today"
+                                         :time-grid t
+                                         :scheduled today)
+                                  (:name "Due today"
+                                         :deadline today)
+                                  (:name "Important"
+                                         :priority "A")
+                                  (:name "Overdue"
+                                         :deadline past)
+                                  (:name "Due soon"
+                                         :deadline future)))
+  :config
+  (org-super-agenda-mode)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Orgdiff                                                                          ;;
+;;                                                                                  ;;
+;; https://github.com/tecosaur/orgdiff                                              ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (use-package! orgdiff
+;;   :config
+;;   (defun +orgdiff-nicer-change-colours ()
+;;     (goto-char (point-min))
+;;     ;; Set red/blue based on whether chameleon is being used
+;;     (if (search-forward "%% make document follow Emacs theme" nil t)
+;;         (setq red  (substring (doom-blend 'red 'fg 0.8) 1)
+;;               blue (substring (doom-blend 'blue 'teal 0.6) 1))
+;;       (setq red  "c82829"
+;;             blue "00618a"))
+;;     (when (and (search-forward "%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF" nil t)
+;;                (search-forward "\\RequirePackage{color}" nil t))
+;;       (when (re-search-forward "definecolor{red}{rgb}{1,0,0}" (cdr (bounds-of-thing-at-point 'line)) t)
+;;         (replace-match (format "definecolor{red}{HTML}{%s}" red)))
+;;       (when (re-search-forward "definecolor{blue}{rgb}{0,0,1}" (cdr (bounds-of-thing-at-point 'line)) t)
+;;         (replace-match (format "definecolor{blue}{HTML}{%s}" blue)))))
+;;   (add-to-list 'orgdiff-latexdiff-postprocess-hooks #'+orgdiff-nicer-change-colours))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -789,7 +838,7 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "black")
   (setq my-theme-shade "light")
-  (load-theme 'poet t)
+  (load-theme 'my-poet t)
   )
 
 ;; switch between light and dark theme

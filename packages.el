@@ -45,3 +45,9 @@
 (package! draft-mode)
 
 (package! wwg)
+
+(package! rainbow-mode)
+
+(package! org-super-agenda)
+
+;; (package! orgdiff :recipe (:host github :repo "tecosaur/orgdiff"))
