@@ -51,3 +51,5 @@
 (package! org-super-agenda)
 
 ;; (package! orgdiff :recipe (:host github :repo "tecosaur/orgdiff"))
+
+(package! org-transclusion)

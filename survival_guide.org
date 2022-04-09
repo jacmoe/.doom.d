@@ -347,6 +347,9 @@ Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want
 # ~C-c C-x TAB~ : org-clock-in
 # ~C-c C-x C-o~ : org-clock-out
 # ~C-c C-c~ : populates/updates a clock-table
+# ~C-c C-,~  : org-insert-structure-template (begin_comment, begin_src, begin_quote, begin_verse, ...)
+# ~<s TAB~ insert =begin_src= structure template. (s : source, e : example, q : quote, v : verse, ...)
+# See [[https://emacsclub.github.io/html/org_tutorial.html#sec-6-2][Org Tutorial - easy templates]]
 
 :DIRECTIVES:
 #  LocalWords:  tp num arg SPC modeline Draftmode Yasnippet wc sb sbtree sbt Mx

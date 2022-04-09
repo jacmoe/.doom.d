@@ -164,6 +164,7 @@
 ;; Org-appear
 ;; Org-pomodoro
 ;; Org-super-agenda
+;; Org-transclusion
 ;; Orgdiff
 ;; Annotate
 ;; ISpell
@@ -394,6 +395,14 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
   :config
   (org-super-agenda-mode)
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-transclusion                                                                 ;;
+;;                                                                                  ;;
+;; https://github.com/nobiot/org-transclusion                                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! org-transclusion)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
