@@ -131,7 +131,27 @@
 (map!"C-<right>" #'shrink-window-horizontally)
 (map! "C-`" #'diff-buffer-with-file) ; view what is modified
 (map! "C-c t m" #'hide-mode-line-mode) ; hide the mode-line
-(map! "C-c t d" #'switch-theme) ; switch theme
+(map! "C-c t d" #'switch-theme) ; switch theme light/dark
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Aliases                                                                          ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defalias 'ts 'transpose-sentences)
+(defalias 'tp 'transpose-paragraphs)
+(defalias 'note 'tb/capture-to-this-buffer)
+(defalias 'slip 'jethro/org-capture-slipbox)
+(defalias 'tt-insert 'org-tracktable-insert-table)
+(defalias 'tt-update 'org-tracktable-write)
+(defalias 'tt-status 'org-tracktable-status)
+(defalias 'fix-quotes 'smart-quotes-smarten)
+(defalias 'mwebster 'mw-thesaurus-lookup-dwim)
+(defalias 'pt-defs 'powerthesaurus-lookup-definitions-dwim)
+(defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
+(defalias 'wwg-goal 'wwg/set-goal-current-buffer)
+(defalias 'wwg-1k 'wwg/set-1k-goal-current-buffer)
+(defalias 'whmode 'writing-header-line-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -291,9 +311,6 @@
   (interactive)
   (org-capture nil "s"))
 
-(defalias 'note 'tb/capture-to-this-buffer)
-(defalias 'slip 'jethro/org-capture-slipbox)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Org-Roam                                                                         ;;
@@ -321,9 +338,6 @@
 (use-package! org-tracktable
   :config
   (setq org-tracktable-daily-goal my-org-tracktable-daily-goal))
-(defalias 'tt-insert 'org-tracktable-insert-table)
-(defalias 'tt-update 'org-tracktable-write)
-(defalias 'tt-status 'org-tracktable-status)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -417,10 +431,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;; https://github.com/gareth-rees/smart-quotes                                      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Only used for the "smart-quotes-smarten" function
-(use-package! smart-quotes
-  :init
-        (defalias 'fix-quotes 'smart-quotes-smarten)
-)
+(use-package! smart-quotes)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -551,7 +562,6 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
   (if (boundp 'my-mw-api-key)
       (setq mw-thesaurus--api-key my-mw-api-key))
 )
-(defalias 'mwebster 'mw-thesaurus-lookup-dwim)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -564,8 +574,6 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
   ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
   ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
   )
-(defalias 'pt-defs 'powerthesaurus-lookup-definitions-dwim)
-(defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -594,8 +602,7 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;                                                                                  ;;
 ;; https://github.com/ag91/writer-word-goals                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defalias 'wwg-goal 'wwg/set-goal-current-buffer)
-(defalias 'wwg-1k 'wwg/set-1k-goal-current-buffer)
+(use-package! wwg)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -760,8 +767,6 @@ Imitates the look of wordprocessors a bit."
         (setq mode-line-format header-line-format))
     (setq header-line-format writing-header--default-format
           mode-line-format writing-modeline--default-format)))
-
-(defalias 'whmode 'writing-header-line-mode)
 
 ;; turn on dark theme
 (defun go-dark-theme ()
