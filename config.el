@@ -838,7 +838,7 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "black")
   (setq my-theme-shade "light")
-  (load-theme 'my-poet t)
+  (load-theme 'poet t)
   )
 
 ;; switch between light and dark theme
