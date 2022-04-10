@@ -256,6 +256,11 @@
                 '((sequence "draft(t)" "revise(r)" "|" "done(d)")
                 (sequence "fixme" "|" "fixed")
                 (sequence "todo" "|" "done"))
+        org-tag-faces
+                '(
+                  ("noexport" . (:foreground "#606060" :weight normal))
+                  ("nowc" . (:foreground "#606060" :weight normal))
+                  )
         ;; Don't pollute the text with markers
         org-hide-emphasis-markers t
         org-return-follows-link t ; hitting RETURN follows the link
