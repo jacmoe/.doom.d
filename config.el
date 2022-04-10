@@ -895,6 +895,9 @@ Imitates the look of wordprocessors a bit."
     (go-light-theme)
     )
   )
+
+;; Performance code
+;; Does this actually make a difference?
 (defun my-minibuffer-setup-hook ()
   (setq gc-cons-threshold most-positive-fixnum))
 
