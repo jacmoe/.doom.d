@@ -879,6 +879,14 @@ Imitates the look of wordprocessors a bit."
   (load-theme 'poet t)
   )
 
+;; turn on typo theme
+(defun typo-theme ()
+  (interactive)
+  (setq boon-default-cursor-color "black")
+  (setq my-theme-shade "light")
+  (load-theme 'typo t)
+  )
+
 ;; switch between light and dark theme
 (defun switch-theme ()
   (interactive)
