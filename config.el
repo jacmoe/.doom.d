@@ -18,7 +18,7 @@
 ;; Variables                                                                        ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar my-dark-theme 'misterioso)    ; misterioso, uwu
+(defvar my-dark-theme 'catppuccin)    ; catppuccin, misterioso, uwu
 (defvar my-light-theme 'tsdh-light)
 (defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
