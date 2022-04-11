@@ -18,6 +18,9 @@
 ;; Variables                                                                        ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar my-dark-theme 'misterioso)    ; misterioso, uwu
+(defvar my-light-theme 'tsdh-light)
+(defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
@@ -97,7 +100,7 @@
   )
 
 ;; Theme
-(setq doom-theme 'misterioso)
+(setq doom-theme my-main-theme)
 
 ;; Make the modified file name in the modeline orange instead of red
 (custom-set-faces!
@@ -873,7 +876,7 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "white")
   (setq my-theme-shade "dark")
-  (load-theme 'misterioso t)
+  (load-theme my-dark-theme t)
   )
 
 ;; turn on light theme
@@ -881,7 +884,7 @@ Imitates the look of wordprocessors a bit."
   (interactive)
   (setq boon-default-cursor-color "black")
   (setq my-theme-shade "light")
-  (load-theme 'tsdh-light)
+  (load-theme my-light-theme)
   )
 
 ;; turn on poet theme
