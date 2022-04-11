@@ -29,7 +29,7 @@
       org-directory "~/org/"
       org-roam-directory org-directory
       org-roam-dailies-directory (concat org-directory "journal/")
-      ;; org-archive-location (concat org-directory ".archive/%s::")
+      org-archive-location (concat org-directory ".archive/%s::")
       org-agenda-files (list "~/org/"
                              ;; "~/Dropbox/skriv/"
                              "~/enestaaende/enestaaende.org"
@@ -571,19 +571,6 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
   :config
   (ctrlf-mode t)
   )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Back-button                                                                      ;;
-;;                                                                                  ;;
-;; https://github.com/rolandwalker/back-button                                      ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Back-button provides an alternative method for navigation by analogy with the "back" button in a web browser.
-;; Uses the mark-ring
-;; (use-package! back-button
-;;   :init
-;;   (back-button-mode 1)
-;;   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
