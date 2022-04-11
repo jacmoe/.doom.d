@@ -389,6 +389,15 @@ Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want
 # See [[https://emacsclub.github.io/html/org_tutorial.html#sec-6-2][Org Tutorial - easy templates]]
 # ~C-c l @~ : org-cite-insert
 # ~C-c &~ : snippets menu
+# Annotate : ~M-x annotate-mode~
+# ~C-c C-a~ / ~c a~ : insert/edit annotation
+# ~C-c C-d~ : delete annotation
+# ~C-c ]~ : next annotation
+# ~C-c [~ : previous annotation
+# ~C-c C-s~ : show annotation summary
+# ~M-x annotate-export-annotations~
+# ~M-x annotate-integrate-annotations~
+# ~M-x annotate-import-annotations~
 
 :DIRECTIVES:
 #  LocalWords:  tp num arg SPC modeline Draftmode Yasnippet wc sb sbtree sbt Mx
