@@ -5,9 +5,28 @@
 
 (package! ctrlf)
 
-(package! move-text)
+(package! org-tracktable)
+
+(package! org-appear :recipe (:host github :repo "awth13/org-appear")
+  :pin "303fcc8d5d85a4ebff2798dab50b2ccc0255ea5f")
+
+(package! org-super-agenda)
+
+(package! org-transclusion)
+
+(package! annotate)
+
+(package! typopunct)
+
+(package! smart-quotes)
 
 (package! flymake-proselint)
+
+;; (package! back-button)
+
+(package! smog)
+
+;; (package! orgdiff :recipe (:host github :repo "tecosaur/orgdiff"))
 
 (package! mw-thesaurus)
 
@@ -17,13 +36,6 @@
 
 (package! dimmer)
 
-(package! annotate)
-
-(package! org-appear :recipe (:host github :repo "awth13/org-appear")
-  :pin "303fcc8d5d85a4ebff2798dab50b2ccc0255ea5f")
-
-(package! org-tracktable)
-
 (package! nov)
 
 (package! hide-mode-line)
@@ -32,14 +44,6 @@
 
 (package! lexic)
 
-(package! typopunct)
-
-(package! smart-quotes)
-
-(package! smog)
-
-(package! back-button)
-
 (package! page-break-lines)
 
 (package! draft-mode)
@@ -47,12 +51,6 @@
 (package! wwg)
 
 (package! rainbow-mode)
-
-(package! org-super-agenda)
-
-;; (package! orgdiff :recipe (:host github :repo "tecosaur/orgdiff"))
-
-(package! org-transclusion)
 
 (unpin! org-roam)
 (package! org-roam-ui)

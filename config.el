@@ -19,7 +19,6 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
-;; (defvar my-theme-shade "light") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
 (defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en") ; store personal dictionary here
@@ -70,9 +69,8 @@
 (require 'zone)                                        ; Emacs "screensaver"
 (zone-when-idle 300)                                   ; Zone out when idle for five minutes.
 (setq enable-local-eval t)                             ; Define safe local variables
-(if (display-mouse-p) (mouse-avoidance-mode 'banish))  ; Shove the mouse pointer out of  the way
-(after! gcmh
-  (setq gcmh-high-cons-threshold 33554432))  ; 32mb, or 64mb, or *maybe* 128mb, BUT NOT 512mb
+(unless (eq system-type 'windows-nt)
+        (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -90,7 +88,7 @@
 
 ;; Fonts - ordinary and variable pitch
 (if (eq system-type 'windows-nt)
-    (setq doom-font (font-spec :family "Overpass Mono" :size 20) ; Windows font
+    (setq doom-font (font-spec :family "Overpass Mono" :size 24) ; Windows font
           doom-variable-pitch-font (font-spec :family "Alegreya" :size 32))
   (setq doom-font (font-spec :family "Overpass Mono" :size 24) ; Linux font
         doom-variable-pitch-font (font-spec :family "Alegreya" :size 32))
@@ -107,7 +105,7 @@
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
-    (setq initial-frame-alist '((top . 45) (left . 76) (width . 120) (height . 45)))
+    (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 25)))
   (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 30)))
   )
 
@@ -338,7 +336,6 @@
         org-roam-dailies-capture-templates
         '(("d" "default" entry "* %?"
            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%B %d, %Y>\n\n")))))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -583,10 +580,10 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Back-button provides an alternative method for navigation by analogy with the "back" button in a web browser.
 ;; Uses the mark-ring
-(use-package! back-button
-  :init
-  (back-button-mode 1)
-  )
+;; (use-package! back-button
+;;   :init
+;;   (back-button-mode 1)
+;;   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -607,17 +604,6 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
          '(90 . 50) '(100 . 100)))))
 
 (map! "C-c t s" #'toggle-transparency)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Move-text                                                                        ;;
-;;                                                                                  ;;
-;; https://github.com/emacsfodder/move-text                                         ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! move-text
-  :init
-  (move-text-default-bindings)
-  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -900,14 +886,3 @@ Imitates the look of wordprocessors a bit."
     (go-light-theme)
     )
   )
-
-;; Performance code
-;; Does this actually make a difference?
-(defun my-minibuffer-setup-hook ()
-  (setq gc-cons-threshold most-positive-fixnum))
-
-(defun my-minibuffer-exit-hook ()
-  (setq gc-cons-threshold 800000))
-
-(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
-(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
