@@ -69,6 +69,7 @@
 (require 'zone)                                        ; Emacs "screensaver"
 (zone-when-idle 300)                                   ; Zone out when idle for five minutes.
 (setq enable-local-eval t)                             ; Define safe local variables
+;; Mouse-avoidance makes the frame "jump" on Windows...
 (unless (eq system-type 'windows-nt)
         (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
 
@@ -174,7 +175,6 @@
 ;; Smart-quotes
 ;; Boon
 ;; CtrlF
-;; Back-button
 ;; Transparency
 ;; Move-text
 ;; Flymake-proselint
@@ -347,11 +347,7 @@
     :after org-roam)
 
 (use-package! org-roam-ui
-    :after org-roam ;; or :after org
-;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-;;         a hookable mode anymore, you're advised to pick something yourself
-;;         if you don't care about startup time, use
-;;  :hook (after-init . org-roam-ui-mode)
+    :after org-roam
     :config
     (setq org-roam-ui-sync-theme t
           org-roam-ui-follow t
