@@ -24,6 +24,7 @@
 (defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en") ; store personal dictionary here
 (setq bookmark-default-file "~/Dropbox/skriv/bookmarks") ; Where to save the bookmarks file
 (setq annotate-file "~/Dropbox/skriv/annotations")
+(setq bib-file "~/Dropbox/skriv/jacmoe.bib")
 ;; Org Directories
 (setq +org-roam-auto-backlinks-buffer t
       org-directory "~/org/"
@@ -167,6 +168,7 @@
 ;; Org-pomodoro
 ;; Org-super-agenda
 ;; Org-transclusion
+;; Citar
 ;; Orgdiff
 ;; Annotate
 ;; ISpell
@@ -428,6 +430,20 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! org-transclusion
 :after org)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Citar                                                                            ;;
+;;                                                                                  ;;
+;; https://github.com/bdarcus/citar                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Bibliography management
+(after! citar
+  (setq! citar-bibliography bib-file)
+  ;; (setq org-cite-global-bibliography citar-bibliography)
+  (setq ;;citar-library-paths '("/path/to/library/files/")
+   citar-notes-paths (list org-roam-directory))
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
