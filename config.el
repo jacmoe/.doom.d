@@ -439,8 +439,8 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bibliography management
 (after! citar
-  (setq! citar-bibliography bib-file)
-  ;; (setq org-cite-global-bibliography citar-bibliography)
+  (setq! citar-bibliography (list bib-file))
+  (setq org-cite-global-bibliography citar-bibliography)
   (setq ;;citar-library-paths '("/path/to/library/files/")
    citar-notes-paths (list org-roam-directory))
 )
