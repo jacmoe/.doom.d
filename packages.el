@@ -55,3 +55,5 @@
 
 (package! mark-navigation
   :recipe (:local-repo "mark-navigation"))
+
+(package! citeproc)

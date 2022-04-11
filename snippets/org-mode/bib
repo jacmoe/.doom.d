@@ -1,0 +1,6 @@
+# name: bib
+# key: bib
+# --
+#+bibliography: ${1:`bib-file`}
+#+cite_export: csl
+$0

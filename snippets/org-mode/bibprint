@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: bibprint
+# key: bibprint
+# --
+#+print_bibliography:
+$0

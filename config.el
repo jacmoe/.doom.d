@@ -169,6 +169,7 @@
 ;; Org-super-agenda
 ;; Org-transclusion
 ;; Citar
+;; Ox-Hugo
 ;; Orgdiff
 ;; Annotate
 ;; ISpell
@@ -443,6 +444,17 @@ alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))
   (setq org-cite-global-bibliography citar-bibliography)
   (setq ;;citar-library-paths '("/path/to/library/files/")
    citar-notes-paths (list org-roam-directory))
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Ox-Hugo                                                                          ;;
+;;                                                                                  ;;
+;; https://ox-hugo.scripter.co/                                                     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Org exporter backend that exports Org to Hugo-compatible Markdown
+(after! ox-hugo
+  (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography")
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
