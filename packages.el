@@ -57,3 +57,8 @@
   :recipe (:local-repo "mark-navigation"))
 
 (package! citeproc)
+
+(package! stimmung-themes)
+
+(package! uwu-theme
+   :recipe (:host github :repo "kborling/uwu-theme"))

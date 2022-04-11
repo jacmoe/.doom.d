@@ -908,3 +908,5 @@ Imitates the look of wordprocessors a bit."
     (go-light-theme)
     )
   )
+
+(setq uwu-use-variable-pitch 1)
