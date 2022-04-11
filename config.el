@@ -287,14 +287,17 @@
     ;;on habit line?
     (when (get-text-property (point) 'org-habit-p)
       (let ((streak 0)
-            (counter (+ org-habit-graph-column (- org-habit-preceding-days org-habit-following-days)))
-            )
-        (move-to-column counter)
+            streak-broken)
+        (move-to-column org-habit-graph-column)
         ;;until end of line
-        (while (= (char-after (point)) org-habit-completed-glyph)
-          (setq streak (+ streak 1))
-          (setq counter (- counter 1))
-          (backward-char 1))
+        (while (not (eolp))
+          (if (= (char-after (point)) org-habit-completed-glyph)
+              (if streak-broken
+                  (setq streak 1
+                        streak-broken nil)
+                (setq streak (+ streak 1)))
+            (setq streak-broken t))
+          (forward-char 1))
         (end-of-line)
         (insert (number-to-string streak))))
     (forward-line 1)))
@@ -307,7 +310,7 @@
            ((org-agenda-show-log t)
             (org-agenda-ndays 7)
             (org-agenda-log-mode-items '(state))
-            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":DAILY:"))))
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":daily:"))))
           ))
   )
 
