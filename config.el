@@ -807,6 +807,7 @@
 (defun my/kbdk ()
   (interactive)
   (call-process-shell-command "setxkbmap" nil nil nil "dk")
+  (message "Danish keyboard layout")
   )
 (map! "C-c k" #'my/kbdk)
 
@@ -814,6 +815,7 @@
 (defun my/kbus ()
   (interactive)
   (call-process-shell-command "setxkbmap" nil nil nil "us")
+  (message "US keyboard layout")
   )
 (map! "C-c u" #'my/kbus)
 
