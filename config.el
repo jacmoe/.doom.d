@@ -76,6 +76,8 @@
 ;; Mouse-avoidance makes the frame "jump" on Windows...
 (unless (eq system-type 'windows-nt)
         (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
+;; tell Undo-fu to only store linear history, not the full history
+(setq undo-fu-session-linear t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
