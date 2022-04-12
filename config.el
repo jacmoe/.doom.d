@@ -94,12 +94,8 @@
 (setq frame-title-format '("%b – Hotel California of Creative Writing"))
 
 ;; Fonts - ordinary and variable pitch
-(if (eq system-type 'windows-nt)
-    (setq doom-font (font-spec :family "Overpass Mono" :size 20) ; Windows font
-          doom-variable-pitch-font (font-spec :family "Alegreya" :size 28))
-  (setq doom-font (font-spec :family "Overpass Mono" :size 20) ; Linux font
+  (setq doom-font (font-spec :family "Overpass Mono" :size 20)
         doom-variable-pitch-font (font-spec :family "Alegreya" :size 28))
-  )
 
 ;; Theme
 (setq doom-theme my-main-theme)
@@ -112,7 +108,7 @@
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
-    (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 25)))
+    (setq initial-frame-alist '((top . 38) (left . 66) (width . 124) (height . 32)))
   (setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38)))
   )
 

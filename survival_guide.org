@@ -30,7 +30,7 @@ For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
 | o                 | move down by line                                                     |
 | u                 | start of line                                                         |
 | p                 | end of line                                                           |
-| K                 | move bacward by sentence                                              |
+| K                 | move backward by sentence                                              |
 | L                 | move forward by sentence                                              |
 | I                 | move backward by paragraph                                            |
 | O                 | move forward by paragraph                                             |
@@ -406,10 +406,9 @@ Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want
 :DIRECTIVES:
 #  LocalWords:  tp num arg SPC modeline Draftmode Yasnippet wc sb sbtree sbt Mx
 #  LocalWords:  sbtreet tracktable tti ttw tts nowc noexport subtree RET dired
-#  LocalWords:  whitespace ispell Writeroom Magit
+#  LocalWords:  whitespace ispell Writeroom Magit Capitalcase un upcase LaTeX
+#  LocalWords:  pagebreak tt src flycheck proselint
 # Local Variables:
 # flycheck-disabled-checkers: (proselint)
 # End:
 :END:
-# {{{
-# }}}
