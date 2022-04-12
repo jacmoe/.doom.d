@@ -191,7 +191,6 @@
 ;; Lexic
 ;; Wwg - Writer Word Goals
 ;; Browse-kill-ring
-;; Mark-navigation
 ;; Dimmer
 ;; Yasnippet
 ;; Nov.el
@@ -730,16 +729,6 @@
   :bind
   ("M-y" . 'browse-kill-ring)
   )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Mark-navigation                                                                  ;;
-;;                                                                                  ;;
-;; https://github.com/slewsys/emacs-extensions                                      ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! mark-navigation
-:config
-(mark-navigation-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

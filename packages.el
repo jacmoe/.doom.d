@@ -42,8 +42,6 @@
 
 (package! lexic)
 
-(package! page-break-lines)
-
 (package! draft-mode)
 
 (package! wwg)
@@ -52,9 +50,6 @@
 
 (unpin! org-roam)
 (package! org-roam-ui)
-
-(package! mark-navigation
-  :recipe (:local-repo "mark-navigation"))
 
 (package! citeproc)
 
