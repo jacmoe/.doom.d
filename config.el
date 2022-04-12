@@ -95,10 +95,10 @@
 
 ;; Fonts - ordinary and variable pitch
 (if (eq system-type 'windows-nt)
-    (setq doom-font (font-spec :family "Overpass Mono" :size 24) ; Windows font
-          doom-variable-pitch-font (font-spec :family "Alegreya" :size 32))
-  (setq doom-font (font-spec :family "Overpass Mono" :size 24) ; Linux font
-        doom-variable-pitch-font (font-spec :family "Alegreya" :size 32))
+    (setq doom-font (font-spec :family "Overpass Mono" :size 20) ; Windows font
+          doom-variable-pitch-font (font-spec :family "Alegreya" :size 28))
+  (setq doom-font (font-spec :family "Overpass Mono" :size 20) ; Linux font
+        doom-variable-pitch-font (font-spec :family "Alegreya" :size 28))
   )
 
 ;; Theme
@@ -113,13 +113,13 @@
 ;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
     (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 25)))
-  (setq initial-frame-alist '((top . 45) (left . 76) (width . 90) (height . 30)))
+  (setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38)))
   )
 
 ;; Misc settings
 (setq display-line-numbers-type nil)                        ; Do not show line numbers
 (display-time-mode 1)                                       ; Display time in modeline
-(fringe-mode '(160 . 160))                                  ; Show vertical fringes
+(fringe-mode '(80 . 80))                                    ; Show vertical fringes
 (blink-cursor-mode t)                                       ; The cursor should blink
 (setq-default line-spacing my-line-spacing)                 ; The amount of space between lines in pixels
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode) ; Do not highlight current line
