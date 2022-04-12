@@ -398,6 +398,10 @@ Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want
 # ~M-x annotate-export-annotations~
 # ~M-x annotate-integrate-annotations~
 # ~M-x annotate-import-annotations~
+# ~C-c l S~ : org-super-links menu
+# ~C-c l S i~ : org-super-links-insert-link
+# ~C-c l S l~ : org-super-links-link
+# ~C-c l S s~ : org-super-links-store-link
 
 :DIRECTIVES:
 #  LocalWords:  tp num arg SPC modeline Draftmode Yasnippet wc sb sbtree sbt Mx

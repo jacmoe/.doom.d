@@ -170,6 +170,7 @@
 ;; Org-appear
 ;; Org-pomodoro
 ;; Org-super-agenda
+;; Org-super-links
 ;; Org-transclusion
 ;; Citar
 ;; Ox-Hugo
@@ -430,6 +431,23 @@
   :config
   (org-super-agenda-mode)
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-super-links                                                                  ;;
+;;                                                                                  ;;
+;; https://github.com/toshism/org-super-links                                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! org-super-links
+:after org
+:config
+  (map! :map org-mode-map
+        :localleader
+        :prefix ("S" . "org-super-links")
+        "l" #'org-super-links-link
+        "s" #'org-super-links-store-link
+        "i" #'org-super-links-insert-link
+))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
