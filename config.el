@@ -24,19 +24,19 @@
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
-(defvar my-personal-dictionary "~/Dropbox/skriv/aspell-en") ; store personal dictionary here
-(setq bookmark-default-file "~/Dropbox/skriv/bookmarks") ; Where to save the bookmarks file
-(setq annotate-file "~/Dropbox/skriv/annotations")
-(setq bib-file "~/Dropbox/skriv/jacmoe.bib")
-(defvar my-journal-directory "~/Dropbox/skriv/journal/")
+(defvar my-storage-directory "~/Dropbox/skriv/")
+(defvar my-personal-dictionary (concat my-storage-directory "aspell-en")) ; store personal dictionary here
+(setq bookmark-default-file (concat my-storage-directory "bookmarks")) ; Where to save the bookmarks file
+(setq annotate-file (concat my-storage-directory "annotations"))
+(setq bib-file (concat my-storage-directory "jacmoe.bib"))
+(defvar my-journal-directory (concat my-storage-directory "journal/"))
 ;; Org Directories
 (setq +org-roam-auto-backlinks-buffer t
-      org-directory "~/org/"
+      org-directory (concat my-storage-directory "org/")
       org-roam-directory org-directory
       org-roam-dailies-directory (concat org-directory "roam-journal/")
       org-archive-location (concat org-directory ".archive/%s::")
-      org-agenda-files (list "~/org/"
-                             ;; "~/Dropbox/skriv/"
+      org-agenda-files (list my-storage-directory
                              "~/enestaaende/enestaaende.org"
                              )
 )

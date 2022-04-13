@@ -30,7 +30,7 @@ For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
 | o                 | move down by line                                                     |
 | u                 | start of line                                                         |
 | p                 | end of line                                                           |
-| K                 | move backward by sentence                                              |
+| K                 | move backward by sentence                                             |
 | L                 | move forward by sentence                                              |
 | I                 | move backward by paragraph                                            |
 | O                 | move forward by paragraph                                             |
@@ -40,7 +40,7 @@ For example, ~C-x~ means hold down the ~Control~ key while typing ~x~.
 | d ;               | delete word to the left                                               |
 | d SPACE           | delete line                                                           |
 | d region          | delete region                                                         |
-| d <number> action | delete times action, i.e. =d 4 l= delete four character to the left     |
+| d <number> action | delete times action, i.e. =d 4 l= delete four character to the left   |
 | `                 | toggle case between Capitalcase and lowercase. Works with regions     |
 | q <character>     | insert character                                                      |
 | t <character>     | change character under cursor to character                            |
