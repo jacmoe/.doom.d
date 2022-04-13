@@ -78,6 +78,7 @@
         (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
 ;; tell Undo-fu to only store linear history, not the full history
 (setq undo-fu-session-linear t)
+(map! "C-;" nil)                                         ; Don't steal my C-; !
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -173,6 +174,7 @@
 ;; Citar
 ;; Ox-Hugo
 ;; Orgdiff
+;; Org-journal
 ;; Annotate
 ;; ISpell
 ;; Abbrev
@@ -503,6 +505,19 @@
 ;;       (when (re-search-forward "definecolor{blue}{rgb}{0,0,1}" (cdr (bounds-of-thing-at-point 'line)) t)
 ;;         (replace-match (format "definecolor{blue}{HTML}{%s}" blue)))))
 ;;   (add-to-list 'orgdiff-latexdiff-postprocess-hooks #'+orgdiff-nicer-change-colours))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-journal                                                                      ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! org-journal
+  :after org
+  :config
+  (setq org-journal-dir "~/org/journal/"
+        org-journal-file-type 'monthly
+        org-extend-today-until 5
+        org-journal-date-format "%A, %d %B %Y"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
