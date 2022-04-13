@@ -24,6 +24,7 @@
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
+(defvar my-day-end 5) ; when does my day end?
 ;; Where do I store everything to be shared between machines?
 (defvar my-storage-directory "~/Dropbox/skriv/")
 (defvar my-personal-dictionary (concat my-storage-directory "aspell-en")) ; store personal dictionary here
@@ -375,7 +376,8 @@
 ;; an emacs/org-mode package for tracking your writing progress in an org-table.
 (use-package! org-tracktable
   :config
-  (setq org-tracktable-daily-goal my-org-tracktable-daily-goal))
+  (setq org-tracktable-daily-goal my-org-tracktable-daily-goal
+        org-tracktable-day-delay my-day-end))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -519,7 +521,7 @@
   (setq org-journal-dir my-journal-directory
         org-journal-file-format "%Y%m%d.org"
         org-journal-file-type 'monthly
-        org-extend-today-until 5
+        org-extend-today-until my-day-end
         org-journal-date-format "%A, %d %B %Y"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
