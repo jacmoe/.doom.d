@@ -28,11 +28,12 @@
 (setq bookmark-default-file "~/Dropbox/skriv/bookmarks") ; Where to save the bookmarks file
 (setq annotate-file "~/Dropbox/skriv/annotations")
 (setq bib-file "~/Dropbox/skriv/jacmoe.bib")
+(defvar my-journal-directory "~/Dropbox/skriv/journal/")
 ;; Org Directories
 (setq +org-roam-auto-backlinks-buffer t
       org-directory "~/org/"
       org-roam-directory org-directory
-      org-roam-dailies-directory (concat org-directory "journal/")
+      org-roam-dailies-directory (concat org-directory "roam-journal/")
       org-archive-location (concat org-directory ".archive/%s::")
       org-agenda-files (list "~/org/"
                              ;; "~/Dropbox/skriv/"
@@ -514,7 +515,8 @@
 (use-package! org-journal
   :after org
   :config
-  (setq org-journal-dir "~/org/journal/"
+  (setq org-journal-dir my-journal-directory
+        org-journal-file-format "%Y%m%d.org"
         org-journal-file-type 'monthly
         org-extend-today-until 5
         org-journal-date-format "%A, %d %B %Y"))
