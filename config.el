@@ -24,6 +24,7 @@
 (defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
 (defvar my-line-spacing 8) ; how much space between the lines?
+;; Where do I store everything to be shared between machines?
 (defvar my-storage-directory "~/Dropbox/skriv/")
 (defvar my-personal-dictionary (concat my-storage-directory "aspell-en")) ; store personal dictionary here
 (setq bookmark-default-file (concat my-storage-directory "bookmarks")) ; Where to save the bookmarks file
@@ -36,7 +37,7 @@
       org-roam-directory org-directory
       org-roam-dailies-directory (concat org-directory "roam-journal/")
       org-archive-location (concat org-directory ".archive/%s::")
-      org-agenda-files (list my-storage-directory
+      org-agenda-files (list org-directory
                              "~/enestaaende/enestaaende.org"
                              )
 )
