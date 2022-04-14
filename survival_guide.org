@@ -402,6 +402,8 @@ Use tag ~nowc~ or ~noexport~ tags for the headings which content you do not want
 # ~C-c l S i~ : org-super-links-insert-link
 # ~C-c l S l~ : org-super-links-link
 # ~C-c l S s~ : org-super-links-store-link
+# ~C-h t~ : Emacs tutorial
+# ~C-h r~ : Emacs manual
 
 :DIRECTIVES:
 #  LocalWords:  tp num arg SPC modeline Draftmode Yasnippet wc sb sbtree sbt Mx
