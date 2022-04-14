@@ -715,19 +715,20 @@
 ;; https://github.com/tecosaur/lexic                                                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! lexic
-  :bind
-  ("<f8>" . +lookup/dictionary-definition-lexic)
-  ("S-<f8>" . lexic-search)
+ :bind
+ ("<f8>" . +lookup/dictionary-definition-lexic)
+ ("S-<f8>" . lexic-search)
 )
 
-(defadvice! +lookup/dictionary-definition-lexic (identifier &optional arg)
-  "Look up the definition of the word at point (or selection) using `lexic-search'."
-  :override #'+lookup/dictionary-definition
-  (interactive
-   (list (or (doom-thing-at-point-or-region 'word)
-             (read-string "Look up in dictionary: "))
-         current-prefix-arg))
-  (lexic-search identifier nil nil t))
+(defadvice! +lookup/dictionary-definition-lexic (identifier &optional
+ arg) "Look up the definition of the word at point (or selection) using
+ `lexic-search'."
+ :override #'+lookup/dictionary-definition
+ (interactive
+  (list (or (doom-thing-at-point-or-region 'word)
+            (read-string "Look up in dictionary: "))
+        current-prefix-arg))
+ (lexic-search identifier nil nil t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

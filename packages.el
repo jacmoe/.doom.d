@@ -40,7 +40,8 @@
 
 (package! poet-theme)
 
-(package! lexic)
+;; (package! lexic :recipe (:host github :repo "tecosaur/lexic"))
+(package! lexic :recipe (:local-repo "lexic"))
 
 (package! draft-mode)
 
