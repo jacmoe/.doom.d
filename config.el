@@ -139,6 +139,7 @@
 (map! "C-`" #'diff-buffer-with-file) ; view what is modified
 (map! "C-c t m" #'hide-mode-line-mode) ; hide the mode-line
 (map! "C-c t d" #'switch-theme) ; switch theme light/dark
+(map! "C-c n q" #'tb/capture-to-this-buffer) ; quick capture to this buffer
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
