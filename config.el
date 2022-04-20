@@ -96,6 +96,9 @@
 (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
 ;; Set the title
 (setq frame-title-format '("%b – Hotel California of Creative Writing"))
+;; Add to the dashboard
+(add-hook! '+doom-dashboard-functions :append
+  (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Hotel California of Creative Writing")))
 
 ;; Fonts - ordinary and variable pitch
 (setq doom-font (font-spec :family "Overpass Mono" :size 20)
@@ -200,6 +203,7 @@
 ;; Nov.el
 ;; Palimpsest
 ;; Emacs-everywhere
+;; Atomic-chrome
 ;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -848,6 +852,17 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
+;; Atomic-chrome                                                                    ;;
+;;                                                                                  ;;
+;; https://github.com/alpha22jp/atomic-chrome                                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! atomic-chrome
+  :init
+  (atomic-chrome-start-server)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
 ;; Miscellaneous                                                                    ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -984,5 +999,3 @@ Imitates the look of wordprocessors a bit."
     (go-light-theme)
     )
   )
-
-(setq uwu-use-variable-pitch 1)
