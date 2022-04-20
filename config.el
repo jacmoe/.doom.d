@@ -197,6 +197,7 @@
 ;; Dimmer
 ;; Yasnippet
 ;; Nov.el
+;; Palimpsest
 ;; Emacs-everywhere
 ;; Miscellaneous
 
@@ -780,6 +781,18 @@
 (use-package! nov
 :config
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Palimpsest                                                                       ;;
+;;                                                                                  ;;
+;; https://github.com/danielsz/Palimpsest                                           ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; This minor mode for Emacs provides several strategies to remove text without permanently deleting it.
+(use-package! palimpsest
+:config
+(setq palimpsest-prefix "Boneyard")
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
