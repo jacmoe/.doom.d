@@ -204,6 +204,7 @@
 ;; Palimpsest
 ;; Emacs-everywhere
 ;; Atomic-chrome
+;; Engine-mode
 ;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -860,6 +861,23 @@
  :defer t
  :init
  (add-transient-hook! 'focus-out-hook (atomic-chrome-start-server)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Engine-mode                                                                      ;;
+;;                                                                                  ;;
+;; https://github.com/hrs/engine-mode                                               ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! engine-mode
+ :init
+ (engine-mode t)
+ :config
+ (defengine duckduckgo
+  "https://duckduckgo.com/?q=%s"
+  :keybinding "d")
+ (defengine github
+  "https://github.com/search?ref=simplesearch&q=%s"
+  :keybinding "g"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

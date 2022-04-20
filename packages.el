@@ -67,3 +67,5 @@
 (package! palimpsest)
 
 (package! atomic-chrome)
+
+(package! engine-mode)
