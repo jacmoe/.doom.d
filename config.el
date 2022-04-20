@@ -592,7 +592,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Automatic typographical punctuation marks
 (use-package! typopunct
-  :defer t
   :config
   (typopunct-change-language 'english t))
 
