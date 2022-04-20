@@ -65,3 +65,5 @@
    :recipe (:host github :repo "toshism/org-super-links"))
 
 (package! palimpsest)
+
+(package! atomic-chrome)
