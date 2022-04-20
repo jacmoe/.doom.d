@@ -18,13 +18,13 @@
 ;; Variables                                                                        ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar my-dark-theme 'catppuccin)    ; catppuccin, misterioso, uwu
+(defvar my-dark-theme 'catppuccin)         ; catppuccin, misterioso, uwu
 (defvar my-light-theme 'tsdh-light)
 (defvar my-main-theme my-dark-theme)
-(defvar my-theme-shade "dark") ; can be light or dark. Used to color the Boon-mode cursor
+(defvar my-theme-shade "dark")             ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
-(defvar my-line-spacing 8) ; how much space between the lines?
-(defvar my-day-end 5) ; when does my day end?
+(defvar my-line-spacing 8)                 ; how much space between the lines?
+(defvar my-day-end 5)                      ; when does my day end?
 ;; Where do I store everything to be shared between machines?
 (defvar my-storage-directory "~/Dropbox/skriv/")
 (defvar my-personal-dictionary (concat my-storage-directory "aspell-en")) ; store personal dictionary here
@@ -41,7 +41,7 @@
       org-agenda-files (list org-directory
                              "~/enestaaende/enestaaende.org"
                              )
-)
+      )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -78,10 +78,10 @@
 (setq enable-local-eval t)                             ; Define safe local variables
 ;; Mouse-avoidance makes the frame "jump" on Windows...
 (unless (eq system-type 'windows-nt)
-        (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
+  (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
 ;; tell Undo-fu to only store linear history, not the full history
 (setq undo-fu-session-linear t)
-(map! "C-;" nil)                                         ; Don't steal my C-; !
+(map! "C-;" nil)                                       ; Don't steal my C-; !
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -98,8 +98,8 @@
 (setq frame-title-format '("%b – Hotel California of Creative Writing"))
 
 ;; Fonts - ordinary and variable pitch
-  (setq doom-font (font-spec :family "Overpass Mono" :size 20)
-        doom-variable-pitch-font (font-spec :family "Alegreya" :size 28))
+(setq doom-font (font-spec :family "Overpass Mono" :size 20)
+      doom-variable-pitch-font (font-spec :family "Alegreya" :size 28))
 
 ;; Theme
 (setq doom-theme my-main-theme)
@@ -220,6 +220,7 @@
 
 ;; Org-habit
 (use-package! org-habit
+  :defer t
   :after org
   :config
   (setq org-habit-following-days 7
@@ -229,6 +230,7 @@
 
 ;; use :ignore: tags to ignore the heading, but keep the content
 (use-package! ox-extra
+  :defer t
   :after org
   :config
   (ox-extras-activate '(ignore-headlines))
@@ -237,12 +239,12 @@
 (add-hook! org-mode (org-indent-mode -1))
 
 (after! org
-(custom-set-faces!
-  '((org-block) :background nil)
-  )
+  (custom-set-faces!
+    '((org-block) :background nil)
+    )
   (defface redd
     '((((class color) (min-colors 88) (background light))
-      :foreground "red"))
+       :foreground "red"))
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
@@ -250,27 +252,27 @@
     '(org-level-2 :height 1.1 :weight bold :slant normal)
     '(org-level-3 :height 1.0 :weight bold :slant normal)
     '(org-document-title   ;:foreground ,(doom-color 'black)
-                           :family "ETBembo"
-                           :height 250
-                           :weight bold)))
+      :family "ETBembo"
+      :height 250
+      :weight bold)))
 
 (after! org
   (setq org-startup-folded 'show2levels
         org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-todo-keyword-faces
-                '(("todo" . "goldenrod1") ("fixme" . "goldenrod1") ("idea" . "goldenrod1")
-                ("draft" . "coral2") ("revise" . "PaleGreen4")
-                "|" ("done" . "DarkOrchid3"))
+        '(("todo" . "goldenrod1") ("fixme" . "goldenrod1") ("idea" . "goldenrod1")
+          ("draft" . "coral2") ("revise" . "PaleGreen4")
+          "|" ("done" . "DarkOrchid3"))
         org-todo-keywords
-                '((sequence "draft(t)" "revise(r)" "|" "done(d)")
-                (sequence "fixme" "|" "fixed")
-                (sequence "todo" "|" "done"))
+        '((sequence "draft(t)" "revise(r)" "|" "done(d)")
+          (sequence "fixme" "|" "fixed")
+          (sequence "todo" "|" "done"))
         org-tag-faces
-                '(
-                  ("noexport" . (:foreground "#606060" :weight normal))
-                  ("nowc" . (:foreground "#606060" :weight normal))
-                  )
+        '(
+          ("noexport" . (:foreground "#606060" :weight normal))
+          ("nowc" . (:foreground "#606060" :weight normal))
+          )
         ;; Don't pollute the text with markers
         org-hide-emphasis-markers t
         org-return-follows-link t ; hitting RETURN follows the link
@@ -283,8 +285,8 @@
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
-       "* %?\n%t\n%i\n%a"))
-))
+           "* %?\n%t\n%i\n%a"))
+        ))
 
 (defun org-habit-streak-count ()
   (goto-char (point-min))
@@ -359,15 +361,17 @@
 ;; https://github.com/org-roam/org-roam-ui                                          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! websocket
-    :after org-roam)
+  :defer t
+  :after org-roam)
 
 (use-package! org-roam-ui
-    :after org-roam
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+  :defer t
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -377,6 +381,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; an emacs/org-mode package for tracking your writing progress in an org-table.
 (use-package! org-tracktable
+  :defer t
   :config
   (setq org-tracktable-daily-goal my-org-tracktable-daily-goal
         org-tracktable-day-delay my-day-end))
@@ -389,6 +394,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make invisible parts of Org elements appear visible.
 (use-package! org-appear
+  :defer t
   :hook (org-mode . org-appear-mode)
   :config
   (setq org-appear-autoemphasis t
@@ -405,6 +411,7 @@
 ;; https://github.com/marcinkoziej/org-pomodoro                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! org-pomodoro
+  :defer t
   :config
   (setq
    org-pomodoro-play-sounds nil ; don't play sounds
@@ -420,22 +427,23 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! org-super-agenda
+  :defer t
   :after org-agenda
   :init
   (setq org-super-agenda-groups '((:name "Today"
-                                         :time-grid t
-                                         :scheduled today)
+                                   :time-grid t
+                                   :scheduled today)
                                   (:name "Due today"
-                                         :deadline today)
+                                   :deadline today)
                                   (:name "Important"
-                                         :priority "A")
+                                   :priority "A")
                                   (:name "Overdue"
-                                         :deadline past)
+                                   :deadline past)
                                   (:name "Due soon"
-                                         :deadline future)))
+                                   :deadline future)))
   :config
   (org-super-agenda-mode)
-)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -444,15 +452,16 @@
 ;; https://github.com/toshism/org-super-links                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! org-super-links
-:after org
-:config
+  :defer t
+  :after org
+  :config
   (map! :map org-mode-map
         :localleader
         :prefix ("S" . "org-super-links")
         "l" #'org-super-links-link
         "s" #'org-super-links-store-link
         "i" #'org-super-links-insert-link
-))
+        ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -461,7 +470,8 @@
 ;; https://github.com/nobiot/org-transclusion                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! org-transclusion
-:after org)
+  :defer t
+  :after org)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -475,7 +485,7 @@
   (setq org-cite-global-bibliography citar-bibliography)
   (setq ;;citar-library-paths '("/path/to/library/files/")
    citar-notes-paths (list org-roam-directory))
-)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -486,7 +496,7 @@
 ;; Org exporter backend that exports Org to Hugo-compatible Markdown
 (after! ox-hugo
   (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography")
-)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -518,6 +528,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! org-journal
+  :defer t
   :after org
   :config
   (setq org-journal-dir my-journal-directory
@@ -534,9 +545,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; add annotations to arbitrary files without changing the files themselves.
 (use-package! annotate
+  :defer t
   :config
   (setq annotate-database-confirm-deletion t)
-)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -545,6 +557,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Interactive spelling
 (use-package! ispell
+  :defer t
   :config
   (setq ispell-dictionary "en")
   (setq ispell-personal-dictionary my-personal-dictionary)
@@ -579,6 +592,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Automatic typographical punctuation marks
 (use-package! typopunct
+  :defer t
   :config
   (typopunct-change-language 'english t))
 
@@ -589,7 +603,8 @@
 ;; https://github.com/gareth-rees/smart-quotes                                      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Only used for the "smart-quotes-smarten" function
-(use-package! smart-quotes)
+(use-package! smart-quotes
+  :defer t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -600,6 +615,7 @@
 ;; An Ergonomic Command Mode for Emacs
 ;; Run tutorial with M-x boon-tutorial
 (use-package! boon
+  :defer t
   :init
   (require 'boon-qwerty)
   (require 'boon-tutorial)
@@ -638,6 +654,7 @@
 ;; https://github.com/raxod502/ctrlf                                                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! ctrlf
+  :defer t
   :config
   (ctrlf-mode t)
   )
@@ -669,10 +686,11 @@
 ;; https://github.com/manuel-uberti/flymake-proselint                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! flymake-proselint
+  :defer t
   :init
   (add-hook! #'org-mode-hook (lambda ()
-                              (flymake-mode)
-                              (flymake-proselint-setup)))
+                               (flymake-mode)
+                               (flymake-proselint-setup)))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -684,7 +702,8 @@
 ;; Smog means "Simple Measure Of Gobbledygook". Checks buffer for readability
 ;; Prerequisite: apt install diction on Ubunbu
 (use-package smog
- :config (setq smog-command "style -L en"))
+  :defer t
+  :config (setq smog-command "style -L en"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -693,10 +712,11 @@
 ;; https://github.com/agzam/mw-thesaurus.el                                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! mw-thesaurus
+  :defer t
   :init
   (if (boundp 'my-mw-api-key)
       (setq mw-thesaurus--api-key my-mw-api-key))
-)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -705,6 +725,7 @@
 ;; https://github.com/SavchenkoValeriy/emacs-powerthesaurus                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! powerthesaurus
+  :defer t
   :bind
   ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
   ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
@@ -717,20 +738,21 @@
 ;; https://github.com/tecosaur/lexic                                                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! lexic
- :bind
- ("<f8>" . +lookup/dictionary-definition-lexic)
- ("S-<f8>" . lexic-search)
-)
+  :defer t
+  :bind
+  ("<f8>" . +lookup/dictionary-definition-lexic)
+  ("S-<f8>" . lexic-search)
+  )
 
 (defadvice! +lookup/dictionary-definition-lexic (identifier &optional
- arg) "Look up the definition of the word at point (or selection) using
+                                                            arg) "Look up the definition of the word at point (or selection) using
  `lexic-search'."
- :override #'+lookup/dictionary-definition
- (interactive
-  (list (or (doom-thing-at-point-or-region 'word)
-            (read-string "Look up in dictionary: "))
-        current-prefix-arg))
- (lexic-search identifier nil nil t))
+                                                            :override #'+lookup/dictionary-definition
+                                                            (interactive
+                                                             (list (or (doom-thing-at-point-or-region 'word)
+                                                                       (read-string "Look up in dictionary: "))
+                                                                   current-prefix-arg))
+                                                            (lexic-search identifier nil nil t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -747,6 +769,7 @@
 ;; https://github.com/browse-kill-ring/browse-kill-ring                             ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! browse-kill-ring
+  :defer t
   :bind
   ("M-y" . 'browse-kill-ring)
   )
@@ -758,10 +781,11 @@
 ;; https://github.com/gonewest818/dimmer.el                                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! dimmer
-:init
-(dimmer-mode t)
-(setq dimmer-adjustment-mode :foreground)
-(setq dimmer-fraction 0.30))
+  :defer t
+  :init
+  (dimmer-mode t)
+  (setq dimmer-adjustment-mode :foreground)
+  (setq dimmer-fraction 0.30))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -770,8 +794,9 @@
 ;; https://github.com/joaotavora/yasnippet                                          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! yasnippet
-:bind
-   ("C-c s n" . yas-new-snippet))
+  :defer t
+  :bind
+  ("C-c s n" . yas-new-snippet))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -780,8 +805,9 @@
 ;; https://depp.brause.cc/nov.el/                                                   ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! nov
-:config
-(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+  :defer t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -791,9 +817,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; This minor mode for Emacs provides several strategies to remove text without permanently deleting it.
 (use-package! palimpsest
-:config
-(setq palimpsest-prefix "Boneyard")
-)
+  :defer t
+  :config
+  (setq palimpsest-prefix "Boneyard")
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -907,13 +934,13 @@ Imitates the look of wordprocessors a bit."
   :global nil
   (if writing-header-line-mode
       (progn
-      (setq header-line-format
-            (concat
-             (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe)
-             (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
-             (propertize " " 'display (list 'space :width 'text) 'face (list (list :height 400) 'default))
-             (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
-             (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe))) ;
+        (setq header-line-format
+              (concat
+               (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe)
+               (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
+               (propertize " " 'display (list 'space :width 'text) 'face (list (list :height 400) 'default))
+               (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
+               (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe))) ;
         (setq mode-line-format header-line-format))
     (setq header-line-format writing-header--default-format
           mode-line-format writing-modeline--default-format)))
