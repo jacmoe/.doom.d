@@ -857,9 +857,9 @@
 ;; https://github.com/alpha22jp/atomic-chrome                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! atomic-chrome
-  :init
-  (atomic-chrome-start-server)
-)
+ :defer t
+ :init
+ (add-transient-hook! 'focus-out-hook (atomic-chrome-start-server)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
