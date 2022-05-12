@@ -40,6 +40,7 @@
       org-archive-location (concat org-directory ".archive/%s::")
       org-agenda-files (list org-directory
                              "~/enestaaende/enestaaende.org"
+                             "~/habits/habits.org"
                              )
       )
 
@@ -225,7 +226,6 @@
 
 ;; Org-habit
 (use-package! org-habit
-  :defer t
   :after org
   :config
   (setq org-habit-following-days 7
@@ -235,7 +235,6 @@
 
 ;; use :ignore: tags to ignore the heading, but keep the content
 (use-package! ox-extra
-  :defer t
   :after org
   :config
   (ox-extras-activate '(ignore-headlines))
