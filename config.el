@@ -123,6 +123,8 @@
 ;; Misc settings
 (setq display-line-numbers-type nil)                        ; Do not show line numbers
 (display-time-mode 1)                                       ; Display time in modeline
+(setq display-time-format "%H:%M")                          ; Set format of clock (Hours:Minutes)
+(setq display-time-24hr-format 1)                           ; Clock is using 24 hour format
 (fringe-mode '(80 . 80))                                    ; Show vertical fringes
 (blink-cursor-mode t)                                       ; The cursor should blink
 (setq-default line-spacing my-line-spacing)                 ; The amount of space between lines in pixels
