@@ -288,6 +288,10 @@
         ;; by asking what to do with the clock time
         org-clock-idle-time 10
         org-latex-toc-command "\\tableofcontents \\clearpage" ; Force page break after TOC for PDF exports
+        org-latex-image-default-width ""
+        org-latex-image-default-scale "0.4"
+        org-latex-images-centered nil
+        org-latex-toc-command "\\clearpage \\tableofcontents \\clearpage"
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
