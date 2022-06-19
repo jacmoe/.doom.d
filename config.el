@@ -663,7 +663,6 @@
 ;; https://github.com/raxod502/ctrlf                                                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! ctrlf
-  :defer t
   :config
   (ctrlf-mode t)
   )
@@ -790,7 +789,6 @@
 ;; https://github.com/gonewest818/dimmer.el                                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! dimmer
-  :defer t
   :init
   (dimmer-mode t)
   (setq dimmer-adjustment-mode :foreground)
