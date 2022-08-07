@@ -59,7 +59,7 @@
 (package! uwu-theme
    :recipe (:host github :repo "kborling/uwu-theme"))
 
-(package! catppuccin-theme)
+;; (package! catppuccin-theme)
 
 (package! org-super-links
    :recipe (:host github :repo "toshism/org-super-links"))
