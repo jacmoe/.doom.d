@@ -120,6 +120,10 @@
   (setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38)))
   )
 
+(if (equal (getenv "MY_MACHINE") "laptop")
+    (setq initial-frame-alist '((top . 28) (left . 46) (width . 90) (height . 26)))
+ )
+
 ;; Misc settings
 (setq display-line-numbers-type nil)                        ; Do not show line numbers
 (display-time-mode 1)                                       ; Display time in modeline
