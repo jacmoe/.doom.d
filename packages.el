@@ -69,3 +69,9 @@
 (package! atomic-chrome)
 
 (package! engine-mode)
+
+(package! ef-themes)
+
+(package! denote)
+
+(package! org-drill)
