@@ -75,3 +75,5 @@
 (package! denote)
 
 (package! org-drill)
+
+(package! anki-editor)
