@@ -18,8 +18,8 @@
 ;; Variables                                                                        ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar my-dark-theme 'misterioso)         ; catppuccin, misterioso, uwu
-(defvar my-light-theme 'tsdh-light)
+(defvar my-dark-theme 'ef-night)
+(defvar my-light-theme 'ef-day)
 (defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark")             ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
@@ -212,6 +212,7 @@
 ;; Emacs-everywhere
 ;; Atomic-chrome
 ;; Engine-mode
+;; EF-Themes
 ;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -637,9 +638,9 @@
   (setq boon-insert-cursor-color "orange")
   (if (equal my-theme-shade "dark")
       (progn
-        (setq boon-default-cursor-color "white")
+        (setq boon-default-cursor-color "#00ccff")
         )
-    (setq boon-default-cursor-color "black")
+    (setq boon-default-cursor-color "#cf1f00")
     )
   (define-key boon-command-map "L" 'forward-sentence)
   (define-key boon-command-map "K" 'backward-sentence)
@@ -888,6 +889,17 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
+;; EF-Themes                                                                        ;;
+;;                                                                                  ;;
+;; https://github.com/prot/ef-themes                                                ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(after! ef-themes
+  (setq ef-themes-mixed-fonts 1)
+  (ef-themes--load-theme my-main-theme)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
 ;; Miscellaneous                                                                    ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -987,33 +999,17 @@ Imitates the look of wordprocessors a bit."
 ;; turn on dark theme
 (defun go-dark-theme ()
   (interactive)
-  (setq boon-default-cursor-color "white")
+  (setq boon-default-cursor-color "#00ccff")
   (setq my-theme-shade "dark")
-  (load-theme my-dark-theme t)
+  (ef-themes--load-theme my-dark-theme)
   )
 
 ;; turn on light theme
 (defun go-light-theme ()
   (interactive)
-  (setq boon-default-cursor-color "black")
+  (setq boon-default-cursor-color "#cf1f00")
   (setq my-theme-shade "light")
-  (load-theme my-light-theme)
-  )
-
-;; turn on poet theme
-(defun poet-theme ()
-  (interactive)
-  (setq boon-default-cursor-color "black")
-  (setq my-theme-shade "light")
-  (load-theme 'poet t)
-  )
-
-;; turn on typo theme
-(defun typo-theme ()
-  (interactive)
-  (setq boon-default-cursor-color "black")
-  (setq my-theme-shade "light")
-  (load-theme 'typo t)
+  (ef-themes--load-theme my-light-theme)
   )
 
 ;; switch between light and dark theme
