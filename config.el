@@ -92,7 +92,7 @@
 ;; convince Emacs to trust themes so that we can install them
 (setq custom-safe-themes t)
 ;; Fancy splash screen
-(setq fancy-splash-image (expand-file-name "splash/emacs.png" doom-private-dir))
+(setq fancy-splash-image (expand-file-name "splash/emacs.png" doom-user-dir))
 ;; Remove all but the first menu entry on the splash screen
 (setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
 ;; Set the title
