@@ -292,7 +292,7 @@
         ;; If idle for more than 10 minutes, resolve the things
         ;; by asking what to do with the clock time
         org-clock-idle-time 10
-        org-html-htmlize-output-type 'css ; do not use inline css for HTML export
+        org-html-htmlize-output-type nil ; do not use inline css for HTML export
         org-latex-toc-command "\\tableofcontents \\clearpage" ; Force page break after TOC for PDF exports
         org-latex-image-default-width ""
         org-latex-image-default-scale "0.4"
