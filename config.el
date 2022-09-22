@@ -656,6 +656,8 @@
         )
     (setq boon-default-cursor-color "#cf1f00")
     )
+  (define-key boon-command-map "u" 'move-beginning-of-line)
+  (define-key boon-command-map "p" 'move-end-of-line)
   (define-key boon-command-map "L" 'forward-sentence)
   (define-key boon-command-map "K" 'backward-sentence)
   (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
