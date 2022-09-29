@@ -109,11 +109,6 @@ STARDICT_DATA_DIR="~/stardict"
 export STARDICT_DATA_DIR
 #+END_SRC
 
-**** Smog
-[[https://github.com/zzkt/smog][Smog]] stands for Simple Measure of Gobbledygook and uses =diction= or =style= command-line tools to analyse the writing style, word use and readability of the prose.
-
-=sudo apt install diction=
-
 **** Hugo
 I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
 **** PDF diff and export
