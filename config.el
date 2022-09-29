@@ -83,7 +83,7 @@
 ;; tell Undo-fu to only store linear history, not the full history
 (setq undo-fu-session-linear t)
 (map! "C-;" nil)                                       ; Don't steal my C-; !
-(setq emojify-download-emojis-p t)                     ; Force Doom-Emacs to download emojis automatically
+(setq emojify-download-emojis-p t)                     ; Force Doom-Emacs to download emojis without asking
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
