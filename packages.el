@@ -22,8 +22,6 @@
 
 (package! flymake-proselint)
 
-(package! smog)
-
 ;; (package! orgdiff :recipe (:host github :repo "tecosaur/orgdiff"))
 
 (package! mw-thesaurus)
