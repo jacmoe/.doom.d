@@ -66,3 +66,5 @@
 (package! org-drill)
 
 (package! anki-editor)
+
+(package! vegetative-theme)
