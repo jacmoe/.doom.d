@@ -93,22 +93,6 @@ Proselint is required by the on-the-fly language checker.
 
 Simply follow the [[https://github.com/amperser/proselint#installation][Proselint installation instructions]] and make sure to, if on Windows, to add the location of the Proselint binary to your PATH. The message you get from Python's pip installation procedure reminds you of what exact path you need to add.
 
-**** Lexic
-[[https://github.com/tecosaur/lexic][Lexic]] looks up words in local dictionaries, as opposed to online dictionaries. It requires you to install the Stardict command-line tool:
-
-=sudo apt install sdcv=
-
-Then, create a directory in your home directory named “stardict” to store the dictionaries, and run the =loaddicts.sh= script to download, unpack and install Stardict dictionaries into your newly created directory.
-
-You need to tell the Stardict command-line tool where to find the dictionaries by setting the =STARDICT_DATA_DIR= variable.
-
-On Linux:
-
-#+BEGIN_SRC
-STARDICT_DATA_DIR="~/stardict"
-export STARDICT_DATA_DIR
-#+END_SRC
-
 **** Hugo
 I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
 **** PDF diff and export
@@ -133,7 +117,7 @@ If it doesn’t find any errors, you should be able to successfully run this Ema
 *** Paths and Personal Info
 You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
 *** Fonts
-This configuration uses two fonts, [[https://github.com/RedHatOfficial/Overpass][Overpass Mono]] and [[https://www.1001freefonts.com/alegreya.font][Alegreya]], the first is mono–spaced and the second is a variable width font that’s great for reading/writing. Install those on your system so that Emacs can use them.
+This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpass]] fonts. Install both ~Overpass~ and ~Overpass Mono~ on your system so that Emacs can use them.
 
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
 
