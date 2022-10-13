@@ -202,7 +202,6 @@
 ;; Flymake-proselint
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
-;; Lexic
 ;; Wwg - Writer Word Goals
 ;; Browse-kill-ring
 ;; Dimmer
@@ -666,7 +665,7 @@
   (define-key boon-command-map "M" 'doom-modeline-mode)
   (define-key boon-command-map "w" 'org-tracktable-status)
   (define-key boon-command-map "æ" 'boon-smarter-forward)
-  (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
+  ;; (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
   (add-hook 'ibuffer-hook 'turn-off-boon-mode)
   (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
   (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
@@ -747,29 +746,6 @@
   ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
   ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
   )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Lexic                                                                            ;;
-;;                                                                                  ;;
-;; https://github.com/tecosaur/lexic                                                ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! lexic
-  :defer t
-  :bind
-  ("<f8>" . +lookup/dictionary-definition-lexic)
-  ("S-<f8>" . lexic-search)
-  )
-
-(defadvice! +lookup/dictionary-definition-lexic (identifier &optional
-                                                            arg) "Look up the definition of the word at point (or selection) using
- `lexic-search'."
-                                                            :override #'+lookup/dictionary-definition
-                                                            (interactive
-                                                             (list (or (doom-thing-at-point-or-region 'word)
-                                                                       (read-string "Look up in dictionary: "))
-                                                                   current-prefix-arg))
-                                                            (lexic-search identifier nil nil t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

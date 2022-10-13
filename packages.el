@@ -36,9 +36,6 @@
 
 (package! hide-mode-line)
 
-;; (package! lexic :recipe (:host github :repo "tecosaur/lexic"))
-(package! lexic :recipe (:local-repo "lexic"))
-
 (package! draft-mode)
 
 (package! wwg)
