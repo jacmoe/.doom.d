@@ -113,6 +113,9 @@
 (custom-set-faces!
   '(doom-modeline-buffer-modified :foreground "orange"))
 
+(custom-set-faces!
+  '(italic :slant oblique :foreground "teal"))
+
 ;; Setting initial size and position of frame
 ;; It is a necessary hack because Doom doesn't seem to
 ;; care about my frame size when restoring sessions ...
