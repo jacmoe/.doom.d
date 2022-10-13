@@ -104,7 +104,7 @@
 
 ;; Fonts - ordinary and variable pitch
 (setq doom-font (font-spec :family "Overpass Mono" :size 20)
-      doom-variable-pitch-font (font-spec :family "Alegreya" :size 28))
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 28))
 
 ;; Theme
 (setq doom-theme my-main-theme)
