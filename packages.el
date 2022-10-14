@@ -28,16 +28,10 @@
 
 (package! nov)
 
-(package! hide-mode-line)
-
-(package! draft-mode)
-
-(package! rainbow-mode)
-
 (unpin! org-roam)
 (package! org-roam-ui)
 
-(package! citeproc)
+(package! citeproc) ; for Ox-Hugo when it exports citations in CSL format
 
 (package! palimpsest)
 
