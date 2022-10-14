@@ -20,10 +20,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-dark-theme 'ef-night)
 (defvar my-light-theme 'ef-day)
-(defvar my-main-theme my-dark-theme)
-(defvar my-theme-shade "dark")             ; can be light or dark. Used to color the Boon-mode cursor
+(defvar my-main-theme my-light-theme)
+(defvar my-theme-shade "light")             ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
-(defvar my-line-spacing 12)                 ; how much space between the lines?
+(defvar my-line-spacing 16)                 ; how much space between the lines?
 (defvar my-day-end 5)                      ; when does my day end?
 ;; Where do I store everything to be shared between machines?
 (defvar my-storage-directory "~/Dropbox/skriv/")
@@ -880,6 +880,8 @@
 (after! ef-themes
   (setq ef-themes-mixed-fonts 1)
   (ef-themes--load-theme my-main-theme)
+  (turn-off-boon-mode)
+  (turn-on-boon-mode)
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
