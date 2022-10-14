@@ -10,10 +10,6 @@
 (package! org-appear :recipe (:host github :repo "awth13/org-appear")
   :pin "303fcc8d5d85a4ebff2798dab50b2ccc0255ea5f")
 
-(package! org-super-agenda)
-
-(package! org-transclusion)
-
 (package! annotate)
 
 (package! typopunct)
@@ -21,8 +17,6 @@
 (package! smart-quotes)
 
 (package! flymake-proselint)
-
-;; (package! orgdiff :recipe (:host github :repo "tecosaur/orgdiff"))
 
 (package! mw-thesaurus)
 
@@ -38,17 +32,12 @@
 
 (package! draft-mode)
 
-(package! wwg)
-
 (package! rainbow-mode)
 
 (unpin! org-roam)
 (package! org-roam-ui)
 
 (package! citeproc)
-
-(package! org-super-links
-   :recipe (:host github :repo "toshism/org-super-links"))
 
 (package! palimpsest)
 
@@ -58,10 +47,4 @@
 
 (package! ef-themes)
 
-(package! denote)
-
-(package! org-drill)
-
 (package! anki-editor)
-
-(package! vegetative-theme)

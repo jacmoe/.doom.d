@@ -19,11 +19,13 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-dark-theme 'ef-night)
+(defvar my-boon-default-cursor-color-dark "#00ccff") ; boon cursor for ef-night
 (defvar my-light-theme 'ef-day)
+(defvar my-boon-default-cursor-color-light "#cf1f00") ; boon cursor for ef-day
 (defvar my-main-theme my-light-theme)
-(defvar my-theme-shade "light")             ; can be light or dark. Used to color the Boon-mode cursor
+(defvar my-theme-shade "light")            ; can be light or dark. Used to color the Boon-mode cursor
 (defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
-(defvar my-line-spacing 16)                 ; how much space between the lines?
+(defvar my-line-spacing 36)                ; how much space between the lines?
 (defvar my-day-end 5)                      ; when does my day end?
 ;; Where do I store everything to be shared between machines?
 (defvar my-storage-directory "~/Dropbox/skriv/")
@@ -60,7 +62,7 @@
 ;; Load secret settings from .secret.el which needs to be created.
 ;; Can be API keys, login information, etc.
 ;; See secret.el.example
-(setq secret-file (expand-file-name ".secret.el" doom-private-dir))
+(setq secret-file (expand-file-name ".secret.el" doom-user-dir))
 (when (file-exists-p secret-file)
   (load secret-file))
 
@@ -172,8 +174,6 @@
 (defalias 'mwebster 'mw-thesaurus-lookup-dwim)
 (defalias 'pt-defs 'powerthesaurus-lookup-definitions-dwim)
 (defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
-(defalias 'wwg-goal 'wwg/set-goal-current-buffer)
-(defalias 'wwg-1k 'wwg/set-1k-goal-current-buffer)
 (defalias 'whmode 'writing-header-line-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -187,12 +187,8 @@
 ;; Org-tracktable
 ;; Org-appear
 ;; Org-pomodoro
-;; Org-super-agenda
-;; Org-super-links
-;; Org-transclusion
 ;; Citar
 ;; Ox-Hugo
-;; Orgdiff
 ;; Org-journal
 ;; Annotate
 ;; ISpell
@@ -206,7 +202,6 @@
 ;; Flymake-proselint
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
-;; Wwg - Writer Word Goals
 ;; Browse-kill-ring
 ;; Dimmer
 ;; Yasnippet
@@ -455,58 +450,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; Org-super-agenda                                                                 ;;
-;;                                                                                  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! org-super-agenda
-  :defer t
-  :after org-agenda
-  :init
-  (setq org-super-agenda-groups '((:name "Today"
-                                   :time-grid t
-                                   :scheduled today)
-                                  (:name "Due today"
-                                   :deadline today)
-                                  (:name "Important"
-                                   :priority "A")
-                                  (:name "Overdue"
-                                   :deadline past)
-                                  (:name "Due soon"
-                                   :deadline future)))
-  :config
-  (org-super-agenda-mode)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Org-super-links                                                                  ;;
-;;                                                                                  ;;
-;; https://github.com/toshism/org-super-links                                       ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! org-super-links
-  :defer t
-  :after org
-  :config
-  (map! :map org-mode-map
-        :localleader
-        :prefix ("S" . "org-super-links")
-        "l" #'org-super-links-link
-        "s" #'org-super-links-store-link
-        "i" #'org-super-links-insert-link
-        ))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Org-transclusion                                                                 ;;
-;;                                                                                  ;;
-;; https://github.com/nobiot/org-transclusion                                       ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! org-transclusion
-  :defer t
-  :after org)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
 ;; Citar                                                                            ;;
 ;;                                                                                  ;;
 ;; https://github.com/bdarcus/citar                                                 ;;
@@ -529,30 +472,6 @@
 (after! ox-hugo
   (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography")
   )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Orgdiff                                                                          ;;
-;;                                                                                  ;;
-;; https://github.com/tecosaur/orgdiff                                              ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (use-package! orgdiff
-;;   :config
-;;   (defun +orgdiff-nicer-change-colours ()
-;;     (goto-char (point-min))
-;;     ;; Set red/blue based on whether chameleon is being used
-;;     (if (search-forward "%% make document follow Emacs theme" nil t)
-;;         (setq red  (substring (doom-blend 'red 'fg 0.8) 1)
-;;               blue (substring (doom-blend 'blue 'teal 0.6) 1))
-;;       (setq red  "c82829"
-;;             blue "00618a"))
-;;     (when (and (search-forward "%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF" nil t)
-;;                (search-forward "\\RequirePackage{color}" nil t))
-;;       (when (re-search-forward "definecolor{red}{rgb}{1,0,0}" (cdr (bounds-of-thing-at-point 'line)) t)
-;;         (replace-match (format "definecolor{red}{HTML}{%s}" red)))
-;;       (when (re-search-forward "definecolor{blue}{rgb}{0,0,1}" (cdr (bounds-of-thing-at-point 'line)) t)
-;;         (replace-match (format "definecolor{blue}{HTML}{%s}" blue)))))
-;;   (add-to-list 'orgdiff-latexdiff-postprocess-hooks #'+orgdiff-nicer-change-colours))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -750,14 +669,6 @@
   ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
   ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
   )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Wwg - Writer Word Goals                                                          ;;
-;;                                                                                  ;;
-;; https://github.com/ag91/writer-word-goals                                        ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! wwg)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -985,7 +896,7 @@ Imitates the look of wordprocessors a bit."
 ;; turn on dark theme
 (defun go-dark-theme ()
   (interactive)
-  (setq boon-default-cursor-color "#00ccff")
+  (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
   (setq my-theme-shade "dark")
   (ef-themes--load-theme my-dark-theme)
   )
@@ -993,7 +904,8 @@ Imitates the look of wordprocessors a bit."
 ;; turn on light theme
 (defun go-light-theme ()
   (interactive)
-  (setq boon-default-cursor-color "#cf1f00")
+  (setq boon-default-cursor-color my-boon-default-cursor-color-light)
+
   (setq my-theme-shade "light")
   (ef-themes--load-theme my-light-theme)
   )
