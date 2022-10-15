@@ -33,8 +33,6 @@
 
 (package! citeproc) ; for Ox-Hugo when it exports citations in CSL format
 
-(package! palimpsest)
-
 (package! atomic-chrome)
 
 (package! engine-mode)

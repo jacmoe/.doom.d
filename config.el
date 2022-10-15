@@ -82,11 +82,9 @@
 ;; Mouse-avoidance makes the frame "jump" on Windows...
 (unless (eq system-type 'windows-nt)
   (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
-;; tell Undo-fu to only store linear history, not the full history
-(setq undo-fu-session-linear t)
+(setq undo-fu-session-linear t)                        ; tell Undo-fu to only store linear history, not the full history
 (map! "C-;" nil)                                       ; Don't steal my C-; !
 (setq emojify-download-emojis-p t)                     ; Force Doom-Emacs to download emojis without asking
-;; (setq dictionary-server "localhost")                   ; Tell Emacs to use local server for dictionary lookup
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -116,19 +114,18 @@
 (custom-set-faces!
   '(doom-modeline-buffer-modified :foreground "orange"))
 
+;; Because Emacs do not render italics at all when markup is hidden force it to render it differently
 (custom-set-faces!
   '(italic :slant oblique :foreground "teal"))
 
 ;; Setting initial size and position of frame
-;; It is a necessary hack because Doom doesn't seem to
-;; care about my frame size when restoring sessions ...
 (if (eq system-type 'windows-nt)
-    (setq initial-frame-alist '((top . 38) (left . 66) (width . 124) (height . 32)))
-  (setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38)))
+    (setq initial-frame-alist '((top . 38) (left . 66) (width . 124) (height . 32))) ; for Windows
+  (setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38))) ; for not Windows
   )
 
 (if (equal (getenv "MY_MACHINE") "laptop")
-    (setq initial-frame-alist '((top . 28) (left . 46) (width . 90) (height . 26)))
+    (setq initial-frame-alist '((top . 28) (left . 46) (width . 90) (height . 26))) ; my laptop has a low screen resolution
  )
 
 ;; Misc settings
@@ -148,15 +145,17 @@
 ;; Global keybindings                                                               ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(map! "<f9>" #'doom-big-font-mode)   ; Toggle big font mode
+(map! "<f9>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
+(map! "<f9>" #'doom-big-font-mode)               ; Toggle big font mode
+(map! "C-<f9>" #'+Zen/toggle)                    ; Toggle Zen mode
 (map!"C-<down>" #'enlarge-window)
 (map!"C-<up>" #'shrink-window)
 (map!"C-<left>" #'enlarge-window-horizontally)
 (map!"C-<right>" #'shrink-window-horizontally)
-(map! "C-`" #'diff-buffer-with-file) ; view what is modified
-(map! "C-c t m" #'hide-mode-line-mode) ; hide the mode-line
-(map! "C-c t d" #'switch-theme) ; switch theme light/dark
-(map! "C-c n q" #'tb/capture-to-this-buffer) ; quick capture to this buffer
+(map! "C-`" #'diff-buffer-with-file)             ; view what is modified
+(map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
+(map! "C-c t d" #'switch-theme)                  ; switch theme light/dark
+(map! "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -206,7 +205,6 @@
 ;; Dimmer
 ;; Yasnippet
 ;; Nov.el
-;; Palimpsest
 ;; Emacs-everywhere
 ;; Atomic-chrome
 ;; Engine-mode
@@ -715,19 +713,6 @@
   :defer t
   :config
   (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Palimpsest                                                                       ;;
-;;                                                                                  ;;
-;; https://github.com/danielsz/Palimpsest                                           ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; This minor mode for Emacs provides several strategies to remove text without permanently deleting it.
-(use-package! palimpsest
-  :defer t
-  :config
-  (setq palimpsest-prefix "Boneyard")
-  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
