@@ -145,14 +145,14 @@
 ;; Global keybindings                                                               ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(map! "<f9>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
-(map! "<f9>" #'doom-big-font-mode)               ; Toggle big font mode
-(map! "C-<f9>" #'+Zen/toggle)                    ; Toggle Zen mode
+(map! "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
+(map! "<f9>" #'+zen/toggle)                      ; Toggle Zen mode
+(map! "C-<f9>" #'doom-big-font-mode)             ; Toggle big font mode
 (map!"C-<down>" #'enlarge-window)
 (map!"C-<up>" #'shrink-window)
 (map!"C-<left>" #'enlarge-window-horizontally)
 (map!"C-<right>" #'shrink-window-horizontally)
-(map! "C-`" #'diff-buffer-with-file)             ; view what is modified
+(map! "C-d" #'diff-buffer-with-file)             ; view what is modified
 (map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
 (map! "C-c t d" #'switch-theme)                  ; switch theme light/dark
 (map! "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
