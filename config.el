@@ -158,6 +158,18 @@
 (map! "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Keybindings defined elsewhere:                                                   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (map! "C-c t s" #'toggle-transparency)
+;; (map! "C-c k" #'my/kbdk)
+;; (map! "C-c u" #'my/kbus)
+;; ("<f6>" . turn-on-boon-mode)
+;; ("<f7>" . turn-off-boon-mode)
+;; ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
+;; ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
+;; ("C-c s n" . yas-new-snippet))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Aliases                                                                          ;;
 ;;                                                                                  ;;
@@ -173,7 +185,6 @@
 (defalias 'mwebster 'mw-thesaurus-lookup-dwim)
 (defalias 'pt-defs 'powerthesaurus-lookup-definitions-dwim)
 (defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
-(defalias 'whmode 'writing-header-line-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -586,7 +597,6 @@
   (define-key boon-command-map "M" 'doom-modeline-mode)
   (define-key boon-command-map "w" 'org-tracktable-status)
   (define-key boon-command-map "æ" 'boon-smarter-forward)
-  ;; (add-hook 'lexic-mode-hook 'turn-off-boon-mode)
   (add-hook 'ibuffer-hook 'turn-off-boon-mode)
   (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
   (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
@@ -848,35 +858,6 @@ comment box."
                      scroll-margin))
       (kill-local-variable `,local)))
   )
-
-
-;; Writing header mode-line minor mode
-;; A bug causes the doom mode-line to disappear when this
-;; minor mode is toggled off.
-;; Run M-x doom-modeline-mode twice to fix the missing modeline
-(defvar writing-header--default-format header-line-format
-  "Storage for the default `mode-line-format'.
-So it can be restored when 'writer-header-line-mode' is disabled.")
-
-(defvar writing-modeline--default-format mode-line-format)
-
-(define-minor-mode writing-header-line-mode
-  "Adds a bar with the same color as the fringe as the header-line.
-Imitates the look of wordprocessors a bit."
-  :init-value nil
-  :global nil
-  (if writing-header-line-mode
-      (progn
-        (setq header-line-format
-              (concat
-               (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe)
-               (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
-               (propertize " " 'display (list 'space :width 'text) 'face (list (list :height 400) 'default))
-               (propertize " " 'display (list 'space :width 'left-margin) 'face (list (list :height 400) 'default))
-               (propertize " " 'display (list 'space :width 'left-fringe) 'face 'fringe))) ;
-        (setq mode-line-format header-line-format))
-    (setq header-line-format writing-header--default-format
-          mode-line-format writing-modeline--default-format)))
 
 ;; turn on dark theme
 (defun go-dark-theme ()
