@@ -121,14 +121,6 @@ This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpa
 
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
 
-** Features Overview
-** Usage Notes
-** How do I?
-** Screenshots
-**** Looking up words in dictionaries
-The window on the right shows the entry in Merriam-Webster for the word “ancient”, while the menu on the bottom shows a list of synonyms. There are also lists of antonyms and example sentences.
-[[file:screenshots/lookup.png]]
-
 
 #  LocalWords:  emacs MSYS mingw aspell Proselint Lexic Stardict flyspell Elwyn
 #  LocalWords:  iBuffer Palahniuk Elmore Butterick Strunk Corbett Gowers
