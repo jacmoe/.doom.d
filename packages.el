@@ -40,3 +40,5 @@
 (package! ef-themes)
 
 (package! anki-editor)
+
+(package! org-wc)
