@@ -156,6 +156,11 @@
 (map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
 (map! "C-c t d" #'switch-theme)                  ; switch theme light/dark
 (map! "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
+(map! "M-1" (lambda() (interactive) (org-shifttab 1)))
+(map! "M-2" (lambda() (interactive) (org-shifttab 2)))
+(map! "M-3" (lambda() (interactive) (org-shifttab 3)))
+(map! "M-4" (lambda() (interactive) (org-shifttab 4)))
+(map! "M-5" (lambda() (interactive) (org-show-all '(headings drawers blocks))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keybindings defined elsewhere:                                                   ;;
