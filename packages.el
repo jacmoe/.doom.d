@@ -42,3 +42,5 @@
 (package! anki-editor)
 
 (package! org-wc)
+
+(package! writegood-mode :recipe (:host github :repo "bnbeckwith/writegood-mode"))
