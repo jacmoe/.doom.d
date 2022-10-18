@@ -213,7 +213,6 @@
 ;; Boon
 ;; CtrlF
 ;; Transparency
-;; Move-text
 ;; Flymake-proselint
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
@@ -800,6 +799,7 @@
 ;; Miscellaneous                                                                    ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; switch to Danish keyboard layout
 (defun my/kbdk ()
   (interactive)
@@ -847,7 +847,24 @@ comment box."
     (goto-char e)
     (set-marker e nil)))
 
-;; center scroll minor mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Last Edit                                                                        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun last-edit ()
+  "Go back to last add/delete edit"
+  (interactive)
+  (let* ((ubuf (cadr buffer-undo-list))
+     (beg (car ubuf))
+     (end (cdr ubuf)))
+    (cond
+     ((integerp beg) (goto-char beg))
+     ((stringp beg) (goto-char (abs end))
+      (message "DEL-> %s" (substring-no-properties beg)))
+     (t (message "No add/delete edit occurred")))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; center scroll minor mode                                                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-minor-mode prot/scroll-center-cursor-mode
   "Toggle centred cursor scrolling behavior"
   :init-value nil
@@ -863,6 +880,10 @@ comment box."
                      scroll-margin))
       (kill-local-variable `,local)))
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Theme functions                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; turn on dark theme
 (defun go-dark-theme ()
