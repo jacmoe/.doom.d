@@ -19,14 +19,19 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-dark-theme 'ef-night)
-(defvar my-boon-default-cursor-color-dark "#00ccff") ; boon cursor for ef-night
+(defvar my-boon-default-cursor-color-dark "#00ccff")  ; boon cursor for ef-night
 (defvar my-light-theme 'ef-day)
 (defvar my-boon-default-cursor-color-light "#cf1f00") ; boon cursor for ef-day
 (defvar my-main-theme my-dark-theme)
-(defvar my-theme-shade "dark")            ; can be light or dark. Used to color the Boon-mode cursor
-(defvar my-org-tracktable-daily-goal 1000) ; How many words do I want to write per day?
-(defvar my-line-spacing 28)                ; how much space between the lines?
-(defvar my-day-end 5)                      ; when does my day end?
+(defvar my-theme-shade "dark")                        ; can be light or dark. Used to color the Boon-mode cursor
+
+(defvar my-monospace-font "Overpass Mono")            ; Font to use for code
+(defvar my-variablespace-font "Overpass")             ; Font to use for writing
+
+(defvar my-org-tracktable-daily-goal 1000)            ; How many words do I want to write per day?
+(defvar my-line-spacing 28)                           ; how much space between the lines?
+(defvar my-day-end 5)                                 ; when does my day end?
+
 ;; Where do I store everything to be shared between machines?
 (defvar my-storage-directory "~/Dropbox/skriv/")
 (defvar my-personal-dictionary (concat my-storage-directory "aspell-en")) ; store personal dictionary here
@@ -34,6 +39,7 @@
 (setq annotate-file (concat my-storage-directory "annotations"))
 (setq bib-file (concat my-storage-directory "jacmoe.bib"))
 (defvar my-journal-directory (concat my-storage-directory "journal/"))
+
 ;; Org Directories
 (setq +org-roam-auto-backlinks-buffer t
       org-directory (concat my-storage-directory "org/")
@@ -104,8 +110,8 @@
   (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Hotel California of Creative Writing")))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family "Overpass Mono" :size 20)
-      doom-variable-pitch-font (font-spec :family "Overpass" :size 28))
+(setq doom-font (font-spec :family my-monospace-font :size 20)
+      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 28))
 
 ;; Theme
 (setq doom-theme my-main-theme)
@@ -274,13 +280,12 @@
     '(org-level-2 :height 1.1 :weight bold :slant normal)
     '(org-level-3 :height 1.0 :weight bold :slant normal)
     '(org-document-title   ;:foreground ,(doom-color 'black)
-      :family "ETBembo"
+      :family my-variablespace-font
       :height 250
       :weight bold)))
 
 (after! org
-  (setq org-startup-folded 'show2levels
-        org-enforce-todo-dependencies t
+  (setq org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-todo-keyword-faces
         '(("todo" . "goldenrod1") ("fixme" . "goldenrod1") ("idea" . "goldenrod1")
