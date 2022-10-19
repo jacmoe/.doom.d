@@ -1,0 +1,6 @@
+# name: hugoimg
+# key: hugoimg
+# --
+#+attr_html: :alt $1 :title $2 :width 100%
+[[/images/$4]]
+$0
