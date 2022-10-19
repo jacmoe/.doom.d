@@ -100,7 +100,7 @@ Even if you do not plan to make use of Latex, or Latexdiff, I found that install
 
 
 On Windows, using MSYS, I believe we can satisfy the PDF generation requirements by running:
-=pacman -S mingw-w64-x86_64-texlive-latex-extra= and =pacman -S mingw-w64-x86_64-texlive-bibtex-extra=
+=pacman -S mingw-w64-x86_64-texlive-latex-extra= and =pacman -S mingw-w64-x86_64-texlive-bibtex-extra= and =pacman -S mingw-w64-x86_64-texlive-fonts-extra=
 
 ** Installation
 Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
