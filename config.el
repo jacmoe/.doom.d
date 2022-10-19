@@ -299,6 +299,7 @@
         '(
           ("noexport" . (:foreground "#606060" :weight normal))
           ("nowc" . (:foreground "#606060" :weight normal))
+          ("ignore" . (:foreground "#606060" :weight normal))
           )
         ;; Don't pollute the text with markers
         org-hide-emphasis-markers t
