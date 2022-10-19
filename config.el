@@ -220,6 +220,7 @@
 ;; CtrlF
 ;; Transparency
 ;; Flymake-proselint
+;; Writegood-mode
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Browse-kill-ring
@@ -660,6 +661,26 @@
   (add-hook! #'org-mode-hook (lambda ()
                                (flymake-mode)
                                (flymake-proselint-setup)))
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Writegood-mode                                                                   ;;
+;;                                                                                  ;;
+;; https://github.com/bnbeckwith/writegood-mode                                     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! writegood-mode
+  :defer t
+  :init
+(setq my/weasel-words
+      '("actually"
+        "basically"
+        "easily"
+        "easy"
+        "simple"
+        "simply"))
+(setq writegood-weasel-words
+      (-concat writegood-weasel-words my/weasel-words))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
