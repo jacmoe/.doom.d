@@ -645,7 +645,7 @@
                     ;; Also handle undocumented (<active> <inactive>) form.
                     ((numberp (cadr alpha)) (cadr alpha)))
               100)
-         '(90 . 50) '(100 . 100)))))
+         '(86 . 50) '(100 . 100)))))
 
 (map! "C-c t s" #'toggle-transparency)
 
