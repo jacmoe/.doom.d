@@ -247,6 +247,7 @@
            #'visual-line-mode
            #'solaire-mode
            #'typopunct-mode
+           #'writegood-mode
            #'variable-pitch-mode)
 
 ;; Org-habit
