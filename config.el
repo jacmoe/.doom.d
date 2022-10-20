@@ -670,8 +670,7 @@
 ;; https://github.com/bnbeckwith/writegood-mode                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! writegood-mode
-  :defer t
-  :init
+  :config
 (setq my/weasel-words
       '("actually"
         "basically"
