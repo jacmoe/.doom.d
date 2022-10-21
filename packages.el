@@ -44,3 +44,5 @@
 (package! org-wc)
 
 (package! writegood-mode :recipe (:host github :repo "bnbeckwith/writegood-mode"))
+
+(package! grab-x-link)
