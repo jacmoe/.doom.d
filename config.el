@@ -600,7 +600,6 @@
     )
 
   ;; free keys
-  (define-key boon-command-map "e" 'ignore)
   (define-key boon-command-map "r" 'ignore)
   (define-key boon-command-map "y" 'ignore)
   (define-key boon-command-map "a" 'ignore)
@@ -614,7 +613,7 @@
   ;; qwerty row 1
   (define-key boon-command-map "q" '("quote" . boon-quote-character))
   (define-key boon-command-map "w" 'org-tracktable-status)
-  ;; e
+  (define-key boon-command-map "e" 'last-edit)
   ;; r
   (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
   ;; y
