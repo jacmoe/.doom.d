@@ -598,13 +598,26 @@
         )
     (setq boon-default-cursor-color "#cf1f00")
     )
+
+  ;; free keys
+  (define-key boon-command-map "e" 'ignore)
+  (define-key boon-command-map "r" 'ignore)
+  (define-key boon-command-map "y" 'ignore)
+  (define-key boon-command-map "a" 'ignore)
+  (define-key boon-command-map "f" 'ignore)
+  (define-key boon-command-map "g" 'ignore)
+  (define-key boon-command-map "h" 'ignore)
+  (define-key boon-command-map "z" 'ignore)
+  (define-key boon-command-map "b" 'ignore)
+  (define-key boon-command-map "m" 'ignore)
+
   ;; qwerty row 1
   (define-key boon-command-map "q" '("quote" . boon-quote-character))
   (define-key boon-command-map "w" 'org-tracktable-status)
-  (define-key boon-command-map "e" 'ignore)
-  (define-key boon-command-map "r" 'ignore)
+  ;; e
+  ;; r
   (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
-  (define-key boon-command-map "y" 'ignore)
+  ;; y
   (define-key boon-command-map "u" 'move-beginning-of-line)
   (define-key boon-moves-map "i"  'previous-line)
   (define-key boon-moves-map "o"  'next-line)
@@ -612,12 +625,12 @@
   (define-key boon-moves-map "O"  'forward-paragraph)
   (define-key boon-command-map "p" 'move-end-of-line)
   ;; qwerty row 2
-  (define-key boon-command-map "a" 'ignore)
+  ;; a
   (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
   (define-key boon-command-map "d" '("delete" . boon-take-region)) ; "delete"
-  (define-key boon-command-map "f" 'ignore)
-  (define-key boon-command-map "g" 'ignore)
-  (define-key boon-command-map "h" 'ignore)
+  ;; f
+  ;; g
+  ;; h
   (define-key boon-moves-map "j"  'boon-smarter-backward)
   (define-key boon-moves-map "k"  'backward-char)
   (define-key boon-moves-map "l"  'forward-char)
@@ -628,16 +641,16 @@
   (define-key boon-moves-map ";"  'boon-smarter-forward)
   (define-key boon-command-map "æ" 'boon-smarter-forward)
   ;; qwerty row 3
-  (define-key boon-command-map "z" 'ignore)
+  ;; z
   (define-key boon-command-map "x" 'boon-x-map)
   (define-key boon-command-map "c" 'boon-c-god)
   (define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
   (define-key boon-command-map "V" 'boon-open-next-line-and-insert)
   (define-key boon-command-map (kbd "C-v") 'boon-open-line-and-insert)
-  (define-key boon-command-map "b" 'ignore)
+  ;; b
   (define-key boon-command-map "n" 'org-narrow-to-subtree)
   (define-key boon-command-map "N" 'widen)
-  (define-key boon-command-map "m" 'ignore)
+  ;; m
   (define-key boon-moves-map "<"  'beginning-of-buffer)
   (define-key boon-moves-map ">"  'end-of-buffer)
 
