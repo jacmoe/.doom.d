@@ -1,0 +1,209 @@
+[
+  {
+    "name": "Hotel California",
+    "author": "Jacob Moena"
+  },
+  [
+    "Esc",
+    {
+      "x": 1
+    },
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    {
+      "x": 0.5
+    },
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    {
+      "x": 0.5
+    },
+    "F9",
+    "F10",
+    "F11",
+    "F12"
+  ],
+  [
+    {
+      "y": 0.5,
+      "c": "#f8d615"
+    },
+    "~\n`",
+    {
+      "c": "#cccccc"
+    },
+    "!\n1",
+    "@\n2",
+    "#\n3",
+    "$\n4",
+    "%\n5",
+    "^\n6",
+    "&\n7",
+    "*\n8",
+    "(\n9",
+    ")\n0",
+    "_\n-",
+    "+\n=",
+    "|\n\\",
+    "Back Space"
+  ],
+  [
+    {
+      "w": 1.5
+    },
+    "Tab",
+    {
+      "c": "#f8d615"
+    },
+    "Q\n\n\n\n\n\nquote",
+    {
+      "c": "#ac97d8"
+    },
+    "W",
+    {
+      "c": "#cccccc"
+    },
+    "E",
+    "R",
+    {
+      "c": "#f8d615"
+    },
+    "T\n\n\n\n\n\nchg chr",
+    {
+      "c": "#cccccc"
+    },
+    "Y",
+    {
+      "c": "#1db63a"
+    },
+    "U\n\n\n\n\n\n<i class='fa fa-fast-backward'></i>",
+    "I\n\n\n\n\n\n<i class='fa fa-arrow-up'></i>",
+    "O\n\n\n\n\n\n<i class='fa fa-arrow-down'></i>",
+    "P\n\n\n\n\n\n<i class='fa fa-fast-forward'></i>",
+    {
+      "c": "#cccccc"
+    },
+    "{\n[",
+    "}\n]",
+    {
+      "w": 1.5,
+      "h": 2,
+      "w2": 2.25,
+      "h2": 1,
+      "x2": -0.75,
+      "y2": 1
+    },
+    "Enter"
+  ],
+  [
+    {
+      "w": 1.75
+    },
+    "Caps Lock",
+    "A",
+    {
+      "c": "#ac97d8"
+    },
+    "S",
+    {
+      "c": "#f8d615"
+    },
+    "D",
+    {
+      "c": "#cccccc"
+    },
+    "F",
+    "G",
+    "H",
+    {
+      "c": "#1db63a",
+      "n": true
+    },
+    "J\n\n\n\n\n\n<i class='fa fa-arrow-left'></i>",
+    "K\n\n\n\n\n\n<i class='fa fa-arrow-left'></i>",
+    "L\n\n\n\n\n\n<i class='fa fa-arrow-right'></i>",
+    ":\n;\n\n\n\n\n<i class='fa fa-arrow-right'></i>",
+    {
+      "c": "#cccccc"
+    },
+    "\"\n'"
+  ],
+  [
+    {
+      "w": 2.25
+    },
+    "Shift",
+    "Z",
+    {
+      "c": "#5eb1e7"
+    },
+    "X",
+    "C",
+    "V",
+    {
+      "c": "#cccccc"
+    },
+    "B",
+    {
+      "c": "#ac97d8"
+    },
+    "N",
+    {
+      "c": "#cccccc"
+    },
+    "M",
+    {
+      "c": "#1db63a"
+    },
+    "<\n,\n\n\n\n\n<i class='fa fa-hand-o-up'></i>",
+    ">\n.\n\n\n\n\n<i class='fa fa-hand-o-down'></i>",
+    {
+      "c": "#cccccc"
+    },
+    "?\n/",
+    {
+      "w": 2.75
+    },
+    "Shift"
+  ],
+  [
+    {
+      "w": 1.25
+    },
+    "Ctrl",
+    {
+      "w": 1.25
+    },
+    "Win",
+    {
+      "w": 1.25
+    },
+    "Alt",
+    {
+      "a": 7,
+      "w": 6.25
+    },
+    "",
+    {
+      "a": 4,
+      "w": 1.25
+    },
+    "Alt",
+    {
+      "w": 1.25
+    },
+    "Win",
+    {
+      "w": 1.25
+    },
+    "Menu",
+    {
+      "w": 1.25
+    },
+    "Ctrl"
+  ]
+]
