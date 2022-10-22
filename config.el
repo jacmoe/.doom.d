@@ -588,8 +588,7 @@
 (use-package! boon
   :defer t
   :init
-  (require 'boon-qwerty)
-  (require 'boon-tutorial)
+  (require 'boon)
   :config
   (boon-mode)
   (setq boon-insert-cursor-color "orange")
@@ -599,10 +598,37 @@
         )
     (setq boon-default-cursor-color "#cf1f00")
     )
+(define-key boon-moves-map "i"  'previous-line)
+(define-key boon-moves-map "o"  'next-line)
+(define-key boon-moves-map "I"  'backward-paragraph)
+(define-key boon-moves-map "O"  'forward-paragraph)
+
   (define-key boon-command-map "u" 'move-beginning-of-line)
   (define-key boon-command-map "p" 'move-end-of-line)
+
+(define-key boon-moves-map "j"  'boon-smarter-backward)
+(define-key boon-moves-map ";"  'boon-smarter-forward)
+
+(define-key boon-moves-map "k"  'backward-char)
+(define-key boon-moves-map "l"  'forward-char)
   (define-key boon-command-map "L" 'forward-sentence)
   (define-key boon-command-map "K" 'backward-sentence)
+(define-key boon-moves-map "<"  'beginning-of-buffer)
+(define-key boon-moves-map ">"  'end-of-buffer)
+
+(define-key boon-command-map "q" '("quote" . boon-quote-character))
+(define-key boon-command-map "t" '("transform" . boon-replace-by-character))
+
+(define-key boon-command-map "d" '("delete" . boon-take-region)) ; "delete"
+(define-key boon-command-map "x" 'boon-x-map)
+(define-key boon-command-map "c" 'boon-c-god)
+(define-key boon-command-map (kbd "C-v") 'boon-open-line-and-insert)
+(define-key boon-command-map "V" 'boon-open-next-line-and-insert)
+(define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
+
+(define-key boon-command-map (kbd "C-k") 'scroll-down-line)
+(define-key boon-command-map (kbd "C-l") 'scroll-up-line)
+
   (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
   (define-key boon-command-map "n" 'org-narrow-to-subtree)
   (define-key boon-command-map "N" 'widen)
