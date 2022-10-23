@@ -604,7 +604,6 @@
   (define-key boon-command-map "y" 'ignore)
   (define-key boon-command-map "a" 'ignore)
   (define-key boon-command-map "f" 'ignore)
-  (define-key boon-command-map "g" 'ignore)
   (define-key boon-command-map "h" 'ignore)
   (define-key boon-command-map "z" 'ignore)
   (define-key boon-command-map "b" 'ignore)
@@ -628,7 +627,7 @@
   (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
   (define-key boon-command-map "d" '("delete" . boon-take-region)) ; "delete"
   ;; f
-  ;; g
+  (define-key boon-command-map "G" 'grab-x-link)
   ;; h
   (define-key boon-moves-map "j"  'boon-smarter-backward)
   (define-key boon-moves-map "k"  'backward-char)
