@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: hugotoc
+# key: hugotoc
+# --
+#+begin_export html
+<div id="contents" style="position:fixed;width: 200px;right:0;top:0">
+#+end_export
+#+toc: headlines 1
+#+begin_export html
+</div>
+#+end_export
+$0
