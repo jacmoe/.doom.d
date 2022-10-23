@@ -606,7 +606,6 @@
   (define-key boon-command-map "f" 'ignore)
   (define-key boon-command-map "h" 'ignore)
   (define-key boon-command-map "z" 'ignore)
-  (define-key boon-command-map "b" 'ignore)
   (define-key boon-command-map "m" 'ignore)
 
   ;; qwerty row 1
@@ -645,7 +644,7 @@
   (define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
   (define-key boon-command-map "V" 'boon-open-next-line-and-insert)
   (define-key boon-command-map (kbd "C-v") 'boon-open-line-and-insert)
-  ;; b
+  (define-key boon-command-map "B" 'org-pomodoro)
   (define-key boon-command-map "n" 'org-narrow-to-subtree)
   (define-key boon-command-map "N" 'widen)
   ;; m
