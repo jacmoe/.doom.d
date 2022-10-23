@@ -600,8 +600,6 @@
     )
 
   ;; free keys
-  (define-key boon-command-map "r" 'ignore)
-  (define-key boon-command-map "y" 'ignore)
   (define-key boon-command-map "a" 'ignore)
   (define-key boon-command-map "f" 'ignore)
   (define-key boon-command-map "h" 'ignore)
@@ -612,9 +610,10 @@
   (define-key boon-command-map "q" '("quote" . boon-quote-character))
   (define-key boon-command-map "w" 'org-tracktable-status)
   (define-key boon-command-map "e" 'last-edit)
-  ;; r
+  (define-key boon-command-map "r" '("replace" . boon-substitute-region))
   (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
-  ;; y
+  (define-key boon-command-map "y" '("yank" . boon-splice))
+  (define-key boon-command-map "Y" 'yank-pop)
   (define-key boon-command-map "u" 'move-beginning-of-line)
   (define-key boon-moves-map "i"  'previous-line)
   (define-key boon-moves-map "o"  'next-line)
@@ -625,6 +624,7 @@
   ;; a
   (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
   (define-key boon-command-map "d" '("delete" . boon-take-region)) ; "delete"
+  (define-key boon-command-map "D" 'boon-treasure-region) ; "duplicate"
   ;; f
   (define-key boon-command-map "G" 'grab-x-link)
   ;; h
