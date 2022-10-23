@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: hugoyoutube
+# key: hugoyoutube
+# --
+#+begin_export hugo
+{{< youtube id="$1" title="$2" >}}
+#+end_export
+$0
