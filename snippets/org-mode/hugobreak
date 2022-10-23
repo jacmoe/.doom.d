@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: hugobreak
+# key: hugobreak
+# --
+#+begin_export html
+<br/>
+#+end_export
+$0
