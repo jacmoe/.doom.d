@@ -609,6 +609,7 @@
   ;; qwerty row 1
   (define-key boon-command-map "q" '("quote" . boon-quote-character))
   (define-key boon-command-map "w" 'org-tracktable-status)
+  (define-key boon-command-map "W" 'org-tracktable-write)
   (define-key boon-command-map "e" 'last-edit)
   (define-key boon-command-map "r" '("replace" . boon-substitute-region))
   (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
@@ -642,8 +643,8 @@
   (define-key boon-command-map "x" 'boon-x-map)
   (define-key boon-command-map "c" 'boon-c-god)
   (define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
-  (define-key boon-command-map "V" 'boon-open-next-line-and-insert)
-  (define-key boon-command-map (kbd "C-v") 'boon-open-line-and-insert)
+  (define-key boon-command-map (kbd "C-v") 'boon-open-next-line-and-insert)
+  (define-key boon-command-map "V" 'boon-open-line-and-insert)
   (define-key boon-command-map "B" 'org-pomodoro)
   (define-key boon-command-map "n" 'org-narrow-to-subtree)
   (define-key boon-command-map "N" 'widen)
