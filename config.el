@@ -603,7 +603,6 @@
   (define-key boon-command-map "a" 'ignore)
   (define-key boon-command-map "f" 'ignore)
   (define-key boon-command-map "h" 'ignore)
-  (define-key boon-command-map "z" 'ignore)
   (define-key boon-command-map "m" 'ignore)
 
   ;; qwerty row 1
@@ -614,7 +613,6 @@
   (define-key boon-command-map "r" '("replace" . boon-substitute-region))
   (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
   (define-key boon-command-map "y" '("yank" . boon-splice))
-  (define-key boon-command-map "Y" 'yank-pop)
   (define-key boon-command-map "u" 'move-beginning-of-line)
   (define-key boon-moves-map "i"  'previous-line)
   (define-key boon-moves-map "o"  'next-line)
@@ -639,7 +637,7 @@
   (define-key boon-moves-map ";"  'boon-smarter-forward)
   (define-key boon-command-map "æ" 'boon-smarter-forward)
   ;; qwerty row 3
-  ;; z
+  (define-key boon-command-map "Z" 'toggle-transparency)
   (define-key boon-command-map "x" 'boon-x-map)
   (define-key boon-command-map "c" 'boon-c-god)
   (define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
