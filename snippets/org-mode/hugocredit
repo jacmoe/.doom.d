@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: hugocredit
+# uuid: hugocredit
+# --
+#+begin_export html
+<div style="font-size:0.7em;font-style:italic;padding-left:30px;padding-bottom:40px;">
+#+end_export
+$1
+#+begin_export html
+</div>
+#+end_export
+$0
