@@ -653,6 +653,7 @@
   (add-hook 'ibuffer-hook 'turn-off-boon-mode)
   (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
   (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
+  (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
   :bind
   ("<f6>" . turn-on-boon-mode)
   ("<f7>" . turn-off-boon-mode)

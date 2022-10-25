@@ -45,4 +45,6 @@
 
 (package! writegood-mode :recipe (:host github :repo "bnbeckwith/writegood-mode"))
 
-(package! grab-x-link)
+(package! grab-x-link) ; use grab-mac-link if you are a Mac user
+
+(package! speed-type)
