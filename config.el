@@ -869,22 +869,6 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; switch to Danish keyboard layout
-(defun my/kbdk ()
-  (interactive)
-  (call-process-shell-command "setxkbmap" nil nil nil "dk")
-  (message "Danish keyboard layout")
-  )
-(map! "C-c k" #'my/kbdk)
-
-;; switch to American keyboard layout
-(defun my/kbus ()
-  (interactive)
-  (call-process-shell-command "setxkbmap" nil nil nil "us")
-  (message "US keyboard layout")
-  )
-(map! "C-c u" #'my/kbus)
-
 ;; kill current buffer, without confirmation
 (defun delete-current-buffer ()
                                         ; deletes the current buffer
@@ -899,6 +883,42 @@
   (let (indent-tabs-mode align-to-tab-stop)
     (align-regexp beginning end (concat "\\(\\s-*\\)"
                                         (regexp-quote comment-start)))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Layout switching                                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; switch to Danish keyboard layout
+(defun my/kbdk ()
+  (interactive)
+  (call-process-shell-command "setxkbmap" nil nil nil "dk")
+  (message "Danish keyboard layout")
+  )
+(map! "C-c d" #'my/kbdk)
+
+;; switch to American keyboard layout
+(defun my/kbus ()
+  (interactive)
+  (call-process-shell-command "setxkbmap" nil nil nil "us")
+  (message "US Qwerty")
+  )
+(map! "C-c u" #'my/kbus)
+
+;; switch to Norwegian keyboard layout, Coleman
+(defun my/kbnocolemak ()
+  (interactive)
+  (call-process-shell-command "setxkbmap" nil nil nil "-layout no -variant colemak")
+  (message "Norwegian Colemak")
+  )
+(map! "C-c k" #'my/kbnocolemak)
+
+;; switch to American keyboard layout, Coleman
+(defun my/kbuscolemak ()
+  (interactive)
+  (call-process-shell-command "setxkbmap" nil nil nil "-layout us -variant colemak")
+  (message "US Colemak")
+  )
+(map! "C-c m" #'my/kbuscolemak)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; better comment box                                                               ;;
