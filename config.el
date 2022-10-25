@@ -18,7 +18,7 @@
 ;; Variables                                                                        ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar my-keyboard-variant "qwerty")                 ; colemak
+(defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
 (defvar my-dark-theme 'ef-night)
 (defvar my-boon-default-cursor-color-dark "#00ccff")  ; boon cursor for ef-night
 (defvar my-light-theme 'ef-day)
@@ -159,7 +159,7 @@
 (map!"C-<left>" #'enlarge-window-horizontally)
 (map!"C-<right>" #'shrink-window-horizontally)
 (map! "C-d" #'diff-buffer-with-file)             ; view what is modified
-(map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
+ (map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
 (map! "C-c t d" #'switch-theme)                  ; switch theme light/dark
 (map! "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
 (map! "M-1" (lambda() (interactive) (org-shifttab 1)))
@@ -167,6 +167,18 @@
 (map! "M-3" (lambda() (interactive) (org-shifttab 3)))
 (map! "M-4" (lambda() (interactive) (org-shifttab 4)))
 (map! "M-5" (lambda() (interactive) (org-show-all '(headings drawers blocks))))
+
+(if (equal my-keyboard-variant "colemak")
+    (progn
+      ;; using colemak
+      (map! "C-o" #'boon-set-command-state); used to quit insert mode
+      (map! "C-;" #'open-line); remapping open-line
+      )
+  (progn
+    ;; using qwerty
+    (map! "C-;" #'boon-set-command-state); used to quit insert mode
+    (map! "C-æ" #'boon-set-command-state); used to quit insert mode - Danish version
+    ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keybindings defined elsewhere:                                                   ;;
@@ -603,6 +615,8 @@
       (progn
         ;; free keys
         (define-key boon-command-map "j" 'ignore)
+        (define-key boon-command-map "h" 'ignore)
+        (define-key boon-command-map "k" 'ignore)
         (define-key boon-command-map "m" 'ignore)
 
         ;; Colemak row 1
@@ -627,7 +641,7 @@
         (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
         (define-key boon-command-map "d" '("delete" . boon-take-region)) ; "delete"
         (define-key boon-command-map "D" 'boon-treasure-region) ; "duplicate"
-        (define-key boon-command-map "h" 'ignore)
+        ;; h
         (define-key boon-moves-map "n"  'boon-smarter-backward)
         (define-key boon-moves-map "e"  'backward-char)
         (define-key boon-moves-map "i"  'forward-char)
@@ -644,6 +658,7 @@
         (define-key boon-command-map (kbd "C-v") 'boon-open-next-line-and-insert)
         (define-key boon-command-map "V" 'boon-open-line-and-insert)
         (define-key boon-command-map "B" 'org-pomodoro)
+        ;; k
         ;; m
         )
     ;; we are using Qwerty
@@ -710,8 +725,6 @@
   :bind
   ("<f6>" . turn-on-boon-mode)
   ("<f7>" . turn-off-boon-mode)
-  ("C-;" . boon-set-command-state); used to quit insert mode
-  ("C-æ" . boon-set-command-state); used to quit insert mode - Danish version
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
