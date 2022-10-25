@@ -602,7 +602,7 @@
       ;; we are using Colemak
       (progn
         ;; free keys
-        (define-key boon-command-map "a" 'ignore)
+        (define-key boon-command-map "j" 'ignore)
         (define-key boon-command-map "m" 'ignore)
 
         ;; Colemak row 1
@@ -944,38 +944,34 @@
 ;; switch to Danish keyboard layout
 (defun my/kbdk ()
   (interactive)
-  (call-process-shell-command "setxkbmap" nil nil nil "dk")
-  (defvar my-keyboard-variant "qwerty")
-  (message "Danish keyboard layout")
+  (if (equal my-keyboard-variant "colemak")
+      ;; we are using Colemak
+      (progn
+        (call-process-shell-command "setxkbmap" nil nil nil "-layout no -variant colemak")
+        (message "Norwegian Colemak")
+        )
+    (progn
+      (call-process-shell-command "setxkbmap" nil nil nil "dk")
+      (message "Danish Qwerty")
+      ))
   )
-(map! "C-c d" #'my/kbdk)
+(map! "C-c k" #'my/kbdk)
 
 ;; switch to American keyboard layout
 (defun my/kbus ()
   (interactive)
-  (call-process-shell-command "setxkbmap" nil nil nil "us")
-  (defvar my-keyboard-variant "qwerty")
-  (message "US Qwerty")
+  (if (equal my-keyboard-variant "colemak")
+      ;; we are using Colemak
+      (progn
+        (call-process-shell-command "setxkbmap" nil nil nil "-layout us -variant colemak")
+        (message "US Colemak")
+        )
+    (progn
+      (call-process-shell-command "setxkbmap" nil nil nil "us")
+      (message "US Qwerty")
+      ))
   )
 (map! "C-c u" #'my/kbus)
-
-;; switch to Norwegian keyboard layout, Coleman
-(defun my/kbnocolemak ()
-  (interactive)
-  (call-process-shell-command "setxkbmap" nil nil nil "-layout no -variant colemak")
-  (defvar my-keyboard-variant "colemak")
-  (message "Norwegian Colemak")
-  )
-(map! "C-c k" #'my/kbnocolemak)
-
-;; switch to American keyboard layout, Coleman
-(defun my/kbuscolemak ()
-  (interactive)
-  (call-process-shell-command "setxkbmap" nil nil nil "-layout us -variant colemak")
-  (defvar my-keyboard-variant "colemak")
-  (message "US Colemak")
-  )
-(map! "C-c m" #'my/kbuscolemak)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; better comment box                                                               ;;
