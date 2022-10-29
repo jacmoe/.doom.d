@@ -1,0 +1,48 @@
+# -*- mode: snippet -*-
+# name: masterdoc
+# key: masterdoc
+# --
+:HEADER:
+#+TITLE: $1
+#+AUTHOR: ${2:`user-full-name`}
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+#+OPTIONS: todo:nil
+#+OPTIONS: tags:nil
+#+DESCRIPTION: $3
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: ${4:en}
+#+SELECT_TAGS: export
+:END:
+$0
+* $1
+# {{{
+* Meta :noexport:nowc:
+* Outline :noexport:nowc:
+* Worldbuilding :noexport:nowc:
+* Captured :noexport:nowc:
+* Tracktable :noexport:nowc:
+* Clocked Time :noexport:nowc:
+** Until now
+#+BEGIN: clocktable :maxlevel 3 :scope file :block untilnow
+#+CAPTION: Clock summary
+| Headline                       | Time |      |      |
+|--------------------------------+------+------+------|
+| *Total time*                     | *0:00* |      |      |
+#+END:
+** Today
+#+BEGIN: clocktable :maxlevel 3 :scope file :block today
+#+CAPTION: Clock summary
+| Headline   | Time |
+|------------+------|
+| *Total time* | *0:00* |
+#+END:
+** Yesterday
+#+BEGIN: clocktable :maxlevel 3 :scope file :block yesterday
+#+CAPTION: Clock summary
+| Headline   | Time |
+|------------+------|
+| *Total time* | *0:00* |
+#+END:
+# }}}
