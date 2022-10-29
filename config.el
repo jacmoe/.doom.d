@@ -172,6 +172,7 @@
     (progn
       ;; using colemak
       (map! "C-o" #'boon-set-command-state); used to quit insert mode
+      (map! "C-ø" #'open-line); remapping open-line, Danish version
       (map! "C-;" #'open-line); remapping open-line
       )
   (progn
@@ -614,7 +615,6 @@
       ;; we are using Colemak
       (progn
         ;; free keys
-        (define-key boon-command-map "j" 'ignore)
         (define-key boon-command-map "h" 'ignore)
         (define-key boon-command-map "k" 'ignore)
         (define-key boon-command-map "m" 'ignore)
@@ -627,7 +627,8 @@
         (define-key boon-command-map "F" 'widen)
         (define-key boon-command-map "p" '("paste" . boon-splice))
         (define-key boon-command-map "G" 'grab-x-link)
-        ;; j
+        (define-key boon-command-map "j" 'next-line) ; for Danish
+        (define-key boon-command-map "J" 'forward-paragraph) ; for Danish
         (define-key boon-command-map "l" 'move-beginning-of-line)
         (define-key boon-moves-map "u"  'previous-line)
         (define-key boon-moves-map "y"  'next-line)
