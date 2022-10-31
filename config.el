@@ -962,6 +962,8 @@
       ;; we are using Colemak
       (progn
         (call-process-shell-command "setxkbmap" nil nil nil "-layout no -variant colemak")
+        (call-process-shell-command "xmodmap" nil nil nil "-e \"keycode 32 = j J\"")
+        (call-process-shell-command "xmodmap" nil nil nil "-e \"keycode 29 = y Y\"")
         (message "Norwegian Colemak")
         )
     (progn
