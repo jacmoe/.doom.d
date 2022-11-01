@@ -619,6 +619,7 @@
         (define-key boon-command-map "h" 'ignore)
         (define-key boon-command-map "k" 'ignore)
         (define-key boon-command-map "m" 'ignore)
+        (define-key boon-command-map "æ" 'ignore)
 
         ;; Colemak row 1
         (define-key boon-command-map "q" '("quote" . boon-quote-character))
