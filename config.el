@@ -636,6 +636,7 @@
         (define-key boon-moves-map "U"  'backward-paragraph)
         (define-key boon-moves-map "Y"  'forward-paragraph)
         (define-key boon-command-map ";" 'move-end-of-line)
+        (define-key boon-command-map "ø" 'move-end-of-line)
         ;; Colemak row 2
         (define-key boon-command-map "a" 'last-edit)
         (define-key boon-command-map "r" '("replace" . boon-substitute-region))
