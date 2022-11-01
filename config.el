@@ -1,4 +1,4 @@
-;;$DOOMDIR/config.el -*- lexical-binding: t; -*-
+;;config.el -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;This is                                                                           ;;
 ;;          __                           __                                         ;;
@@ -111,6 +111,7 @@
 
 ;; Fonts - ordinary and variable pitch
 (setq doom-font (font-spec :family my-monospace-font :size 20)
+      doom-big-font-increment 5
       doom-variable-pitch-font (font-spec :family my-variablespace-font :size 28))
 
 ;; Theme
@@ -153,7 +154,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (map! "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
 (map! "<f9>" #'+zen/toggle)                      ; Toggle Zen mode
-(map! "C-<f9>" #'doom-big-font-mode)             ; Toggle big font mode
+(map! "C-<f9>" #'writeroom-toggle-mode-line)     ; Toggle Zen mode-line
 (map!"C-<down>" #'enlarge-window)
 (map!"C-<up>" #'shrink-window)
 (map!"C-<left>" #'enlarge-window-horizontally)
