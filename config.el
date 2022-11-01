@@ -29,7 +29,7 @@
 (defvar my-monospace-font "Overpass Mono")            ; Font to use for code
 (defvar my-variablespace-font "Overpass")             ; Font to use for writing
 
-(defvar my-org-tracktable-daily-goal 1000)            ; How many words do I want to write per day?
+(defvar my-org-tracktable-daily-goal 1667)            ; How many words do I want to write per day?
 (defvar my-line-spacing 28)                           ; how much space between the lines?
 (defvar my-day-end 5)                                 ; when does my day end?
 
