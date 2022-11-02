@@ -629,8 +629,6 @@
         (define-key boon-command-map "F" 'widen)
         (define-key boon-command-map "p" '("paste" . boon-splice))
         (define-key boon-command-map "G" 'grab-x-link)
-        (define-key boon-command-map "j" 'next-line) ; for Danish
-        (define-key boon-command-map "J" 'forward-paragraph) ; for Danish
         (define-key boon-command-map "l" 'move-beginning-of-line)
         (define-key boon-moves-map "u"  'previous-line)
         (define-key boon-moves-map "y"  'next-line)
