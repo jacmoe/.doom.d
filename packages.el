@@ -48,3 +48,5 @@
 (package! grab-x-link) ; use grab-mac-link if you are a Mac user
 
 (package! speed-type)
+
+(package! org-analyzer)
