@@ -50,3 +50,5 @@
 (package! speed-type)
 
 (package! org-analyzer)
+
+(package! mastodon)
