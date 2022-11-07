@@ -939,7 +939,10 @@
 ;; https://codeberg.org/martianh/mastodon.el                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq mastodon-instance-url "https://writing.exchange"
-      mastodon-active-user "@jacmoe")
+      mastodon-active-user "@jacmoe"
+      mastodon-toot--download-custom-emoji t
+      mastodon-toot--enable-custom-emoji t
+      mastodon-toot--enable-completion t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
