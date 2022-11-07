@@ -135,6 +135,10 @@
     (setq initial-frame-alist '((top . 28) (left . 46) (width . 90) (height . 26))) ; my laptop has a low screen resolution
  )
 
+(when (member "Segoe UI Emoji" (font-family-list))
+  (set-fontset-font
+    t 'symbol (font-spec :family "Segoe UI Emoji") nil 'prepend))
+
 ;; Misc settings
 (setq display-line-numbers-type nil)                        ; Do not show line numbers
 (display-time-mode 1)                                       ; Display time in modeline
