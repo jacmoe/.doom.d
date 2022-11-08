@@ -99,6 +99,8 @@ You need to change some variables around line 20 in =config.el=, the location of
 *** Fonts
 This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpass]] fonts. Install both ~Overpass~ and ~Overpass Mono~ on your system so that Emacs can use them.
 
+For unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/segoe-ui-emoji][Segoe UI Emoji]]
+
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
 
 #  LocalWords:  MSYS mingw aspell Proselint Palahniuk Elmore Butterick Strunk
