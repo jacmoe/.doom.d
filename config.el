@@ -87,7 +87,7 @@
 (zone-when-idle 300)                                   ; Zone out when idle for five minutes.
 (setq enable-local-eval t)                             ; Define safe local variables
 (unless (eq system-type 'windows-nt)                   ; Mouse-avoidance makes the frame "jump" on Windows...
-  (if (display-mouse-p) (mouse-avoidance-mode 'banish)))  ; Shove the mouse pointer out of  the way
+  (if (display-mouse-p) (mouse-avoidance-mode 'jump)))  ; Shove the mouse pointer out of  the way
 (setq undo-fu-session-linear t)                        ; tell Undo-fu to only store linear history, not the full history
 (map! "C-;" nil)                                       ; Don't steal my C-; !
 (setq emojify-download-emojis-p t)                     ; Force Doom-Emacs to download emojis without asking
