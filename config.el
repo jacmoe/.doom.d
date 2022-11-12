@@ -126,7 +126,7 @@
   '(italic :slant oblique :foreground "teal"))
 
 ;; Setting initial size and position of frame
-(setq initial-frame-alist '((top . 38) (left . 42) (width . 86) (height . 36)))
+(setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38)))
 
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font
