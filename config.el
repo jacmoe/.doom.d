@@ -126,14 +126,7 @@
   '(italic :slant oblique :foreground "teal"))
 
 ;; Setting initial size and position of frame
-(if (eq system-type 'windows-nt)
-    (setq initial-frame-alist '((top . 38) (left . 66) (width . 124) (height . 32))) ; for Windows
-  (setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38))) ; for not Windows
-  )
-
-(if (equal (getenv "MY_MACHINE") "laptop")
-    (setq initial-frame-alist '((top . 28) (left . 46) (width . 90) (height . 26))) ; my laptop has a low screen resolution
- )
+(setq initial-frame-alist '((top . 38) (left . 42) (width . 86) (height . 36)))
 
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font
