@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-17 tor 00:21 -->
+<!-- 2022-11-17 tor 02:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hotel California of Creative Writing</title>
@@ -23,23 +23,996 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org83e6cfd">1. Test</a></li>
+<li><a href="#orgba3937a">1. Introduction</a></li>
+<li><a href="#orge226dfa">2. Emacs</a>
+<ul>
+<li><a href="#orgc0d1fb9">2.1. Emacs basics</a></li>
+<li><a href="#orgd046529">2.2. Doom-Emacs</a></li>
+<li><a href="#orgaca1da9">2.3. Notes about the Hotel California configuration</a></li>
+</ul>
+</li>
+<li><a href="#orgedb86d5">3. Org-mode</a>
+<ul>
+<li><a href="#org823848d">3.1. Standard markup</a></li>
+<li><a href="#org7d88ccd">3.2. Headings (structure)</a></li>
+<li><a href="#org755b91b">3.3. Lists</a></li>
+<li><a href="#org693011d">3.4. Document options</a>
+<ul>
+<li><a href="#org8f6baeb">3.4.1. TOC</a></li>
+</ul>
+</li>
+<li><a href="#org3370e3e">3.5. Links</a></li>
+<li><a href="#orgf296fde">3.6. Footnote-links</a></li>
+<li><a href="#org3b7be61">3.7. Special blocks</a></li>
+<li><a href="#org22133ac">3.8. Noexport tags</a></li>
+<li><a href="#orgb80a15a">3.9. Ignore tags</a></li>
+<li><a href="#org91e4291">3.10. Tables</a></li>
+</ul>
+</li>
+<li><a href="#orga9ba42a">4. Boon</a>
+<ul>
+<li><a href="#orgb16f6bb">4.1. Movement</a></li>
+<li><a href="#orgd3f5b06">4.2. Editing</a></li>
+<li><a href="#org04759c3">4.3. Custom</a></li>
+</ul>
+</li>
+<li><a href="#org0accbd3">5. Dictionaries et cetera</a>
+<ul>
+<li><a href="#orgb4e878a">5.1. Dictionary server</a></li>
+<li><a href="#orgd1dd990">5.2. Webster</a></li>
+<li><a href="#orgdc6cd08">5.3. Powerthesaurus</a></li>
+<li><a href="#orga581d59">5.4. Proselint</a></li>
+<li><a href="#org1a54bc1">5.5. Writegood-mode</a></li>
+<li><a href="#org137b39f">5.6. Typopunct</a></li>
+<li><a href="#org078b6c2">5.7. Special characters</a></li>
+</ul>
+</li>
+<li><a href="#org7f7a307">6. Tracking progress</a>
+<ul>
+<li><a href="#orgb583206">6.1. Track-table</a></li>
+<li><a href="#org7a9faf6">6.2. Clocking time</a></li>
+<li><a href="#orga658758">6.3. Org-habit streak count</a></li>
+<li><a href="#org9a6e0fb">6.4. Words per heading</a></li>
+<li><a href="#org124793e">6.5. Column view</a></li>
+</ul>
+</li>
+<li><a href="#org15f3f8c">7. Organize the writing</a>
+<ul>
+<li><a href="#org4981029">7.1. Master document</a></li>
+</ul>
+</li>
+<li><a href="#orgafa793b">8. Capturing thoughts</a></li>
+<li><a href="#org17d19bf">9. Saving the work</a>
+<ul>
+<li><a href="#org48f5a2b">9.1. Magit</a></li>
+<li><a href="#orgb11dd32">9.2. Unsaved changes</a></li>
+</ul>
+</li>
+<li><a href="#org8aa00ac">10. Exporting</a>
+<ul>
+<li><a href="#org94b7d7f">10.1. HTML to E-book</a></li>
+<li><a href="#org95b8256">10.2. PDF via LaTeX</a></li>
+<li><a href="#org07f700c">10.3. Open Document Format</a></li>
+</ul>
+</li>
+<li><a href="#org3e3bdf0">11. Looking good and being comfortable</a>
+<ul>
+<li><a href="#org04234ee">11.1. Themes and fonts</a></li>
+<li><a href="#org2c611d6">11.2. Zen-mode and transparency</a></li>
+<li><a href="#orgbabb296">11.3. Scroll-center-cursor-mode</a></li>
+</ul>
+</li>
+<li><a href="#org9ccf0f7">12. Org-roam</a>
+<ul>
+<li><a href="#org79d0cb9">12.1. Org-roam UI</a></li>
+</ul>
+</li>
+<li><a href="#org2b4617d">13. Other things</a>
+<ul>
+<li><a href="#org29ec8c9">13.1. Journaling</a></li>
+<li><a href="#orgf42b02f">13.2. Blogging</a></li>
+<li><a href="#org450aebc">13.3. Bibliography</a>
+<ul>
+<li><a href="#org5c70dff">13.3.1. Zotero</a></li>
+<li><a href="#orga83be2a">13.3.2. Emacs</a></li>
+</ul>
+</li>
+<li><a href="#org289f47a">13.4. Snippets</a></li>
+<li><a href="#orga2e27ec">13.5. Miscellaneous</a>
+<ul>
+<li><a href="#org0e9d570">13.5.1. Grabbing links from the web browser</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org23d1114">14. Online Resources</a></li>
+<li><a href="#org16ef4cc">15. Conclusion</a></li>
 </ul>
 </div>
 </div>
+<div class="description" id="org117da65">
 
-<div id="outline-container-org83e6cfd" class="outline-2">
-<h2 id="org83e6cfd"><span class="section-number-2">1.</span> Test</h2>
+</div>
+
+<div id="outline-container-orgba3937a" class="outline-2">
+<h2 id="orgba3937a"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
+
+<div id="org7317226" class="figure">
+<p><img src="images/hotel-california.png" alt="Emacs - my Hotel California" title="Emacs - my Hotel California" width="100%" />
+</p>
+</div>
+
 <p>
-This is a test of this
+This blog post is a detailed explanation of why Emacs is my Hotel California of creative writing. It shows how I have created a writing environment exactly how I want it to be, and why there—in my mind—is nothing out there that compares to it.
+</p>
+<br/>
+<p>
+Perhaps when you think of Emacs, you think of it as a text editor and an Integrated Development Environment (IDE).
+</p>
+<br/>
+<p>
+It is my hope that, after reading this article, that  you start thinking of it as an Integrated Writing Environment (IWE) as well.
+</p>
+<br/>
+</div>
+</div>
+<div id="outline-container-orge226dfa" class="outline-2">
+<h2 id="orge226dfa"><span class="section-number-2">2.</span> Emacs</h2>
+<div class="outline-text-2" id="text-2">
+<blockquote>
+<p>
+“I use emacs, which might be thought of as a thermonuclear word processor&#x2026; the engineer-hours that, in the case of Microsoft Word, were devoted to features like mail merge, and the ability to embed feature-length motion pictures in corporate memoranda, were, in the case of emacs, focused with maniacal intensity on the deceptively simple-seeming problem of editing text. If you are a professional writer&#x2026; emacs outshines all other editing software in approximately the same way that the noonday sun does the stars. It is not just bigger and brighter; it simply makes everything else vanish.”
+</p>
+</blockquote>
+<div style="font-size:0.7em;font-style:italic;padding-left:30px;padding-bottom:40px;">
+<p>
+-Neal Stephenson, 1998 (<a href="https://en.wikipedia.org/wiki/In_the_Beginning..._Was_the_Command_Line">In the Beginning&#x2026; Was the Command Line - Wikipedia</a>)
+</p>
+</div>
+<blockquote>
+<p>
+“I use emacs, which might be thought of as a thermonuclear word processor&#x2026; the engineer-hours that, in the case of Microsoft Word, were devoted to features like mail merge, and the ability to embed feature-length motion pictures in corporate memoranda, were, in the case of emacs, focused with maniacal intensity on the deceptively simple-seeming problem of editing text. If you are a professional writer&#x2026; emacs outshines all other editing software in approximately the same way that the noonday sun does the stars. It is not just bigger and brighter; it simply makes everything else vanish.”
+</p>
+</blockquote>
+<div style="font-size:0.7em;font-style:italic;padding-left:30px;padding-bottom:40px;">
+<p>
+-Neal Stephenson, 1998 (<a href="https://en.wikipedia.org/wiki/In_the_Beginning..._Was_the_Command_Line">In the Beginning&#x2026; Was the Command Line - Wikipedia</a>)
+</p>
+</div>
+<p>
+I can make Emacs fit my workflow rather than the other way around.
+</p>
+
+<div id="org49a94c6" class="figure">
+<p><img src="images/hackerman1.jpg" alt="Hackerman" title="Hackerman" width="40%" />
+</p>
+</div>
+
+<p>
+Emacs is a LISP machine.
+</p>
+</div>
+
+<div id="outline-container-orgc0d1fb9" class="outline-3">
+<h3 id="orgc0d1fb9"><span class="section-number-3">2.1.</span> Emacs basics</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+It’s highly recommended to run Emacs without any customization a couple of times to learn how the basic Emacs commands work. We can do that by running Emacs with the <code>Q</code> command-line argument, like this: <code>emacs -Q</code>. If you want—again, highly recommended—you can run the Emacs Tutorial by running <code>C-h t</code>. Do the tutorial until you feel confident. Also, experiment in the Scratch buffer, like in the video tutorial above.
+</p>
+<br/>
+<p>
+Common Emacs commands:
+</p>
+<ul class="org-ul">
+<li><code>C-x C-f</code> : <code>find-file</code>, allows you to open an existing file. If the file doesn’t exist, create a new file.</li>
+<li><code>C-x C-s</code> : <code>save-buffer</code>, saves buffer to disk.</li>
+<li><code>C-x b</code> : <code>ibuffer</code>, show a list of buffers in the minibuffer, and allows you to switch to a different buffer.</li>
+<li><code>C-x C-b</code> : <code>ibuffer</code>, runs ibuffer in a new window (use <code>q</code> to quit).</li>
+<li><code>C-x k</code> : kill (close) buffer.</li>
+<li><code>C-x C-c</code> : quit Emacs.</li>
+<li><code>C-o</code> : <code>org-open-line</code> : inserts new line below point.</li>
+<li><code>C-x 2</code> : split window in two, one below another.</li>
+<li><code>C-x 3</code> : split window in two, side-by-side windows.</li>
+<li><code>C-x o</code> : switch to other window.</li>
+<li><code>C-x 0</code> : close window.</li>
+<li><code>C-x 1</code> : close other windows.</li>
+<li><code>C-&lt;space&gt;</code> : toggle the mark.</li>
+<li><code>C-w</code> : kill (cut) text between point and mark. <i>(‘w’ is for “wipe”)</i>.</li>
+<li><code>M-w</code> : (copy) save region, but don’t kill it. <i>(‘w’ is for “wipe”)</i></li>
+<li><code>C-y</code> : yank (paste) first item from the kill-ring.</li>
+<li><code>M-y</code> : display items in the kill-ring to yank (paste) into the buffer.</li>
+</ul>
+<br/>
+<p>
+To get out of trouble, use <code>C-g</code> (keyboard quit) to cancel whatever it is that Emacs is doing at the moment. Use <code>C-x C-c</code> to rage-quit if you need to (I admit that I have when I first started out). <code>C-x u</code> will undo, and <code>C-?</code> will redo. Use <code>C-x C-s</code> to save current buffer. If the current buffer is a horrible mess, you can run <code>M-x revert-buffer</code> to get back to whatever it was when you loaded it from disk (by doing a <code>C-x C-f</code>). Also, sometimes you will want to toggle a file read-only. You can do that by pressing <code>x C-q</code>.
+</p>
+<br/>
+<p>
+Press <code>C-h</code> to view a list of options to get help. Especially useful is <code>C-h k</code> when you want to know what a keyboard command does without running it first. For example, pressing <code>C-h k &lt;F4&gt;</code> will tell you that it runs the command <code>kmacro-end-or-call-macro</code>. Press <code>q</code> to close the help window.
+</p>
+<br/>
+<p>
+If you want to read a comprehensive—very much so—guide to Emacs, the history, and the details of how it works, read my massive <a href="https://jacmoes.wordpress.com/2019/09/24/creative-writing-with-emacs/">Creative writing with Emacs</a> blog post from 2019. It delves into the mechanics of Emacs in much more depth, leaving us free to explore Emacs as a writer’s toolbox. So, if you are completely blank with regard to Emacs, I highly recommend that you read at least the first part of it before continuing.
+</p>
+<br/>
+<p>
+And, before you ask, let me tell you my favorite Emacs command: <code>C-o</code> (<i>insert new line below</i>); I use it all the time!
+</p>
+<br/>
+<p>
+Now that you know a thing or two about Emacs, here’s another introductory video about Emacs as a text editor:
+</p>
+<p>
+<i>NB: He uses the <code>&lt;Esc&gt;</code> key as an alternative to <code>&lt;Control&gt;</code> like in <code>&lt;Esc&gt; y</code>. May I suggest that you use <code>C-y</code> instead. Using the Escape key that way will conflict with the modal editing package Boon mentioned below.</i>
+</p>
+<br/>
+</div>
+</div>
+<div id="outline-container-orgd046529" class="outline-3">
+<h3 id="orgd046529"><span class="section-number-3">2.2.</span> Doom-Emacs</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<a href="https://github.com/hlissner/doom-emacs">Doom-Emacs</a> is a minimalist modern Emacs distribution that is light and fast. It provides a rock-solid and highly configurable infrastructure to base an Emacs configuration on.
+</p>
+<br/>
+<p>
+I switched to Doom-Emacs after declaring Emacs Bankruptcy <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>, and I haven’t regretted it. It uses every trick in the book to optimize, and the install/upgrade/maintenance scripts are excellent. It provides infrastructure and a well thought out framework for creating your own, speedy Emacs configuration.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaca1da9" class="outline-3">
+<h3 id="orgaca1da9"><span class="section-number-3">2.3.</span> Notes about the Hotel California configuration</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+If you feel that you need to have at least a menu-bar, then you can turn it on/off by running this command: <code>M-x menu-bar-mode</code>. It can be useful sometimes, especially when learning the Emacs ropes.
 </p>
 </div>
 </div>
 </div>
+<div id="outline-container-orgedb86d5" class="outline-2">
+<h2 id="orgedb86d5"><span class="section-number-2">3.</span> Org-mode</h2>
+<div class="outline-text-2" id="text-3">
+
+<div id="org8050043" class="figure">
+<p><img src="images/org-mode-unicorn.svg" alt="Org-mode" class="org-svg" title="Org-mode" width="20%" />
+</p>
+</div>
+<blockquote>
+<p>
+A GNU Emacs major mode for keeping notes, authoring documents, computational notebooks, literate programming, maintaining to-do lists, planning projects, and more — in a fast and effective plain text system.
+</p>
+</blockquote>
+<br/>
+<p>
+<a href="https://orgmode.org/">Org-mode</a> is based on outline-mode which is again based on text-mode, and is both a markup language, an organizer (GTD), and an out-liner, and there are some people who live their entire lives in Org-mode.
+</p>
+<br/>
+<p>
+Here’s a small demo of Org-mode in action (<i>may I suggest that you turn off the sound for this one</i>):
+</p>
+<p>
+Here is a nerdy blog post about why Org-mode is a great markup language: <a href="https://karl-voit.at/2017/09/23/orgmode-as-markup-only/">Org Mode Syntax Is One of the Most Reasonable Markup Languages to Use for Text</a>
+</p>
+
+<ul class="org-ul">
+<li>Official format</li>
+<li>Out-liner</li>
+<li>Organizer</li>
+<li>Extendable</li>
+<li>One hundred percent pure text</li>
+</ul>
+</div>
+
+<div id="outline-container-org823848d" class="outline-3">
+<h3 id="org823848d"><span class="section-number-3">3.1.</span> Standard markup</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><code>*bold*</code> <b>bold</b></li>
+<li><code>/italic/</code> <i>italic</i></li>
+<li><code>_underline_</code> <span class="underline">underline</span></li>
+<li><code>~code~</code>  <code>code</code></li>
+<li><code>=monospaced=</code> <code>monospaced</code></li>
+<li><code># comment</code> anything after a hash sign and a space will not be exported</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7d88ccd" class="outline-3">
+<h3 id="org7d88ccd"><span class="section-number-3">3.2.</span> Headings (structure)</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+A heading is one or more asterisks followed by a space and some text.
+</p>
+
+<ul class="org-ul">
+<li><code>* heading</code> level 1 heading</li>
+<li><code>** heading</code> level 2 heading</li>
+<li><code>*** heading</code> level 3 heading, and so on</li>
+<li><code>* todo heading</code> a heading with a todo</li>
+<li><code>* heading :tag:</code> heading with a tag</li>
+<li><code>* heading :tag1:tag2:</code> heading with two tags</li>
+<li><code>* heading :@category:</code> heading with a category</li>
+</ul>
+
+<p>
+Press <code>C-&lt;Enter&gt;</code> to insert a new heading at the same level as the heading you’re in.
+</p>
+
+<p>
+<code>M-&lt;up&gt;</code> and <code>M-&lt;down&gt;</code> will move a heading up and down.
+</p>
+
+<p>
+<code>M-&lt;left&gt;</code> and <code>M-&lt;right&gt;</code> will promote/demote a heading.
+</p>
+
+<p>
+<code>c n</code> and <code>c p</code> will navigate to next and previous heading, respectively.
+</p>
+
+<p>
+<code>c u</code> navigates up to the parent heading, if any.
+</p>
+
+<p>
+<code>S-&lt;right&gt;</code> and <code>S-&lt;left&gt;</code> cycles through todo states for a heading, ie from <i>draft</i> to <i>revise</i> to <i>done</i>.
+</p>
+
+<p>
+<code>c q</code> can be used to set tags/categories for a heading. (<code>c c</code> also works, when standing on the actual heading)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org755b91b" class="outline-3">
+<h3 id="org755b91b"><span class="section-number-3">3.3.</span> Lists</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+A list item is a dash (-) followed by a space and some text.
+</p>
+
+<ul class="org-ul">
+<li><code>- list item</code> unnumbered list item</li>
+<li><code>1 list item</code> numbered list item ()</li>
+<li><code>- [ ] list item</code> list item with unchecked check box</li>
+<li><code>- [X] list item</code> list item with checked check box</li>
+</ul>
+
+<p>
+Press <code>C-&lt;Enter&gt;</code> to insert a new list item at the same level as the heading you’re in.
+</p>
+
+<p>
+<code>M-&lt;up&gt;</code> and <code>M-&lt;down&gt;</code> will move a list item up and down.
+</p>
+
+<p>
+<code>M-&lt;left&gt;</code> and <code>M-&lt;right&gt;</code> will demote/promote a list item.
+</p>
+
+<p>
+<code>S-&lt;left&gt;</code> and <code>S-&lt;right&gt;</code> will cycle through different list styles, provided that the point is placed on the list item symbol (by default a <code>-</code>))
+</p>
+</div>
+</div>
+
+<div id="outline-container-org693011d" class="outline-3">
+<h3 id="org693011d"><span class="section-number-3">3.4.</span> Document options</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<div id="outline-container-org8f6baeb" class="outline-4">
+<h4 id="org8f6baeb"><span class="section-number-4">3.4.1.</span> TOC</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+<code>#+OPTIONS: toc:nil</code> turns off the insertion of an auto-generated Table Of Contents (TOC) upon export.
+You can then use <code>#+toc: headlines 2</code> to manually insert a table of contents into the document.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3370e3e" class="outline-3">
+<h3 id="org3370e3e"><span class="section-number-3">3.5.</span> Links</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li><code>[[link][description]]</code> link with description (use <code>c l</code> to insert)</li>
+<li><code>[[file:link_to_file]]</code> inline image is a file link <b>without</b> description</li>
+</ul>
+
+<p>
+Use <code>c l</code> to insert a link, or to edit a link. Use <code>c o</code> to open a link.
+</p>
+
+<p>
+If the link is a file link to an image, and without a description, it is an inline image. To toggle the rendering of inline images, you can press <code>c &lt;TAB&gt;</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf296fde" class="outline-3">
+<h3 id="orgf296fde"><span class="section-number-3">3.6.</span> Footnote-links</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li><code>[fn:1: this is an inline, numbered footnote]</code></li>
+<li><code>[fn:name: named, inline footnote]</code></li>
+<li><code>[fn:: anonymous, inline footnote]</code></li>
+</ul>
+
+<p>
+For more information about footnotes, see <sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3b7be61" class="outline-3">
+<h3 id="org3b7be61"><span class="section-number-3">3.7.</span> Special blocks</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+In addition to the standard markup, Org-mode has special blocks. Use <code>C-c C-,</code> to insert a block.
+</p>
+<p alt="Special blocks" title="Special blocks" width="100%">
+<img src="images/orgmode-blocks.png" alt="Special blocks" title="Special blocks" width="100%" />
+For example, choosing “comment” as a block type will result in the following being inserted in the document:
+</p>
+<pre class="example">
+#+begin_comment
+#+end_comment
+</pre>
+<p>
+The “verse” block is useful for when you want to have a piece of poetry and not have Emacs mess with the formatting.
+</p>
+
+<p>
+Special blocks is a good way to extend the markup, and—of course—you can define your own special blocks.
+</p>
+</div>
+</div>
+<div id="outline-container-org22133ac" class="outline-3">
+<h3 id="org22133ac"><span class="section-number-3">3.8.</span> Noexport tags</h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+The <code>:noexport:</code> tag tells Org-mode that the contents—including any children—of a section is not to be exported. Useful for when you keep your work in one single file, including sections for things like research, notes, and character studies.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb80a15a" class="outline-3">
+<h3 id="orgb80a15a"><span class="section-number-3">3.9.</span> Ignore tags</h3>
+<div class="outline-text-3" id="text-3-9">
+<p>
+The <code>:ignore:</code> tag instructs Org-mode to export the contents of a heading section, but not the heading itself. That’s useful when we organize your outline/document in chapters and scenes, but don’t want the exported text to be partitioned with scene headings. Having the text partitioned using headings allows us to rearrange those sections of the document—promoting, demoting, moving up and down—and we wouldn’t be able to do that if the text was not organized in an outline. Or, put another way: the <code>:ignore:</code> tag allows us to keep the outline to ourselves.
+</p>
+</div>
+</div>
+<div id="outline-container-org91e4291" class="outline-3">
+<h3 id="org91e4291"><span class="section-number-3">3.10.</span> Tables</h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+In Org-mode tables are made of ASCII characters, but it feels like magic in action.
+</p>
+<p>
+See <a href="https://orgmode.org/manual/Tables.html">Tables (The Org Manual)</a> for more details.
+</p>
+
+<p>
+We’ll see more of what Org-mode tables can do later on in this article, when discussing clock-tables and when discussing Org-tracktable.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga9ba42a" class="outline-2">
+<h2 id="orga9ba42a"><span class="section-number-2">4.</span> Boon</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="https://github.com/jyp/boon">Boon</a> is a modal editing package for Emacs which is ergonomic and designed to integrate well with existing Emacs infrastructure. That means that we can continue to use the standard Emacs keyboard shortcuts should we choose to do so, in addition to the features that Boon provides.
+</p>
+<br/>
+<p>
+Boon is designed so that the right hand takes care of movement, and the left hand do the actions. And great care is taken to ensure that the fingers never leave the home row. Important for touch typists!
+</p>
+<br/>
+<p>
+Boon is a modal editing system with two modes: Command mode and Insert mode. Command mode is the default mode, and where we perform movement and commands. Insert mode is the mode where the keyboard acts like we’re used to: inserting letters as we type them (as opposed to perform commands).
+</p>
+<br/>
+<p>
+When in Command mode, we can switch to Insert mode by pressing <code>v</code>. The cursor changes shape and color to indicate that we are indeed in Insert mode. For convenience, pressing <code>S-v</code> will insert a line above the current line and place the cursor in it, and <code>C-v</code> will insert a line below. That often saves us from a couple of keystrokes.
+</p>
+<br/>
+<p>
+In Insert mode, we can exit it by pressing <code>&lt;Esc&gt;</code> or <code>C-;</code>. The cursor changes back to normal shape and color to indicate that pressing keys will no longer insert letters but perform commands. I’ve bound <code>boon-quit</code> to <code>C-;</code> because <code>&lt;Esc&gt;</code> is <b>not</b> on the home row, even if we rebind it to <code>&lt;Caps Lock&gt;</code>, a fairly common thing to do. The combination of <code>v</code> and <code>C-;</code> means that we don’t have to move our fingers at all, even when switching between the two modes at speed. Ergonomics is important.
+</p>
+<br/>
+<p>
+<code>C-x</code> and <code>C-c</code> shortcuts are handled in Boon so that any command starting with <code>C-x</code> is simply <code>x</code>, and <code>C-c C-</code>  shortcuts are just <code>c</code>.
+</p>
+<br/>
+<p>
+Not all commands work as you would expect, however, so if we wanted to run <code>find-file</code> (<code>C-x C-f</code>) we will have to press <code>x C-f</code>, and not <code>x f</code> (<code>set-fill-column</code>). That’s because <code>set-fill-column</code> normally uses the shortcut <code>C-x f</code>, and there is no way to make a distinction between the two, <code>find-file</code> or <code>set-fill-column</code>. Luckily, there aren’t many exceptions like this.
+</p>
+<br/>
+<p>
+Here’s how the keyboard layout looks like for Command mode using Boon:
+</p>
+
+<div id="org32c38f2" class="figure">
+<p><img src="images/keyboard-layout.png" alt="The Hotel California layout" title="The Hotel California layout" width="100%" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Blue is Boon commands</li>
+<li>Green is movement commands</li>
+<li>Yellow is edit commands</li>
+<li>Purple is custom commands</li>
+</ul>
+
+<p>
+We already covered the Boon commands in blue, so the following will not cover those.
+</p>
+</div>
+
+<div id="outline-container-orgb16f6bb" class="outline-3">
+<h3 id="orgb16f6bb"><span class="section-number-3">4.1.</span> Movement</h3>
+</div>
+
+<div id="outline-container-orgd3f5b06" class="outline-3">
+<h3 id="orgd3f5b06"><span class="section-number-3">4.2.</span> Editing</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>` : cycles between uppercase, title-case, and lowercase</li>
+<li>q : “quote”, insert a literal character</li>
+<li>r : “replace”, replaces a region, ie deletes and enters Insert mode</li>
+<li>t : “transform”, use to change the character at point</li>
+<li>y : “yank”, yank from the kill-ring (paste)</li>
+<li>d : “delete”, delete region (cut to kill-ring)</li>
+<li>D : “duplicate”, copies region to kill-ring</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org04759c3" class="outline-3">
+<h3 id="org04759c3"><span class="section-number-3">4.3.</span> Custom</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>w : show how many words have been written today (<code>org-tracktable-status</code>)</li>
+<li>W : write to the track-table (<code>org-tracktable-write</code>)</li>
+<li>E : go to last edit</li>
+<li>s : toggle center-cursor-mode</li>
+<li>G : grab an URL from a running web browser and inserts it</li>
+<li>Z : toggle transparency (zee-through)</li>
+<li>B : begin a Pomodoro session</li>
+<li>n : narrow to Org-mode heading</li>
+<li>N : widen the view (un-narrow)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0accbd3" class="outline-2">
+<h2 id="org0accbd3"><span class="section-number-2">5.</span> Dictionaries et cetera</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgb4e878a" class="outline-3">
+<h3 id="orgb4e878a"><span class="section-number-3">5.1.</span> Dictionary server</h3>
+</div>
+
+<div id="outline-container-orgd1dd990" class="outline-3">
+<h3 id="orgd1dd990"><span class="section-number-3">5.2.</span> Webster</h3>
+</div>
+<div id="outline-container-orgdc6cd08" class="outline-3">
+<h3 id="orgdc6cd08"><span class="section-number-3">5.3.</span> Powerthesaurus</h3>
+</div>
+<div id="outline-container-orga581d59" class="outline-3">
+<h3 id="orga581d59"><span class="section-number-3">5.4.</span> Proselint</h3>
+<div class="outline-text-3" id="text-5-4">
+
+<div id="org166e8d0" class="figure">
+<p><img src="images/proselint.png" alt="Proselint has checked the text and is not satisfied" title="Proselint has checked the text and is not satisfied" width="100%" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1a54bc1" class="outline-3">
+<h3 id="org1a54bc1"><span class="section-number-3">5.5.</span> Writegood-mode</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+<code>Writegood-mode</code> is a minor mode that will highlight weasel words and passive voice.
+</p>
+<p alt="Writegood-mode" title="Writegood-mode" width="100%">
+<img src="images/writegood-mode.png" alt="Writegood-mode" title="Writegood-mode" width="100%" />
+The weasel words are highlighted in orange, passive voice in cyan.
+</p>
+
+<p>
+Additional weasel words can be added to writegood-mode by editing the <code>my/weasel-words</code> list in <code>config.el</code> in the Doom user directory.
+</p>
+</div>
+</div>
+<div id="outline-container-org137b39f" class="outline-3">
+<h3 id="org137b39f"><span class="section-number-3">5.6.</span> Typopunct</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+<code>Typopunct</code> is a package that enables us to simply write regular ASCII single and double quotes and have them automatically be converted into typographical quotes.
+</p>
+
+<p>
+For example, typing <code>'quoted'</code> will result in ‘quoted’, and <code>"double-quoted"</code> will result in “double-quoted”.
+</p>
+
+<p>
+If we want to actually write a regular ASCII single or double quote, we need to use <code>quoted-insert</code>, which is bound to <code>C-q</code>, like this: <code>C-q "</code> to insert an ASCII <code>"</code>.
+</p>
+
+<p>
+<i>Note: some exporters, like the Hugo exporter, will automatically convert regular ASCII quotes to typographical quotes, unless you wrap them in code tags (~)</i>.
+</p>
+
+<p>
+Additionally, <code>typopunct</code> also allows us to insert <code>en-dash</code> and <code>em-dash</code> by typing  <code>--</code> for – and <code>---</code> for —.
+</p>
+</div>
+</div>
+<div id="outline-container-org078b6c2" class="outline-3">
+<h3 id="org078b6c2"><span class="section-number-3">5.7.</span> Special characters</h3>
+</div>
+</div>
+<div id="outline-container-org7f7a307" class="outline-2">
+<h2 id="org7f7a307"><span class="section-number-2">6.</span> Tracking progress</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgb583206" class="outline-3">
+<h3 id="orgb583206"><span class="section-number-3">6.1.</span> Track-table</h3>
+</div>
+<div id="outline-container-org7a9faf6" class="outline-3">
+<h3 id="org7a9faf6"><span class="section-number-3">6.2.</span> Clocking time</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+<code>c x i</code> to clock in. <code>c x o</code> to clock out. <code>c x q</code> to cancel a clock.
+There is also the option of starting a 20 minute Pomodoro session, by pressing <code>B</code>.
+Clocking is tied to the heading you are working under, and will add a <code>:LOGBOOK:</code> section to it, like this:
+</p>
+<pre class="example">
+:LOGBOOK:
+CLOCK: [2017-04-10 Mon 15:16]--[2017-04-10 Mon 15:17] =&gt;  0:01
+CLOCK: [2017-04-07 Fri 16:05]--[2017-04-07 Fri 16:35] =&gt;  0:30
+CLOCK: [2017-04-05 Wed 16:42]--[2017-04-05 Wed 16:52] =&gt;  0:10
+:END:
+</pre>
+<p>
+We can generate clock report table by executing <code>C-c l c R</code> or <code>M-x org-clock-report</code>.
+The following will be inserted at point, depending on the logbooks in the current document:
+</p>
+<pre class="example">
+#+BEGIN: clocktable :scope subtree :maxlevel 2
+#+CAPTION: Clock summary at [2022-10-23 søn 09:56]
+| Headline   | Time |
+|------------+------|
+| *Total time* | *0:41* |
+|------------+------|
+#+END:
+</pre>
+<p>
+A clocktable can be configured, for example, to show time clocked until now, like this:
+</p>
+<pre class="example">
+#+BEGIN: clocktable :maxlevel 3 :scope file :block untilnow
+</pre>
+<p alt="Time clocked in total" title="Time clocked in total" width="100%">
+<img src="images/clocktable-master.png" alt="Time clocked in total" title="Time clocked in total" width="100%" />
+Time clocked today:
+</p>
+<pre class="example">
+#+BEGIN: clocktable :maxlevel 3 :scope file :block today
+</pre>
+<p>
+Time clocked yesterday:
+</p>
+<pre class="example">
+#+BEGIN: clocktable :maxlevel 3 :scope file :block yesterday
+</pre>
+<p>
+To update a clocktable, simply place the point somewhere in the <code>BEGIN</code> line, and press <code>c c</code>.
+</p>
+
+<p>
+For more on clocking time, see <a href="https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html">Clocking time with Org-mode</a>.
+</p>
+
+<p>
+Often when writing, our progress can’t always be measured in words, so time spent is a good alternative.
+</p>
+</div>
+</div>
+<div id="outline-container-orga658758" class="outline-3">
+<h3 id="orga658758"><span class="section-number-3">6.3.</span> Org-habit streak count</h3>
+</div>
+<div id="outline-container-org9a6e0fb" class="outline-3">
+<h3 id="org9a6e0fb"><span class="section-number-3">6.4.</span> Words per heading</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+Using <code>org-wc</code>.
+</p>
+
+
+<div id="org92f0928" class="figure">
+<p><img src="images/org-wc.png" alt="Running M-x org-wc-display shows word count per heading" title="Running M-x org-wc-display shows word count per heading" width="100%" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org124793e" class="outline-3">
+<h3 id="org124793e"><span class="section-number-3">6.5.</span> Column view</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+Column view is a good way to view properties of headers. While we can view todo status, categories, tags, time logged, and other standard properties, we can add our own, custom properties, and this is where it gets real interesting for creative writers.
+We can easily add properties to a heading by running <code>C-c C-x p</code>:
+</p>
+
+
+<div id="org2029d0d" class="figure">
+<p><img src="images/properties-actions.png" alt="Adding properties to a heading" title="Adding properties to a heading" width="100%" />
+</p>
+</div>
+
+<p>
+Now we can configure the <code>COLUMNS</code> special property, which will be inherited by child headings:
+</p>
+
+<div id="org40be35e" class="figure">
+<p><img src="images/columns-source.png" alt="Setting up columns with properties" title="Setting up columns with properties" width="100%" />
+</p>
+</div>
+
+<p>
+See <a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.html">Org column view tutorial</a> for details.
+</p>
+
+<p>
+Having set it all up, we can now run <code>org-columns</code> by pressing <code>c x c</code>:
+</p>
+
+<div id="org4ae640b" class="figure">
+<p><img src="images/columns.png" alt="Column view" title="Column view" width="100%" />
+</p>
+</div>
+
+<p>
+Pres <code>q</code> to exit.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org15f3f8c" class="outline-2">
+<h2 id="org15f3f8c"><span class="section-number-2">7.</span> Organize the writing</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org4981029" class="outline-3">
+<h3 id="org4981029"><span class="section-number-3">7.1.</span> Master document</h3>
+</div>
+</div>
+<div id="outline-container-orgafa793b" class="outline-2">
+<h2 id="orgafa793b"><span class="section-number-2">8.</span> Capturing thoughts</h2>
+</div>
+<div id="outline-container-org17d19bf" class="outline-2">
+<h2 id="org17d19bf"><span class="section-number-2">9.</span> Saving the work</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org48f5a2b" class="outline-3">
+<h3 id="org48f5a2b"><span class="section-number-3">9.1.</span> Magit</h3>
+</div>
+<div id="outline-container-orgb11dd32" class="outline-3">
+<h3 id="orgb11dd32"><span class="section-number-3">9.2.</span> Unsaved changes</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+Sometimes you want to know what changes you have made to a buffer since your last save. Since you haven’t saved the file yet, Magit can’t help you, so you need something else. Fortunately, we can use Emacs’ <code>diff-buffer-with-file</code>, mapped to <code>C-d</code>.
+</p>
+
+<div id="orgcc65579" class="figure">
+<p><img src="images/diff.png" alt="Using diff to see the difference between buffer and file" title="Using diff to see the difference between buffer and file" width="100%" />
+</p>
+</div>
+
+
+<p>
+Emacs will ask you for the file on disk, and then open a diff buffer where you can examine the differences. Use <code>x o</code> (o for ‘other’) to go to the diff buffer, if you’re not already in it. Using movement commands, like <code>i o k l</code>, etc. And then, when done, close the buffer by pressing <code>x 0</code> (zero), or <code>x 1</code> if you’re not in the diff buffer.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8aa00ac" class="outline-2">
+<h2 id="org8aa00ac"><span class="section-number-2">10.</span> Exporting</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org94b7d7f" class="outline-3">
+<h3 id="org94b7d7f"><span class="section-number-3">10.1.</span> HTML to E-book</h3>
+</div>
+<div id="outline-container-org95b8256" class="outline-3">
+<h3 id="org95b8256"><span class="section-number-3">10.2.</span> PDF via LaTeX</h3>
+</div>
+<div id="outline-container-org07f700c" class="outline-3">
+<h3 id="org07f700c"><span class="section-number-3">10.3.</span> Open Document Format</h3>
+</div>
+</div>
+<div id="outline-container-org3e3bdf0" class="outline-2">
+<h2 id="org3e3bdf0"><span class="section-number-2">11.</span> Looking good and being comfortable</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org04234ee" class="outline-3">
+<h3 id="org04234ee"><span class="section-number-3">11.1.</span> Themes and fonts</h3>
+</div>
+<div id="outline-container-org2c611d6" class="outline-3">
+<h3 id="org2c611d6"><span class="section-number-3">11.2.</span> Zen-mode and transparency</h3>
+<div class="outline-text-3" id="text-11-2">
+
+<div id="org49fac32" class="figure">
+<p><img src="images/zen-mode.png" alt="Zen-mode with transparency turned on" title="Zen-mode with transparency turned on" width="100%" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbabb296" class="outline-3">
+<h3 id="orgbabb296"><span class="section-number-3">11.3.</span> Scroll-center-cursor-mode</h3>
+</div>
+</div>
+<div id="outline-container-org9ccf0f7" class="outline-2">
+<h2 id="org9ccf0f7"><span class="section-number-2">12.</span> Org-roam</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-org79d0cb9" class="outline-3">
+<h3 id="org79d0cb9"><span class="section-number-3">12.1.</span> Org-roam UI</h3>
+</div>
+</div>
+<div id="outline-container-org2b4617d" class="outline-2">
+<h2 id="org2b4617d"><span class="section-number-2">13.</span> Other things</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org29ec8c9" class="outline-3">
+<h3 id="org29ec8c9"><span class="section-number-3">13.1.</span> Journaling</h3>
+</div>
+<div id="outline-container-orgf42b02f" class="outline-3">
+<h3 id="orgf42b02f"><span class="section-number-3">13.2.</span> Blogging</h3>
+</div>
+<div id="outline-container-org450aebc" class="outline-3">
+<h3 id="org450aebc"><span class="section-number-3">13.3.</span> Bibliography</h3>
+<div class="outline-text-3" id="text-13-3">
+</div>
+<div id="outline-container-org5c70dff" class="outline-4">
+<h4 id="org5c70dff"><span class="section-number-4">13.3.1.</span> Zotero</h4>
+<div class="outline-text-4" id="text-13-3-1">
+<p>
+<a href="https://www.zotero.org/">Zotero</a> is used to gather and store and export the citations/references, by the use of the <code>Better-Bibtex</code> plugin.
+</p>
+<p alt="Zotero" title="Zotero" width="100%">
+<img src="images/zotero.png" alt="Zotero" title="Zotero" width="100%" />
+After installing Zotero itself, the plugin can be installed by following this guide: <a href="https://retorque.re/zotero-better-bibtex/installation/">https://retorque.re/zotero-better-bibtex/installation/</a>. When downloading using Firefox, I had to right-click and “save as” because otherwise Firefox thought I was trying to install a Firefox add-on due to the file-extension being the same.
+</p>
+<p alt="BetterBibtex installed" title="BetterBibtex installed" width="100%">
+<img src="images/zotero-plugins.png" alt="BetterBibtex installed" title="BetterBibtex installed" width="100%" />
+When the plugin has been successfully installed, it can be set up to automatically export and keep updated the LaTeX formatted Bibtex file that we need in order to use it from Emacs.
+</p>
+<p alt="Zotero export settings" title="Zotero export settings" width="100%">
+<img src="images/zotero-export-settings.png" alt="Zotero export settings" title="Zotero export settings" width="100%" />
+Choose “file - Export Library”, and choose the <code>Better BibLaTeX</code> as the format, and make sure to check the “keep updated” box. When you click “OK” you will be asked where to save the export. For my configuration, I have it as <code>~/Dropbox/skriv/jacmoe.bib</code>.
+</p>
+
+<p>
+To actually populate the bibliography library, I am using the Zotero Firefox connector plugin. I can press a button in Firefox whenever I am visiting a resource.
+</p>
+</div>
+</div>
+<div id="outline-container-orga83be2a" class="outline-4">
+<h4 id="orga83be2a"><span class="section-number-4">13.3.2.</span> Emacs</h4>
+<div class="outline-text-4" id="text-13-3-2">
+<p>
+After all the work with Zotero, we are now ready to use the bibliography from within Emacs.
+In the file where we want to insert citations, we configure the bibliography file to be used, and configure the export of the citations to use the CSL format:
+</p>
+<pre class="example">
+#+bibliography: ~/Dropbox/skriv/jacmoe.bib
+#+cite_export: csl
+</pre>
+<p>
+Then, we set a placeholder for where the generated bibliography list will be rendered in the document:
+</p>
+<pre class="example">
+#+print_bibliography:
+</pre>
+<p>
+Now that we’re all set up, we can now insert citations into our document by running <code>org-cite-insert</code> (bound to <code>C-c l @</code>)
+</p>
+
+<div id="org9778523" class="figure">
+<p><img src="images/citation-insert.png" alt="Inserting a citation in Emacs" title="Inserting a citation in Emacs" width="100%" />
+</p>
+</div>
+
+
+<div id="org9621c88" class="figure">
+<p><img src="images/bibliography-source.png" alt="Bibliography source code" title="Biblography source code" width="100%" />
+</p>
+</div>
+
+
+<div id="org6b8e017" class="figure">
+<p><img src="images/bibliography-test.png" alt="Bibliography test rendering" title="Bibliography test rendering" width="100%" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org289f47a" class="outline-3">
+<h3 id="org289f47a"><span class="section-number-3">13.4.</span> Snippets</h3>
+</div>
+<div id="outline-container-orga2e27ec" class="outline-3">
+<h3 id="orga2e27ec"><span class="section-number-3">13.5.</span> Miscellaneous</h3>
+<div class="outline-text-3" id="text-13-5">
+</div>
+<div id="outline-container-org0e9d570" class="outline-4">
+<h4 id="org0e9d570"><span class="section-number-4">13.5.1.</span> Grabbing links from the web browser</h4>
+<div class="outline-text-4" id="text-13-5-1">
+<p>
+By running <code>M-x grab-x-link</code> we can insert a link from an active web browser window.
+It will ask you to choose your browser—Chromium, Chrome, Firefox, or Brave—and what format to use (plain, markdown or Org format). Much quicker than manually copying, pasting, and write the title manually. The links can be edited by <code>c l</code> , and opened by <code>c o</code>.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23d1114" class="outline-2">
+<h2 id="org23d1114"><span class="section-number-2">14.</span> Online Resources</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+<a href="https://www.youtube.com/watch?v=FtieBc3KptU">Emacs For Writers - YouTube</a>
+</p>
+
+<p>
+<a href="https://emacsconf.org/2020/talks/03/">EmacsConf - 2020 - talks - Idea to Novel Superstructure: Emacs for Writing</a>
+</p>
+
+<p>
+<a href="https://www.linuxfordevices.com/tutorials/linux/emacs-editor-tutorial">Emacs Editor Tutorial - An Absolute Beginners Reference - LinuxForDevices</a>
+</p>
+
+<p>
+<a href="https://www.gnu.org/software/emacs/tour/">GNU Emacs - Guided Tour - GNU Project</a>
+</p>
+
+<p>
+<a href="https://www.youtube.com/watch?v=SzA2YODtgK4">Getting Started With Org Mode - YouTube</a>
+</p>
+
+<p>
+<a href="https://github.com/yjwen/org-reveal/">yjwen/org-reveal: Exports Org-mode contents to Reveal.js HTML presentation.</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org16ef4cc" class="outline-2">
+<h2 id="org16ef4cc"><span class="section-number-2">15.</span> Conclusion</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+Write the conclusion
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+When your InitFile gets so large that you really need to start over, then you have declared “.emacs bankruptcy”. <a href="https://www.emacswiki.org/emacs/DotEmacsBankruptcy">EmacsWiki: Dot Emacs Bankruptcy</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara"><a href="https://orgmode.org/manual/Creating-Footnotes.html">Creating Footnotes (The Org Manual)</a></p></div></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Jacob Moena</p>
-<p class="date">Created: 2022-11-17 tor 00:21</p>
+<p class="date">Created: 2022-11-17 tor 02:01</p>
 </div>
 </body>
 </html>
