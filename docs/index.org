@@ -31,16 +31,6 @@ It is my hope that, after reading this article, that  you start thinking of it a
 #+begin_export html
 </div>
 #+end_export
-#+begin_quote
-“I use emacs, which might be thought of as a thermonuclear word processor... the engineer-hours that, in the case of Microsoft Word, were devoted to features like mail merge, and the ability to embed feature-length motion pictures in corporate memoranda, were, in the case of emacs, focused with maniacal intensity on the deceptively simple-seeming problem of editing text. If you are a professional writer... emacs outshines all other editing software in approximately the same way that the noonday sun does the stars. It is not just bigger and brighter; it simply makes everything else vanish.”
-#+end_quote
-#+begin_export html
-<div style="font-size:0.7em;font-style:italic;padding-left:30px;padding-bottom:40px;">
-#+end_export
--Neal Stephenson, 1998 ([[https://en.wikipedia.org/wiki/In_the_Beginning..._Was_the_Command_Line][In the Beginning... Was the Command Line - Wikipedia]])
-#+begin_export html
-</div>
-#+end_export
 I can make Emacs fit my workflow rather than the other way around.
 #+attr_html: :alt Hackerman :title Hackerman :width 40%
 [[file:images/hackerman1.jpg]]
