@@ -4,29 +4,15 @@ My =Doom-Emacs= configuration.
 
 [[file:splash/emacs.png]]
 
+** Introduction
+
+
 ** Prerequisites
 First, make sure that you have at least Emacs 28.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
-*** Doom-Emacs
-Before you install anything, you need to make sure that there isn’t a ~.emacs.d~ directory on your machine. If you are running Emacs, there is, so you need to either delete or rename it.
 
-To install Doom-Emacs, clone it into ~.emacs.d~ , and run the Doom-Emacs installation script:
-
-#+BEGIN_SRC
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-
-~/.emacs.d/bin/doom install
-#+END_SRC
-
-Try running Emacs now to make sure that Doom-Emacs is up and running.
-
-If you run into issues, where Doom-Emacs has a hiccup, a simple restart usually fixes it.
-
-Once Doom-Emacs is up and running, it’s time to prepare the installation of Hotel California.
-
-*** Additional Requirements
 This configuration uses the following packages that have dependencies:
-**** Org-Roam
+*** Org-Roam
 
 =org-roam= uses a custom SQLite binary to store its database, and it will compile it when it installs. So there must be a C compiler available to Emacs.
 
@@ -37,14 +23,13 @@ One option is to use MSYS2, which is Linux distribution for Windows. Follow the 
 Make sure that you add the =bin= directory of you MSYS2 installation to your system path, so that Emacs can find it.
 
 On my machine, I had to add =C:\msys64\mingw64\bin=
-
-**** Aspell
+*** Aspell
 We use =Aspell= for spellchecking, instead of other options, because I think it works better, and because it, unlike =hunspell=, allows me to make use of the =C-;= key-chord (usually reserved for =flyspell=)
-***** Linux
+**** Linux
 
 If Aspell is not installed, install =aspell= using your package manager.
 
-***** Windows
+**** Windows
 
 Assuming that you installed MSYS2, including the mingw compiler suite, you can simply open up a MSYS2 command line and run:
 
@@ -60,7 +45,7 @@ Here's the packages that I installed:
 
 If you followed the guide for how to install the C compiler, then Emacs will be able to find =aspell=, and all should be well.
 
-**** Proselint
+*** Proselint
 Proselint is required by the on-the-fly language checker.
 
 #+Begin_quote
@@ -69,39 +54,50 @@ Proselint is required by the on-the-fly language checker.
 
 Simply follow the [[https://github.com/amperser/proselint#installation][Proselint installation instructions]] and make sure to, if on Windows, to add the location of the Proselint binary to your PATH. The message you get from Python's pip installation procedure reminds you of what exact path you need to add.
 
-**** Hugo
+*** Hugo
 I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
-**** PDF diff and export
+*** PDF diff and export
 Even if you do not plan to make use of Latex, or Latexdiff, I found that installing the =latexdiff= package fixed my issues with exporting to PDF, so you might want to do that too. And maybe also the =texlive-bibtex-extra= and =texlive-latex-extra= packages.
 
+On Windows you are most probably out of luck. I haven’t found a way to install all required LaTeX packages, so don’t export to PDF :) Or export to ODT (LibreOffice) and export from there.
 
-On Windows, using MSYS, I believe we can satisfy the PDF generation requirements by running:
-=pacman -S mingw-w64-x86_64-texlive-latex-extra= and =pacman -S mingw-w64-x86_64-texlive-bibtex-extra= and =pacman -S mingw-w64-x86_64-texlive-fonts-extra= and =pacman -S mingw-w64-x86_64-texlive-latex-recommended=
+*** Fonts
+This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpass]] fonts. Install both ~Overpass~ and ~Overpass Mono~ on your system so that Emacs can use them.
 
+For Unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/segoe-ui-emoji][Segoe UI Emoji]]
+
+If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
 ** Installation
-Delete the ~.doom.d~ directory that the Doom-Emacs installation script created.
-
+*** Hotel California
 Clone the Hotel California repository into =~/.doom.d=, like this:
 
 =git clone https://github.com/jacmoe/.doom.d ~/.doom.d=
 
-Now run the Doom-Emacs ~sync~ command:
+*** Doom-Emacs
+Make sure that there isn’t a ~.emacs.d~ directory on your machine. If you are running Emacs, there is, so you need to either delete or rename it.
 
-=~/.emacs.d/bin/doom sync=
+To install Doom-Emacs, clone it into ~.emacs.d~ , and run the Doom-Emacs installation script:
 
-Before running Emacs again, check with the Doom-Emacs doctor that everything is alright:
+#+BEGIN_SRC
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+
+~/.emacs.d/bin/doom install
+#+END_SRC
+Don’t try to run Emacs just yet!
+
+What you can do, however, is check the installation by running the Doom-Emacs doctor, like so:
 
 =~./.emacs.d/bin doom doctor=
 
-If it doesn’t find any errors, you should be able to successfully run this Emacs configuration. But before you do, you need to adjust the configuration a bit:
-*** Paths and Personal Info
+It should run without errors or warnings, but if it doesn’t, you should be able to fix the issues in most cases based on what the doctor orders.
+
 You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
-*** Fonts
-This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpass]] fonts. Install both ~Overpass~ and ~Overpass Mono~ on your system so that Emacs can use them.
 
-For unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/segoe-ui-emoji][Segoe UI Emoji]]
+=~/.emacs.d/bin/doom sync=
 
-If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
+Probably a good idea to add =~./emacs.d/bin= to your =PATH=, for example by adding it to your exports in =.bashrc=.
+
+Happy Writing!
 
 #  LocalWords:  MSYS mingw aspell Proselint Palahniuk Elmore Butterick Strunk
-#  LocalWords:  Elwyn Corbett Gowers Latexdiff
+#  LocalWords:  Elwyn Corbett Gowers Latexdiff UI ODT
