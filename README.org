@@ -5,9 +5,18 @@ My =Doom-Emacs= configuration.
 [[file:splash/emacs.png]]
 
 ** Introduction
+This is my Emacs configuration, my Hotel California of Creative Writing.
 
+It features all the bells and whistles that I could ever want from a writing environment, and nothing else.
+
+For a very detailed walkthrough of what this configuration provides, see
+[[https://jacmoe.github.io/.doom.d/][https://jacmoe.github.io/.doom.d/]]
+
+/The walkthrough is currently a work in progress. This notice will be removed once it gets finished./
 
 ** Prerequisites
+/This has been tested on Linux, and to some degree, Windows. I recently got rid of Windows, so I am not personally going to be able to provide any help with that, and I might even remove Windows specific instructions from this Readme in the future./
+
 First, make sure that you have at least Emacs 28.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
 
@@ -93,9 +102,16 @@ It should run without errors or warnings, but if it doesn’t, you should be abl
 
 You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
 
+If you changed anything in =init.el= or =packages.el=, though I can’t think of a valid reason why you’d do such a thing, you need to run the Doom-Emacs sync script:
+
 =~/.emacs.d/bin/doom sync=
 
+
 Probably a good idea to add =~./emacs.d/bin= to your =PATH=, for example by adding it to your exports in =.bashrc=.
+
+Now, fire up Emacs, and you should be looking at the Hotel California of Creative Writing starting screen.
+
+All you need to do now is to press =C-x C-f= and start making yourself comfortable with your new writing environment.
 
 Happy Writing!
 
