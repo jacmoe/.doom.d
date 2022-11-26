@@ -77,7 +77,7 @@ For Unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/se
 
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
 *** Email
-**** offlineimap and nutmuch
+**** offlineimap and notmuch
 In order to read email with Emacs, install =offlineimap= and =notmuch= following the steps outlined in this article, up until sending email:
 [[https://firminmartin.com/en/posts/2020/10/read_email_in_emacs_with_notmuch/][Read and Compose Email in Emacs with Notmuch – Firmin Martin]]
 
