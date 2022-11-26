@@ -49,9 +49,9 @@
       org-archive-location (concat org-directory ".archive/%s::")
       org-agenda-files (list org-directory
                              "~/enestaaende/enestaaende.org"
-                             "~/habits/habits.org"
-                             )
-      )
+                             "~/habits/habits.org"))
+                             
+      
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -157,7 +157,7 @@
 (map!"C-<left>" #'enlarge-window-horizontally)
 (map!"C-<right>" #'shrink-window-horizontally)
 (map! "C-d" #'diff-buffer-with-file)             ; view what is modified
- (map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
+(map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
 (map! "C-c t d" #'switch-theme)                  ; switch theme light/dark
 (map! "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
 (map! "M-1" (lambda() (interactive) (org-shifttab 1)))
@@ -171,13 +171,13 @@
       ;; using colemak
       (map! "C-o" #'boon-set-command-state); used to quit insert mode
       (map! "C-ø" #'open-line); remapping open-line, Danish version
-      (map! "C-;" #'open-line); remapping open-line
-      )
+      (map! "C-;" #'open-line)); remapping open-line
+      
   (progn
     ;; using qwerty
     (map! "C-;" #'boon-set-command-state); used to quit insert mode
-    (map! "C-æ" #'boon-set-command-state); used to quit insert mode - Danish version
-    ))
+    (map! "C-æ" #'boon-set-command-state))); used to quit insert mode - Danish version
+    
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keybindings defined elsewhere:                                                   ;;
@@ -268,22 +268,22 @@
   :config
   (setq org-habit-following-days 7
         org-habit-preceding-days 35
-        org-habit-show-habits t)
-  )
+        org-habit-show-habits t))
+  
 
 ;; use :ignore: tags to ignore the heading, but keep the content
 (use-package! ox-extra
   :after org
   :config
-  (ox-extras-activate '(ignore-headlines))
-  )
+  (ox-extras-activate '(ignore-headlines)))
+  
 
 (add-hook! org-mode (org-indent-mode -1))
 
 (after! org
   (custom-set-faces!
-    '((org-block) :background nil)
-    )
+    '((org-block) :background nil))
+    
   (defface redd
     '((((class color) (min-colors 88) (background light))
        :foreground "red"))
@@ -313,8 +313,8 @@
         '(
           ("noexport" . (:foreground "#606060" :weight normal))
           ("nowc" . (:foreground "#606060" :weight normal))
-          ("ignore" . (:foreground "#606060" :weight normal))
-          )
+          ("ignore" . (:foreground "#606060" :weight normal)))
+          
         ;; Don't pollute the text with markers
         org-hide-emphasis-markers t
         org-return-follows-link t ; hitting RETURN follows the link
@@ -332,8 +332,8 @@
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
-           "* %?\n%t\n%i\n%a"))
-        ))
+           "* %?\n%t\n%i\n%a"))))
+        
 
 (defun org-habit-streak-count ()
   (goto-char (point-min))
@@ -364,22 +364,22 @@
            ((org-agenda-show-log t)
             (org-agenda-ndays 7)
             (org-agenda-log-mode-items '(state))
-            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":daily:"))))
-          ))
-  )
+            (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":daily:")))))))
+          
+  
 
 (after! ox-latex
-(add-to-list 'org-latex-classes
-             '("org-plain-latex"
-               "\\documentclass{article}
+ (add-to-list 'org-latex-classes
+              '("org-plain-latex"
+                "\\documentclass{article}
            [NO-DEFAULT-PACKAGES]
            [PACKAGES]
            [EXTRA]"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+                ("\\section{%s}" . "\\section*{%s}")
+                ("\\subsection{%s}" . "\\subsection*{%s}")
+                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
 (defun tb/capture-to-this-buffer ()
   "Capture note to this buffer"
@@ -478,8 +478,8 @@
    org-pomodoro-length 20       ; 20 minutes are great for word-sprints
    org-pomodoro-short-break-length 5
    ;; use libnotify
-   alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil)))
-   ))
+   alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil)))))
+   
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -492,8 +492,8 @@
   (setq! citar-bibliography (list bib-file))
   (setq org-cite-global-bibliography citar-bibliography)
   (setq ;;citar-library-paths '("/path/to/library/files/")
-   citar-notes-paths (list org-roam-directory))
-  )
+   citar-notes-paths (list org-roam-directory)))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -503,8 +503,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org exporter backend that exports Org to Hugo-compatible Markdown
 (after! ox-hugo
-  (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography")
-  )
+  (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography"))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -531,8 +531,8 @@
 (use-package! annotate
   :defer t
   :config
-  (setq annotate-database-confirm-deletion t)
-  )
+  (setq annotate-database-confirm-deletion t))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -606,10 +606,10 @@
   (setq boon-insert-cursor-color "orange")
   (if (equal my-theme-shade "dark")
       (progn
-        (setq boon-default-cursor-color "#00ccff")
-        )
-    (setq boon-default-cursor-color "#cf1f00")
-    )
+        (setq boon-default-cursor-color "#00ccff"))
+        
+    (setq boon-default-cursor-color "#cf1f00"))
+    
   (if (equal my-keyboard-variant "colemak")
       ;; we are using Colemak
       (progn
@@ -657,10 +657,10 @@
         (define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
         (define-key boon-command-map (kbd "C-v") 'boon-open-next-line-and-insert)
         (define-key boon-command-map "V" 'boon-open-line-and-insert)
-        (define-key boon-command-map "B" 'org-pomodoro)
+        (define-key boon-command-map "B" 'org-pomodoro))
         ;; k
         ;; m
-        )
+        
     ;; we are using Qwerty
     (progn
       ;; free keys
@@ -709,10 +709,10 @@
       (define-key boon-command-map "V" 'boon-open-line-and-insert)
       (define-key boon-command-map "B" 'org-pomodoro)
       (define-key boon-command-map "n" 'org-narrow-to-subtree)
-      (define-key boon-command-map "N" 'widen)
+      (define-key boon-command-map "N" 'widen)))
       ;; m
-      )
-    )
+      
+    
 
   (define-key boon-moves-map "<"  'beginning-of-buffer)
   (define-key boon-moves-map ">"  'end-of-buffer)
@@ -724,8 +724,8 @@
   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
   :bind
   ("<f6>" . turn-on-boon-mode)
-  ("<f7>" . turn-off-boon-mode)
-  )
+  ("<f7>" . turn-off-boon-mode))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -735,8 +735,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! ctrlf
   :config
-  (ctrlf-mode t)
-  )
+  (ctrlf-mode t))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -769,8 +769,8 @@
   :init
   (add-hook! #'org-mode-hook (lambda ()
                                (flymake-mode)
-                               (flymake-proselint-setup)))
-  )
+                               (flymake-proselint-setup))))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -780,16 +780,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! writegood-mode
   :config
-(setq my/weasel-words
-      '("actually"
-        "basically"
-        "easily"
-        "easy"
-        "simple"
-        "simply"))
-(setq writegood-weasel-words
-      (-concat writegood-weasel-words my/weasel-words))
-  )
+ (setq my/weasel-words
+       '("actually"
+         "basically"
+         "easily"
+         "easy"
+         "simple"
+         "simply"))
+ (setq writegood-weasel-words
+       (-concat writegood-weasel-words my/weasel-words)))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -801,8 +801,8 @@
   :defer t
   :init
   (if (boundp 'my-mw-api-key)
-      (setq mw-thesaurus--api-key my-mw-api-key))
-  )
+      (setq mw-thesaurus--api-key my-mw-api-key)))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -814,8 +814,8 @@
   :defer t
   :bind
   ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
-  ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
-  )
+  ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -826,8 +826,8 @@
 (use-package! browse-kill-ring
   :defer t
   :bind
-  ("M-y" . 'browse-kill-ring)
-  )
+  ("M-y" . 'browse-kill-ring))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -926,8 +926,8 @@
   (setq ef-themes-mixed-fonts 1)
   (ef-themes--load-theme my-main-theme)
   (turn-off-boon-mode)
-  (turn-on-boon-mode)
-)
+  (turn-on-boon-mode))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -975,13 +975,13 @@
         (call-process-shell-command "setxkbmap" nil nil nil "-layout no -variant colemak")
         ;; (call-process-shell-command "xmodmap" nil nil nil "-e \"keycode 32 = j J\"")
         ;; (call-process-shell-command "xmodmap" nil nil nil "-e \"keycode 29 = y Y\"")
-        (message "Norwegian Colemak")
-        )
+        (message "Norwegian Colemak"))
+        
     (progn
       (call-process-shell-command "setxkbmap" nil nil nil "dk")
-      (message "Danish Qwerty")
-      ))
-  )
+      (message "Danish Qwerty"))))
+      
+  
 (map! "C-c k" #'my/kbdk)
 
 ;; switch to American keyboard layout
@@ -991,13 +991,13 @@
       ;; we are using Colemak
       (progn
         (call-process-shell-command "setxkbmap" nil nil nil "-layout us -variant colemak")
-        (message "US Colemak")
-        )
+        (message "US Colemak"))
+        
     (progn
       (call-process-shell-command "setxkbmap" nil nil nil "us")
-      (message "US Qwerty")
-      ))
-  )
+      (message "US Qwerty"))))
+      
+  
 (map! "C-c u" #'my/kbus)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1023,8 +1023,8 @@ comment box."
   "Go back to last add/delete edit"
   (interactive)
   (let* ((ubuf (cadr buffer-undo-list))
-     (beg (car ubuf))
-     (end (cdr ubuf)))
+         (beg (car ubuf))
+         (end (cdr ubuf)))
     (cond
      ((integerp beg) (goto-char beg))
      ((stringp beg) (goto-char (abs end))
@@ -1047,8 +1047,8 @@ comment box."
                      scroll-conservatively
                      maximum-scroll-margin
                      scroll-margin))
-      (kill-local-variable `,local)))
-  )
+      (kill-local-variable `,local))))
+  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme functions                                                                  ;;
@@ -1059,8 +1059,8 @@ comment box."
   (interactive)
   (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
   (setq my-theme-shade "dark")
-  (ef-themes--load-theme my-dark-theme)
-  )
+  (ef-themes--load-theme my-dark-theme))
+  
 
 ;; turn on light theme
 (defun go-light-theme ()
@@ -1068,14 +1068,14 @@ comment box."
   (setq boon-default-cursor-color my-boon-default-cursor-color-light)
 
   (setq my-theme-shade "light")
-  (ef-themes--load-theme my-light-theme)
-  )
+  (ef-themes--load-theme my-light-theme))
+  
 
 ;; switch between light and dark theme
 (defun switch-theme ()
   (interactive)
   (if (equal my-theme-shade "light")
       (go-dark-theme)
-    (go-light-theme)
-    )
-  )
+    (go-light-theme)))
+    
+  
