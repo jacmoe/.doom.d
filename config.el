@@ -59,7 +59,9 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq user-full-name "Jacob Moena"
-      user-mail-address "jacmoe.dk@gmail.com")
+      user-mail-address "jacmoe.dk@gmail.com"
+      user-mail-domain "gmail.com"
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -948,9 +950,9 @@
 ;; Smtpmail                                                                         ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq mail-host-address "gmail.com")
-(setq user-full-name "Jacob Moena")
-(setq user-mail-adress "jacmoe.dk@gmail.com")
+(setq mail-host-address user-mail-domain)
+(setq user-full-name user-full-name)
+(setq user-mail-adress user-mail-address)
 (setq mail-user-agent 'message-user-agent)
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq message-kill-buffer-on-exit t)

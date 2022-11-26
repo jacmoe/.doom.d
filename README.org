@@ -76,6 +76,15 @@ This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpa
 For Unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/segoe-ui-emoji][Segoe UI Emoji]]
 
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
+*** Email
+**** offlineimap and nutmuch
+In order to read email with Emacs, install =offlineimap= and =notmuch= following the steps outlined in this article, up until sending email:
+[[https://firminmartin.com/en/posts/2020/10/read_email_in_emacs_with_notmuch/][Read and Compose Email in Emacs with Notmuch – Firmin Martin]]
+
+Be sure that running =offlineimap= and =notmuch new= works without error before proceeding.
+**** msmtp
+Install =msmtp= and create a basic configuration file (=~/.msmtprc=) using this wiki article:
+[[https://wiki.archlinux.org/title/Msmtp#Basic_setup][msmtp - ArchWiki]]
 ** Installation
 *** Hotel California
 Clone the Hotel California repository into =~/.doom.d=, like this:
@@ -101,6 +110,7 @@ What you can do, however, is check the installation by running the Doom-Emacs do
 It should run without errors or warnings, but if it doesn’t, you should be able to fix the issues in most cases based on what the doctor orders.
 
 You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
+
 
 If you changed anything in =init.el= or =packages.el=, though I can’t think of a valid reason why you’d do such a thing, you need to run the Doom-Emacs sync script:
 
