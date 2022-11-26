@@ -51,7 +51,7 @@
                              "~/enestaaende/enestaaende.org"
                              "~/habits/habits.org"))
                              
-      
+(defvar my-notmuch-address-command "/home/moena/notmuch-addrlookup-c/notmuch-addrlookup")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -961,6 +961,10 @@
 	  mail-specify-envelope-from t
 	  mail-envelope-from 'header
 	  message-sendmail-envelope-from 'header)
+
+(require 'notmuch-address)
+(setq notmuch-address-command my-notmuch-address-command)
+(notmuch-address-message-insinuate)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
