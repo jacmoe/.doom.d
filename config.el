@@ -244,6 +244,7 @@
 ;; Engine-mode
 ;; EF-Themes
 ;; Mastodon
+;; Smtpmail
 ;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -941,6 +942,23 @@
       mastodon-toot--download-custom-emoji t
       mastodon-toot--enable-custom-emoji t
       mastodon-toot--enable-completion t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Smtpmail                                                                         ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq mail-host-address "gmail.com")
+(setq user-full-name "Jacob Moena")
+(setq user-mail-adress "jacmoe.dk@gmail.com")
+(setq mail-user-agent 'message-user-agent)
+(setq message-send-mail-function 'message-send-mail-with-sendmail)
+(setq message-kill-buffer-on-exit t)
+(setq mail-specify-envelope-from t)
+(setq sendmail-program "/usr/bin/msmtp"
+	  mail-specify-envelope-from t
+	  mail-envelope-from 'header
+	  message-sendmail-envelope-from 'header)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
