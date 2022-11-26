@@ -143,6 +143,7 @@
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode) ; Do not highlight current line
 (setq global-page-break-lines-mode t)                       ; Pretty page breaks everywhere
 (setq confirm-kill-processes nil)                           ; Don't ask to kill running processes when exiting Emacs.
+(setq +notmuch-sync-backend 'offlineimap)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
