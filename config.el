@@ -19,17 +19,32 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
-(defvar my-dark-theme 'ef-night)
-(defvar my-boon-default-cursor-color-dark "#00ccff")  ; boon cursor for ef-night
-(defvar my-light-theme 'ef-day)
-(defvar my-boon-default-cursor-color-light "#cf1f00") ; boon cursor for ef-day
+
+;; (defvar my-dark-theme 'ef-night)
+;; (defvar my-boon-default-cursor-color-dark "#00ccff")  ; boon cursor for ef-night
+;; (defvar my-dark-theme 'ef-cherie)
+;; (defvar my-boon-default-cursor-color-dark "#ff5aaf")  ; boon cursor for ef-cherie
+;; (defvar my-dark-theme 'ef-winter)
+;; (defvar my-boon-default-cursor-color-dark "#ff6ff0")  ; boon cursor for ef-winter
+;; (defvar my-dark-theme 'ef-autumn)
+;; (defvar my-boon-default-cursor-color-dark "#ffaa33")  ; boon cursor for ef-autumn
+;; (defvar my-dark-theme 'ef-duo-dark)
+;; (defvar my-boon-default-cursor-color-dark "#ef6f11")  ; boon cursor for ef-duo-dark
+(defvar my-dark-theme 'ef-tritanopia-dark)
+(defvar my-boon-default-cursor-color-dark "#fd3333")  ; boon cursor for ef-tritanopia-dark
+
+;; (defvar my-light-theme 'ef-day)
+;; (defvar my-boon-default-cursor-color-light "#cf1f00") ; boon cursor for ef-day
+(defvar my-light-theme 'ef-tritanopia-light)
+(defvar my-boon-default-cursor-color-light "#bb0000")  ; boon cursor for ef-tritanopia-light
+
 (defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark")                        ; can be light or dark. Used to color the Boon-mode cursor
 
 (defvar my-monospace-font "Overpass Mono")            ; Font to use for code
 (defvar my-variablespace-font "Overpass")             ; Font to use for writing
 
-(defvar my-org-tracktable-daily-goal 2000)            ; How many words do I want to write per day?
+(defvar my-org-tracktable-daily-goal 500)            ; How many words do I want to write per day?
 (defvar my-line-spacing 28)                           ; how much space between the lines?
 (defvar my-day-end 5)                                 ; when does my day end?
 
@@ -610,9 +625,9 @@
   (setq boon-insert-cursor-color "orange")
   (if (equal my-theme-shade "dark")
       (progn
-        (setq boon-default-cursor-color "#00ccff"))
+        (setq boon-default-cursor-color my-boon-default-cursor-color-dark))
         
-    (setq boon-default-cursor-color "#cf1f00"))
+    (setq boon-default-cursor-color my-boon-default-cursor-color-light))
     
   (if (equal my-keyboard-variant "colemak")
       ;; we are using Colemak
