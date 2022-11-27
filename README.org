@@ -85,6 +85,14 @@ Be sure that running =offlineimap= and =notmuch new= works without error before 
 **** msmtp
 Install =msmtp= and create a basic configuration file (=~/.msmtprc=) using this wiki article:
 [[https://wiki.archlinux.org/title/Msmtp#Basic_setup][msmtp - ArchWiki]]
+**** Notmuch Address Lookup tool
+To aid in looking up email addresses for auto-completion, we need to download (via git) and compile an address lookup tool coded in C.
+#+begin_src
+git clone git@github.com:aperezdc/notmuch-addrlookup-c.git
+cd notmuch-addrlookup-c
+make
+#+end_src
+See [[https://github.com/aperezdc/notmuch-addrlookup-c][aperezdc/notmuch-addrlookup-c]] for details.
 ** Installation
 *** Hotel California
 Clone the Hotel California repository into =~/.doom.d=, like this:
@@ -109,7 +117,7 @@ What you can do, however, is check the installation by running the Doom-Emacs do
 
 It should run without errors or warnings, but if it doesn’t, you should be able to fix the issues in most cases based on what the doctor orders.
 
-You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40.
+You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40, and correct the path to the C address lookup tool you compiled earlier.
 
 
 If you changed anything in =init.el= or =packages.el=, though I can’t think of a valid reason why you’d do such a thing, you need to run the Doom-Emacs sync script:
