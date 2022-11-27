@@ -3,18 +3,18 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-24 tor 04:05 -->
+<!-- 2022-11-28 man 00:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hotel California of Creative Writing</title>
 <meta name="author" content="Jacob Moena" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="js/readtheorg.js"></script>
 </head>
 <body>
 <div id="content" class="content">
@@ -23,125 +23,125 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9078941">1. Introduction</a></li>
-<li><a href="#orge30a9d8">2. Emacs</a>
+<li><a href="#orgdbaaf5f">1. Introduction</a></li>
+<li><a href="#orgf69f35e">2. Emacs</a>
 <ul>
-<li><a href="#orga887458">2.1. Emacs basics</a></li>
-<li><a href="#org989f0fe">2.2. Doom-Emacs</a></li>
-<li><a href="#orgc97641d">2.3. Notes about the Hotel California configuration</a></li>
+<li><a href="#orge35a4a9">2.1. Emacs basics</a></li>
+<li><a href="#org141b7dc">2.2. Doom-Emacs</a></li>
+<li><a href="#org301b4c7">2.3. Notes about the Hotel California configuration</a></li>
 </ul>
 </li>
-<li><a href="#orgdb9dcf0">3. Org-mode</a>
+<li><a href="#orgad4a42c">3. Org-mode</a>
 <ul>
-<li><a href="#org36e53a1">3.1. Standard markup</a></li>
-<li><a href="#orgc714e87">3.2. Headings (structure)</a></li>
-<li><a href="#org306a66a">3.3. Lists</a></li>
-<li><a href="#org5b4b77f">3.4. Document options</a>
+<li><a href="#orgec21869">3.1. Standard markup</a></li>
+<li><a href="#org1b41b8f">3.2. Headings (structure)</a></li>
+<li><a href="#org151d9c9">3.3. Lists</a></li>
+<li><a href="#org23ac455">3.4. Document options</a>
 <ul>
-<li><a href="#org2e0cd47">3.4.1. TOC</a></li>
+<li><a href="#org9f4e2a9">3.4.1. TOC</a></li>
 </ul>
 </li>
-<li><a href="#org4273cc6">3.5. Links</a></li>
-<li><a href="#org868e7b9">3.6. Footnote-links</a></li>
-<li><a href="#org8c74ab1">3.7. Special blocks</a></li>
-<li><a href="#orga24d7e9">3.8. Noexport tags</a></li>
-<li><a href="#orgca2d6f7">3.9. Ignore tags</a></li>
-<li><a href="#orgce2f6f0">3.10. Tables</a></li>
+<li><a href="#orgb64f951">3.5. Links</a></li>
+<li><a href="#org811f260">3.6. Footnote-links</a></li>
+<li><a href="#org4c46639">3.7. Special blocks</a></li>
+<li><a href="#org0142fcc">3.8. Noexport tags</a></li>
+<li><a href="#orgfcf1301">3.9. Ignore tags</a></li>
+<li><a href="#org180a5ca">3.10. Tables</a></li>
 </ul>
 </li>
-<li><a href="#org949e943">4. Boon</a>
+<li><a href="#org1b9db44">4. Boon</a>
 <ul>
-<li><a href="#org6acc204">4.1. Movement</a></li>
-<li><a href="#org4c3cc91">4.2. Editing</a></li>
-<li><a href="#orge296012">4.3. Custom</a></li>
+<li><a href="#org4ded9b3">4.1. Movement</a></li>
+<li><a href="#org21b20a7">4.2. Editing</a></li>
+<li><a href="#orgf754f30">4.3. Custom</a></li>
 </ul>
 </li>
-<li><a href="#org3fa0aee">5. Dictionaries et cetera</a>
+<li><a href="#org4592b2e">5. Dictionaries et cetera</a>
 <ul>
-<li><a href="#org0d20454">5.1. Dictionary server</a></li>
-<li><a href="#org7e97ee8">5.2. Webster</a></li>
-<li><a href="#org78053fa">5.3. Powerthesaurus</a></li>
-<li><a href="#org6633d55">5.4. Proselint</a></li>
-<li><a href="#org59b8371">5.5. Writegood-mode</a></li>
-<li><a href="#org83a4695">5.6. Typopunct</a></li>
-<li><a href="#org6223cc3">5.7. Special characters</a></li>
+<li><a href="#orge444bfb">5.1. Dictionary server</a></li>
+<li><a href="#orga825d10">5.2. Webster</a></li>
+<li><a href="#orgecf93ec">5.3. Powerthesaurus</a></li>
+<li><a href="#org48e5aeb">5.4. Proselint</a></li>
+<li><a href="#orga0c1005">5.5. Writegood-mode</a></li>
+<li><a href="#orgca0e0a1">5.6. Typopunct</a></li>
+<li><a href="#org0d9b79e">5.7. Special characters</a></li>
 </ul>
 </li>
-<li><a href="#orgee08c01">6. Tracking progress</a>
+<li><a href="#org8dfe901">6. Tracking progress</a>
 <ul>
-<li><a href="#orgb8d5585">6.1. Track-table</a></li>
-<li><a href="#orgc28cd03">6.2. Clocking time</a></li>
-<li><a href="#orgb30a309">6.3. Org-habit streak count</a></li>
-<li><a href="#org7b10b91">6.4. Words per heading</a></li>
-<li><a href="#orgfee9aef">6.5. Column view</a></li>
+<li><a href="#orgfd4a922">6.1. Track-table</a></li>
+<li><a href="#org58f20b7">6.2. Clocking time</a></li>
+<li><a href="#orge7bb378">6.3. Org-habit streak count</a></li>
+<li><a href="#org5916f0f">6.4. Words per heading</a></li>
+<li><a href="#orgf962ec1">6.5. Column view</a></li>
 </ul>
 </li>
-<li><a href="#org9375a06">7. Organize the writing</a>
+<li><a href="#org84c1312">7. Organize the writing</a>
 <ul>
-<li><a href="#org07043b8">7.1. Master document</a></li>
+<li><a href="#org52ca6f2">7.1. Master document</a></li>
 </ul>
 </li>
-<li><a href="#org02f8654">8. Capturing thoughts</a></li>
-<li><a href="#org58deb64">9. Saving the work</a>
+<li><a href="#orgfbde428">8. Capturing thoughts</a></li>
+<li><a href="#org86cfd17">9. Saving the work</a>
 <ul>
-<li><a href="#orgbb50bdc">9.1. Magit</a></li>
-<li><a href="#org403706a">9.2. Unsaved changes</a></li>
+<li><a href="#org592b2a9">9.1. Magit</a></li>
+<li><a href="#orgc67f5bb">9.2. Unsaved changes</a></li>
 </ul>
 </li>
-<li><a href="#orgcba70b7">10. Exporting</a>
+<li><a href="#orgfb89b12">10. Exporting</a>
 <ul>
-<li><a href="#org9658a91">10.1. HTML to E-book</a></li>
-<li><a href="#orgbbbf449">10.2. PDF via LaTeX</a></li>
-<li><a href="#org13a2814">10.3. Open Document Format</a></li>
+<li><a href="#org5fd02cf">10.1. HTML to E-book</a></li>
+<li><a href="#orged5ef17">10.2. PDF via LaTeX</a></li>
+<li><a href="#org248f7fd">10.3. Open Document Format</a></li>
 </ul>
 </li>
-<li><a href="#org738d11c">11. Looking good and being comfortable</a>
+<li><a href="#orgaaf9655">11. Looking good and being comfortable</a>
 <ul>
-<li><a href="#orgabd447e">11.1. Themes and fonts</a></li>
-<li><a href="#orga0f5695">11.2. Zen-mode and transparency</a></li>
-<li><a href="#org4774f27">11.3. Scroll-center-cursor-mode</a></li>
+<li><a href="#org03b4b5c">11.1. Themes and fonts</a></li>
+<li><a href="#orgaf1d41b">11.2. Zen-mode and transparency</a></li>
+<li><a href="#org72adfbc">11.3. Scroll-center-cursor-mode</a></li>
 </ul>
 </li>
-<li><a href="#org5018ed3">12. Org-roam</a>
+<li><a href="#orgafe2965">12. Org-roam</a>
 <ul>
-<li><a href="#orgb430d3e">12.1. Org-roam UI</a></li>
+<li><a href="#org7451f0c">12.1. Org-roam UI</a></li>
 </ul>
 </li>
-<li><a href="#orgc083a0e">13. Other things</a>
+<li><a href="#orgb229edf">13. Other things</a>
 <ul>
-<li><a href="#orgbc5bfa3">13.1. Journaling</a></li>
-<li><a href="#org6b320ab">13.2. Blogging</a></li>
-<li><a href="#org82280ea">13.3. Bibliography</a>
+<li><a href="#org99abe64">13.1. Journaling</a></li>
+<li><a href="#orgffed614">13.2. Blogging</a></li>
+<li><a href="#org9855897">13.3. Bibliography</a>
 <ul>
-<li><a href="#org4b9ff9a">13.3.1. Zotero</a></li>
-<li><a href="#org638fe5d">13.3.2. Emacs</a></li>
+<li><a href="#orgf367332">13.3.1. Zotero</a></li>
+<li><a href="#org252d4ed">13.3.2. Emacs</a></li>
 </ul>
 </li>
-<li><a href="#orgd8e8740">13.4. Snippets</a></li>
-<li><a href="#orga70b746">13.5. Miscellaneous</a>
+<li><a href="#org8a6b66e">13.4. Snippets</a></li>
+<li><a href="#org490f9a3">13.5. Miscellaneous</a>
 <ul>
-<li><a href="#orgc238234">13.5.1. Grabbing links from the web browser</a></li>
+<li><a href="#orgf42c518">13.5.1. Grabbing links from the web browser</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb66ba03">14. Online Resources</a></li>
-<li><a href="#orgfa7033d">15. Conclusion</a></li>
+<li><a href="#org84fd2a3">14. Online Resources</a></li>
+<li><a href="#orgc778692">15. Conclusion</a></li>
 </ul>
 </div>
 </div>
 <p>
 This is currently a work in progress
 </p>
-<div class="description" id="org0803e27">
+<div class="description" id="org5f5f0a9">
 
 </div>
 
-<div id="outline-container-org9078941" class="outline-2">
-<h2 id="org9078941"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orgdbaaf5f" class="outline-2">
+<h2 id="orgdbaaf5f"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 
-<div id="org6d897f5" class="figure">
+<div id="org0377c18" class="figure">
 <p><img src="images/hotel-california.png" alt="Emacs - my Hotel California" title="Emacs - my Hotel California" width="100%" />
 </p>
 </div>
@@ -160,8 +160,8 @@ It is my hope that, after reading this article, that  you start thinking of it a
 <br/>
 </div>
 </div>
-<div id="outline-container-orge30a9d8" class="outline-2">
-<h2 id="orge30a9d8"><span class="section-number-2">2.</span> Emacs</h2>
+<div id="outline-container-orgf69f35e" class="outline-2">
+<h2 id="orgf69f35e"><span class="section-number-2">2.</span> Emacs</h2>
 <div class="outline-text-2" id="text-2">
 <blockquote>
 <p>
@@ -177,7 +177,7 @@ It is my hope that, after reading this article, that  you start thinking of it a
 I can make Emacs fit my workflow rather than the other way around.
 </p>
 
-<div id="org408edfa" class="figure">
+<div id="orgec771fb" class="figure">
 <p><img src="images/hackerman1.jpg" alt="Hackerman" title="Hackerman" width="40%" />
 </p>
 </div>
@@ -187,8 +187,8 @@ Emacs is a LISP machine.
 </p>
 </div>
 
-<div id="outline-container-orga887458" class="outline-3">
-<h3 id="orga887458"><span class="section-number-3">2.1.</span> Emacs basics</h3>
+<div id="outline-container-orge35a4a9" class="outline-3">
+<h3 id="orge35a4a9"><span class="section-number-3">2.1.</span> Emacs basics</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 It’s highly recommended to run Emacs without any customization a couple of times to learn how the basic Emacs commands work. We can do that by running Emacs with the <code>Q</code> command-line argument, like this: <code>emacs -Q</code>. If you want—again, highly recommended—you can run the Emacs Tutorial by running <code>C-h t</code>. Do the tutorial until you feel confident. Also, experiment in the Scratch buffer, like in the video tutorial above.
@@ -242,8 +242,8 @@ Now that you know a thing or two about Emacs, here’s another introductory vide
 <br/>
 </div>
 </div>
-<div id="outline-container-org989f0fe" class="outline-3">
-<h3 id="org989f0fe"><span class="section-number-3">2.2.</span> Doom-Emacs</h3>
+<div id="outline-container-org141b7dc" class="outline-3">
+<h3 id="org141b7dc"><span class="section-number-3">2.2.</span> Doom-Emacs</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <a href="https://github.com/hlissner/doom-emacs">Doom-Emacs</a> is a minimalist modern Emacs distribution that is light and fast. It provides a rock-solid and highly configurable infrastructure to base an Emacs configuration on.
@@ -254,8 +254,8 @@ I switched to Doom-Emacs after declaring Emacs Bankruptcy <sup><a id="fnr.1" cla
 </p>
 </div>
 </div>
-<div id="outline-container-orgc97641d" class="outline-3">
-<h3 id="orgc97641d"><span class="section-number-3">2.3.</span> Notes about the Hotel California configuration</h3>
+<div id="outline-container-org301b4c7" class="outline-3">
+<h3 id="org301b4c7"><span class="section-number-3">2.3.</span> Notes about the Hotel California configuration</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 If you feel that you need to have at least a menu-bar, then you can turn it on/off by running this command: <code>M-x menu-bar-mode</code>. It can be useful sometimes, especially when learning the Emacs ropes.
@@ -263,11 +263,11 @@ If you feel that you need to have at least a menu-bar, then you can turn it on/o
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb9dcf0" class="outline-2">
-<h2 id="orgdb9dcf0"><span class="section-number-2">3.</span> Org-mode</h2>
+<div id="outline-container-orgad4a42c" class="outline-2">
+<h2 id="orgad4a42c"><span class="section-number-2">3.</span> Org-mode</h2>
 <div class="outline-text-2" id="text-3">
 
-<div id="orgb3f7f65" class="figure">
+<div id="orgc45fc0e" class="figure">
 <p><img src="images/org-mode-unicorn.svg" alt="Org-mode" class="org-svg" title="Org-mode" width="20%" />
 </p>
 </div>
@@ -297,8 +297,8 @@ Here is a nerdy blog post about why Org-mode is a great markup language: <a href
 </ul>
 </div>
 
-<div id="outline-container-org36e53a1" class="outline-3">
-<h3 id="org36e53a1"><span class="section-number-3">3.1.</span> Standard markup</h3>
+<div id="outline-container-orgec21869" class="outline-3">
+<h3 id="orgec21869"><span class="section-number-3">3.1.</span> Standard markup</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li><code>*bold*</code> <b>bold</b></li>
@@ -311,8 +311,8 @@ Here is a nerdy blog post about why Org-mode is a great markup language: <a href
 </div>
 </div>
 
-<div id="outline-container-orgc714e87" class="outline-3">
-<h3 id="orgc714e87"><span class="section-number-3">3.2.</span> Headings (structure)</h3>
+<div id="outline-container-org1b41b8f" class="outline-3">
+<h3 id="org1b41b8f"><span class="section-number-3">3.2.</span> Headings (structure)</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 A heading is one or more asterisks followed by a space and some text.
@@ -358,8 +358,8 @@ Press <code>C-&lt;Enter&gt;</code> to insert a new heading at the same level as 
 </div>
 </div>
 
-<div id="outline-container-org306a66a" class="outline-3">
-<h3 id="org306a66a"><span class="section-number-3">3.3.</span> Lists</h3>
+<div id="outline-container-org151d9c9" class="outline-3">
+<h3 id="org151d9c9"><span class="section-number-3">3.3.</span> Lists</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 A list item is a dash (-) followed by a space and some text.
@@ -390,12 +390,12 @@ Press <code>C-&lt;Enter&gt;</code> to insert a new list item at the same level a
 </div>
 </div>
 
-<div id="outline-container-org5b4b77f" class="outline-3">
-<h3 id="org5b4b77f"><span class="section-number-3">3.4.</span> Document options</h3>
+<div id="outline-container-org23ac455" class="outline-3">
+<h3 id="org23ac455"><span class="section-number-3">3.4.</span> Document options</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org2e0cd47" class="outline-4">
-<h4 id="org2e0cd47"><span class="section-number-4">3.4.1.</span> TOC</h4>
+<div id="outline-container-org9f4e2a9" class="outline-4">
+<h4 id="org9f4e2a9"><span class="section-number-4">3.4.1.</span> TOC</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 <code>#+OPTIONS: toc:nil</code> turns off the insertion of an auto-generated Table Of Contents (TOC) upon export.
@@ -405,8 +405,8 @@ You can then use <code>#+toc: headlines 2</code> to manually insert a table of c
 </div>
 </div>
 
-<div id="outline-container-org4273cc6" class="outline-3">
-<h3 id="org4273cc6"><span class="section-number-3">3.5.</span> Links</h3>
+<div id="outline-container-orgb64f951" class="outline-3">
+<h3 id="orgb64f951"><span class="section-number-3">3.5.</span> Links</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li><code>[[link][description]]</code> link with description (use <code>c l</code> to insert)</li>
@@ -422,8 +422,8 @@ If the link is a file link to an image, and without a description, it is an inli
 </p>
 </div>
 </div>
-<div id="outline-container-org868e7b9" class="outline-3">
-<h3 id="org868e7b9"><span class="section-number-3">3.6.</span> Footnote-links</h3>
+<div id="outline-container-org811f260" class="outline-3">
+<h3 id="org811f260"><span class="section-number-3">3.6.</span> Footnote-links</h3>
 <div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li><code>[fn:1: this is an inline, numbered footnote]</code></li>
@@ -437,8 +437,8 @@ For more information about footnotes, see <sup><a id="fnr.2" class="footref" hre
 </div>
 </div>
 
-<div id="outline-container-org8c74ab1" class="outline-3">
-<h3 id="org8c74ab1"><span class="section-number-3">3.7.</span> Special blocks</h3>
+<div id="outline-container-org4c46639" class="outline-3">
+<h3 id="org4c46639"><span class="section-number-3">3.7.</span> Special blocks</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 In addition to the standard markup, Org-mode has special blocks. Use <code>C-c C-,</code> to insert a block.
@@ -460,24 +460,24 @@ Special blocks is a good way to extend the markup, and—of course—you can def
 </p>
 </div>
 </div>
-<div id="outline-container-orga24d7e9" class="outline-3">
-<h3 id="orga24d7e9"><span class="section-number-3">3.8.</span> Noexport tags</h3>
+<div id="outline-container-org0142fcc" class="outline-3">
+<h3 id="org0142fcc"><span class="section-number-3">3.8.</span> Noexport tags</h3>
 <div class="outline-text-3" id="text-3-8">
 <p>
 The <code>:noexport:</code> tag tells Org-mode that the contents—including any children—of a section is not to be exported. Useful for when you keep your work in one single file, including sections for things like research, notes, and character studies.
 </p>
 </div>
 </div>
-<div id="outline-container-orgca2d6f7" class="outline-3">
-<h3 id="orgca2d6f7"><span class="section-number-3">3.9.</span> Ignore tags</h3>
+<div id="outline-container-orgfcf1301" class="outline-3">
+<h3 id="orgfcf1301"><span class="section-number-3">3.9.</span> Ignore tags</h3>
 <div class="outline-text-3" id="text-3-9">
 <p>
 The <code>:ignore:</code> tag instructs Org-mode to export the contents of a heading section, but not the heading itself. That’s useful when we organize your outline/document in chapters and scenes, but don’t want the exported text to be partitioned with scene headings. Having the text partitioned using headings allows us to rearrange those sections of the document—promoting, demoting, moving up and down—and we wouldn’t be able to do that if the text was not organized in an outline. Or, put another way: the <code>:ignore:</code> tag allows us to keep the outline to ourselves.
 </p>
 </div>
 </div>
-<div id="outline-container-orgce2f6f0" class="outline-3">
-<h3 id="orgce2f6f0"><span class="section-number-3">3.10.</span> Tables</h3>
+<div id="outline-container-org180a5ca" class="outline-3">
+<h3 id="org180a5ca"><span class="section-number-3">3.10.</span> Tables</h3>
 <div class="outline-text-3" id="text-3-10">
 <p>
 In Org-mode tables are made of ASCII characters, but it feels like magic in action.
@@ -492,8 +492,8 @@ We’ll see more of what Org-mode tables can do later on in this article, when d
 </div>
 </div>
 </div>
-<div id="outline-container-org949e943" class="outline-2">
-<h2 id="org949e943"><span class="section-number-2">4.</span> Boon</h2>
+<div id="outline-container-org1b9db44" class="outline-2">
+<h2 id="org1b9db44"><span class="section-number-2">4.</span> Boon</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <a href="https://github.com/jyp/boon">Boon</a> is a modal editing package for Emacs which is ergonomic and designed to integrate well with existing Emacs infrastructure. That means that we can continue to use the standard Emacs keyboard shortcuts should we choose to do so, in addition to the features that Boon provides.
@@ -527,7 +527,7 @@ Not all commands work as you would expect, however, so if we wanted to run <code
 Here’s how the keyboard layout looks like for Command mode using Boon:
 </p>
 
-<div id="orgcd5a159" class="figure">
+<div id="org1b7236a" class="figure">
 <p><img src="images/keyboard-layout.png" alt="The Hotel California layout" title="The Hotel California layout" width="100%" />
 </p>
 </div>
@@ -543,12 +543,12 @@ We already covered the Boon commands in blue, so the following will not cover th
 </p>
 </div>
 
-<div id="outline-container-org6acc204" class="outline-3">
-<h3 id="org6acc204"><span class="section-number-3">4.1.</span> Movement</h3>
+<div id="outline-container-org4ded9b3" class="outline-3">
+<h3 id="org4ded9b3"><span class="section-number-3">4.1.</span> Movement</h3>
 </div>
 
-<div id="outline-container-org4c3cc91" class="outline-3">
-<h3 id="org4c3cc91"><span class="section-number-3">4.2.</span> Editing</h3>
+<div id="outline-container-org21b20a7" class="outline-3">
+<h3 id="org21b20a7"><span class="section-number-3">4.2.</span> Editing</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>` : cycles between uppercase, title-case, and lowercase</li>
@@ -562,8 +562,8 @@ We already covered the Boon commands in blue, so the following will not cover th
 </div>
 </div>
 
-<div id="outline-container-orge296012" class="outline-3">
-<h3 id="orge296012"><span class="section-number-3">4.3.</span> Custom</h3>
+<div id="outline-container-orgf754f30" class="outline-3">
+<h3 id="orgf754f30"><span class="section-number-3">4.3.</span> Custom</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>w : show how many words have been written today (<code>org-tracktable-status</code>)</li>
@@ -580,32 +580,32 @@ We already covered the Boon commands in blue, so the following will not cover th
 </div>
 </div>
 
-<div id="outline-container-org3fa0aee" class="outline-2">
-<h2 id="org3fa0aee"><span class="section-number-2">5.</span> Dictionaries et cetera</h2>
+<div id="outline-container-org4592b2e" class="outline-2">
+<h2 id="org4592b2e"><span class="section-number-2">5.</span> Dictionaries et cetera</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org0d20454" class="outline-3">
-<h3 id="org0d20454"><span class="section-number-3">5.1.</span> Dictionary server</h3>
+<div id="outline-container-orge444bfb" class="outline-3">
+<h3 id="orge444bfb"><span class="section-number-3">5.1.</span> Dictionary server</h3>
 </div>
 
-<div id="outline-container-org7e97ee8" class="outline-3">
-<h3 id="org7e97ee8"><span class="section-number-3">5.2.</span> Webster</h3>
+<div id="outline-container-orga825d10" class="outline-3">
+<h3 id="orga825d10"><span class="section-number-3">5.2.</span> Webster</h3>
 </div>
-<div id="outline-container-org78053fa" class="outline-3">
-<h3 id="org78053fa"><span class="section-number-3">5.3.</span> Powerthesaurus</h3>
+<div id="outline-container-orgecf93ec" class="outline-3">
+<h3 id="orgecf93ec"><span class="section-number-3">5.3.</span> Powerthesaurus</h3>
 </div>
-<div id="outline-container-org6633d55" class="outline-3">
-<h3 id="org6633d55"><span class="section-number-3">5.4.</span> Proselint</h3>
+<div id="outline-container-org48e5aeb" class="outline-3">
+<h3 id="org48e5aeb"><span class="section-number-3">5.4.</span> Proselint</h3>
 <div class="outline-text-3" id="text-5-4">
 
-<div id="org161f830" class="figure">
+<div id="org0d29cc4" class="figure">
 <p><img src="images/proselint.png" alt="Proselint has checked the text and is not satisfied" title="Proselint has checked the text and is not satisfied" width="100%" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org59b8371" class="outline-3">
-<h3 id="org59b8371"><span class="section-number-3">5.5.</span> Writegood-mode</h3>
+<div id="outline-container-orga0c1005" class="outline-3">
+<h3 id="orga0c1005"><span class="section-number-3">5.5.</span> Writegood-mode</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 <code>Writegood-mode</code> is a minor mode that will highlight weasel words and passive voice.
@@ -620,8 +620,8 @@ Additional weasel words can be added to writegood-mode by editing the <code>my/w
 </p>
 </div>
 </div>
-<div id="outline-container-org83a4695" class="outline-3">
-<h3 id="org83a4695"><span class="section-number-3">5.6.</span> Typopunct</h3>
+<div id="outline-container-orgca0e0a1" class="outline-3">
+<h3 id="orgca0e0a1"><span class="section-number-3">5.6.</span> Typopunct</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 <code>Typopunct</code> is a package that enables us to simply write regular ASCII single and double quotes and have them automatically be converted into typographical quotes.
@@ -644,19 +644,19 @@ Additionally, <code>typopunct</code> also allows us to insert <code>en-dash</cod
 </p>
 </div>
 </div>
-<div id="outline-container-org6223cc3" class="outline-3">
-<h3 id="org6223cc3"><span class="section-number-3">5.7.</span> Special characters</h3>
+<div id="outline-container-org0d9b79e" class="outline-3">
+<h3 id="org0d9b79e"><span class="section-number-3">5.7.</span> Special characters</h3>
 </div>
 </div>
-<div id="outline-container-orgee08c01" class="outline-2">
-<h2 id="orgee08c01"><span class="section-number-2">6.</span> Tracking progress</h2>
+<div id="outline-container-org8dfe901" class="outline-2">
+<h2 id="org8dfe901"><span class="section-number-2">6.</span> Tracking progress</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgb8d5585" class="outline-3">
-<h3 id="orgb8d5585"><span class="section-number-3">6.1.</span> Track-table</h3>
+<div id="outline-container-orgfd4a922" class="outline-3">
+<h3 id="orgfd4a922"><span class="section-number-3">6.1.</span> Track-table</h3>
 </div>
-<div id="outline-container-orgc28cd03" class="outline-3">
-<h3 id="orgc28cd03"><span class="section-number-3">6.2.</span> Clocking time</h3>
+<div id="outline-container-org58f20b7" class="outline-3">
+<h3 id="org58f20b7"><span class="section-number-3">6.2.</span> Clocking time</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 <code>c x i</code> to clock in. <code>c x o</code> to clock out. <code>c x q</code> to cancel a clock.
@@ -715,25 +715,25 @@ Often when writing, our progress can’t always be measured in words, so time sp
 </p>
 </div>
 </div>
-<div id="outline-container-orgb30a309" class="outline-3">
-<h3 id="orgb30a309"><span class="section-number-3">6.3.</span> Org-habit streak count</h3>
+<div id="outline-container-orge7bb378" class="outline-3">
+<h3 id="orge7bb378"><span class="section-number-3">6.3.</span> Org-habit streak count</h3>
 </div>
-<div id="outline-container-org7b10b91" class="outline-3">
-<h3 id="org7b10b91"><span class="section-number-3">6.4.</span> Words per heading</h3>
+<div id="outline-container-org5916f0f" class="outline-3">
+<h3 id="org5916f0f"><span class="section-number-3">6.4.</span> Words per heading</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 Using <code>org-wc</code>.
 </p>
 
 
-<div id="org58b79aa" class="figure">
+<div id="org25208ba" class="figure">
 <p><img src="images/org-wc.png" alt="Running M-x org-wc-display shows word count per heading" title="Running M-x org-wc-display shows word count per heading" width="100%" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfee9aef" class="outline-3">
-<h3 id="orgfee9aef"><span class="section-number-3">6.5.</span> Column view</h3>
+<div id="outline-container-orgf962ec1" class="outline-3">
+<h3 id="orgf962ec1"><span class="section-number-3">6.5.</span> Column view</h3>
 <div class="outline-text-3" id="text-6-5">
 <p>
 Column view is a good way to view properties of headers. While we can view todo status, categories, tags, time logged, and other standard properties, we can add our own, custom properties, and this is where it gets real interesting for creative writers.
@@ -741,7 +741,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 </p>
 
 
-<div id="orgc7863e5" class="figure">
+<div id="org3826a00" class="figure">
 <p><img src="images/properties-actions.png" alt="Adding properties to a heading" title="Adding properties to a heading" width="100%" />
 </p>
 </div>
@@ -750,7 +750,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 Now we can configure the <code>COLUMNS</code> special property, which will be inherited by child headings:
 </p>
 
-<div id="orgf36d778" class="figure">
+<div id="orgaa48b45" class="figure">
 <p><img src="images/columns-source.png" alt="Setting up columns with properties" title="Setting up columns with properties" width="100%" />
 </p>
 </div>
@@ -763,7 +763,7 @@ See <a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.htm
 Having set it all up, we can now run <code>org-columns</code> by pressing <code>c x c</code>:
 </p>
 
-<div id="org84e3959" class="figure">
+<div id="orge29d1bf" class="figure">
 <p><img src="images/columns.png" alt="Column view" title="Column view" width="100%" />
 </p>
 </div>
@@ -775,32 +775,32 @@ Pres <code>q</code> to exit.
 </div>
 </div>
 
-<div id="outline-container-org9375a06" class="outline-2">
-<h2 id="org9375a06"><span class="section-number-2">7.</span> Organize the writing</h2>
+<div id="outline-container-org84c1312" class="outline-2">
+<h2 id="org84c1312"><span class="section-number-2">7.</span> Organize the writing</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org07043b8" class="outline-3">
-<h3 id="org07043b8"><span class="section-number-3">7.1.</span> Master document</h3>
+<div id="outline-container-org52ca6f2" class="outline-3">
+<h3 id="org52ca6f2"><span class="section-number-3">7.1.</span> Master document</h3>
 </div>
 </div>
-<div id="outline-container-org02f8654" class="outline-2">
-<h2 id="org02f8654"><span class="section-number-2">8.</span> Capturing thoughts</h2>
+<div id="outline-container-orgfbde428" class="outline-2">
+<h2 id="orgfbde428"><span class="section-number-2">8.</span> Capturing thoughts</h2>
 </div>
-<div id="outline-container-org58deb64" class="outline-2">
-<h2 id="org58deb64"><span class="section-number-2">9.</span> Saving the work</h2>
+<div id="outline-container-org86cfd17" class="outline-2">
+<h2 id="org86cfd17"><span class="section-number-2">9.</span> Saving the work</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-orgbb50bdc" class="outline-3">
-<h3 id="orgbb50bdc"><span class="section-number-3">9.1.</span> Magit</h3>
+<div id="outline-container-org592b2a9" class="outline-3">
+<h3 id="org592b2a9"><span class="section-number-3">9.1.</span> Magit</h3>
 </div>
-<div id="outline-container-org403706a" class="outline-3">
-<h3 id="org403706a"><span class="section-number-3">9.2.</span> Unsaved changes</h3>
+<div id="outline-container-orgc67f5bb" class="outline-3">
+<h3 id="orgc67f5bb"><span class="section-number-3">9.2.</span> Unsaved changes</h3>
 <div class="outline-text-3" id="text-9-2">
 <p>
 Sometimes you want to know what changes you have made to a buffer since your last save. Since you haven’t saved the file yet, Magit can’t help you, so you need something else. Fortunately, we can use Emacs’ <code>diff-buffer-with-file</code>, mapped to <code>C-d</code>.
 </p>
 
-<div id="orge63cfbf" class="figure">
+<div id="orgaa373f6" class="figure">
 <p><img src="images/diff.png" alt="Using diff to see the difference between buffer and file" title="Using diff to see the difference between buffer and file" width="100%" />
 </p>
 </div>
@@ -812,65 +812,65 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 </div>
 </div>
 </div>
-<div id="outline-container-orgcba70b7" class="outline-2">
-<h2 id="orgcba70b7"><span class="section-number-2">10.</span> Exporting</h2>
+<div id="outline-container-orgfb89b12" class="outline-2">
+<h2 id="orgfb89b12"><span class="section-number-2">10.</span> Exporting</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org9658a91" class="outline-3">
-<h3 id="org9658a91"><span class="section-number-3">10.1.</span> HTML to E-book</h3>
+<div id="outline-container-org5fd02cf" class="outline-3">
+<h3 id="org5fd02cf"><span class="section-number-3">10.1.</span> HTML to E-book</h3>
 </div>
-<div id="outline-container-orgbbbf449" class="outline-3">
-<h3 id="orgbbbf449"><span class="section-number-3">10.2.</span> PDF via LaTeX</h3>
+<div id="outline-container-orged5ef17" class="outline-3">
+<h3 id="orged5ef17"><span class="section-number-3">10.2.</span> PDF via LaTeX</h3>
 </div>
-<div id="outline-container-org13a2814" class="outline-3">
-<h3 id="org13a2814"><span class="section-number-3">10.3.</span> Open Document Format</h3>
+<div id="outline-container-org248f7fd" class="outline-3">
+<h3 id="org248f7fd"><span class="section-number-3">10.3.</span> Open Document Format</h3>
 </div>
 </div>
-<div id="outline-container-org738d11c" class="outline-2">
-<h2 id="org738d11c"><span class="section-number-2">11.</span> Looking good and being comfortable</h2>
+<div id="outline-container-orgaaf9655" class="outline-2">
+<h2 id="orgaaf9655"><span class="section-number-2">11.</span> Looking good and being comfortable</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-orgabd447e" class="outline-3">
-<h3 id="orgabd447e"><span class="section-number-3">11.1.</span> Themes and fonts</h3>
+<div id="outline-container-org03b4b5c" class="outline-3">
+<h3 id="org03b4b5c"><span class="section-number-3">11.1.</span> Themes and fonts</h3>
 </div>
-<div id="outline-container-orga0f5695" class="outline-3">
-<h3 id="orga0f5695"><span class="section-number-3">11.2.</span> Zen-mode and transparency</h3>
+<div id="outline-container-orgaf1d41b" class="outline-3">
+<h3 id="orgaf1d41b"><span class="section-number-3">11.2.</span> Zen-mode and transparency</h3>
 <div class="outline-text-3" id="text-11-2">
 
-<div id="orgb8e3b2d" class="figure">
+<div id="orgf41c956" class="figure">
 <p><img src="images/zen-mode.png" alt="Zen-mode with transparency turned on" title="Zen-mode with transparency turned on" width="100%" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org4774f27" class="outline-3">
-<h3 id="org4774f27"><span class="section-number-3">11.3.</span> Scroll-center-cursor-mode</h3>
+<div id="outline-container-org72adfbc" class="outline-3">
+<h3 id="org72adfbc"><span class="section-number-3">11.3.</span> Scroll-center-cursor-mode</h3>
 </div>
 </div>
-<div id="outline-container-org5018ed3" class="outline-2">
-<h2 id="org5018ed3"><span class="section-number-2">12.</span> Org-roam</h2>
+<div id="outline-container-orgafe2965" class="outline-2">
+<h2 id="orgafe2965"><span class="section-number-2">12.</span> Org-roam</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-orgb430d3e" class="outline-3">
-<h3 id="orgb430d3e"><span class="section-number-3">12.1.</span> Org-roam UI</h3>
+<div id="outline-container-org7451f0c" class="outline-3">
+<h3 id="org7451f0c"><span class="section-number-3">12.1.</span> Org-roam UI</h3>
 </div>
 </div>
-<div id="outline-container-orgc083a0e" class="outline-2">
-<h2 id="orgc083a0e"><span class="section-number-2">13.</span> Other things</h2>
+<div id="outline-container-orgb229edf" class="outline-2">
+<h2 id="orgb229edf"><span class="section-number-2">13.</span> Other things</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-orgbc5bfa3" class="outline-3">
-<h3 id="orgbc5bfa3"><span class="section-number-3">13.1.</span> Journaling</h3>
+<div id="outline-container-org99abe64" class="outline-3">
+<h3 id="org99abe64"><span class="section-number-3">13.1.</span> Journaling</h3>
 </div>
-<div id="outline-container-org6b320ab" class="outline-3">
-<h3 id="org6b320ab"><span class="section-number-3">13.2.</span> Blogging</h3>
+<div id="outline-container-orgffed614" class="outline-3">
+<h3 id="orgffed614"><span class="section-number-3">13.2.</span> Blogging</h3>
 </div>
-<div id="outline-container-org82280ea" class="outline-3">
-<h3 id="org82280ea"><span class="section-number-3">13.3.</span> Bibliography</h3>
+<div id="outline-container-org9855897" class="outline-3">
+<h3 id="org9855897"><span class="section-number-3">13.3.</span> Bibliography</h3>
 <div class="outline-text-3" id="text-13-3">
 </div>
-<div id="outline-container-org4b9ff9a" class="outline-4">
-<h4 id="org4b9ff9a"><span class="section-number-4">13.3.1.</span> Zotero</h4>
+<div id="outline-container-orgf367332" class="outline-4">
+<h4 id="orgf367332"><span class="section-number-4">13.3.1.</span> Zotero</h4>
 <div class="outline-text-4" id="text-13-3-1">
 <p>
 <a href="https://www.zotero.org/">Zotero</a> is used to gather and store and export the citations/references, by the use of the <code>Better-Bibtex</code> plugin.
@@ -893,8 +893,8 @@ To actually populate the bibliography library, I am using the Zotero Firefox con
 </p>
 </div>
 </div>
-<div id="outline-container-org638fe5d" class="outline-4">
-<h4 id="org638fe5d"><span class="section-number-4">13.3.2.</span> Emacs</h4>
+<div id="outline-container-org252d4ed" class="outline-4">
+<h4 id="org252d4ed"><span class="section-number-4">13.3.2.</span> Emacs</h4>
 <div class="outline-text-4" id="text-13-3-2">
 <p>
 After all the work with Zotero, we are now ready to use the bibliography from within Emacs.
@@ -914,19 +914,19 @@ Then, we set a placeholder for where the generated bibliography list will be ren
 Now that we’re all set up, we can now insert citations into our document by running <code>org-cite-insert</code> (bound to <code>C-c l @</code>)
 </p>
 
-<div id="org8551b5b" class="figure">
+<div id="org34e50f4" class="figure">
 <p><img src="images/citation-insert.png" alt="Inserting a citation in Emacs" title="Inserting a citation in Emacs" width="100%" />
 </p>
 </div>
 
 
-<div id="org860b3d5" class="figure">
+<div id="org1519351" class="figure">
 <p><img src="images/bibliography-source.png" alt="Bibliography source code" title="Biblography source code" width="100%" />
 </p>
 </div>
 
 
-<div id="org0571704" class="figure">
+<div id="orgaf9fe76" class="figure">
 <p><img src="images/bibliography-test.png" alt="Bibliography test rendering" title="Bibliography test rendering" width="100%" />
 </p>
 </div>
@@ -934,15 +934,15 @@ Now that we’re all set up, we can now insert citations into our document by ru
 </div>
 </div>
 
-<div id="outline-container-orgd8e8740" class="outline-3">
-<h3 id="orgd8e8740"><span class="section-number-3">13.4.</span> Snippets</h3>
+<div id="outline-container-org8a6b66e" class="outline-3">
+<h3 id="org8a6b66e"><span class="section-number-3">13.4.</span> Snippets</h3>
 </div>
-<div id="outline-container-orga70b746" class="outline-3">
-<h3 id="orga70b746"><span class="section-number-3">13.5.</span> Miscellaneous</h3>
+<div id="outline-container-org490f9a3" class="outline-3">
+<h3 id="org490f9a3"><span class="section-number-3">13.5.</span> Miscellaneous</h3>
 <div class="outline-text-3" id="text-13-5">
 </div>
-<div id="outline-container-orgc238234" class="outline-4">
-<h4 id="orgc238234"><span class="section-number-4">13.5.1.</span> Grabbing links from the web browser</h4>
+<div id="outline-container-orgf42c518" class="outline-4">
+<h4 id="orgf42c518"><span class="section-number-4">13.5.1.</span> Grabbing links from the web browser</h4>
 <div class="outline-text-4" id="text-13-5-1">
 <p>
 By running <code>M-x grab-x-link</code> we can insert a link from an active web browser window.
@@ -953,8 +953,8 @@ It will ask you to choose your browser—Chromium, Chrome, Firefox, or Brave—a
 </div>
 </div>
 
-<div id="outline-container-orgb66ba03" class="outline-2">
-<h2 id="orgb66ba03"><span class="section-number-2">14.</span> Online Resources</h2>
+<div id="outline-container-org84fd2a3" class="outline-2">
+<h2 id="org84fd2a3"><span class="section-number-2">14.</span> Online Resources</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 <a href="https://www.youtube.com/watch?v=FtieBc3KptU">Emacs For Writers - YouTube</a>
@@ -982,8 +982,8 @@ It will ask you to choose your browser—Chromium, Chrome, Firefox, or Brave—a
 </div>
 </div>
 
-<div id="outline-container-orgfa7033d" class="outline-2">
-<h2 id="orgfa7033d"><span class="section-number-2">15.</span> Conclusion</h2>
+<div id="outline-container-orgc778692" class="outline-2">
+<h2 id="orgc778692"><span class="section-number-2">15.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-15">
 <p>
 Write the conclusion
@@ -1005,7 +1005,7 @@ When your InitFile gets so large that you really need to start over, then you ha
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Jacob Moena</p>
-<p class="date">Created: 2022-11-24 tor 04:05</p>
+<p class="date">Created: 2022-11-28 man 00:50</p>
 </div>
 </body>
 </html>
