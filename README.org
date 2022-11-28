@@ -131,6 +131,8 @@ Now, fire up Emacs, and you should be looking at the Hotel California of Creativ
 
 All you need to do now is to press =C-x C-f= and start making yourself comfortable with your new writing environment.
 
+You might want to read the extensive guide here: [[https://jacmoe.github.io/.doom.d/][https://jacmoe.github.io/.doom.d/]], or at least have it ready as a reference.
+
 Happy Writing!
 
 #  LocalWords:  MSYS mingw aspell Proselint Palahniuk Elmore Butterick Strunk
