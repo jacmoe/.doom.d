@@ -38,7 +38,7 @@ I can make Emacs fit my workflow rather than the other way around.
 Emacs is a LISP machine.
 
 *** Emacs basics
-[[yt:RuiBsWQeeTs]]
+[[yt:RuiBsWQeeTs][Emacs Basic Movement and Editing]]
 #+begin_export hugo
 {{< youtube id="RuiBsWQeeTs" title="Emacs: Basic Movement and Editing" >}}
 #+end_export
