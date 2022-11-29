@@ -39,9 +39,6 @@ Emacs is a LISP machine.
 
 *** Emacs basics
 [[yt:RuiBsWQeeTs][Emacs Basic Movement and Editing]]
-#+begin_export hugo
-{{< youtube id="RuiBsWQeeTs" title="Emacs: Basic Movement and Editing" >}}
-#+end_export
 It’s highly recommended to run Emacs without any customization a couple of times to learn how the basic Emacs commands work. We can do that by running Emacs with the ~Q~ command-line argument, like this: ~emacs -Q~. If you want—again, highly recommended—you can run the Emacs Tutorial by running ~C-h t~. Do the tutorial until you feel confident. Also, experiment in the Scratch buffer, like in the video tutorial above.
 #+begin_export html
 <br/>
@@ -84,10 +81,8 @@ And, before you ask, let me tell you my favorite Emacs command: ~C-o~ (/insert n
 <br/>
 #+end_export
 Now that you know a thing or two about Emacs, here’s another introductory video about Emacs as a text editor:
-#+begin_export hugo
-{{< youtube id="jPkIaqSh3cA" title="The Basics of Emacs as a Text Editor" >}}
-#+end_export
-/NB: He uses the ~<Esc>~ key as an alternative to ~<Control>~ like in ~<Esc> y~. May I suggest that you use ~C-y~ instead. Using the Escape key that way will conflict with the modal editing package Boon mentioned below./
+[[yt:jPkIaqSh3cA][The Basics of Emacs as a Text Editor]]
+NB: He uses the ~<Esc>~ key as an alternative to ~<Control>~ like in ~<Esc> y~. May I suggest that you use ~C-y~ instead. Using the Escape key that way will conflict with the modal editing package Boon mentioned below./
 #+begin_export html
 <br/>
 #+end_export
