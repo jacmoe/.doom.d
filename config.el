@@ -1,4 +1,4 @@
-;;config.el -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;This is                                                                           ;;
 ;;          __                           __                                         ;;
@@ -351,8 +351,17 @@
         org-fontify-done-headline nil ; don't color the headline grey when done
         org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
-           "* %?\n%t\n%i\n%a"))))
-        
+           "* %?\n%t\n%i\n%a")))
+)
+(after! org
+(defun my/link-export (destination description backend)
+  (let* ((link (concat "https://www.youtube.com/embed/" destination))
+         (description (or description link)))
+    (cond
+     ((eq backend 'html)
+      (format "<iframe width=\"560\" height=\"315\" src=\"%s\" frameborder=\"0\" allowfullscreen></iframe>" link description)))))
+(org-link-set-parameters "yt" :follow 'my/link-export :export 'my/link-export)
+)
 
 (defun org-habit-streak-count ()
   (goto-char (point-min))
@@ -979,7 +988,6 @@
 
 (require 'notmuch-address)
 (setq notmuch-address-command my-notmuch-address-command)
-(notmuch-address-message-insinuate)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

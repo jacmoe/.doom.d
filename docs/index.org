@@ -38,6 +38,10 @@ I can make Emacs fit my workflow rather than the other way around.
 Emacs is a LISP machine.
 
 *** Emacs basics
+[[yt:RuiBsWQeeTs]]
+#+begin_export html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RuiBsWQeeTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+end_export
 #+begin_export hugo
 {{< youtube id="RuiBsWQeeTs" title="Emacs: Basic Movement and Editing" >}}
 #+end_export
