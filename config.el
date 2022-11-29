@@ -368,7 +368,7 @@
            (url (if (string-empty-p video-id) path
                   (format "//youtube.com/embed/%s" video-id))))
       (format
-       "<iframe width=\"560\" height=\"315\" src=\"%s\" title=\"%s\" frameborder=\"0\" allowfullscreen></iframe>"
+       "<div><iframe width=\"560\" height=\"315\" src=\"%s\" title=\"%s\" frameborder=\"0\" allowfullscreen></iframe></div>"
        url desc))))
 
 (org-link-set-parameters "yt" :follow #'spook-org--follow-yt-link :export #'spook-org--export-yt-link)
