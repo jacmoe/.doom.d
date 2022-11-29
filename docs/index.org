@@ -579,7 +579,7 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 :PROPERTIES:
 :CUSTOM_ID: other-things-bibliography-zotero
 :END:
-Zotero]] is used to gather and store and export the citations/references, by the use of the ~Better-Bibtex~ plugin.
+Zotero is used to gather and store and export the citations/references, by the use of the ~Better-Bibtex~ plugin.
 #+attr_html: :alt Zotero :title Zotero :width 100%
 [[file:images/zotero.png]]
 After installing Zotero itself, the plugin can be installed by following this guide: [[https://retorque.re/zotero-better-bibtex/installation/]]. When downloading using Firefox, I had to right-click and “save as” because otherwise Firefox thought I was trying to install a Firefox add-on due to the file-extension being the same.
