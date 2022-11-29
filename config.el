@@ -354,13 +354,24 @@
            "* %?\n%t\n%i\n%a")))
 )
 (after! org
-(defun my/link-export (destination description backend)
-  (let* ((link (concat "https://www.youtube.com/embed/" destination))
-         (description (or description link)))
-    (cond
-     ((eq backend 'html)
-      (format "<iframe width=\"560\" height=\"315\" src=\"%s\" frameborder=\"0\" allowfullscreen></iframe>" link description)))))
-(org-link-set-parameters "yt" :follow 'my/link-export :export 'my/link-export)
+(defun spook-org--follow-yt-link (path prefix)
+  (let* ((url (format "https:%s" path))
+         (proc-name (format "*yt://%s*" url)))
+    (if (and prefix (executable-find "mpv"))
+        (browse-url url)
+      (make-process :name proc-name :buffer proc-name :command `("mpv" ,url))
+      (message "Launched mpv in buffer: %s" proc-name))))
+
+(defun spook-org--export-yt-link (path desc backend)
+  (when (eq backend 'html)
+    (let* ((video-id (cadar (url-parse-query-string path)))
+           (url (if (string-empty-p video-id) path
+                  (format "//youtube.com/embed/%s" video-id))))
+      (format
+       "<iframe width=\"560\" height=\"315\" src=\"%s\" title=\"%s\" frameborder=\"0\" allowfullscreen></iframe>"
+       url desc))))
+
+(org-link-set-parameters "yt" :follow #'spook-org--follow-yt-link :export #'spook-org--export-yt-link)
 )
 
 (defun org-habit-streak-count ()
