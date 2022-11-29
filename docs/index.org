@@ -576,7 +576,7 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 :CUSTOM_ID: other-things-bibliography
 :END:
 **** Zotero
-[[https://www.zotero.org/][:PROPERTIES:
+:PROPERTIES:
 :CUSTOM_ID: other-things-bibliography-zotero
 :END:
 Zotero]] is used to gather and store and export the citations/references, by the use of the ~Better-Bibtex~ plugin.
