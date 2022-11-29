@@ -5,6 +5,9 @@ This is currently a work in progress
 #+end_description
 
 ** Introduction
+:PROPERTIES:
+:CUSTOM_ID: introduction
+:END:
 #+attr_html: :alt Emacs - my Hotel California :title Emacs - my Hotel California :width 100%
 [[file:images/hotel-california.png]]
 
@@ -21,6 +24,9 @@ It is my hope that, after reading this article, that  you start thinking of it a
 <br/>
 #+end_export
 ** Emacs
+:PROPERTIES:
+:CUSTOM_ID: emacs
+:END:
 #+begin_quote
 “I use emacs, which might be thought of as a thermonuclear word processor... the engineer-hours that, in the case of Microsoft Word, were devoted to features like mail merge, and the ability to embed feature-length motion pictures in corporate memoranda, were, in the case of emacs, focused with maniacal intensity on the deceptively simple-seeming problem of editing text. If you are a professional writer... emacs outshines all other editing software in approximately the same way that the noonday sun does the stars. It is not just bigger and brighter; it simply makes everything else vanish.”
 #+end_quote
@@ -38,6 +44,11 @@ I can make Emacs fit my workflow rather than the other way around.
 Emacs is a LISP machine.
 
 *** Emacs basics
+:PROPERTIES:
+:CUSTOM_ID: emacs-basics
+:END:
+
+
 [[yt:RuiBsWQeeTs][Emacs Basic Movement and Editing]]
 It’s highly recommended to run Emacs without any customization a couple of times to learn how the basic Emacs commands work. We can do that by running Emacs with the ~Q~ command-line argument, like this: ~emacs -Q~. If you want—again, highly recommended—you can run the Emacs Tutorial by running ~C-h t~. Do the tutorial until you feel confident. Also, experiment in the Scratch buffer, like in the video tutorial above.
 #+begin_export html
@@ -87,6 +98,9 @@ NB: He uses the ~<Esc>~ key as an alternative to ~<Control>~ like in ~<Esc> y~. 
 <br/>
 #+end_export
 *** Doom-Emacs
+:PROPERTIES:
+:CUSTOM_ID: emacs-doom-emacs
+:END:
 [[https://github.com/hlissner/doom-emacs][Doom-Emacs]] is a minimalist modern Emacs distribution that is light and fast. It provides a rock-solid and highly configurable infrastructure to base an Emacs configuration on.
 #+begin_export html
 <br/>
@@ -94,8 +108,14 @@ NB: He uses the ~<Esc>~ key as an alternative to ~<Control>~ like in ~<Esc> y~. 
 I switched to Doom-Emacs after declaring Emacs Bankruptcy [fn:1], and I haven’t regretted it. It uses every trick in the book to optimize, and the install/upgrade/maintenance scripts are excellent. It provides infrastructure and a well thought out framework for creating your own, speedy Emacs configuration.
 [fn:1] When your InitFile gets so large that you really need to start over, then you have declared “.emacs bankruptcy”. [[https://www.emacswiki.org/emacs/DotEmacsBankruptcy][EmacsWiki: Dot Emacs Bankruptcy]]
 *** Notes about the Hotel California configuration
+:PROPERTIES:
+:CUSTOM_ID: emacs-notes-hotel-california
+:END:
 If you feel that you need to have at least a menu-bar, then you can turn it on/off by running this command: ~M-x menu-bar-mode~. It can be useful sometimes, especially when learning the Emacs ropes.
 ** Org-mode
+:PROPERTIES:
+:CUSTOM_ID: org-mode
+:END:
 #+attr_html: :alt Org-mode :title Org-mode :width 20%
 [[file:images/org-mode-unicorn.svg]]
 #+begin_quote
@@ -122,6 +142,9 @@ Here is a nerdy blog post about why Org-mode is a great markup language: [[https
 - One hundred percent pure text
 
 *** Standard markup
+:PROPERTIES:
+:CUSTOM_ID: org-mode-standard-markup
+:END:
 
 - ~*bold*~ *bold*
 - ~/italic/~ /italic/
@@ -131,6 +154,10 @@ Here is a nerdy blog post about why Org-mode is a great markup language: [[https
 - ~# comment~ anything after a hash sign and a space will not be exported
 
 *** Headings (structure)
+:PROPERTIES:
+:CUSTOM_ID: org-mode-headings
+:END:
+
 A heading is one or more asterisks followed by a space and some text.
 
 - ~* heading~ level 1 heading
@@ -156,6 +183,10 @@ Press ~C-<Enter>~ to insert a new heading at the same level as the heading you�
 ~c q~ can be used to set tags/categories for a heading. (~c c~ also works, when standing on the actual heading)
 
 *** Lists
+:PROPERTIES:
+:CUSTOM_ID: org-mode-lists
+:END:
+
 A list item is a dash (-) followed by a space and some text.
 
 - ~- list item~ unnumbered list item
@@ -172,11 +203,22 @@ Press ~C-<Enter>~ to insert a new list item at the same level as the heading you
 ~S-<left>~ and ~S-<right>~ will cycle through different list styles, provided that the point is placed on the list item symbol (by default a ~-~))
 
 *** Document options
+:PROPERTIES:
+:CUSTOM_ID: org-mode-document-options
+:END:
 **** TOC
+:PROPERTIES:
+:CUSTOM_ID: org-mode-document-options-toc
+:END:
+
 ~#+OPTIONS: toc:nil~ turns off the insertion of an auto-generated Table Of Contents (TOC) upon export.
 You can then use ~#+toc: headlines 2~ to manually insert a table of contents into the document.
 
 *** Links
+:PROPERTIES:
+:CUSTOM_ID: org-mode-links
+:END:
+
 - ~[[link][description]]~ link with description (use ~c l~ to insert)
 - ~[[file:link_to_file]]~ inline image is a file link *without* description
 
@@ -184,6 +226,10 @@ Use ~c l~ to insert a link, or to edit a link. Use ~c o~ to open a link.
 
 If the link is a file link to an image, and without a description, it is an inline image. To toggle the rendering of inline images, you can press ~c <TAB>~.
 *** Footnote-links
+:PROPERTIES:
+:CUSTOM_ID: org-mode-footnote-links
+:END:
+
 - ~[fn:1: this is an inline, numbered footnote]~
 - ~[fn:name: named, inline footnote]~
 - ~[fn:: anonymous, inline footnote]~
@@ -191,6 +237,10 @@ If the link is a file link to an image, and without a description, it is an inli
 For more information about footnotes, see [fn:footnotes: [[https://orgmode.org/manual/Creating-Footnotes.html][Creating Footnotes (The Org Manual)]]]
 
 *** Special blocks
+:PROPERTIES:
+:CUSTOM_ID: org-mode-special-blocks
+:END:
+
 In addition to the standard markup, Org-mode has special blocks. Use ~C-c C-,~ to insert a block.
 #+attr_html: :alt Special blocks :title Special blocks :width 100%
 [[file:images/orgmode-blocks.png]]
@@ -203,10 +253,22 @@ The “verse” block is useful for when you want to have a piece of poetry and 
 
 Special blocks is a good way to extend the markup, and—of course—you can define your own special blocks.
 *** Noexport tags
+:PROPERTIES:
+:CUSTOM_ID: org-mode-noexport-tags
+:END:
+
 The ~:noexport:~ tag tells Org-mode that the contents—including any children—of a section is not to be exported. Useful for when you keep your work in one single file, including sections for things like research, notes, and character studies.
 *** Ignore tags
+:PROPERTIES:
+:CUSTOM_ID: org-mode-ignore-tags
+:END:
+
 The ~:ignore:~ tag instructs Org-mode to export the contents of a heading section, but not the heading itself. That’s useful when we organize your outline/document in chapters and scenes, but don’t want the exported text to be partitioned with scene headings. Having the text partitioned using headings allows us to rearrange those sections of the document—promoting, demoting, moving up and down—and we wouldn’t be able to do that if the text was not organized in an outline. Or, put another way: the ~:ignore:~ tag allows us to keep the outline to ourselves.
 *** Tables
+:PROPERTIES:
+:CUSTOM_ID: org-mode-tables
+:END:
+
 In Org-mode tables are made of ASCII characters, but it feels like magic in action.
 #+begin_export hugo
 {{< youtube id="5vGGgfs0q3k" title="Using Emacs episode 54 - Org Tables" >}}
@@ -215,6 +277,10 @@ See [[https://orgmode.org/manual/Tables.html][Tables (The Org Manual)]] for more
 
 We’ll see more of what Org-mode tables can do later on in this article, when discussing clock-tables and when discussing Org-tracktable.
 ** Boon
+:PROPERTIES:
+:CUSTOM_ID: boon
+:END:
+
 [[https://github.com/jyp/boon][Boon]] is a modal editing package for Emacs which is ergonomic and designed to integrate well with existing Emacs infrastructure. That means that we can continue to use the standard Emacs keyboard shortcuts should we choose to do so, in addition to the features that Boon provides.
 #+begin_export html
 <br/>
@@ -254,8 +320,15 @@ Here’s how the keyboard layout looks like for Command mode using Boon:
 We already covered the Boon commands in blue, so the following will not cover those.
 
 *** Movement
+:PROPERTIES:
+:CUSTOM_ID: boon-movement
+:END:
 
 *** Editing
+:PROPERTIES:
+:CUSTOM_ID: boon-editing
+:END:
+
 - ` : cycles between uppercase, title-case, and lowercase
 - q : “quote”, insert a literal character
 - r : “replace”, replaces a region, ie deletes and enters Insert mode
@@ -265,6 +338,10 @@ We already covered the Boon commands in blue, so the following will not cover th
 - D : “duplicate”, copies region to kill-ring
 
 *** Custom
+:PROPERTIES:
+:CUSTOM_ID: boon-custom
+:END:
+
 - w : show how many words have been written today (~org-tracktable-status~)
 - W : write to the track-table (~org-tracktable-write~)
 - E : go to last edit
@@ -276,14 +353,31 @@ We already covered the Boon commands in blue, so the following will not cover th
 - N : widen the view (un-narrow)
 
 ** Dictionaries et cetera
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc
+:END:
 *** Dictionary server
-
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-dictionary-server
+:END:
 *** Webster
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-webster
+:END:
 *** Powerthesaurus
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-powertheraurus
+:END:
 *** Proselint
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-proselint
+:END:
 #+attr_html: :alt Proselint has checked the text and is not satisfied :title Proselint has checked the text and is not satisfied :width 100%
 [[file:images/proselint.png]]
 *** Writegood-mode
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-writegood-mode
+:END:
 ~Writegood-mode~ is a minor mode that will highlight weasel words and passive voice.
 #+attr_html: :alt Writegood-mode :title Writegood-mode :width 100%
 [[file:images/writegood-mode.png]]
@@ -291,6 +385,9 @@ The weasel words are highlighted in orange, passive voice in cyan.
 
 Additional weasel words can be added to writegood-mode by editing the ~my/weasel-words~ list in ~config.el~ in the Doom user directory.
 *** Typopunct
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-typopunct
+:END:
 ~Typopunct~ is a package that enables us to simply write regular ASCII single and double quotes and have them automatically be converted into typographical quotes.
 
 For example, typing ~'quoted'~ will result in ‘quoted’, and ~"double-quoted"~ will result in “double-quoted”.
@@ -301,9 +398,21 @@ If we want to actually write a regular ASCII single or double quote, we need to 
 
 Additionally, ~typopunct~ also allows us to insert ~en-dash~ and ~em-dash~ by typing  ~--~ for – and ~---~ for —.
 *** Special characters
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-special-characters
+:END:
 ** Tracking progress
+:PROPERTIES:
+:CUSTOM_ID: tracking-progress
+:END:
 *** Track-table
+:PROPERTIES:
+:CUSTOM_ID: tracking-progress-track-table
+:END:
 *** Clocking time
+:PROPERTIES:
+:CUSTOM_ID: tracking-progress-clocking-time
+:END:
 ~c x i~ to clock in. ~c x o~ to clock out. ~c x q~ to cancel a clock.
 There is also the option of starting a 20 minute Pomodoro session, by pressing ~B~.
 Clocking is tied to the heading you are working under, and will add a ~:LOGBOOK:~ section to it, like this:
@@ -345,12 +454,21 @@ For more on clocking time, see [[https://writequit.org/denver-emacs/presentation
 
 Often when writing, our progress can’t always be measured in words, so time spent is a good alternative.
 *** Org-habit streak count
+:PROPERTIES:
+:CUSTOM_ID: tracking-progress-org-habit-streak-count
+:END:
 *** Words per heading
+:PROPERTIES:
+:CUSTOM_ID: tracking-progress-words-per-heading
+:END:
 Using ~org-wc~.
 
 #+attr_html: :alt Running M-x org-wc-display shows word count per heading :title Running M-x org-wc-display shows word count per heading :width 100%
 [[file:images/org-wc.png]]
 *** Column view
+:PROPERTIES:
+:CUSTOM_ID: tracking-progress-column-view
+:END:
 Column view is a good way to view properties of headers. While we can view todo status, categories, tags, time logged, and other standard properties, we can add our own, custom properties, and this is where it gets real interesting for creative writers.
 We can easily add properties to a heading by running ~C-c C-x p~:
 
@@ -370,11 +488,29 @@ Having set it all up, we can now run ~org-columns~ by pressing ~c x c~:
 Pres ~q~ to exit.
 
 ** Organize the writing
+:PROPERTIES:
+:CUSTOM_ID: organize-the–writing
+:END:
 *** Master document
+:PROPERTIES:
+:CUSTOM_ID: organize-the–writing-master-document
+:END:
 ** Capturing thoughts
+:PROPERTIES:
+:CUSTOM_ID: capturing-thoughts
+:END:
 ** Saving the work
+:PROPERTIES:
+:CUSTOM_ID: saving-the-work
+:END:
 *** Magit
+:PROPERTIES:
+:CUSTOM_ID: saving-the-work-magit
+:END:
 *** Unsaved changes
+:PROPERTIES:
+:CUSTOM_ID: saving-the-work-unsaved-changes
+:END:
 Sometimes you want to know what changes you have made to a buffer since your last save. Since you haven’t saved the file yet, Magit can’t help you, so you need something else. Fortunately, we can use Emacs’ ~diff-buffer-with-file~, mapped to ~C-d~.
 #+attr_html: :alt Using diff to see the difference between buffer and file :title Using diff to see the difference between buffer and file :width 100%
 [[file:images/diff.png]]
@@ -382,23 +518,68 @@ Sometimes you want to know what changes you have made to a buffer since your las
 
 Emacs will ask you for the file on disk, and then open a diff buffer where you can examine the differences. Use ~x o~ (o for ‘other’) to go to the diff buffer, if you’re not already in it. Using movement commands, like ~i o k l~, etc. And then, when done, close the buffer by pressing ~x 0~ (zero), or ~x 1~ if you’re not in the diff buffer.
 ** Exporting
+:PROPERTIES:
+:CUSTOM_ID: exporting
+:END:
 *** HTML to E-book
+:PROPERTIES:
+:CUSTOM_ID: exporting-html-ebook
+:END:
 *** PDF via LaTeX
+:PROPERTIES:
+:CUSTOM_ID: exporting-pdf-latex
+:END:
 *** Open Document Format
+:PROPERTIES:
+:CUSTOM_ID: exporting-odt
+:END:
 ** Looking good and being comfortable
+:PROPERTIES:
+:CUSTOM_ID: looking-good-and-being-comfortable
+:END:
 *** Themes and fonts
+:PROPERTIES:
+:CUSTOM_ID: looking-good-and-being-comfortable-themes-and-fonts
+:END:
 *** Zen-mode and transparency
+:PROPERTIES:
+:CUSTOM_ID: looking-good-and-being-comfortable-zen-mode-and-transparency
+:END:
 #+attr_html: :alt Zen-mode with transparency turned on :title Zen-mode with transparency turned on :width 100%
 [[file:images/zen-mode.png]]
 *** Scroll-center-cursor-mode
+:PROPERTIES:
+:CUSTOM_ID: looking-good-and-being-comfortable-scroll-center-cursor-mode
+:END:
 ** Org-roam
+:PROPERTIES:
+:CUSTOM_ID: org-roam
+:END:
 *** Org-roam UI
+:PROPERTIES:
+:CUSTOM_ID: org-roam-org-roam-ui
+:END:
 ** Other things
+:PROPERTIES:
+:CUSTOM_ID: other-things
+:END:
 *** Journaling
+:PROPERTIES:
+:CUSTOM_ID: other-things-journaling
+:END:
 *** Blogging
+:PROPERTIES:
+:CUSTOM_ID: other-things-blogging
+:END:
 *** Bibliography
+:PROPERTIES:
+:CUSTOM_ID: other-things-bibliography
+:END:
 **** Zotero
-[[https://www.zotero.org/][Zotero]] is used to gather and store and export the citations/references, by the use of the ~Better-Bibtex~ plugin.
+[[https://www.zotero.org/][:PROPERTIES:
+:CUSTOM_ID: other-things-bibliography-zotero
+:END:
+Zotero]] is used to gather and store and export the citations/references, by the use of the ~Better-Bibtex~ plugin.
 #+attr_html: :alt Zotero :title Zotero :width 100%
 [[file:images/zotero.png]]
 After installing Zotero itself, the plugin can be installed by following this guide: [[https://retorque.re/zotero-better-bibtex/installation/]]. When downloading using Firefox, I had to right-click and “save as” because otherwise Firefox thought I was trying to install a Firefox add-on due to the file-extension being the same.
@@ -411,6 +592,9 @@ Choose “file - Export Library”, and choose the ~Better BibLaTeX~ as the form
 
 To actually populate the bibliography library, I am using the Zotero Firefox connector plugin. I can press a button in Firefox whenever I am visiting a resource.
 **** Emacs
+:PROPERTIES:
+:CUSTOM_ID: other-things-bibliography-emacs
+:END:
 After all the work with Zotero, we are now ready to use the bibliography from within Emacs.
 In the file where we want to insert citations, we configure the bibliography file to be used, and configure the export of the citations to use the CSL format:
 #+begin_src
@@ -432,12 +616,24 @@ Now that we’re all set up, we can now insert citations into our document by ru
 [[file:images/bibliography-test.png]]
 
 *** Snippets
+:PROPERTIES:
+:CUSTOM_ID: other-things-snippets
+:END:
 *** Miscellaneous
+:PROPERTIES:
+:CUSTOM_ID: other-things-miscellaneous
+:END:
 **** Grabbing links from the web browser
+:PROPERTIES:
+:CUSTOM_ID: other-things-miscellaneous-grabbing-links-from-the-web-browser
+:END:
 By running ~M-x grab-x-link~ we can insert a link from an active web browser window.
 It will ask you to choose your browser—Chromium, Chrome, Firefox, or Brave—and what format to use (plain, markdown or Org format). Much quicker than manually copying, pasting, and write the title manually. The links can be edited by ~c l~ , and opened by ~c o~.
 
 ** Online Resources
+:PROPERTIES:
+:CUSTOM_ID: online-resources
+:END:
 [[https://www.youtube.com/watch?v=FtieBc3KptU][Emacs For Writers - YouTube]]
 
 [[https://emacsconf.org/2020/talks/03/][EmacsConf - 2020 - talks - Idea to Novel Superstructure: Emacs for Writing]]
@@ -451,4 +647,7 @@ It will ask you to choose your browser—Chromium, Chrome, Firefox, or Brave—a
 [[https://github.com/yjwen/org-reveal/][yjwen/org-reveal: Exports Org-mode contents to Reveal.js HTML presentation.]]
 
 ** Conclusion
-   Write the conclusion
+:PROPERTIES:
+:CUSTOM_ID: conclusion
+:END:
+Write the conclusion
