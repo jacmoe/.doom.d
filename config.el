@@ -515,9 +515,9 @@
   :defer t
   :config
   (setq
-   org-pomodoro-play-sounds nil ; don't play sounds
-   org-pomodoro-length 20       ; 20 minutes are great for word-sprints
-   org-pomodoro-short-break-length 5
+   org-pomodoro-play-sounds my-org-pomodoro-play-sounds ; don't play sounds
+   org-pomodoro-length my-org-pomodoro-length       ; 20 minutes are great for word-sprints
+   org-pomodoro-short-break-length my-org-pomodoro-short-break-length
    ;; use libnotify
    alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil)))))
    
