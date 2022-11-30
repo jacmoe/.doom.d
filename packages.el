@@ -16,7 +16,7 @@
 
 (package! smart-quotes)
 
-(package! flymake-proselint)
+;; (package! flymake-proselint)
 
 (package! mw-thesaurus)
 

@@ -803,13 +803,12 @@
 ;;                                                                                  ;;
 ;; https://github.com/manuel-uberti/flymake-proselint                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! flymake-proselint
-  :defer t
-  :init
-  (add-hook! #'org-mode-hook (lambda ()
-                               (flymake-mode)
-                               (flymake-proselint-setup))))
-  
+;; (use-package! flymake-proselint
+;;   :defer t
+;;   :init
+;;   (add-hook! #'org-mode-hook (lambda ()
+;;                                (flymake-mode)
+;;                                (flymake-proselint-setup))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
