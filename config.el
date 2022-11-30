@@ -44,8 +44,8 @@
 (defvar my-monospace-font "Overpass Mono")            ; Font to use for code
 (defvar my-variablespace-font "Overpass")             ; Font to use for writing
 
-(defvar my-org-tracktable-daily-goal 500)            ; How many words do I want to write per day?
-(defvar my-line-spacing 28)                           ; how much space between the lines?
+(defvar my-org-tracktable-daily-goal 500)             ; How many words do I want to write per day?
+(defvar my-line-spacing 0.4)                          ; how much space between the lines?
 (defvar my-day-end 5)                                 ; when does my day end?
 
 ;; Where do I store everything to be shared between machines?
@@ -97,7 +97,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (save-place-mode 1)                                    ; Remember and restore the last cursor location of opened files
 (setq confirm-kill-emacs nil)                          ; Yes, I really want to quit.
-(setq custom-file (make-temp-file "emacs-custom"))     ; prevent custom from preserving state
 (setq inhibit-compacting-font-caches t)                ; for performance reasons
 (setq bookmark-save-flag 1)                            ; Save bookmarks each time it changes, not only on exit
 (require 'zone)                                        ; Emacs "screensaver"
@@ -127,9 +126,9 @@
   (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Hotel California of Creative Writing")))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family my-monospace-font :size 20)
+(setq doom-font (font-spec :family my-monospace-font :size 24)
       doom-big-font-increment 5
-      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 28))
+      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 26))
 
 ;; Theme
 (setq doom-theme my-main-theme)
@@ -143,7 +142,7 @@
   '(italic :slant oblique :foreground "teal"))
 
 ;; Setting initial size and position of frame
-(setq initial-frame-alist '((top . 38) (left . 76) (width . 130) (height . 38)))
+(setq initial-frame-alist '((top . 38) (left . 64) (width . 110) (height . 30)))
 
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font
@@ -279,6 +278,7 @@
            #'solaire-mode
            #'typopunct-mode
            #'writegood-mode
+           #'org-modern-mode
            #'variable-pitch-mode)
 
 ;; Org-habit
@@ -289,6 +289,7 @@
         org-habit-preceding-days 35
         org-habit-show-habits t))
   
+(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
 ;; use :ignore: tags to ignore the heading, but keep the content
 (use-package! ox-extra
@@ -296,26 +297,35 @@
   :config
   (ox-extras-activate '(ignore-headlines)))
   
+(setq
+ ;; Edit settings
+ org-auto-align-tags nil
+ org-tags-column 0
+ org-catch-invisible-edits 'show-and-error
+ org-special-ctrl-a/e t
+ org-insert-heading-respect-content t
 
-(add-hook! org-mode (org-indent-mode -1))
+ ;; Org styling, hide markup etc.
+ org-hide-emphasis-markers t
+ org-pretty-entities t
+ org-ellipsis "…"
+
+ ;; Agenda styling
+ org-agenda-tags-column 0
+ org-agenda-block-separator ?─
+ org-agenda-time-grid
+ '((daily today require-timed)
+   (800 1000 1200 1400 1600 1800 2000)
+   " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+ org-agenda-current-time-string
+ "⭠ now ─────────────────────────────────────────────────")
 
 (after! org
-  (custom-set-faces!
-    '((org-block) :background nil))
-    
-  (defface redd
-    '((((class color) (min-colors 88) (background light))
-       :foreground "red"))
-    "Red."
-    :group 'basic-faces)
-  (custom-set-faces!
-    '(org-level-1 :height 1.2 :weight bold :slant normal)
-    '(org-level-2 :height 1.1 :weight bold :slant normal)
-    '(org-level-3 :height 1.0 :weight bold :slant normal)
-    '(org-document-title   ;:foreground ,(doom-color 'black)
-      :family my-variablespace-font
-      :height 250
-      :weight bold)))
+;; These two lines sets org tables to use fixed pitch fonts and turns off org-modern
+(set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+(custom-set-variables '(org-modern-table nil)))
+
+(add-hook! org-mode (org-indent-mode -1))
 
 (after! org
   (setq org-enforce-todo-dependencies t
@@ -334,8 +344,6 @@
           ("nowc" . (:foreground "#606060" :weight normal))
           ("ignore" . (:foreground "#606060" :weight normal)))
           
-        ;; Don't pollute the text with markers
-        org-hide-emphasis-markers t
         org-return-follows-link t ; hitting RETURN follows the link
         ;; We want to log the time when the TODO is closed
         org-log-done "time" org-log-done-with-time 't
@@ -394,8 +402,6 @@
             (org-agenda-log-mode-items '(state))
             (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":daily:")))))))
           
-  
-
 (after! ox-latex
  (add-to-list 'org-latex-classes
               '("org-plain-latex"

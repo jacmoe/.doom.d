@@ -52,3 +52,5 @@
 (package! org-analyzer)
 
 (package! mastodon)
+
+(package! org-modern)
