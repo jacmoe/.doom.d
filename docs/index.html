@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-30 ons 01:18 -->
+<!-- 2022-11-30 ons 07:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hotel California of Creative Writing</title>
@@ -51,9 +51,10 @@
 </li>
 <li><a href="#boon">4. Boon</a>
 <ul>
-<li><a href="#boon-movement">4.1. Movement</a></li>
-<li><a href="#boon-editing">4.2. Editing</a></li>
-<li><a href="#boon-custom">4.3. Custom</a></li>
+<li><a href="#boon-layout">4.1. Layout</a></li>
+<li><a href="#boon-movement">4.2. Movement</a></li>
+<li><a href="#boon-editing">4.3. Editing</a></li>
+<li><a href="#boon-custom">4.4. Custom</a></li>
 </ul>
 </li>
 <li><a href="#dictionaries-etc">5. Dictionaries et cetera</a>
@@ -133,7 +134,7 @@
 <p>
 This is currently a work in progress
 </p>
-<div class="description" id="org586d6cb">
+<div class="description" id="org0113731">
 
 </div>
 
@@ -141,7 +142,7 @@ This is currently a work in progress
 <h2 id="introduction"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-introduction">
 
-<div id="org20fbcae" class="figure">
+<div id="org70bd5b0" class="figure">
 <p><img src="images/hotel-california.png" alt="Emacs - my Hotel California" title="Emacs - my Hotel California" width="100%" />
 </p>
 </div>
@@ -177,7 +178,7 @@ It is my hope that, after reading this article, that  you start thinking of it a
 I can make Emacs fit my workflow rather than the other way around.
 </p>
 
-<div id="orgf5a1c15" class="figure">
+<div id="orgda45571" class="figure">
 <p><img src="images/hackerman1.jpg" alt="Hackerman" title="Hackerman" width="40%" />
 </p>
 </div>
@@ -186,7 +187,6 @@ I can make Emacs fit my workflow rather than the other way around.
 Emacs is a LISP machine.
 </p>
 </div>
-
 <div id="outline-container-emacs-basics" class="outline-3">
 <h3 id="emacs-basics"><span class="section-number-3">2.1.</span> Emacs basics</h3>
 <div class="outline-text-3" id="text-emacs-basics">
@@ -267,7 +267,7 @@ If you feel that you need to have at least a menu-bar, then you can turn it on/o
 <h2 id="org-mode"><span class="section-number-2">3.</span> Org-mode</h2>
 <div class="outline-text-2" id="text-org-mode">
 
-<div id="orgbe03e53" class="figure">
+<div id="org55d120d" class="figure">
 <p><img src="images/org-mode-unicorn.svg" alt="Org-mode" class="org-svg" title="Org-mode" width="20%" />
 </p>
 </div>
@@ -522,12 +522,15 @@ In Insert mode, we can exit it by pressing <code>&lt;Esc&gt;</code> or <code>C-;
 <p>
 Not all commands work as you would expect, however, so if we wanted to run <code>find-file</code> (<code>C-x C-f</code>) we will have to press <code>x C-f</code>, and not <code>x f</code> (<code>set-fill-column</code>). That’s because <code>set-fill-column</code> normally uses the shortcut <code>C-x f</code>, and there is no way to make a distinction between the two, <code>find-file</code> or <code>set-fill-column</code>. Luckily, there aren’t many exceptions like this.
 </p>
-<br/>
+</div>
+<div id="outline-container-boon-layout" class="outline-3">
+<h3 id="boon-layout"><span class="section-number-3">4.1.</span> Layout</h3>
+<div class="outline-text-3" id="text-boon-layout">
 <p>
 Here’s how the keyboard layout looks like for Command mode using Boon:
 </p>
 
-<div id="org58feb2d" class="figure">
+<div id="org49ea510" class="figure">
 <p><img src="images/keyboard-layout.png" alt="The Hotel California layout" title="The Hotel California layout" width="100%" />
 </p>
 </div>
@@ -542,15 +545,16 @@ Here’s how the keyboard layout looks like for Command mode using Boon:
 We already covered the Boon commands in blue, so the following will not cover those.
 </p>
 </div>
+</div>
 
 <div id="outline-container-boon-movement" class="outline-3">
-<h3 id="boon-movement"><span class="section-number-3">4.1.</span> Movement</h3>
+<h3 id="boon-movement"><span class="section-number-3">4.2.</span> Movement</h3>
 <div class="outline-text-3" id="text-boon-movement">
 </div>
 </div>
 
 <div id="outline-container-boon-editing" class="outline-3">
-<h3 id="boon-editing"><span class="section-number-3">4.2.</span> Editing</h3>
+<h3 id="boon-editing"><span class="section-number-3">4.3.</span> Editing</h3>
 <div class="outline-text-3" id="text-boon-editing">
 <ul class="org-ul">
 <li>` : cycles between uppercase, title-case, and lowercase</li>
@@ -565,7 +569,7 @@ We already covered the Boon commands in blue, so the following will not cover th
 </div>
 
 <div id="outline-container-boon-custom" class="outline-3">
-<h3 id="boon-custom"><span class="section-number-3">4.3.</span> Custom</h3>
+<h3 id="boon-custom"><span class="section-number-3">4.4.</span> Custom</h3>
 <div class="outline-text-3" id="text-boon-custom">
 <ul class="org-ul">
 <li>w : show how many words have been written today (<code>org-tracktable-status</code>)</li>
@@ -605,7 +609,7 @@ We already covered the Boon commands in blue, so the following will not cover th
 <h3 id="dictionaries-etc-proselint"><span class="section-number-3">5.4.</span> Proselint</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-proselint">
 
-<div id="org5893aab" class="figure">
+<div id="org33f4ffe" class="figure">
 <p><img src="images/proselint.png" alt="Proselint has checked the text and is not satisfied" title="Proselint has checked the text and is not satisfied" width="100%" />
 </p>
 </div>
@@ -739,7 +743,7 @@ Using <code>org-wc</code>.
 </p>
 
 
-<div id="org8bb9a6f" class="figure">
+<div id="org872df85" class="figure">
 <p><img src="images/org-wc.png" alt="Running M-x org-wc-display shows word count per heading" title="Running M-x org-wc-display shows word count per heading" width="100%" />
 </p>
 </div>
@@ -754,7 +758,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 </p>
 
 
-<div id="org45fdd92" class="figure">
+<div id="org49dddf1" class="figure">
 <p><img src="images/properties-actions.png" alt="Adding properties to a heading" title="Adding properties to a heading" width="100%" />
 </p>
 </div>
@@ -763,7 +767,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 Now we can configure the <code>COLUMNS</code> special property, which will be inherited by child headings:
 </p>
 
-<div id="org1646567" class="figure">
+<div id="org62ff770" class="figure">
 <p><img src="images/columns-source.png" alt="Setting up columns with properties" title="Setting up columns with properties" width="100%" />
 </p>
 </div>
@@ -776,7 +780,7 @@ See <a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.htm
 Having set it all up, we can now run <code>org-columns</code> by pressing <code>c x c</code>:
 </p>
 
-<div id="org37278fe" class="figure">
+<div id="org7e68758" class="figure">
 <p><img src="images/columns.png" alt="Column view" title="Column view" width="100%" />
 </p>
 </div>
@@ -819,7 +823,7 @@ Pres <code>q</code> to exit.
 Sometimes you want to know what changes you have made to a buffer since your last save. Since you haven’t saved the file yet, Magit can’t help you, so you need something else. Fortunately, we can use Emacs’ <code>diff-buffer-with-file</code>, mapped to <code>C-d</code>.
 </p>
 
-<div id="orgccbb0ca" class="figure">
+<div id="orgd94229b" class="figure">
 <p><img src="images/diff.png" alt="Using diff to see the difference between buffer and file" title="Using diff to see the difference between buffer and file" width="100%" />
 </p>
 </div>
@@ -864,7 +868,7 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 <h3 id="looking-good-and-being-comfortable-zen-mode-and-transparency"><span class="section-number-3">11.2.</span> Zen-mode and transparency</h3>
 <div class="outline-text-3" id="text-looking-good-and-being-comfortable-zen-mode-and-transparency">
 
-<div id="orgd36d004" class="figure">
+<div id="orge98b2db" class="figure">
 <p><img src="images/zen-mode.png" alt="Zen-mode with transparency turned on" title="Zen-mode with transparency turned on" width="100%" />
 </p>
 </div>
@@ -949,19 +953,19 @@ Then, we set a placeholder for where the generated bibliography list will be ren
 Now that we’re all set up, we can now insert citations into our document by running <code>org-cite-insert</code> (bound to <code>C-c l @</code>)
 </p>
 
-<div id="orgf6c1dbb" class="figure">
+<div id="org3ceed8d" class="figure">
 <p><img src="images/citation-insert.png" alt="Inserting a citation in Emacs" title="Inserting a citation in Emacs" width="100%" />
 </p>
 </div>
 
 
-<div id="orga4b5bff" class="figure">
+<div id="orge9b3188" class="figure">
 <p><img src="images/bibliography-source.png" alt="Bibliography source code" title="Biblography source code" width="100%" />
 </p>
 </div>
 
 
-<div id="orgb242f62" class="figure">
+<div id="org393bcd1" class="figure">
 <p><img src="images/bibliography-test.png" alt="Bibliography test rendering" title="Bibliography test rendering" width="100%" />
 </p>
 </div>
@@ -1042,7 +1046,7 @@ When your InitFile gets so large that you really need to start over, then you ha
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Jacob Moena</p>
-<p class="date">Created: 2022-11-30 ons 01:18</p>
+<p class="date">Created: 2022-11-30 ons 07:46</p>
 </div>
 </body>
 </html>

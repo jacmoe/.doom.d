@@ -42,13 +42,10 @@ I can make Emacs fit my workflow rather than the other way around.
 [[file:images/hackerman1.jpg]]
 
 Emacs is a LISP machine.
-
 *** Emacs basics
 :PROPERTIES:
 :CUSTOM_ID: emacs-basics
 :END:
-
-
 [[yt:RuiBsWQeeTs][Emacs Basic Movement and Editing]]
 It’s highly recommended to run Emacs without any customization a couple of times to learn how the basic Emacs commands work. We can do that by running Emacs with the ~Q~ command-line argument, like this: ~emacs -Q~. If you want—again, highly recommended—you can run the Emacs Tutorial by running ~C-h t~. Do the tutorial until you feel confident. Also, experiment in the Scratch buffer, like in the video tutorial above.
 #+begin_export html
@@ -306,9 +303,10 @@ In Insert mode, we can exit it by pressing ~<Esc>~ or ~C-;~. The cursor changes 
 <br/>
 #+end_export
 Not all commands work as you would expect, however, so if we wanted to run ~find-file~ (~C-x C-f~) we will have to press ~x C-f~, and not ~x f~ (~set-fill-column~). That’s because ~set-fill-column~ normally uses the shortcut ~C-x f~, and there is no way to make a distinction between the two, ~find-file~ or ~set-fill-column~. Luckily, there aren’t many exceptions like this.
-#+begin_export html
-<br/>
-#+end_export
+*** Layout
+:PROPERTIES:
+:CUSTOM_ID: boon-layout
+:END:
 Here’s how the keyboard layout looks like for Command mode using Boon:
 #+attr_html: :alt The Hotel California layout :title The Hotel California layout :width 100%
 [[file:images/keyboard-layout.png]]
