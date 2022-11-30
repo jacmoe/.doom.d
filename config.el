@@ -462,11 +462,9 @@
 ;; https://github.com/org-roam/org-roam-ui                                          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! websocket
-  :defer t
   :after org-roam)
 
 (use-package! org-roam-ui
-  :defer t
   :after org-roam
   :config
   (setq org-roam-ui-sync-theme t
