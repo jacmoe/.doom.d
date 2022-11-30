@@ -48,6 +48,11 @@
 (defvar my-line-spacing 0.4)                          ; how much space between the lines?
 (defvar my-day-end 5)                                 ; when does my day end?
 
+(defvar my-org-pomodoro-play-sounds nil) ; don't play sounds
+(defvar my-org-pomodoro-length 20)       ; 20 minutes are great for word-sprints
+(defvar my-org-pomodoro-short-break-length 5)
+
+
 ;; Where do I store everything to be shared between machines?
 (defvar my-storage-directory "~/Dropbox/skriv/")
 (defvar my-personal-dictionary (concat my-storage-directory "aspell-en")) ; store personal dictionary here
@@ -76,6 +81,8 @@
 (setq user-full-name "Jacob Moena"
       user-mail-address "jacmoe.dk@gmail.com"
       user-mail-domain "gmail.com"
+      user-instance-url "https://writing.exchange"
+      mastodon-username "@jacmoe"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -969,8 +976,8 @@
 ;;                                                                                  ;;
 ;; https://codeberg.org/martianh/mastodon.el                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq mastodon-instance-url "https://writing.exchange"
-      mastodon-active-user "@jacmoe"
+(setq mastodon-instance-url user-instance-url
+      mastodon-active-user mastodon-username
       mastodon-toot--download-custom-emoji t
       mastodon-toot--enable-custom-emoji t
       mastodon-toot--enable-completion t)
