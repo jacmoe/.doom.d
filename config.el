@@ -335,6 +335,7 @@
 (add-hook! org-mode (org-indent-mode -1))
 
 (after! org
+  (setq org-fold-core-style 'overlays) ; https://github.com/org-roam/org-roam/issues/2198
   (setq org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-todo-keyword-faces
