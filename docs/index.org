@@ -25,6 +25,10 @@ It is my hope that, after reading this article, that  you start thinking of it a
 :PROPERTIES:
 :CUSTOM_ID: emacs
 :END:
+*** Introduction
+:PROPERTIES:
+:CUSTOM_ID: emacs-introduction
+:END:
 #+begin_quote
 “I use emacs, which might be thought of as a thermonuclear word processor... the engineer-hours that, in the case of Microsoft Word, were devoted to features like mail merge, and the ability to embed feature-length motion pictures in corporate memoranda, were, in the case of emacs, focused with maniacal intensity on the deceptively simple-seeming problem of editing text. If you are a professional writer... emacs outshines all other editing software in approximately the same way that the noonday sun does the stars. It is not just bigger and brighter; it simply makes everything else vanish.”
 #+end_quote
@@ -110,6 +114,10 @@ If you feel that you need to have at least a menu-bar, then you can turn it on/o
 ** Org-mode
 :PROPERTIES:
 :CUSTOM_ID: org-mode
+:END:
+*** Introduction
+:PROPERTIES:
+:CUSTOM_ID: org-mode-introduction
 :END:
 #+attr_html: :alt Org-mode :title Org-mode :width 20%
 [[file:images/org-mode-unicorn.svg]]
@@ -275,7 +283,10 @@ We’ll see more of what Org-mode tables can do later on in this article, when d
 :PROPERTIES:
 :CUSTOM_ID: boon
 :END:
-
+*** Introduction
+:PROPERTIES:
+:CUSTOM_ID: boon-introduction
+:END:
 [[https://github.com/jyp/boon][Boon]] is a modal editing package for Emacs which is ergonomic and designed to integrate well with existing Emacs infrastructure. That means that we can continue to use the standard Emacs keyboard shortcuts should we choose to do so, in addition to the features that Boon provides.
 #+begin_export html
 <br/>
@@ -387,12 +398,14 @@ Additionally, ~typopunct~ also allows us to insert ~en-dash~ and ~em-dash~ by ty
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-special-characters
 :END:
-placeholder text
 *** Abbrevs
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-abbrevs
 :END:
-placeholder text
+*** Registers
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-registers
+:END:
 ** Tracking progress
 :PROPERTIES:
 :CUSTOM_ID: tracking-progress
@@ -517,6 +530,10 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 :PROPERTIES:
 :CUSTOM_ID: exporting
 :END:
+*** Introduction
+:PROPERTIES:
+:CUSTOM_ID: exporting-introduction
+:END:
 *** HTML to E-book
 :PROPERTIES:
 :CUSTOM_ID: exporting-html-ebook
@@ -529,23 +546,23 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 :PROPERTIES:
 :CUSTOM_ID: exporting-odt
 :END:
-** Looking good and being comfortable
+** Creature comforts
 :PROPERTIES:
-:CUSTOM_ID: looking-good-and-being-comfortable
+:CUSTOM_ID: creature-comforts
 :END:
 *** Themes and fonts
 :PROPERTIES:
-:CUSTOM_ID: looking-good-and-being-comfortable-themes-and-fonts
+:CUSTOM_ID: creature-comforts-themes-and-fonts
 :END:
 *** Zen-mode and transparency
 :PROPERTIES:
-:CUSTOM_ID: looking-good-and-being-comfortable-zen-mode-and-transparency
+:CUSTOM_ID: creature-comforts-zen-mode-and-transparency
 :END:
 #+attr_html: :alt Zen-mode with transparency turned on :title Zen-mode with transparency turned on :width 100%
 [[file:images/zen-mode.png]]
 *** Scroll-center-cursor-mode
 :PROPERTIES:
-:CUSTOM_ID: looking-good-and-being-comfortable-scroll-center-cursor-mode
+:CUSTOM_ID: creature-comforts-scroll-center-cursor-mode
 :END:
 ** Org-roam
 :PROPERTIES:
