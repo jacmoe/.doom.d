@@ -58,10 +58,10 @@ If you followed the guide for how to install the C compiler, then Emacs will be 
 [[https://vale.sh/][Vale.sh]] is used for prose linting.
 
 
-The easiest way to install Vale is to download a binary release from [[https://github.com/errata-ai/vale/releases][Vale Github Releases]] and put the binary in your PATH. Emacs needs to be able to find the Vala binary.
+The easiest way to install Vale is to download a binary release from [[https://github.com/errata-ai/vale/releases][Vale Github Releases]] and put the binary in your PATH. Emacs needs to be able to find the Vale binary.
 
 
-Now you need to download some Vala style checkers. There is a list of the available styles here: [[https://github.com/errata-ai/packages][errata-ai/packages]].
+Now you need to download some Vale style checkers. There is a list of the available styles here: [[https://github.com/errata-ai/packages][errata-ai/packages]].
 
 I installed the following styles:
 - proselint : [[https://github.com/errata-ai/proselint/releases][Releases · errata-ai/proselint]]
@@ -70,7 +70,7 @@ I installed the following styles:
 - joblint : [[https://github.com/errata-ai/Joblint/releases][Releases · errata-ai/Joblint]]
 - readability: [[https://github.com/errata-ai/Joblint/releases][Releases · errata-ai/readability]]
 
-Download and extract into a place where they can easily be found, like in =~/vala-styles= for instance.
+Download and extract into a place where they can easily be found, like in =~/vale-styles= for instance.
 
 Now you can place a =.vale.ini= file in any top level directory where you want Vale to check your prose.
 
@@ -84,6 +84,8 @@ BasedOnStyles = proselint, write-good
 #+end_src
 
 See the Vale home page for more information.
+
+To make Emacs actually check your document, run =M-x flymake-mode=. Run =M-x flymake-mode= to turn it off again.
 
 *** Hugo
 I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
