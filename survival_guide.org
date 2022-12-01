@@ -1,6 +1,6 @@
 :HEADER:
 #+TITLE: Emacs survival guide
-#+AUTHOR: Jacob Moen
+#+AUTHOR: Jacob Moena
 #+OPTIONS: whn:nil toc:3
 #+DESCRIPTION:
 #+EXCLUDE_TAGS: noexport
@@ -8,6 +8,8 @@
 #+LANGUAGE: en
 #+SELECT_TAGS: export
 #+STARTUP: showeverything
+#+LATEX: \setlength\parindent{0pt}
+#+SETUPFILE: ./jacmoe-latex-standard-setup.org
 :END:
 * Emacs Survival Guide
 
