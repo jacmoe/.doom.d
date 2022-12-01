@@ -1,8 +1,6 @@
 #+TITLE: Hotel California of Creative Writing
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 This is currently a work in progress
-#+begin_description
-#+end_description
 
 ** Introduction
 :PROPERTIES:
@@ -366,23 +364,12 @@ We already covered the Boon commands in blue, so the following will not cover th
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-powertheraurus
 :END:
-*** Proselint
+* Prose linting
 :PROPERTIES:
-:CUSTOM_ID: dictionaries-etc-proselint
-:END:
-#+attr_html: :alt Proselint has checked the text and is not satisfied :title Proselint has checked the text and is not satisfied :width 100%
-[[file:images/proselint.png]]
-*** Writegood-mode
-:PROPERTIES:
-:CUSTOM_ID: dictionaries-etc-writegood-mode
-:END:
-~Writegood-mode~ is a minor mode that will highlight weasel words and passive voice.
-#+attr_html: :alt Writegood-mode :title Writegood-mode :width 100%
-[[file:images/writegood-mode.png]]
-The weasel words are highlighted in orange, passive voice in cyan.
+:CUSTOM_ID: dictionaries-etc-prose-linting
+:END::CUSTOM_ID:
 
-Additional weasel words can be added to writegood-mode by editing the ~my/weasel-words~ list in ~config.el~ in the Doom user directory.
-*** Typopunct
+* Typopunct
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-typopunct
 :END:
@@ -399,6 +386,11 @@ Additionally, ~typopunct~ also allows us to insert ~en-dash~ and ~em-dash~ by ty
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-special-characters
 :END:
+*** Abbrevs
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-abbrevs
+:END:
+
 ** Tracking progress
 :PROPERTIES:
 :CUSTOM_ID: tracking-progress
@@ -451,6 +443,10 @@ To update a clocktable, simply place the point somewhere in the ~BEGIN~ line, an
 For more on clocking time, see [[https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html][Clocking time with Org-mode]].
 
 Often when writing, our progress can’t always be measured in words, so time spent is a good alternative.
+*** Org-analyzer
+:PROPERTIES:
+:CUSTOM_ID: tracking-progress-org-analyzer
+:END:
 *** Org-habit streak count
 :PROPERTIES:
 :CUSTOM_ID: tracking-progress-org-habit-streak-count
