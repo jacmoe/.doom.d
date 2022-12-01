@@ -64,11 +64,11 @@ The easiest way to install Vale is to download a binary release from [[https://g
 Now you need to download some Vale style checkers. There is a list of the available styles here: [[https://github.com/errata-ai/packages][errata-ai/packages]].
 
 I installed the following styles:
-- proselint : [[https://github.com/errata-ai/proselint/releases][Releases · errata-ai/proselint]]
-- write-good : [[https://github.com/errata-ai/write-good/releases][Releases · errata-ai/write-good]]
-- alex : [[https://github.com/errata-ai/alex/releases][Releases · errata-ai/alex]]
-- joblint : [[https://github.com/errata-ai/Joblint/releases][Releases · errata-ai/Joblint]]
-- readability: [[https://github.com/errata-ai/readability/releases][Releases · errata-ai/readability]]
+- proselint : [[https://github.com/errata-ai/proselint/releases][Releases · errata-ai/proselint]] “proselint places the world’s greatest writers and editors by your side, where they whisper suggestions on how to improve your prose.”
+- write-good : [[https://github.com/errata-ai/write-good/releases][Releases · errata-ai/write-good]] “Naive linter for English prose for developers who can't write good and wanna learn to do other stuff good too.”
+- alex : [[https://github.com/errata-ai/alex/releases][Releases · errata-ai/alex]] “Helps you find gender favoring, polarizing, race related, or other unequal phrasing in text.”
+- joblint : [[https://github.com/errata-ai/Joblint/releases][Releases · errata-ai/Joblint]] “Test tech job posts for issues with sexism, culture, expectations, and recruiter fails.”
+- readability: [[https://github.com/errata-ai/readability/releases][Releases · errata-ai/readability]] “implementation of many popular ‘readability’ metrics.”
 
 Download and extract into a place where they can easily be found, like in =~/vale-styles= for instance.
 
