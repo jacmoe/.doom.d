@@ -364,12 +364,12 @@ We already covered the Boon commands in blue, so the following will not cover th
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-powertheraurus
 :END:
-* Prose linting
+*** Prose linting
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-prose-linting
 :END::CUSTOM_ID:
 
-* Typopunct
+*** Typopunct
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-typopunct
 :END:
@@ -382,15 +382,17 @@ If we want to actually write a regular ASCII single or double quote, we need to 
 /Note: some exporters, like the Hugo exporter, will automatically convert regular ASCII quotes to typographical quotes, unless you wrap them in code tags (~)/.
 
 Additionally, ~typopunct~ also allows us to insert ~en-dash~ and ~em-dash~ by typing  ~--~ for – and ~---~ for —.
+
 *** Special characters
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-special-characters
 :END:
+placeholder text
 *** Abbrevs
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-abbrevs
 :END:
-
+placeholder text
 ** Tracking progress
 :PROPERTIES:
 :CUSTOM_ID: tracking-progress
