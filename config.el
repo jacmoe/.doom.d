@@ -254,8 +254,7 @@
 ;; Boon
 ;; CtrlF
 ;; Transparency
-;; Flymake-proselint
-;; Writegood-mode
+;; Prose linting
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Browse-kill-ring
@@ -776,7 +775,7 @@
 (use-package! ctrlf
   :config
   (ctrlf-mode t))
-  
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -800,35 +799,16 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; Flymake-proselint                                                                ;;
+;; Prose linting                                                                    ;;
 ;;                                                                                  ;;
-;; https://github.com/manuel-uberti/flymake-proselint                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (use-package! flymake-proselint
-;;   :defer t
-;;   :init
-;;   (add-hook! #'org-mode-hook (lambda ()
-;;                                (flymake-mode)
-;;                                (flymake-proselint-setup))))
+(after! org
+  (add-hook 'org-mode-hook #'eglot-ensure)
+)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Writegood-mode                                                                   ;;
-;;                                                                                  ;;
-;; https://github.com/bnbeckwith/writegood-mode                                     ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! writegood-mode
-  :config
- (setq my/weasel-words
-       '("actually"
-         "basically"
-         "easily"
-         "easy"
-         "simple"
-         "simply"))
- (setq writegood-weasel-words
-       (-concat writegood-weasel-words my/weasel-words)))
-  
+(after! eglot
+  (add-to-list 'eglot-server-programs '((org-mode) "/home/moena/go/bin/efm-langserver"))
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

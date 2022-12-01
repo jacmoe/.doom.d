@@ -2,3 +2,4 @@
 /flycheck_config.el
 /.secret.el
 /custom.el
+/abbrev.el

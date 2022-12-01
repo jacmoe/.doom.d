@@ -16,8 +16,6 @@
 
 (package! smart-quotes)
 
-;; (package! flymake-proselint)
-
 (package! mw-thesaurus)
 
 (package! powerthesaurus)
@@ -43,8 +41,6 @@
 
 (package! org-wc)
 
-(package! writegood-mode :recipe (:host github :repo "bnbeckwith/writegood-mode"))
-
 (package! grab-x-link) ; use grab-mac-link if you are a Mac user
 
 (package! speed-type)
@@ -54,3 +50,5 @@
 (package! mastodon)
 
 (package! org-modern)
+
+(package! eglot)
