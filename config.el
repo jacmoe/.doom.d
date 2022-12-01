@@ -801,6 +801,7 @@
 ;;                                                                                  ;;
 ;; Flymake-vale                                                                     ;;
 ;;                                                                                  ;;
+;; https://github.com/tpeacock19/flymake-vale                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! flymake-vale)
 
