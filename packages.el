@@ -51,4 +51,4 @@
 
 (package! org-modern)
 
-(package! eglot)
+(package! flymake-vale :recipe (:host github :repo "tpeacock19/flymake-vale"))

@@ -3,3 +3,4 @@
 /.secret.el
 /custom.el
 /abbrev.el
+/.vale.ini

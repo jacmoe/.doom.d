@@ -254,7 +254,7 @@
 ;; Boon
 ;; CtrlF
 ;; Transparency
-;; Prose linting
+;; Flymake-vale
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Browse-kill-ring
@@ -283,7 +283,7 @@
            #'visual-line-mode
            #'solaire-mode
            #'typopunct-mode
-           #'writegood-mode
+           #'flymake-vale-load
            #'org-modern-mode
            #'variable-pitch-mode)
 
@@ -799,16 +799,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; Prose linting                                                                    ;;
+;; Flymake-vale                                                                     ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(after! org
-  (add-hook 'org-mode-hook #'eglot-ensure)
-)
-
-(after! eglot
-  (add-to-list 'eglot-server-programs '((org-mode) "/home/moena/go/bin/efm-langserver"))
-)
+(use-package! flymake-vale)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
