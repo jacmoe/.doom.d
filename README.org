@@ -68,7 +68,7 @@ I installed the following styles:
 - write-good : [[https://github.com/errata-ai/write-good/releases][Releases · errata-ai/write-good]]
 - alex : [[https://github.com/errata-ai/alex/releases][Releases · errata-ai/alex]]
 - joblint : [[https://github.com/errata-ai/Joblint/releases][Releases · errata-ai/Joblint]]
-- readability: [[https://github.com/errata-ai/Joblint/releases][Releases · errata-ai/readability]]
+- readability: [[https://github.com/errata-ai/readability/releases][Releases · errata-ai/readability]]
 
 Download and extract into a place where they can easily be found, like in =~/vale-styles= for instance.
 
