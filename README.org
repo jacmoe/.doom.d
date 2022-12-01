@@ -85,7 +85,7 @@ StylesPath = /path/to/vale-styles
 MinAlertLevel = warning
 
 [*]
-BasedOnStyles = proselint, write-good
+BasedOnStyles = proselint, write-good, alex, joblint, readability
 #+end_src
 
 See the Vale home page for more information.
