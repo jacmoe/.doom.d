@@ -379,7 +379,8 @@ We already covered the Boon commands in blue, so the following will not cover th
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-prose-linting
 :END::CUSTOM_ID:
-
+#+attr_html: :alt Prose linting with Vale :title Prose linting with Vale :width 100%
+[[file:images/vale.png]]
 *** Typopunct
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-typopunct
