@@ -363,6 +363,10 @@ We already covered the Boon commands in blue, so the following will not cover th
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc
 :END:
+*** Define-word
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-define-word
+:END:
 *** Dictionary server
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-dictionary-server

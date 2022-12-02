@@ -231,6 +231,8 @@
 (defalias 'mwebster 'mw-thesaurus-lookup-dwim)
 (defalias 'pt-defs 'powerthesaurus-lookup-definitions-dwim)
 (defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
+(defalias 'dwp 'define-word-at-point)
+(defalias 'dw 'define-word)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
