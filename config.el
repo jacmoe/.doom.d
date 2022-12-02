@@ -599,12 +599,9 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Auto-text for Emacs
-(setq save-abbrevs 'silently)     ; stop asking whether to save newly added abbrev when quitting emacs
-
-(add-hook 'doom-first-buffer-hook ; one abbrev file for all modes
-          (defun +abbrev-file-name ()
-            (setq-default abbrev-mode t)
-            (setq abbrev-file-name (expand-file-name "abbrev.el" doom-private-dir))))
+(setq save-abbrevs 'silently)   ; stop asking whether to save newly added abbrev when quitting emacs
+(setq abbrev-file-name (expand-file-name "abbrev_defs.el" doom-private-dir)) ; where to load abbrevs from
+(setq-default abbrev-mode t)    ; Abbrev mode always on
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
