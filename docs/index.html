@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-02 fre 00:52 -->
+<!-- 2022-12-02 fre 01:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hotel California of Creative Writing</title>
@@ -65,11 +65,19 @@
 <li><a href="#dictionaries-etc-dictionary-server">5.1. Dictionary server</a></li>
 <li><a href="#dictionaries-etc-webster">5.2. Webster</a></li>
 <li><a href="#dictionaries-etc-powertheraurus">5.3. Powerthesaurus</a></li>
-<li><a href="#orge0f3704">5.4. Prose linting</a></li>
+<li><a href="#org2890fb8">5.4. Prose linting</a></li>
 <li><a href="#dictionaries-etc-typopunct">5.5. Typopunct</a></li>
 <li><a href="#dictionaries-etc-special-characters">5.6. Special characters</a></li>
 <li><a href="#dictionaries-etc-abbrevs">5.7. Abbrevs</a></li>
-<li><a href="#dictionaries-etc-registers">5.8. Registers</a></li>
+<li><a href="#dictionaries-etc-registers">5.8. Registers</a>
+<ul>
+<li><a href="#dictionaries-etc-registers-introduction">5.8.1. Introduction</a></li>
+<li><a href="#dictionaries-etc-registers-positions">5.8.2. Positions</a></li>
+<li><a href="#dictionaries-etc-registers-text">5.8.3. Text</a></li>
+<li><a href="#dictionaries-etc-registers-window-configurations">5.8.4. Window configurations</a></li>
+<li><a href="#dictionaries-etc-registers-bookmarks">5.8.5. Bookmarks</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#tracking-progress">6. Tracking progress</a>
@@ -145,7 +153,7 @@ This is currently a work in progress
 <h2 id="introduction"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-introduction">
 
-<div id="org588870d" class="figure">
+<div id="org38e587e" class="figure">
 <p><img src="images/hotel-california.png" alt="Emacs - my Hotel California" title="Emacs - my Hotel California" width="100%" />
 </p>
 </div>
@@ -185,7 +193,7 @@ It is my hope that, after reading this article, that  you start thinking of it a
 I can make Emacs fit my workflow rather than the other way around.
 </p>
 
-<div id="orgd7877dd" class="figure">
+<div id="org50b429a" class="figure">
 <p><img src="images/hackerman1.jpg" alt="Hackerman" title="Hackerman" width="40%" />
 </p>
 </div>
@@ -279,7 +287,7 @@ If you feel that you need to have at least a menu-bar, then you can turn it on/o
 <h3 id="org-mode-introduction"><span class="section-number-3">3.1.</span> Introduction</h3>
 <div class="outline-text-3" id="text-org-mode-introduction">
 
-<div id="orge62cb5a" class="figure">
+<div id="orgc1a858b" class="figure">
 <p><img src="images/org-mode-unicorn.svg" alt="Org-mode" class="org-svg" title="Org-mode" width="20%" />
 </p>
 </div>
@@ -548,7 +556,7 @@ Not all commands work as you would expect, however, so if we wanted to run <code
 Here’s how the keyboard layout looks like for Command mode using Boon:
 </p>
 
-<div id="org1616e7a" class="figure">
+<div id="orgec7c347" class="figure">
 <p><img src="images/keyboard-layout.png" alt="The Hotel California layout" title="The Hotel California layout" width="100%" />
 </p>
 </div>
@@ -623,8 +631,8 @@ We already covered the Boon commands in blue, so the following will not cover th
 <div class="outline-text-3" id="text-dictionaries-etc-powertheraurus">
 </div>
 </div>
-<div id="outline-container-orge0f3704" class="outline-3">
-<h3 id="orge0f3704"><span class="section-number-3">5.4.</span> Prose linting</h3>
+<div id="outline-container-org2890fb8" class="outline-3">
+<h3 id="org2890fb8"><span class="section-number-3">5.4.</span> Prose linting</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 :PROPERTIES:
@@ -672,6 +680,79 @@ Additionally, <code>typopunct</code> also allows us to insert <code>en-dash</cod
 <div id="outline-container-dictionaries-etc-registers" class="outline-3">
 <h3 id="dictionaries-etc-registers"><span class="section-number-3">5.8.</span> Registers</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-registers">
+</div>
+<div id="outline-container-dictionaries-etc-registers-introduction" class="outline-4">
+<h4 id="dictionaries-etc-registers-introduction"><span class="section-number-4">5.8.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-dictionaries-etc-registers-introduction">
+<p>
+Registers in Emacs is a bit like a clipboard where we can store not only text, but also numbers, positions in a buffer, window and frame configurations, rectangles, and bookmarks.
+</p>
+
+<p>
+All registers, except bookmark registers, are not persisted between Emacs sessions, and they can be named using single characters, that is upper and lower case letters, numbers, and symbols.
+</p>
+</div>
+</div>
+<div id="outline-container-dictionaries-etc-registers-positions" class="outline-4">
+<h4 id="dictionaries-etc-registers-positions"><span class="section-number-4">5.8.2.</span> Positions</h4>
+<div class="outline-text-4" id="text-dictionaries-etc-registers-positions">
+<p>
+<code>x r SPACE</code>  : save position in a buffer to a register.
+</p>
+
+<p>
+Use <code>c x j</code> to jump to saved buffer position.
+</p>
+</div>
+</div>
+<div id="outline-container-dictionaries-etc-registers-text" class="outline-4">
+<h4 id="dictionaries-etc-registers-text"><span class="section-number-4">5.8.3.</span> Text</h4>
+<div class="outline-text-4" id="text-dictionaries-etc-registers-text">
+<p>
+<code>x r s</code> : copy region to register.
+</p>
+
+<p>
+Use <code>x r i</code> to insert the contents of a register.
+</p>
+</div>
+</div>
+<div id="outline-container-dictionaries-etc-registers-window-configurations" class="outline-4">
+<h4 id="dictionaries-etc-registers-window-configurations"><span class="section-number-4">5.8.4.</span> Window configurations</h4>
+<div class="outline-text-4" id="text-dictionaries-etc-registers-window-configurations">
+<p>
+<code>x r w</code> : save window configuration to register.
+</p>
+
+<p>
+Use <code>c x j</code> to “jump” to a saved window configuration.
+</p>
+</div>
+</div>
+<div id="outline-container-dictionaries-etc-registers-bookmarks" class="outline-4">
+<h4 id="dictionaries-etc-registers-bookmarks"><span class="section-number-4">5.8.5.</span> Bookmarks</h4>
+<div class="outline-text-4" id="text-dictionaries-etc-registers-bookmarks">
+<p>
+Bookmarks are special buffer position registers that are persisted (saved) between Emacs sessions, and can be named using strings rather than single characters.
+</p>
+
+<p>
+<code>x r m</code> : set bookmark.
+</p>
+
+<p>
+<code>x r b</code> : jump to bookmark.
+</p>
+
+<p>
+<code>x r l</code> : show bookmark list.
+Click the Bookmark Menu in the status bar to see what commands are available.
+</p>
+
+<p>
+Use <code>q</code> to close the bookmark list buffer.
+</p>
+</div>
 </div>
 </div>
 </div>
@@ -762,7 +843,7 @@ Using <code>org-wc</code>.
 </p>
 
 
-<div id="org2f2c9f4" class="figure">
+<div id="orgdaee84a" class="figure">
 <p><img src="images/org-wc.png" alt="Running M-x org-wc-display shows word count per heading" title="Running M-x org-wc-display shows word count per heading" width="100%" />
 </p>
 </div>
@@ -777,7 +858,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 </p>
 
 
-<div id="org850db95" class="figure">
+<div id="org2759c51" class="figure">
 <p><img src="images/properties-actions.png" alt="Adding properties to a heading" title="Adding properties to a heading" width="100%" />
 </p>
 </div>
@@ -786,7 +867,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 Now we can configure the <code>COLUMNS</code> special property, which will be inherited by child headings:
 </p>
 
-<div id="orgff8ca58" class="figure">
+<div id="org37f8786" class="figure">
 <p><img src="images/columns-source.png" alt="Setting up columns with properties" title="Setting up columns with properties" width="100%" />
 </p>
 </div>
@@ -799,7 +880,7 @@ See <a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.htm
 Having set it all up, we can now run <code>org-columns</code> by pressing <code>c x c</code>:
 </p>
 
-<div id="org614fbd3" class="figure">
+<div id="orgcdc41bc" class="figure">
 <p><img src="images/columns.png" alt="Column view" title="Column view" width="100%" />
 </p>
 </div>
@@ -842,7 +923,7 @@ Pres <code>q</code> to exit.
 Sometimes you want to know what changes you have made to a buffer since your last save. Since you haven’t saved the file yet, Magit can’t help you, so you need something else. Fortunately, we can use Emacs’ <code>diff-buffer-with-file</code>, mapped to <code>C-d</code>.
 </p>
 
-<div id="org4d1adaf" class="figure">
+<div id="org08daa2c" class="figure">
 <p><img src="images/diff.png" alt="Using diff to see the difference between buffer and file" title="Using diff to see the difference between buffer and file" width="100%" />
 </p>
 </div>
@@ -892,7 +973,7 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 <h3 id="creature-comforts-zen-mode-and-transparency"><span class="section-number-3">11.2.</span> Zen-mode and transparency</h3>
 <div class="outline-text-3" id="text-creature-comforts-zen-mode-and-transparency">
 
-<div id="orgc109ce4" class="figure">
+<div id="org0994f47" class="figure">
 <p><img src="images/zen-mode.png" alt="Zen-mode with transparency turned on" title="Zen-mode with transparency turned on" width="100%" />
 </p>
 </div>
@@ -977,19 +1058,19 @@ Then, we set a placeholder for where the generated bibliography list will be ren
 Now that we’re all set up, we can now insert citations into our document by running <code>org-cite-insert</code> (bound to <code>C-c l @</code>)
 </p>
 
-<div id="org67d78d0" class="figure">
+<div id="org48ab5ba" class="figure">
 <p><img src="images/citation-insert.png" alt="Inserting a citation in Emacs" title="Inserting a citation in Emacs" width="100%" />
 </p>
 </div>
 
 
-<div id="orgf575d33" class="figure">
+<div id="org7fcf903" class="figure">
 <p><img src="images/bibliography-source.png" alt="Bibliography source code" title="Biblography source code" width="100%" />
 </p>
 </div>
 
 
-<div id="org9181f7a" class="figure">
+<div id="org2a7c13d" class="figure">
 <p><img src="images/bibliography-test.png" alt="Bibliography test rendering" title="Bibliography test rendering" width="100%" />
 </p>
 </div>
@@ -1070,7 +1151,7 @@ When your InitFile gets so large that you really need to start over, then you ha
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Jacob Moena</p>
-<p class="date">Created: 2022-12-02 fre 00:52</p>
+<p class="date">Created: 2022-12-02 fre 01:54</p>
 </div>
 </body>
 </html>

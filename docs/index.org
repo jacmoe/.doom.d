@@ -406,6 +406,48 @@ Additionally, ~typopunct~ also allows us to insert ~en-dash~ and ~em-dash~ by ty
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-registers
 :END:
+**** Introduction
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-registers-introduction
+:END:
+Registers in Emacs is a bit like a clipboard where we can store not only text, but also numbers, positions in a buffer, window and frame configurations, rectangles, and bookmarks.
+
+All registers, except bookmark registers, are not persisted between Emacs sessions, and they can be named using single characters, that is upper and lower case letters, numbers, and symbols.
+**** Positions
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-registers-positions
+:END:
+=x r SPACE=  : save position in a buffer to a register.
+
+Use =c x j= to jump to saved buffer position.
+**** Text
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-registers-text
+:END:
+=x r s= : copy region to register.
+
+Use =x r i= to insert the contents of a register.
+**** Window configurations
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-registers-window-configurations
+:END:
+=x r w= : save window configuration to register.
+
+Use =c x j= to “jump” to a saved window configuration.
+**** Bookmarks
+:PROPERTIES:
+:CUSTOM_ID: dictionaries-etc-registers-bookmarks
+:END:
+Bookmarks are special buffer position registers that are persisted (saved) between Emacs sessions, and can be named using strings rather than single characters.
+
+=x r m= : set bookmark.
+
+=x r b= : jump to bookmark.
+
+=x r l= : show bookmark list.
+Click the Bookmark Menu in the status bar to see what commands are available.
+
+Use =q= to close the bookmark list buffer.
 ** Tracking progress
 :PROPERTIES:
 :CUSTOM_ID: tracking-progress
