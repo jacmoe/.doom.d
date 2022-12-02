@@ -402,6 +402,16 @@ Additionally, ~typopunct~ also allows us to insert ~en-dash~ and ~em-dash~ by ty
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-abbrevs
 :END:
+=x a l= : add local abbrev
+
+=x a g= : add global abbrev
+
+=x a i l= : add local inverse abbrev
+
+=x a i g= : add global inverse abbrev
+
+Use =C-q SPACE= to insert a literal space after a abbreviation instead of expanding it.
+
 *** Registers
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-registers
