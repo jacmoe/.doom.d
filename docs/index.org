@@ -132,10 +132,7 @@ A GNU Emacs major mode for keeping notes, authoring documents, computational not
 <br/>
 #+end_export
 Here’s a small demo of Org-mode in action (/may I suggest that you turn off the sound for this one/):
-#+begin_export hugo
-{{< youtube id="hnMntOQjs7Q" title="Emacs Org Mode Demo 2021" >}}
-#+end_export
-
+[[yt:hnMntOQjs7Q][Emacs Org Mode Demo 2021]]
 Here is a nerdy blog post about why Org-mode is a great markup language: [[https://karl-voit.at/2017/09/23/orgmode-as-markup-only/][Org Mode Syntax Is One of the Most Reasonable Markup Languages to Use for Text]]
 
 - Official format
@@ -273,9 +270,9 @@ The ~:ignore:~ tag instructs Org-mode to export the contents of a heading sectio
 :END:
 
 In Org-mode tables are made of ASCII characters, but it feels like magic in action.
-#+begin_export hugo
-{{< youtube id="5vGGgfs0q3k" title="Using Emacs episode 54 - Org Tables" >}}
-#+end_export
+
+[[yt:5vGGgfs0q3k][Using Emacs episode 54 - Org Tables]]
+
 See [[https://orgmode.org/manual/Tables.html][Tables (The Org Manual)]] for more details.
 
 We’ll see more of what Org-mode tables can do later on in this article, when discussing clock-tables and when discussing Org-tracktable.
