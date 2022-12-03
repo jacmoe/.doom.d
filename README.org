@@ -9,10 +9,10 @@ This is my Emacs configuration, my Hotel California of Creative Writing.
 
 It features all the bells and whistles that I could ever want from a writing environment, and nothing else.
 
-For a very detailed walkthrough of what this configuration provides, see
+For a very detailed walk-through of what this configuration provides, see
 [[https://jacmoe.github.io/.doom.d/][https://jacmoe.github.io/.doom.d/]]
 
-/The walkthrough is currently a work in progress. This notice will be removed once it gets finished./
+/The walk-through is currently a work in progress. This notice will be removed once it gets finished./
 
 ** Prerequisites
 /This has been tested on Linux, and to some degree, Windows. I recently got rid of Windows, so I am not personally going to be able to provide any help with that, and I might even remove Windows specific instructions from this Readme in the future./
@@ -20,8 +20,8 @@ For a very detailed walkthrough of what this configuration provides, see
 First, make sure that you have at least Emacs 28.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
 
-This configuration uses the following packages that have dependencies:
-*** Org-Roam
+This configuration uses the following external dependencies:
+*** C compiler
 
 =org-roam= uses a custom SQLite binary to store its database, and it will compile it when it installs. So there must be a C compiler available to Emacs.
 
@@ -80,7 +80,7 @@ Download and extract into a place where they can easily be found, like in =~/val
 Now you can place a =.vale.ini= file in any top level directory where you want Vale to check your prose.
 
 An example:
-#+begin_src
+#+begin_src ini
 StylesPath = /path/to/vale-styles
 MinAlertLevel = warning
 
@@ -109,7 +109,7 @@ Create a configuration file in your home directory, called =puppeteerConfigFile.
 }
 #+end_src
 *** Hugo
-I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
+I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]]. Choose the ‘extended’ version.
 *** PDF diff and export
 Even if you do not plan to make use of Latex, or Latexdiff, I found that installing the =latexdiff= package fixed my issues with exporting to PDF, so you might want to do that too. And maybe also the =texlive-bibtex-extra= and =texlive-latex-extra= packages.
 
@@ -132,7 +132,7 @@ Install =msmtp= and create a basic configuration file (=~/.msmtprc=) using this 
 [[https://wiki.archlinux.org/title/Msmtp#Basic_setup][msmtp - ArchWiki]]
 **** Notmuch Address Lookup tool
 To aid in looking up email addresses for auto-completion, we need to download (via git) and compile an address lookup tool coded in C.
-#+begin_src
+#+begin_src bash
 git clone git@github.com:aperezdc/notmuch-addrlookup-c.git
 cd notmuch-addrlookup-c
 make
@@ -142,14 +142,16 @@ See [[https://github.com/aperezdc/notmuch-addrlookup-c][aperezdc/notmuch-addrloo
 *** Hotel California
 Clone the Hotel California repository into =~/.doom.d=, like this:
 
-=git clone https://github.com/jacmoe/.doom.d ~/.doom.d=
+#+begin_src bash
+git clone https://github.com/jacmoe/.doom.d ~/.doom.d
+#+end_src
 
 *** Doom-Emacs
 Make sure that there isn’t a ~.emacs.d~ directory on your machine. If you are running Emacs, there is, so you need to either delete or rename it.
 
 To install Doom-Emacs, clone it into ~.emacs.d~ , and run the Doom-Emacs installation script:
 
-#+BEGIN_SRC
+#+BEGIN_SRC bash
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 
 ~/.emacs.d/bin/doom install
@@ -181,4 +183,6 @@ You might want to read the extensive guide here: [[https://jacmoe.github.io/.doo
 Happy Writing!
 
 #  LocalWords:  MSYS mingw aspell Proselint Palahniuk Elmore Butterick Strunk
-#  LocalWords:  Elwyn Corbett Gowers Latexdiff UI ODT
+#  LocalWords:  Elwyn Corbett Gowers Latexdiff UI ODT Readme ai proselint alex
+#  LocalWords:  joblint Gantt cli offlineimap notmuch Firmin msmtp ArchWiki
+#  LocalWords:  addrlookup
