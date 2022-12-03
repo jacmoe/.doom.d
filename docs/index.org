@@ -384,7 +384,7 @@ We already covered the Boon commands in blue, so the following will not cover th
 [[file:images/vale.png]]
 *** Mermaid
 :PROPERTIES:
-:CUSTOM_ID: dictionaries-etc-prose-linting
+:CUSTOM_ID: dictionaries-etc-mermaid
 :END:
 #+attr_html: :alt Mermaid script can be used to define diagrams in code blocks :title Mermaid script can be used to define diagrams in code blocks :width 100%
 [[file:images/gantt.png]]
