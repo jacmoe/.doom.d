@@ -91,7 +91,14 @@ BasedOnStyles = proselint, write-good, alex, joblint, readability
 See the Vale home page for more information.
 
 To make Emacs actually check your document, run =M-x flymake-mode=. Run =M-x flymake-mode= to turn it off again.
+*** Mermaid
+[[https://mermaid-js.github.io/mermaid/#/][Mermaid]] is used to generate Gantt charts and other diagrams.
 
+To use it, install [[https://github.com/mermaid-js/mermaid-cli][mermaid-cli]] by running:
+#+begin_src bash
+npm install -g @mermaid-js/mermaid-cli
+#+end_src
+This assumes that you already installed =node.js= and =npm=.
 *** Hugo
 I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
 *** PDF diff and export
