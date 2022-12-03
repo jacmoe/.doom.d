@@ -234,6 +234,8 @@
 (defalias 'pt-sent 'powerthesaurus-lookup-sentences-dwim)
 (defalias 'dwp 'define-word-at-point)
 (defalias 'dw 'define-word)
+(defalias 'om 'org-mode)
+(defalias 'tm 'text-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
