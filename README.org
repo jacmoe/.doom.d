@@ -98,7 +98,16 @@ To use it, install [[https://github.com/mermaid-js/mermaid-cli][mermaid-cli]] by
 #+begin_src bash
 npm install -g @mermaid-js/mermaid-cli
 #+end_src
-This assumes that you already installed =node.js= and =npm=.
+This assumes that you already installed =nodejs= and =npm=.
+
+The command-line client needs =Chromium= (or Chrome), and it needs to be told where it is.
+
+Create a configuration file in your home directory, called =puppeteerConfigFile.json=:
+#+begin_src json
+{
+  "executablePath": "/usr/bin/chromium"
+}
+#+end_src
 *** Hugo
 I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
 *** PDF diff and export
@@ -153,7 +162,7 @@ What you can do, however, is check the installation by running the Doom-Emacs do
 
 It should run without errors or warnings, but if it doesn’t, you should be able to fix the issues in most cases based on what the doctor orders.
 
-You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40, and correct the path to the C address lookup tool you compiled earlier.
+You need to change some variables around line 20 in =config.el=, the location of personal dictionary, bookmarks and Org folders. Also be sure to change the personal information around line 40, correct the path to the C address lookup tool you compiled earlier, and enter the path to =puppeteerConfigFile.json= that you created earlier.
 
 
 If you changed anything in =init.el= or =packages.el=, though I can’t think of a valid reason why you’d do such a thing, you need to run the Doom-Emacs sync script:
