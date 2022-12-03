@@ -72,6 +72,7 @@
                              "~/habits/habits.org"))
                              
 (defvar my-notmuch-address-command "/home/moena/notmuch-addrlookup-c/notmuch-addrlookup")
+(defvar my-puppeteer-config-file "/home/moena/puppeteerConfigFile.json")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -336,6 +337,7 @@
 (add-hook! org-mode (org-indent-mode -1))
 
 (after! org
+  (setq mermaid-flags (concat "--puppeteerConfigFile " my-puppeteer-config-file))
   (setq org-fold-core-style 'overlays) ; https://github.com/org-roam/org-roam/issues/2198
   (setq org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
