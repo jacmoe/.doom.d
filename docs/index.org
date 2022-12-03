@@ -581,7 +581,7 @@ Pres ~q~ to exit.
 :PROPERTIES:
 :CUSTOM_ID: saving-the-work-magit
 :END:
-attr_html: :alt Prose linting with Vale :title Prose linting with Vale :width 100%
+#+attr_html: :alt Prose linting with Vale :title Prose linting with Vale :width 100%
 [[file:images/magit.png]]
 *** Unsaved changes
 :PROPERTIES:
