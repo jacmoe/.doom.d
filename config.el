@@ -337,7 +337,7 @@
 (add-hook! org-mode (org-indent-mode -1))
 
 (after! org
-  (setq mermaid-flags (concat "--puppeteerConfigFile " my-puppeteer-config-file))
+  (setq mermaid-flags (concat "-w 1810 --puppeteerConfigFile " my-puppeteer-config-file))
   (setq org-fold-core-style 'overlays) ; https://github.com/org-roam/org-roam/issues/2198
   (setq org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
