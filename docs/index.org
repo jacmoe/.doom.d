@@ -576,10 +576,16 @@ Pres ~q~ to exit.
 :PROPERTIES:
 :CUSTOM_ID: organize-the–writing
 :END:
+*** All in one
+:PROPERTIES:
+:CUSTOM_ID: organize-the–writing-all-in-one
+:END:
+Everything in one big file.
 *** Master document
 :PROPERTIES:
 :CUSTOM_ID: organize-the–writing-master-document
 :END:
+Transclusion.
 ** Capturing thoughts
 :PROPERTIES:
 :CUSTOM_ID: capturing-thoughts

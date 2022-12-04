@@ -56,3 +56,5 @@
 (package! define-word)
 
 (package! mermaid-mode)
+
+(package! org-transclusion)
