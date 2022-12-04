@@ -439,7 +439,10 @@ For example, =C-x 8 o= will insert a degree symbol: °.
 | C-x 8 " "   | ¨         | C-x 8 " u   | ü         | C-x 8 ' o   | ó         |
 | C-x 8 , ,   | ¸         | C-x 8 , c   | ç         | C-x 8 / a   | å         |
 | C-x 8 / e   | æ         | C-x 8 / o   | ø         | C-x 8 ' '   | ´         |
+| C-x 8 ^ i   | î         |             |           |             |           |
+Use =C-x 8 C-h= to see a list of available characters that can be typed this way. You might have to run Emacs without any costumizations, =emacs Q=, in order to be able to enter the command.
 
+See also [[http://xahlee.info/emacs/emacs/emacs_n_unicode.html][Emacs: Unicode Tutorial]]
 *** Abbrevs
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-abbrevs
