@@ -738,11 +738,11 @@ However, if we swicth to /text-mode/ (=M-x text-mode= or =M-x tm=) we see that t
 Switching back to /org-mode/ (=M-x org-mode= or =M-x om=) how do we position the point at the right place, how do we insert a new line?
 #+attr_html: :alt problem :title problem :width 100%
 [[file:images/om-problem3.png]]
-We could simply switch to /text-mode/ and perform the edit operation there, but we can do better by moving the point to the end of line by pressing =u= in command mode:
+We could simply switch to /text-mode/ and perform the edit operation there, but we can do better by moving the point to the beginnind of line by pressing =u= in command mode:
 #+attr_html: :alt problem :title problem :width 100%
 [[file:images/om-problem4.png]]
-The point is now at the very end of the previous line.
-Now, all we have to do is insert a new line below the point by pressing =C-o=:
+Curiously, the point is now at the very end of the previous line, but we can take advantage of that.
+All we have to do is insert a new line below the point by pressing =C-o=:
 #+attr_html: :alt problem :title problem :width 100%
 [[file:images/om-problem5.png]]
 Move the point down a line, and we have successfully inserted a new line:
