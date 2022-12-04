@@ -418,6 +418,28 @@ Additionally, ~typopunct~ also allows us to insert ~en-dash~ and ~em-dash~ by ty
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-special-characters
 :END:
+To insert special characters enter =C-x 8 RETURN=:
+[[file:images/insert-char-list.png]]
+Now, instead of pressing return, we can conveniently insert an often used character by pressing that key.
+For example, =C-x 8 o= will insert a degree symbol: °.
+| code        | character | code        | character | code        | character |
+|-------------+-----------+-------------+-----------+-------------+-----------|
+| C-x 8 C     | ©         | C-x 8 R     | ®         | C-x 8 $     | ¤         |
+| C-x 8 Y     | ¥         | C-x 8 +     | ±         | C-x 8 .     | ·         |
+| C-x 8 L     | £         | C-x 8 d     | §         | C-x 8 P     | ¶         |
+| C-x 8 c     | ¢         | C-x 8 m     | µ         | C-x 8 o     | °         |
+| C-x 8 x     | ×         | C-x 8 ?     | ¿         | C-x 8 a <   | ←         |
+| C-x 8 a -   | ¯         | C-x 8 a =   | ↔         | C-x 8 a >   | →         |
+| C-x 8 N o   | №         | C-x 8 2 +   | ‡         | C-x 8 ~ =   | ≈         |
+| C-x 8 _ >   | ≥         | C-x 8 _ <   | ≤         | C-x 8 1 +   | †         |
+| C-x 8 / /   | ÷         | C-x 8 / =   | ≠         | C-x 8 * !   | ¡         |
+| C-x 8 * *   | •         | C-x 8 * E   | €         | C-x 8 * +   | ±         |
+| C-x 8 * .   | ·         | C-x 8 3 / 4 | ¾         | C-x 8 1 / 2 | ½         |
+| C-x 8 1 / 2 | ½         | C-x 8 ` e   | è         | C-x 8 ~ n   | ñ         |
+| C-x 8 " "   | ¨         | C-x 8 " u   | ü         | C-x 8 ' o   | ó         |
+| C-x 8 , ,   | ¸         | C-x 8 , c   | ç         | C-x 8 / a   | å         |
+| C-x 8 / e   | æ         | C-x 8 / o   | ø         | C-x 8 ' '   | ´         |
+
 *** Abbrevs
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-abbrevs
