@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: imgtitle
+# key: imgtitle
+# --
+#+attr_html: :alt $1 :title $2 :width 100%
+$0

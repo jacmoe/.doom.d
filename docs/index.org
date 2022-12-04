@@ -364,18 +364,28 @@ We already covered the Boon commands in blue, so the following will not cover th
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-define-word
 :END:
+#+attr_html: :alt Quick word definition :title Quick word definition :width 100%
+[[file:images/define-word.png]]
 *** Dictionary server
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-dictionary-server
 :END:
+#+attr_html: :alt Dictionary server lookup :title Dictionary server lookup :width 100%
+[[file:images/dictionary.png]]
 *** Webster
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-webster
 :END:
+#+attr_html: :alt Look up word in Merriam-Webster :title Look up word in Merriam-Webster :width 100%
+[[file:images/webster.png]]
 *** Powerthesaurus
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-powertheraurus
 :END:
+#+attr_html: :alt Synonym lookup :title Synonym lookup :width 100%
+[[file:images/synonyms.png]]
+#+attr_html: :alt Sentences lookup :title Sentences lookup :width 100%
+[[file:images/sentences.png]]
 *** Prose linting
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-prose-linting
@@ -476,12 +486,16 @@ Use =q= to close the bookmark list buffer.
 :PROPERTIES:
 :CUSTOM_ID: tracking-progress-track-table
 :END:
+#+attr_html: :alt Track-table keeps track of words written per day :title Track-table keeps track of words written per day :width 100%
+[[file:images/tracktable.png]]
 *** Clocking time
 :PROPERTIES:
 :CUSTOM_ID: tracking-progress-clocking-time
 :END:
 ~c x i~ to clock in. ~c x o~ to clock out. ~c x q~ to cancel a clock.
 There is also the option of starting a 20 minute Pomodoro session, by pressing ~B~.
+#+attr_html: :alt Pomodoro session :title Pomodoro session :width 100%
+[[file:images/pomodoro.png]]
 Clocking is tied to the heading you are working under, and will add a ~:LOGBOOK:~ section to it, like this:
 #+begin_src
 :LOGBOOK:
