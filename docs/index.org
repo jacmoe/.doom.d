@@ -752,7 +752,7 @@ Now that we’re all set up, we can now insert citations into our document by ru
 By running ~M-x grab-x-link~ we can insert a link from an active web browser window.
 It will ask you to choose your browser—Chromium, Chrome, Firefox, or Brave—and what format to use (plain, markdown or Org format). Much quicker than manually copying, pasting, and write the title manually. The links can be edited by ~c l~ , and opened by ~c o~.
 
-** Problems and how to fix them
+** Problems and how to fix them :noexport:
 :PROPERTIES:
 :CUSTOM_ID: problems-and-how-to-fix-them
 :END:
