@@ -58,3 +58,5 @@
 (package! mermaid-mode)
 
 (package! org-transclusion)
+
+(package! org-super-agenda)
