@@ -154,6 +154,7 @@
             +hugo
             +journal
             +pomodoro
+            +pretty
             +dragndrop
             +noter
             +present

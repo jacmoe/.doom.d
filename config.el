@@ -290,7 +290,6 @@
            #'solaire-mode
            #'typopunct-mode
            #'flymake-vale-load
-           #'org-modern-mode
            #'variable-pitch-mode)
 
 ;; Org-habit
@@ -301,8 +300,6 @@
         org-habit-preceding-days 35
         org-habit-show-habits t))
   
-(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
-
 (use-package! org-super-agenda
   :after org-agenda
   :init
@@ -380,16 +377,10 @@
  org-agenda-current-time-string
  "⭠ now ─────────────────────────────────────────────────")
 
-(after! org
-;; These two lines sets org tables to use fixed pitch fonts and turns off org-modern
-(set-face-attribute 'org-table nil :inherit 'fixed-pitch)
-(custom-set-variables '(org-modern-table nil)))
-
 (add-hook! org-mode (org-indent-mode -1))
 
 (after! org
   (setq mermaid-flags (concat "-w 1810 --puppeteerConfigFile " my-puppeteer-config-file))
-  (setq org-fold-core-style 'overlays) ; https://github.com/org-roam/org-roam/issues/2198
   (setq org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-todo-keyword-faces

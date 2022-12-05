@@ -49,8 +49,6 @@
 
 (package! mastodon)
 
-(package! org-modern)
-
 (package! flymake-vale :recipe (:host github :repo "tpeacock19/flymake-vale"))
 
 (package! define-word)
