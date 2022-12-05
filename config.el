@@ -145,6 +145,9 @@
 (custom-set-faces!
   '(doom-modeline-buffer-modified :foreground "orange"))
 
+;; Make the Doom modeline occupy a more comfortable amount of space
+(setq doom-modeline-height 45)
+
 ;; Because Emacs do not render italics at all when markup is hidden force it to render it differently
 (custom-set-faces!
   '(italic :slant oblique :foreground "teal"))
@@ -237,6 +240,8 @@
 (defalias 'dw 'define-word)
 (defalias 'om 'org-mode)
 (defalias 'tm 'text-mode)
+(defalias 'kcast 'keycast-tab-bar-mode)
+(defalias 'gcast 'gif-screencast)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
