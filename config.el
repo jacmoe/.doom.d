@@ -202,7 +202,8 @@
     ;; using qwerty
     (map! "C-;" #'boon-set-command-state); used to quit insert mode
     (map! "C-æ" #'boon-set-command-state))); used to quit insert mode - Danish version
-    
+
+;; (define-key org-mode-map (kbd "C-u C-c C-l") 'org-toggle-link-display)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keybindings defined elsewhere:                                                   ;;
