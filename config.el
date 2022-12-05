@@ -1020,10 +1020,12 @@
 (require 'notmuch-address)
 (setq notmuch-address-command my-notmuch-address-command)
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;; Keycast                                                                          ;;
 ;;                                                                                  ;;
+;; https://github.com/tarsius/keycast                                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! keycast
   :commands keycast-mode
@@ -1049,6 +1051,7 @@
 ;;                                                                                  ;;
 ;; Gif-screencast                                                                   ;;
 ;;                                                                                  ;;
+;; https://gitlab.com/ambrevar/emacs-gif-screencast                                 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! gif-screencast
   :commands gif-screencast-mode
