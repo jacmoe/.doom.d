@@ -138,6 +138,8 @@ cd notmuch-addrlookup-c
 make
 #+end_src
 See [[https://github.com/aperezdc/notmuch-addrlookup-c][aperezdc/notmuch-addrlookup-c]] for details.
+*** Maim and Gifsicle
+For creating gif screencasts, we use Maim and Gifsicle. Install =maim= and =gifsicle= using your package manager of choice.
 ** Installation
 *** Hotel California
 Clone the Hotel California repository into =~/.doom.d=, like this:

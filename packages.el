@@ -58,3 +58,7 @@
 (package! org-transclusion)
 
 (package! org-super-agenda)
+
+(package! keycast)
+
+(package! gif-screencast)
