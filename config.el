@@ -694,117 +694,26 @@
   (boon-mode)
   (setq boon-insert-cursor-color "orange")
   (if (equal my-theme-shade "dark")
-      (progn
-        (setq boon-default-cursor-color my-boon-default-cursor-color-dark))
-        
+        (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
     (setq boon-default-cursor-color my-boon-default-cursor-color-light))
     
   (if (equal my-keyboard-variant "colemak")
       ;; we are using Colemak
       (progn
-        ;; free keys
-        (define-key boon-command-map "h" 'ignore)
-        (define-key boon-command-map "k" 'ignore)
-        (define-key boon-command-map "m" 'ignore)
-        (define-key boon-command-map "æ" 'ignore)
-
-        ;; Colemak row 1
-        (define-key boon-command-map "q" '("quote" . boon-quote-character))
-        (define-key boon-command-map "w" 'org-tracktable-status)
-        (define-key boon-command-map "W" 'org-tracktable-write)
-        (define-key boon-command-map "f" 'org-narrow-to-subtree)
-        (define-key boon-command-map "F" 'widen)
-        (define-key boon-command-map "p" '("paste" . boon-splice))
-        (define-key boon-command-map "G" 'grab-x-link)
-        (define-key boon-command-map "l" 'move-beginning-of-line)
-        (define-key boon-moves-map "u"  'previous-line)
-        (define-key boon-moves-map "y"  'next-line)
-        (define-key boon-moves-map "U"  'backward-paragraph)
-        (define-key boon-moves-map "Y"  'forward-paragraph)
-        (define-key boon-command-map ";" 'move-end-of-line)
-        (define-key boon-command-map "ø" 'move-end-of-line)
-        ;; Colemak row 2
-        (define-key boon-command-map "a" 'last-edit)
-        (define-key boon-command-map "r" '("replace" . boon-substitute-region))
-        (define-key boon-command-map "S" 'prot/scroll-center-cursor-mode)
-        (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
-        (define-key boon-command-map "d" '("delete" . boon-take-region)) ; "delete"
-        (define-key boon-command-map "D" 'boon-treasure-region) ; "duplicate"
-        ;; h
-        (define-key boon-moves-map "n"  'boon-smarter-backward)
-        (define-key boon-moves-map "e"  'backward-char)
-        (define-key boon-moves-map "i"  'forward-char)
-        (define-key boon-command-map "E" 'backward-sentence)
-        (define-key boon-command-map "I" 'forward-sentence)
-        (define-key boon-command-map (kbd "C-e") 'scroll-down-line)
-        (define-key boon-command-map (kbd "C-i") 'scroll-up-line)
-        (define-key boon-moves-map "o"  'boon-smarter-forward)
-        ;; Colemak row 3
-        (define-key boon-command-map "Z" 'toggle-transparency)
-        (define-key boon-command-map "x" 'boon-x-map)
-        (define-key boon-command-map "c" 'boon-c-god)
-        (define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
-        (define-key boon-command-map (kbd "C-v") 'boon-open-next-line-and-insert)
-        (define-key boon-command-map "V" 'boon-open-line-and-insert)
-        (define-key boon-command-map "B" 'org-pomodoro))
-        ;; k
-        ;; m
-        
+        (define-key boon-moves-map "ø" 'move-end-of-line)
+        (require 'boon-colemak)
+        (define-key boon-moves-map "l" 'move-beginning-of-line)
+        (define-key boon-moves-map ";" 'move-end-of-line)
+        (define-key boon-moves-map "E" 'backward-sentence)
+        (define-key boon-moves-map "I" 'forward-sentence))
     ;; we are using Qwerty
     (progn
-      ;; free keys
-      (define-key boon-command-map "a" 'ignore)
-      (define-key boon-command-map "f" 'ignore)
-      (define-key boon-command-map "h" 'ignore)
-      (define-key boon-command-map "m" 'ignore)
-
-      ;; qwerty row 1
-      (define-key boon-command-map "q" '("quote" . boon-quote-character))
-      (define-key boon-command-map "w" 'org-tracktable-status)
-      (define-key boon-command-map "W" 'org-tracktable-write)
-      (define-key boon-command-map "e" 'last-edit)
-      (define-key boon-command-map "r" '("replace" . boon-substitute-region))
-      (define-key boon-command-map "t" '("transform" . boon-replace-by-character))
-      (define-key boon-command-map "y" '("yank" . boon-splice))
-      (define-key boon-command-map "u" 'move-beginning-of-line)
-      (define-key boon-moves-map "i"  'previous-line)
-      (define-key boon-moves-map "o"  'next-line)
-      (define-key boon-moves-map "I"  'backward-paragraph)
-      (define-key boon-moves-map "O"  'forward-paragraph)
-      (define-key boon-command-map "p" 'move-end-of-line)
-      ;; qwerty row 2
-      ;; a
-      (define-key boon-command-map "s" 'prot/scroll-center-cursor-mode)
-      (define-key boon-command-map "d" '("delete" . boon-take-region)) ; "delete"
-      (define-key boon-command-map "D" 'boon-treasure-region) ; "duplicate"
-      ;; f
-      (define-key boon-command-map "G" 'grab-x-link)
-      ;; h
-      (define-key boon-moves-map "j"  'boon-smarter-backward)
-      (define-key boon-moves-map "k"  'backward-char)
-      (define-key boon-moves-map "l"  'forward-char)
-      (define-key boon-command-map "K" 'backward-sentence)
-      (define-key boon-command-map "L" 'forward-sentence)
-      (define-key boon-command-map (kbd "C-k") 'scroll-down-line)
-      (define-key boon-command-map (kbd "C-l") 'scroll-up-line)
-      (define-key boon-moves-map ";"  'boon-smarter-forward)
-      (define-key boon-command-map "æ" 'boon-smarter-forward)
-      ;; qwerty row 3
-      (define-key boon-command-map "Z" 'toggle-transparency)
-      (define-key boon-command-map "x" 'boon-x-map)
-      (define-key boon-command-map "c" 'boon-c-god)
-      (define-key boon-command-map "v" '("v looks like an insert mark" . boon-set-insert-like-state))
-      (define-key boon-command-map (kbd "C-v") 'boon-open-next-line-and-insert)
-      (define-key boon-command-map "V" 'boon-open-line-and-insert)
-      (define-key boon-command-map "B" 'org-pomodoro)
-      (define-key boon-command-map "n" 'org-narrow-to-subtree)
-      (define-key boon-command-map "N" 'widen)))
-      ;; m
-      
-    
-
-  (define-key boon-moves-map "<"  'beginning-of-buffer)
-  (define-key boon-moves-map ">"  'end-of-buffer)
+      (define-key boon-moves-map "æ" 'boon-smarter-forward)
+      (require 'boon-qwerty)
+      (define-key boon-moves-map "u" 'move-beginning-of-line)
+      (define-key boon-moves-map "p" 'move-end-of-line)
+      (define-key boon-moves-map "K" 'backward-sentence)
+      (define-key boon-moves-map "L" 'forward-sentence)))
 
   ;; turn off Boon in the following modes
   (add-hook 'ibuffer-hook 'turn-off-boon-mode)
@@ -815,6 +724,15 @@
   ("<f6>" . turn-on-boon-mode)
   ("<f7>" . turn-off-boon-mode))
   
+;; (define-key boon-command-map "w" 'org-tracktable-status)
+;; (define-key boon-command-map "W" 'org-tracktable-write)
+;; (define-key boon-command-map "f" 'org-narrow-to-subtree)
+;; (define-key boon-command-map "F" 'widen)
+;; (define-key boon-command-map "G" 'grab-x-link)
+;; (define-key boon-command-map "a" 'last-edit)
+;; (define-key boon-command-map "S" 'prot/scroll-center-cursor-mode)
+;; (define-key boon-command-map "Z" 'toggle-transparency)
+;; (define-key boon-command-map "B" 'org-pomodoro))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -1208,5 +1126,3 @@ comment box."
   (if (equal my-theme-shade "light")
       (go-dark-theme)
     (go-light-theme)))
-    
-  
