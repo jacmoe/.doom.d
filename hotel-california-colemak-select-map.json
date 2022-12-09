@@ -1,6 +1,6 @@
 [
   {
-    "name": "Hotel California Colemak"
+    "name": "Hotel California Colemak Select Map"
   },
   [
     "Esc",
@@ -75,13 +75,13 @@
     },
     "Tab",
     {
-      "c": "#f8d615"
+      "c": "#fbbbc9"
     },
-    "Q\nQuote",
-    "W\nWhere",
-    "F\nFind",
-    "P\nPinpoint",
-    "G\nGoto",
+    "Q\nQuotes",
+    "W\nWord",
+    "F\nWord",
+    "P\nParagraph",
+    "G\nTable",
     {
       "c": "#8ed7b0"
     },
@@ -130,13 +130,13 @@
     },
     "Back Space",
     {
-      "c": "#f8d615"
+      "c": "#fbbbc9"
     },
     "A\nAround",
-    "R\nReplace",
-    "S\nSplice",
-    "T\nTake",
-    "D\nDisplace",
+    "R\nRow",
+    "S\nSymbol\n\n\n\n\nSentence",
+    "T\nSelect\n\n\n\n\nTree",
+    "D\nDocument",
     {
       "c": "#8ed7b0"
     },
@@ -165,23 +165,23 @@
     },
     "Shift",
     {
-      "c": "#f8d615"
+      "c": "#fbbbc9"
     },
-    "Z\nRepeat",
+    "Z\nInZide",
+    "X\nPairs  Outside",
+    "C\nPairs i\n\n\n\n\nComment",
     {
       "c": "#5eb1e7"
     },
-    "X",
-    "C",
     "V",
     {
-      "c": "#f8d615"
+      "c": "#fbbbc9"
     },
-    "B\nBank",
+    "B\nBlock",
+    "K\nBlanks",
     {
       "c": "#8ed7b0"
     },
-    "K\nBck to Mark",
     "M\nPrev",
     {
       "c": "#1db63a",

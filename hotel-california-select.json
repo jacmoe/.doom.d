@@ -1,6 +1,6 @@
 [
   {
-    "name": "Hotel California",
+    "name": "Hotel California Select",
     "author": "Jacob Moena"
   },
   [
@@ -57,13 +57,16 @@
     },
     "Tab",
     {
-      "c": "#f8d615"
+      "c": "#fbbbc9"
     },
-    "Q\nQuote",
-    "W\nS-Forward\n\n\n\n\nS-Prev",
-    "E\nS-Reverse\n\n\n\n\nS-Next",
-    "R\noccuR\n\n\n\n\nRecord",
-    "T\nTransform",
+    "Q\nQuotes outside",
+    "W\nWord",
+    {
+      "c": "#d0ccc0"
+    },
+    "E",
+    "R",
+    "T",
     {
       "c": "#8ed7b0"
     },
@@ -96,13 +99,19 @@
     },
     "Caps Lock",
     {
-      "c": "#f8d615"
+      "c": "#fbbbc9"
     },
     "A\nAround",
-    "S\nSubstitute",
-    "D\nDelete",
-    "F\nFetch\n\n\n\n\nPop",
-    "G\nGoto",
+    "S\nSymbol",
+    "D\nDocument",
+    {
+      "c": "#d0ccc0"
+    },
+    "F",
+    {
+      "c": "#fbbbc9"
+    },
+    "G\nParagraph",
     {
       "c": "#8ed7b0"
     },
@@ -126,19 +135,13 @@
     },
     "Shift",
     {
-      "c": "#f8d615"
+      "c": "#fbbbc9"
     },
-    "Z\nRepeat",
-    {
-      "c": "#5eb1e7"
-    },
-    "X",
-    "C",
-    "V",
-    {
-      "c": "#f8d615"
-    },
-    "B\nBank",
+    "Z\nContent",
+    "X\nPairs Outside",
+    "C\nPairs\n\n\n\n\nComment",
+    "V\nWith Spaces",
+    "B\nBlanks",
     {
       "c": "#8ed7b0"
     },
