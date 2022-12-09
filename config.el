@@ -177,6 +177,14 @@
 ;; Global keybindings                                                               ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(map! "C-c h w" #'org-tracktable-status)
+(map! "C-c h W" #'org-tracktable-write)
+(map! "C-c h g" #'grab-x-link)
+(map! "C-c h e" #'last-edit)
+(map! "C-c h s" #'prot/scroll-center-cursor-mode)
+(map! "C-c h t" #'toggle-transparency)
+(map! "C-c h b" #'org-pomodoro)
+
 (map! "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
 (map! "<f9>" #'+zen/toggle)                      ; Toggle Zen mode
 (map! "C-<f9>" #'writeroom-toggle-mode-line)     ; Toggle Zen mode-line
@@ -724,15 +732,6 @@
   ("<f6>" . turn-on-boon-mode)
   ("<f7>" . turn-off-boon-mode))
   
-;; (define-key boon-command-map "w" 'org-tracktable-status)
-;; (define-key boon-command-map "W" 'org-tracktable-write)
-;; (define-key boon-command-map "f" 'org-narrow-to-subtree)
-;; (define-key boon-command-map "F" 'widen)
-;; (define-key boon-command-map "G" 'grab-x-link)
-;; (define-key boon-command-map "a" 'last-edit)
-;; (define-key boon-command-map "S" 'prot/scroll-center-cursor-mode)
-;; (define-key boon-command-map "Z" 'toggle-transparency)
-;; (define-key boon-command-map "B" 'org-pomodoro))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
