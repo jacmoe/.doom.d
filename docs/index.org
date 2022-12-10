@@ -284,7 +284,7 @@ We’ll see more of what Org-mode tables can do later on in this article, when d
 :PROPERTIES:
 :CUSTOM_ID: boon-introduction
 :END:
-[[https://github.com/jyp/boon][Boon]] is a modal editing package for Emacs which is ergonomic and designed to integrate well with existing Emacs infrastructure. That means that we can continue to use the standard Emacs keyboard shortcuts should we choose to do so, in addition to the features that Boon provides.
+[[https://github.com/jyp/boon][Boon]] is a modal editing package for Emacs that is ergonomic and designed to integrate well with existing Emacs infrastructure. That means that we can continue to use the standard Emacs keyboard shortcuts should we choose to do so, in addition to the features that Boon provides.
 #+begin_export html
 <br/>
 #+end_export
@@ -316,45 +316,55 @@ Not all commands work as you would expect, however, so if we wanted to run ~find
 Here’s how the keyboard layout looks like for Command mode using Boon:
 #+attr_html: :alt The Hotel California layout :title The Hotel California layout :width 100%
 [[file:images/keyboard-layout.png]]
-- Blue is Boon commands
-- Green is movement commands
-- Yellow is edit commands
-- Purple is custom commands
 
-We already covered the Boon commands in blue, so the following will not cover those.
+The right-hand side of the keyboard is dedicated to moving around while the left-hand side is dedicated to issuing commands.
 
 *** Movement
 :PROPERTIES:
 :CUSTOM_ID: boon-movement
 :END:
+=k l i o= are equivalent to the four arrow keys. =k= moves backward by one character, =l= moves forward by one character. =i= moves up by one line, =o= moves down by one line.
+
+The keys =j ;= moves by word: =j= backward by word, =;= forward by word.
+
+=u= moves to the beginning of the line, =p= takes you to the end of the line.
+
+By using the SHIFT key, we can move by sentence: =K= moves backward by sentence, =L= moves forward. Similarly, =I= and =O= move by paragraph.
+
+You can jump several steps at once by using a number prefix. For example, =5 i= will move up five lines, =8 j= will move back eight words.
+
+The largest jumps are provided by =<= and =>= and will move to the beginning and end of the buffer, respectively.
+
+For convenient navigation we can use =h= to jump (hop) to a character. For example, if we wanted to navigate to the word /”character”/, we could enter =h c= and all occurrences of /c/ is highlighted:
+#+attr_html: :alt Hop to a character :title Hop to a character :width 60%
+[[file:images/boon-hop.png]]
+#+begin_export html
+<br/>
+#+end_export
+Now, if we press =g= we will land on /”character”/.
 
 *** Editing
 :PROPERTIES:
 :CUSTOM_ID: boon-editing
 :END:
+**** Inserting
+v
 
-- ` : cycles between uppercase, title-case, and lowercase
-- q : “quote”, insert a literal character
-- r : “replace”, replaces a region, ie deletes and enters Insert mode
-- t : “transform”, use to change the character at point
-- y : “yank”, yank from the kill-ring (paste)
-- d : “delete”, delete region (cut to kill-ring)
-- D : “duplicate”, copies region to kill-ring
+quote
 
-*** Custom
-:PROPERTIES:
-:CUSTOM_ID: boon-custom
-:END:
 
-- w : show how many words have been written today (~org-tracktable-status~)
-- W : write to the track-table (~org-tracktable-write~)
-- E : go to last edit
-- s : toggle center-cursor-mode
-- G : grab an URL from a running web browser and inserts it
-- Z : toggle transparency (zee-through)
-- B : begin a Pomodoro session
-- n : narrow to Org-mode heading
-- N : widen the view (un-narrow)
+**** Deleting
+Deleting text is mostly done with =d=. It takes an argument which can be either a movement command or a region specifier.
+
+When deleting a word under the cursor we are often left with an annoying extra space. We can avoid that by using the /select-with-spaces/ modifier, =v=, when deleting a word. So, instead of =d w= to delete a word, we can do =d v w= to delete the word and the extra space.
+
+**** Replacing
+We can kill and switch to insert state at the same time by using the /replace/ command, =r= instead of =d=. It works exactly like =d= except that it enters into insert mode. It is a convenience that saves you from having to press =v= after =d=.
+
+Often, it is useful to be able to replace a single character, and =t= is used for that purpose. Simply place the point on the character to replace and press =t= followed by the replacement character.
+
+Another typical character replacement is change of case. The =`= key toggles between title, upper, and lower case.
+
 
 ** Dictionaries et cetera
 :PROPERTIES:
