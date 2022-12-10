@@ -292,7 +292,7 @@ Boon is designed so that the right hand takes care of movement, and the left han
 #+begin_export html
 <br/>
 #+end_export
-Boon is a modal editing system with two modes: Command mode and Insert mode. Command mode is the default mode, and where we perform movement and commands. Insert mode is the mode where the keyboard acts like we’re used to: inserting letters as we type them (as opposed to perform commands).
+Boon is a modal editing system with two modes: Command mode and Insert mode. Command mode is the default mode, and where we perform movement and commands. Insert mode is the mode where the keyboard inserts letters as we type them (as opposed to perform commands).
 #+begin_export html
 <br/>
 #+end_export
@@ -348,17 +348,26 @@ Now, if we press =g= we will land on /”character”/.
 :CUSTOM_ID: boon-editing
 :END:
 **** Inserting
+:PROPERTIES:
+:CUSTOM_ID: boon-editing-inserting
+:END:
 v
 
 quote
 
 
 **** Deleting
+:PROPERTIES:
+:CUSTOM_ID: boon-editing-deleting
+:END:
 Deleting text is mostly done with =d=. It takes an argument which can be either a movement command or a region specifier.
 
 When deleting a word under the cursor we are often left with an annoying extra space. We can avoid that by using the /select-with-spaces/ modifier, =v=, when deleting a word. So, instead of =d w= to delete a word, we can do =d v w= to delete the word and the extra space.
 
 **** Replacing
+:PROPERTIES:
+:CUSTOM_ID: boon-editing-replacing
+:END:
 We can kill and switch to insert state at the same time by using the /replace/ command, =r= instead of =d=. It works exactly like =d= except that it enters into insert mode. It is a convenience that saves you from having to press =v= after =d=.
 
 Often, it is useful to be able to replace a single character, and =t= is used for that purpose. Simply place the point on the character to replace and press =t= followed by the replacement character.

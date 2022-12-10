@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-10 lør 11:53 -->
+<!-- 2022-12-10 lør 16:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hotel California of Creative Writing</title>
@@ -58,9 +58,9 @@
 <li><a href="#boon-movement">4.3. Movement</a></li>
 <li><a href="#boon-editing">4.4. Editing</a>
 <ul>
-<li><a href="#org4aacd72">4.4.1. Inserting</a></li>
-<li><a href="#org6ab2f2a">4.4.2. Deleting</a></li>
-<li><a href="#orge7bad48">4.4.3. Replacing</a></li>
+<li><a href="#boon-editing-inserting">4.4.1. Inserting</a></li>
+<li><a href="#boon-editing-deleting">4.4.2. Deleting</a></li>
+<li><a href="#boon-editing-replacing">4.4.3. Replacing</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +161,7 @@ This is currently a work in progress
 <h2 id="introduction"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-introduction">
 
-<div id="org6379f84" class="figure">
+<div id="orgc61733a" class="figure">
 <p><img src="images/hotel-california.png" alt="Emacs - my Hotel California" title="Emacs - my Hotel California" width="100%" />
 </p>
 </div>
@@ -201,7 +201,7 @@ It is my hope that, after reading this article, that  you start thinking of it a
 I can make Emacs fit my workflow rather than the other way around.
 </p>
 
-<div id="org636fdf6" class="figure">
+<div id="orgf56181d" class="figure">
 <p><img src="images/hackerman1.jpg" alt="Hackerman" title="Hackerman" width="40%" />
 </p>
 </div>
@@ -295,7 +295,7 @@ If you feel that you need to have at least a menu-bar, then you can turn it on/o
 <h3 id="org-mode-introduction"><span class="section-number-3">3.1.</span> Introduction</h3>
 <div class="outline-text-3" id="text-org-mode-introduction">
 
-<div id="org9261adf" class="figure">
+<div id="orgac2d33e" class="figure">
 <p><img src="images/org-mode-unicorn.svg" alt="Org-mode" class="org-svg" title="Org-mode" width="20%" />
 </p>
 </div>
@@ -541,7 +541,7 @@ Boon is designed so that the right hand takes care of movement, and the left han
 </p>
 <br/>
 <p>
-Boon is a modal editing system with two modes: Command mode and Insert mode. Command mode is the default mode, and where we perform movement and commands. Insert mode is the mode where the keyboard acts like we’re used to: inserting letters as we type them (as opposed to perform commands).
+Boon is a modal editing system with two modes: Command mode and Insert mode. Command mode is the default mode, and where we perform movement and commands. Insert mode is the mode where the keyboard inserts letters as we type them (as opposed to perform commands).
 </p>
 <br/>
 <p>
@@ -568,7 +568,7 @@ Not all commands work as you would expect, however, so if we wanted to run <code
 Here’s how the keyboard layout looks like for Command mode using Boon:
 </p>
 
-<div id="orgfb89723" class="figure">
+<div id="org85cacfe" class="figure">
 <p><img src="images/keyboard-layout.png" alt="The Hotel California layout" title="The Hotel California layout" width="100%" />
 </p>
 </div>
@@ -610,7 +610,7 @@ The largest jumps are provided by <code>&lt;</code> and <code>&gt;</code> and wi
 For convenient navigation we can use <code>h</code> to jump (hop) to a character. For example, if we wanted to navigate to the word <i>”character”</i>, we could enter <code>h c</code> and all occurrences of <i>c</i> is highlighted:
 </p>
 
-<div id="orgca04803" class="figure">
+<div id="orgdd0c743" class="figure">
 <p><img src="images/boon-hop.png" alt="Hop to a character" title="Hop to a character" width="60%" />
 </p>
 </div>
@@ -625,9 +625,9 @@ Now, if we press <code>g</code> we will land on <i>”character”</i>.
 <h3 id="boon-editing"><span class="section-number-3">4.4.</span> Editing</h3>
 <div class="outline-text-3" id="text-boon-editing">
 </div>
-<div id="outline-container-org4aacd72" class="outline-4">
-<h4 id="org4aacd72"><span class="section-number-4">4.4.1.</span> Inserting</h4>
-<div class="outline-text-4" id="text-4-4-1">
+<div id="outline-container-boon-editing-inserting" class="outline-4">
+<h4 id="boon-editing-inserting"><span class="section-number-4">4.4.1.</span> Inserting</h4>
+<div class="outline-text-4" id="text-boon-editing-inserting">
 <p>
 v
 </p>
@@ -639,9 +639,9 @@ quote
 </div>
 
 
-<div id="outline-container-org6ab2f2a" class="outline-4">
-<h4 id="org6ab2f2a"><span class="section-number-4">4.4.2.</span> Deleting</h4>
-<div class="outline-text-4" id="text-4-4-2">
+<div id="outline-container-boon-editing-deleting" class="outline-4">
+<h4 id="boon-editing-deleting"><span class="section-number-4">4.4.2.</span> Deleting</h4>
+<div class="outline-text-4" id="text-boon-editing-deleting">
 <p>
 Deleting text is mostly done with <code>d</code>. It takes an argument which can be either a movement command or a region specifier.
 </p>
@@ -652,9 +652,9 @@ When deleting a word under the cursor we are often left with an annoying extra s
 </div>
 </div>
 
-<div id="outline-container-orge7bad48" class="outline-4">
-<h4 id="orge7bad48"><span class="section-number-4">4.4.3.</span> Replacing</h4>
-<div class="outline-text-4" id="text-4-4-3">
+<div id="outline-container-boon-editing-replacing" class="outline-4">
+<h4 id="boon-editing-replacing"><span class="section-number-4">4.4.3.</span> Replacing</h4>
+<div class="outline-text-4" id="text-boon-editing-replacing">
 <p>
 We can kill and switch to insert state at the same time by using the <i>replace</i> command, <code>r</code> instead of <code>d</code>. It works exactly like <code>d</code> except that it enters into insert mode. It is a convenience that saves you from having to press <code>v</code> after <code>d</code>.
 </p>
@@ -680,7 +680,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-define-word"><span class="section-number-3">5.1.</span> Define-word</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-define-word">
 
-<div id="orgbc1f5d8" class="figure">
+<div id="orgb50b28f" class="figure">
 <p><img src="images/define-word.png" alt="Quick word definition" title="Quick word definition" width="100%" />
 </p>
 </div>
@@ -690,7 +690,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-dictionary-server"><span class="section-number-3">5.2.</span> Dictionary server</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-dictionary-server">
 
-<div id="orgec0c2e0" class="figure">
+<div id="orgac02fbc" class="figure">
 <p><img src="images/dictionary.png" alt="Dictionary server lookup" title="Dictionary server lookup" width="100%" />
 </p>
 </div>
@@ -700,7 +700,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-webster"><span class="section-number-3">5.3.</span> Webster</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-webster">
 
-<div id="orga356e2f" class="figure">
+<div id="org08ffd1d" class="figure">
 <p><img src="images/webster.png" alt="Look up word in Merriam-Webster" title="Look up word in Merriam-Webster" width="100%" />
 </p>
 </div>
@@ -710,12 +710,12 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-powertheraurus"><span class="section-number-3">5.4.</span> Powerthesaurus</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-powertheraurus">
 
-<div id="org6250923" class="figure">
+<div id="orga8f314d" class="figure">
 <p><img src="images/synonyms.png" alt="Synonym lookup" title="Synonym lookup" width="100%" />
 </p>
 </div>
 
-<div id="org393b6a5" class="figure">
+<div id="org84bb117" class="figure">
 <p><img src="images/sentences.png" alt="Sentences lookup" title="Sentences lookup" width="100%" />
 </p>
 </div>
@@ -725,7 +725,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-prose-linting"><span class="section-number-3">5.5.</span> Prose linting</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-prose-linting">
 
-<div id="orga68dcaf" class="figure">
+<div id="orge40e30f" class="figure">
 <p><img src="images/vale.png" alt="Prose linting with Vale" title="Prose linting with Vale" width="100%" />
 </p>
 </div>
@@ -735,12 +735,12 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-mermaid"><span class="section-number-3">5.6.</span> Mermaid</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-mermaid">
 
-<div id="org65ee927" class="figure">
+<div id="org7614a44" class="figure">
 <p><img src="images/gantt.png" alt="Mermaid script can be used to define diagrams in code blocks" title="Mermaid script can be used to define diagrams in code blocks" width="100%" />
 </p>
 </div>
 
-<div id="orgedbf9b5" class="figure">
+<div id="orgc22a941" class="figure">
 <p><img src="images/gantt_out.png" alt="Gantt diagram generated by Mermaid script" title="Gantt diagram generated by Mermaid script" width="100%" />
 </p>
 </div>
@@ -1073,7 +1073,7 @@ Use <code>q</code> to close the bookmark list buffer.
 <h3 id="tracking-progress-track-table"><span class="section-number-3">6.1.</span> Track-table</h3>
 <div class="outline-text-3" id="text-tracking-progress-track-table">
 
-<div id="org4fa9328" class="figure">
+<div id="org24bdeb1" class="figure">
 <p><img src="images/tracktable.png" alt="Track-table keeps track of words written per day" title="Track-table keeps track of words written per day" width="100%" />
 </p>
 </div>
@@ -1160,7 +1160,7 @@ Using <code>org-wc</code>.
 </p>
 
 
-<div id="orgbfb0deb" class="figure">
+<div id="orge1bff8d" class="figure">
 <p><img src="images/org-wc.png" alt="Running M-x org-wc-display shows word count per heading" title="Running M-x org-wc-display shows word count per heading" width="100%" />
 </p>
 </div>
@@ -1175,7 +1175,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 </p>
 
 
-<div id="orgc341520" class="figure">
+<div id="org1874e30" class="figure">
 <p><img src="images/properties-actions.png" alt="Adding properties to a heading" title="Adding properties to a heading" width="100%" />
 </p>
 </div>
@@ -1184,7 +1184,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 Now we can configure the <code>COLUMNS</code> special property, which will be inherited by child headings:
 </p>
 
-<div id="org4e271dd" class="figure">
+<div id="org0bf65d6" class="figure">
 <p><img src="images/columns-source.png" alt="Setting up columns with properties" title="Setting up columns with properties" width="100%" />
 </p>
 </div>
@@ -1197,7 +1197,7 @@ See <a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.htm
 Having set it all up, we can now run <code>org-columns</code> by pressing <code>c x c</code>:
 </p>
 
-<div id="org7ecf5a1" class="figure">
+<div id="org4d63845" class="figure">
 <p><img src="images/columns.png" alt="Column view" title="Column view" width="100%" />
 </p>
 </div>
@@ -1243,7 +1243,7 @@ Transclusion.
 <h3 id="saving-the-work-magit"><span class="section-number-3">9.1.</span> Magit</h3>
 <div class="outline-text-3" id="text-saving-the-work-magit">
 
-<div id="org880cc10" class="figure">
+<div id="org1314606" class="figure">
 <p><img src="images/magit.png" alt="Prose linting with Vale" title="Prose linting with Vale" width="100%" />
 </p>
 </div>
@@ -1256,7 +1256,7 @@ Transclusion.
 Sometimes you want to know what changes you have made to a buffer since your last save. Since you haven’t saved the file yet, Magit can’t help you, so you need something else. Fortunately, we can use Emacs’ <code>diff-buffer-with-file</code>, mapped to <code>C-d</code>.
 </p>
 
-<div id="org51d4717" class="figure">
+<div id="org2baa3f2" class="figure">
 <p><img src="images/diff.png" alt="Using diff to see the difference between buffer and file" title="Using diff to see the difference between buffer and file" width="100%" />
 </p>
 </div>
@@ -1306,7 +1306,7 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 <h3 id="creature-comforts-zen-mode-and-transparency"><span class="section-number-3">11.2.</span> Zen-mode and transparency</h3>
 <div class="outline-text-3" id="text-creature-comforts-zen-mode-and-transparency">
 
-<div id="org2becfc3" class="figure">
+<div id="org3ff77a1" class="figure">
 <p><img src="images/zen-mode.png" alt="Zen-mode with transparency turned on" title="Zen-mode with transparency turned on" width="100%" />
 </p>
 </div>
@@ -1391,19 +1391,19 @@ Then, we set a placeholder for where the generated bibliography list will be ren
 Now that we’re all set up, we can now insert citations into our document by running <code>org-cite-insert</code> (bound to <code>C-c l @</code>)
 </p>
 
-<div id="org0344fd6" class="figure">
+<div id="orgac128a1" class="figure">
 <p><img src="images/citation-insert.png" alt="Inserting a citation in Emacs" title="Inserting a citation in Emacs" width="100%" />
 </p>
 </div>
 
 
-<div id="org735149a" class="figure">
+<div id="orgaa924de" class="figure">
 <p><img src="images/bibliography-source.png" alt="Bibliography source code" title="Bibliography source code" width="100%" />
 </p>
 </div>
 
 
-<div id="org26f2e7c" class="figure">
+<div id="orgec61ca7" class="figure">
 <p><img src="images/bibliography-test.png" alt="Bibliography test rendering" title="Bibliography test rendering" width="100%" />
 </p>
 </div>
@@ -1484,7 +1484,7 @@ When your InitFile gets so large that you really need to start over, then you ha
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Jacob Moena</p>
-<p class="date">Created: 2022-12-10 lør 11:53</p>
+<p class="date">Created: 2022-12-10 lør 16:28</p>
 </div>
 </body>
 </html>
