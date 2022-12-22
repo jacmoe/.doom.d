@@ -134,9 +134,9 @@
   (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Hotel California of Creative Writing")))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family my-monospace-font :size 24)
+(setq doom-font (font-spec :family my-monospace-font :size 22)
       doom-big-font-increment 5
-      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 26))
+      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 24))
 
 ;; Theme
 (setq doom-theme my-main-theme)
@@ -153,7 +153,7 @@
   '(italic :slant oblique :foreground "teal"))
 
 ;; Setting initial size and position of frame
-(setq initial-frame-alist '((top . 38) (left . 64) (width . 110) (height . 30)))
+(setq initial-frame-alist '((top . 38) (left . 26) (width . 100) (height . 32)))
 
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font
