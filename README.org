@@ -197,7 +197,7 @@ Now we  need to create an =Offlineimap= postsync hook so that it can run =notmuc
 Create a file called =postsync.sh= in ~/home/username/mail/~:
 #+begin_src bash
 #!/usr/bin/env bash
-# ~/email/postsync.sh
+# ~/mail/postsync.sh
 
 # tag_new <tags> <search-term>
 function tag_new { notmuch tag $1 -- tag:inbox and $2; }
