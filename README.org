@@ -119,19 +119,137 @@ For Unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/se
 If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
 
 *** Email
-**** offlineimap and notmuch
-In order to read email with Emacs, install =offlineimap= and =notmuch= following the steps outlined in this article: [[https://www.maketecheasier.com/use-email-within-emacs/][How to Use Email within Emacs - Make Tech Easier]]
+In order to read email with Emacs, we need to install and configure =offlineimap= for synchronizing with the remote email server, =notmuch= for tagging the email, and =msmtp= for sending email.
+
+The following assumes that you are using Gmail. If you are not, see this article: [[https://www.maketecheasier.com/use-email-within-emacs/][How to Use Email within Emacs - Make Tech Easier]]
+
+**** Google
+We need to generate an application password here: [[https://myaccount.google.com/apppasswords][Application Passwords - Google Account]]
+
+Choose application password for “Mail”, and write the password down.
+
+**** Offlineimap
 #+begin_src bash
-pamac install offlinemap notmuch
+pamac install offlinemap
 #+end_src
 
-Be sure that running =offlineimap= and =notmuch new= works without error before proceeding.
+Create a file called =.offlineimaprc= in your home directory, with the following contents:
+#+begin_src conf
+[general]
+accounts = gmailaccount
+
+[Account gmailaccount]
+localrepository = localgmail
+remoterepository = remotegmail
+postsynchook = ~/mail/postsync.sh # notmuch tagging script
+utf8foldernames = yes
+
+[Repository localgmail]
+type = GmailMaildir
+localfolders = /home/username/mail/username@gmail.com
+
+[Repository remotegmail]
+type = Gmail
+maxconnections=1
+remotehost = imap.gmail.com
+remoteuser = username@gmail.com
+remotepass = PASSWORD
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+#+end_src
+
+Now run Offlineimap:
+#+begin_src bash
+offlineimap
+#+end_src
+It should, hopefully, download the email into ~/home/username/mail/username@gmail/~.
+**** Notmuch
+#+begin_src bash
+pamac install notmuch
+#+end_src
+
+The =.notmuch-config= file in my home directory:
+#+begin_src conf
+# .notmuch-config - Configuration file for the notmuch mail system
+# Database configuration
+[database]
+
+# User configuration
+[user]
+primary_email=username@gmail.com
+
+# Configuration for "notmuch new"
+[new]
+tags=inbox;unread;
+ignore=
+
+# Search configuration
+[search]
+exclude_tags = junk;deleted;
+
+# Maildir compatibility configuration
+[maildir]
+synchronize_flags=true
+#+end_src
+
+Now we  need to create an =Offlineimap= postsync hook so that it can run =notmuch new= after synchronizing with the remote email server.
+
+Create a file called =postsync.sh= in ~/home/username/mail/~:
+#+begin_src conf
+#!/usr/bin/env bash
+# ~/email/postsync.sh
+
+# tag_new <tags> <search-term>
+function tag_new { notmuch tag $1 -- tag:inbox and $2; }
+
+# blacklist <search-term>
+function blacklist { tag_new "-inbox -unread +deleted" $1; }
+
+# spam <search-term>
+function spam { tag_new "-inbox -unread +spam +deleted" $1; }
+
+# security <search-term>
+function security { tag_new "-inbox +Security" $1; }
+
+# update : let notmuch process new mails
+notmuch new
+#+end_src
+Make the file executable:
+#+begin_src bash
+chmod +x postsync.sh
+#+end_src
+
 **** msmtp
-Install =msmtp= and create a basic configuration file (=~/.msmtprc=) using this wiki article:
-[[https://wiki.archlinux.org/title/Msmtp#Basic_setup][msmtp - ArchWiki]]
 #+begin_src bash
 pamac install msmtp
 #+end_src
+Create a file called =.msmtprc= in your home directory:
+#+begin_src conf
+# Set default values for all following accounts.
+defaults
+auth           on
+tls            on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.msmtp.log
+
+# Gmail
+account        gmail
+host           smtp.gmail.com
+port           465
+tls_starttls   off
+from           username@gmail.com
+user           username
+password       PASSWORD
+
+# Set a default account
+account default : gmail
+#+end_src
+Set the correct permissions on the file:
+#+begin_src bash
+chmod 600 .msmtprc
+#+end_src
+See this wiki article for reference: [[https://wiki.archlinux.org/title/Msmtp#Basic_setup][msmtp - ArchWiki]]
+
 **** Notmuch Address Lookup tool
 To aid in looking up email addresses for auto-completion, we need to download (via git) and compile an address lookup tool coded in C.
 #+begin_src bash
