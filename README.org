@@ -31,10 +31,10 @@ This configuration uses the following external dependencies:
 
 =org-roam= uses a custom SQLite binary to store its database, and it will compile it when it installs. So there must be a C compiler available to Emacs.
 
-On Linux, there are likely to be a C compiler installed.
+On Linux, there is likely to be a C compiler installed.
 
 *** Aspell
-We use =Aspell= for spellchecking, instead of other options, because I think it works better, and because it, unlike =hunspell=, allows me to make use of the =C-;= key-chord (usually reserved for =flyspell=)
+We use =Aspell= for spellchecking:
 
 #+begin_src bash
 pamac install aspell-en
@@ -195,7 +195,7 @@ synchronize_flags=true
 Now we  need to create an =Offlineimap= postsync hook so that it can run =notmuch new= after synchronizing with the remote email server.
 
 Create a file called =postsync.sh= in ~/home/username/mail/~:
-#+begin_src conf
+#+begin_src bash
 #!/usr/bin/env bash
 # ~/email/postsync.sh
 
