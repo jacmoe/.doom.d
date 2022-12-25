@@ -19,7 +19,7 @@ For a very detailed walk-through of what this configuration provides, see
 First, make sure that you have at least Emacs 28.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
 
-On my Manjoro system, that was accomplished by installing =emacs-nativecomp=:
+On my Manjaro system, that was accomplished by installing =emacs-nativecomp=:
 #+begin_src bash
 pamac install emacs-nativecomp
 #+end_src
@@ -312,5 +312,5 @@ Happy Writing!
 
 #  LocalWords:  MSYS mingw aspell Proselint Palahniuk Elmore Butterick Strunk
 #  LocalWords:  Elwyn Corbett Gowers Latexdiff UI ODT Readme ai proselint alex
-#  LocalWords:  joblint Gantt cli offlineimap notmuch Firmin msmtp ArchWiki
-#  LocalWords:  addrlookup
+#  LocalWords:  joblint Gantt cli offlineimap notmuch Firmin msmtp ArchWiki gif
+#  LocalWords:  addrlookup PDFs Gmail postsync aperezdc Gifsicle screencasts
