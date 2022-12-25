@@ -152,8 +152,22 @@
 (custom-set-faces!
   '(italic :slant oblique :foreground "teal"))
 
-;; Setting initial size and position of frame
-(setq initial-frame-alist '((top . 38) (left . 26) (width . 114) (height . 38)))
+;; Setting initial initial size and position of frame
+;; "base-factor" is fraction of screen estate, ie '0.88' is 88 %
+;; (from https://www.reddit.com/r/emacs/comments/9c0a4d/tip_setting_initial_frame_size_and_position )
+(defun my/set-initial-frame ()
+  (let* ((base-factor 0.88)
+         (a-width (* (display-pixel-width) base-factor))
+         (a-height (* (display-pixel-height) base-factor))
+         (a-left (truncate (/ (- (display-pixel-width) a-width) 2)))
+         (a-top (truncate (/ (- (display-pixel-height) a-height) 2))))
+    (set-frame-position (selected-frame) a-left a-top)
+    (set-frame-size (selected-frame) (truncate a-width)  (truncate a-height) t)))
+
+(setq frame-resize-pixelwise t)
+
+(my/set-initial-frame)
+
 
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font
