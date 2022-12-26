@@ -134,9 +134,9 @@
   (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Hotel California of Creative Writing")))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family my-monospace-font :size 20)
+(setq doom-font (font-spec :family my-monospace-font :size 24)
       doom-big-font-increment 5
-      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 22))
+      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 28))
 
 ;; Theme
 (setq doom-theme my-main-theme)
