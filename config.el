@@ -156,7 +156,7 @@
 ;; "base-factor" is fraction of screen estate, ie '0.88' is 88 %
 ;; (from https://www.reddit.com/r/emacs/comments/9c0a4d/tip_setting_initial_frame_size_and_position )
 (defun my/set-initial-frame ()
-  (let* ((base-factor 0.88)
+  (let* ((base-factor 0.52)
          (a-width (* (display-pixel-width) base-factor))
          (a-height (* (display-pixel-height) base-factor))
          (a-left (truncate (/ (- (display-pixel-width) a-width) 2)))
