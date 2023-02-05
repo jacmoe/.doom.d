@@ -19,6 +19,7 @@
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
+(defvar set-initial-size t)                           ; set the initial size of the frame
 
 ;; (defvar my-dark-theme 'ef-night)
 ;; (defvar my-boon-default-cursor-color-dark "#00ccff")  ; boon cursor for ef-night
@@ -156,7 +157,7 @@
 ;; "base-factor" is fraction of screen estate, ie '0.88' is 88 %
 ;; (from https://www.reddit.com/r/emacs/comments/9c0a4d/tip_setting_initial_frame_size_and_position )
 (defun my/set-initial-frame ()
-  (let* ((base-factor 0.52)
+  (let* ((base-factor 0.88)
          (a-width (* (display-pixel-width) base-factor))
          (a-height (* (display-pixel-height) base-factor))
          (a-left (truncate (/ (- (display-pixel-width) a-width) 2)))
@@ -166,8 +167,7 @@
 
 (setq frame-resize-pixelwise t)
 
-(my/set-initial-frame)
-
+(when set-initial-size (my/set-initial-frame))
 
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font
