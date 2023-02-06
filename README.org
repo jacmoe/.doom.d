@@ -19,9 +19,9 @@ For a very detailed walk-through of what this configuration provides, see
 First, make sure that you have at least Emacs 28.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
 
-On my Manjaro system, that was accomplished by installing =emacs-nativecomp=:
+On my Arch (EndeavourOS) system, that was accomplished by installing =emacs-nativecomp=:
 #+begin_src bash
-pamac install emacs-nativecomp
+sudo pacman -S emacs-nativecomp
 #+end_src
 
 ———————————
@@ -37,7 +37,7 @@ On Linux, there is likely to be a C compiler installed.
 We use =Aspell= for spellchecking:
 
 #+begin_src bash
-pamac install aspell-en
+sudo pacman -S aspell-en
 #+end_src
 
 *** Vale
@@ -83,7 +83,7 @@ To make Emacs actually check your document, run =M-x flymake-mode=. Run =M-x fly
 
 Install =npm= if not already installed:
 #+begin_src bash
-pamac install npm
+sudo pacman -S npm
 #+end_src
 
 Then, install [[https://github.com/mermaid-js/mermaid-cli][mermaid-cli]]:
@@ -108,7 +108,7 @@ In order to be able to export excellent PDFs using LaTeX, we need to install TeX
 
 Installing the following satisfies the requirements of the Org-mode LaTeX / PDF exporter on my system:
 #+begin_src bash
-pamac install texlive-bibtexextra texlive-latexextra
+sudo pacman -S texlive-bibtexextra texlive-latexextra
 #+end_src
 
 *** Fonts
@@ -130,7 +130,7 @@ Choose application password for “Mail”, and write the password down.
 
 **** Offlineimap
 #+begin_src bash
-pamac install offlinemap
+sudo pacman -S offlinemap
 #+end_src
 
 Create a file called =.offlineimaprc= in your home directory, with the following contents:
@@ -165,7 +165,7 @@ offlineimap
 It should, hopefully, download the email into ~/home/username/mail/username@gmail/~.
 **** Notmuch
 #+begin_src bash
-pamac install notmuch
+sudo pacman -S notmuch
 #+end_src
 
 The =.notmuch-config= file in my home directory:
@@ -221,7 +221,7 @@ chmod +x postsync.sh
 
 **** msmtp
 #+begin_src bash
-pamac install msmtp
+sudo pacman -S msmtp
 #+end_src
 Create a file called =.msmtprc= in your home directory:
 #+begin_src conf
@@ -261,7 +261,7 @@ See [[https://github.com/aperezdc/notmuch-addrlookup-c][aperezdc/notmuch-addrloo
 *** Maim and Gifsicle
 For creating gif screencasts, we use Maim and Gifsicle. Install =maim= and =gifsicle= using your package manager of choice.
 #+begin_src bash
-pamac install maim gifsicle
+sudo pacman? -S maim gifsicle
 #+end_src
 
 ** Installation
