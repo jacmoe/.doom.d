@@ -31,12 +31,12 @@
 ;; (defvar my-dark-theme 'ef-duo-dark)
 ;; (defvar my-boon-default-cursor-color-dark "#ef6f11")  ; boon cursor for ef-duo-dark
 (defvar my-dark-theme 'ef-tritanopia-dark)
-(defvar my-boon-default-cursor-color-dark "#fd3333")  ; boon cursor for ef-tritanopia-dark
+;; (defvar my-boon-default-cursor-color-dark "#fd3333")  ; boon cursor for ef-tritanopia-dark
 
 ;; (defvar my-light-theme 'ef-day)
 ;; (defvar my-boon-default-cursor-color-light "#cf1f00") ; boon cursor for ef-day
 (defvar my-light-theme 'ef-tritanopia-light)
-(defvar my-boon-default-cursor-color-light "#bb0000")  ; boon cursor for ef-tritanopia-light
+;; (defvar my-boon-default-cursor-color-light "#bb0000")  ; boon cursor for ef-tritanopia-light
 
 (defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark")                        ; can be light or dark. Used to color the Boon-mode cursor
@@ -199,17 +199,17 @@
 (map! "M-4" (lambda() (interactive) (org-shifttab 4)))
 (map! "M-5" (lambda() (interactive) (org-show-all '(headings drawers blocks))))
 
-(if (equal my-keyboard-variant "colemak")
-    (progn
-      ;; using colemak
-      (map! "C-o" #'boon-set-command-state); used to quit insert mode
-      (map! "C-ø" #'open-line); remapping open-line, Danish version
-      (map! "C-;" #'open-line)); remapping open-line
-      
-  (progn
-    ;; using qwerty
-    (map! "C-;" #'boon-set-command-state); used to quit insert mode
-    (map! "C-æ" #'boon-set-command-state))); used to quit insert mode - Danish version
+;; (if (equal my-keyboard-variant "colemak")
+;;     (progn
+;;       ;; using colemak
+;;       (map! "C-o" #'boon-set-command-state); used to quit insert mode
+;;       (map! "C-ø" #'open-line); remapping open-line, Danish version
+;;       (map! "C-;" #'open-line)); remapping open-line
+
+;;   (progn
+;;     ;; using qwerty
+;;     (map! "C-;" #'boon-set-command-state); used to quit insert mode
+;;     (map! "C-æ" #'boon-set-command-state))); used to quit insert mode - Danish version
 
 ;; (define-key org-mode-map (kbd "C-u C-c C-l") 'org-toggle-link-display)
 
@@ -698,10 +698,10 @@
   :config
   (boon-mode)
   (setq boon-insert-cursor-color "orange")
-  (if (equal my-theme-shade "dark")
-        (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
-    (setq boon-default-cursor-color my-boon-default-cursor-color-light))
-    
+  ;; (if (equal my-theme-shade "dark")
+  ;;       (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
+  ;;   (setq boon-default-cursor-color my-boon-default-cursor-color-light))
+
   (if (equal my-keyboard-variant "colemak")
       ;; we are using Colemak
       (progn
