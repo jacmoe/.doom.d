@@ -691,44 +691,44 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; An Ergonomic Command Mode for Emacs
 ;; Run tutorial with M-x boon-tutorial
-(use-package! boon
-  :defer t
-  :init
-  (require 'boon)
-  :config
-  (boon-mode)
-  (setq boon-insert-cursor-color "orange")
-  ;; (if (equal my-theme-shade "dark")
-  ;;       (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
-  ;;   (setq boon-default-cursor-color my-boon-default-cursor-color-light))
+;; (use-package! boon
+;;   :defer t
+;;   :init
+;;   (require 'boon)
+;;   :config
+;;   (boon-mode)
+;;   (setq boon-insert-cursor-color "orange")
+;;   ;; (if (equal my-theme-shade "dark")
+;;   ;;       (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
+;;   ;;   (setq boon-default-cursor-color my-boon-default-cursor-color-light))
 
-  (if (equal my-keyboard-variant "colemak")
-      ;; we are using Colemak
-      (progn
-        (define-key boon-moves-map "ø" 'move-end-of-line)
-        (require 'boon-colemak)
-        (define-key boon-moves-map "l" 'move-beginning-of-line)
-        (define-key boon-moves-map ";" 'move-end-of-line)
-        (define-key boon-moves-map "E" 'backward-sentence)
-        (define-key boon-moves-map "I" 'forward-sentence))
-    ;; we are using Qwerty
-    (progn
-      (define-key boon-moves-map "æ" 'boon-smarter-forward)
-      (require 'boon-qwerty)
-      (define-key boon-moves-map "u" 'move-beginning-of-line)
-      (define-key boon-moves-map "p" 'move-end-of-line)
-      (define-key boon-moves-map "K" 'backward-sentence)
-      (define-key boon-moves-map "L" 'forward-sentence)))
+;;   (if (equal my-keyboard-variant "colemak")
+;;       ;; we are using Colemak
+;;       (progn
+;;         (define-key boon-moves-map "ø" 'move-end-of-line)
+;;         (require 'boon-colemak)
+;;         (define-key boon-moves-map "l" 'move-beginning-of-line)
+;;         (define-key boon-moves-map ";" 'move-end-of-line)
+;;         (define-key boon-moves-map "E" 'backward-sentence)
+;;         (define-key boon-moves-map "I" 'forward-sentence))
+;;     ;; we are using Qwerty
+;;     (progn
+;;       (define-key boon-moves-map "æ" 'boon-smarter-forward)
+;;       (require 'boon-qwerty)
+;;       (define-key boon-moves-map "u" 'move-beginning-of-line)
+;;       (define-key boon-moves-map "p" 'move-end-of-line)
+;;       (define-key boon-moves-map "K" 'backward-sentence)
+;;       (define-key boon-moves-map "L" 'forward-sentence)))
 
-  ;; turn off Boon in the following modes
-  (add-hook 'ibuffer-hook 'turn-off-boon-mode)
-  (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
-  (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
-  (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
-  :bind
-  ("<f6>" . turn-on-boon-mode)
-  ("<f7>" . turn-off-boon-mode))
-  
+;;   ;; turn off Boon in the following modes
+;;   (add-hook 'ibuffer-hook 'turn-off-boon-mode)
+;;   (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
+;;   (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
+;;   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
+;;   :bind
+;;   ("<f6>" . turn-on-boon-mode)
+;;   ("<f7>" . turn-off-boon-mode))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
