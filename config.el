@@ -21,22 +21,14 @@
 (defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
 
 ;; (defvar my-dark-theme 'ef-night)
-;; (defvar my-boon-default-cursor-color-dark "#00ccff")  ; boon cursor for ef-night
 ;; (defvar my-dark-theme 'ef-cherie)
-;; (defvar my-boon-default-cursor-color-dark "#ff5aaf")  ; boon cursor for ef-cherie
 ;; (defvar my-dark-theme 'ef-winter)
-;; (defvar my-boon-default-cursor-color-dark "#ff6ff0")  ; boon cursor for ef-winter
 ;; (defvar my-dark-theme 'ef-autumn)
-;; (defvar my-boon-default-cursor-color-dark "#ffaa33")  ; boon cursor for ef-autumn
 ;; (defvar my-dark-theme 'ef-duo-dark)
-;; (defvar my-boon-default-cursor-color-dark "#ef6f11")  ; boon cursor for ef-duo-dark
 (defvar my-dark-theme 'ef-tritanopia-dark)
-;; (defvar my-boon-default-cursor-color-dark "#fd3333")  ; boon cursor for ef-tritanopia-dark
 
 ;; (defvar my-light-theme 'ef-day)
-;; (defvar my-boon-default-cursor-color-light "#cf1f00") ; boon cursor for ef-day
 (defvar my-light-theme 'ef-tritanopia-light)
-;; (defvar my-boon-default-cursor-color-light "#bb0000")  ; boon cursor for ef-tritanopia-light
 
 (defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark")                        ; can be light or dark. Used to color the Boon-mode cursor
@@ -696,10 +688,6 @@
    (require 'boon)
    :config
    (boon-mode)
-   (setq boon-insert-cursor-color "orange")
-   ;; (if (equal my-theme-shade "dark")
-   ;;       (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
-   ;;   (setq boon-default-cursor-color my-boon-default-cursor-color-light))
 
    (if (equal my-keyboard-variant "colemak")
        ;; we are using Colemak
