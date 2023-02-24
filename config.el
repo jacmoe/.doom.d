@@ -9,7 +9,7 @@
 ;;                                                                                  ;;
 ;; My Emacs configuration.                                                          ;;
 ;; My Hotel California of creative writing.                                         ;;
-;; Copyright (C) 2022 Jacob Moena                                                   ;;
+;; Copyright (C) 2022-2023 Jacob Moena                                              ;;
 ;; Homepage: https://github.com/jacmoe/.doom.d                                      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

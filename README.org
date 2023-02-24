@@ -130,7 +130,7 @@ Choose application password for “Mail”, and write the password down.
 
 **** Offlineimap
 #+begin_src bash
-sudo pacman -S offlinemap
+sudo pacman -S offlineimap
 #+end_src
 
 Create a file called =.offlineimaprc= in your home directory, with the following contents:
@@ -261,7 +261,7 @@ See [[https://github.com/aperezdc/notmuch-addrlookup-c][aperezdc/notmuch-addrloo
 *** Maim and Gifsicle
 For creating gif screencasts, we use Maim and Gifsicle. Install =maim= and =gifsicle= using your package manager of choice.
 #+begin_src bash
-sudo pacman? -S maim gifsicle
+sudo pacman -S maim gifsicle
 #+end_src
 
 ** Installation
