@@ -1,8 +1,7 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;;(package! boon)
-(package! meow)
+(package! boon)
 
 (package! ctrlf)
 

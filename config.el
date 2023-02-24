@@ -199,19 +199,18 @@
 (map! "M-4" (lambda() (interactive) (org-shifttab 4)))
 (map! "M-5" (lambda() (interactive) (org-show-all '(headings drawers blocks))))
 
-;; (if (equal my-keyboard-variant "colemak")
-;;     (progn
-;;       ;; using colemak
-;;       (map! "C-o" #'boon-set-command-state); used to quit insert mode
-;;       (map! "C-ø" #'open-line); remapping open-line, Danish version
-;;       (map! "C-;" #'open-line)); remapping open-line
+ (if (equal my-keyboard-variant "colemak")
+     (progn
+       ;; using colemak
+       (map! "C-o" #'boon-set-command-state); used to quit insert mode
+       (map! "C-ø" #'open-line); remapping open-line, Danish version
+       (map! "C-;" #'open-line)); remapping open-line
 
-;;   (progn
-;;     ;; using qwerty
-;;     (map! "C-;" #'boon-set-command-state); used to quit insert mode
-;;     (map! "C-æ" #'boon-set-command-state))); used to quit insert mode - Danish version
+   (progn
+     ;; using qwerty
+     (map! "C-;" #'boon-set-command-state); used to quit insert mode
+     (map! "C-æ" #'boon-set-command-state))); used to quit insert mode - Danish version
 
-;; (define-key org-mode-map (kbd "C-u C-c C-l") 'org-toggle-link-display)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Keybindings defined elsewhere:                                                   ;;
@@ -691,137 +690,44 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; An Ergonomic Command Mode for Emacs
 ;; Run tutorial with M-x boon-tutorial
-;; (use-package! boon
-;;   :defer t
-;;   :init
-;;   (require 'boon)
-;;   :config
-;;   (boon-mode)
-;;   (setq boon-insert-cursor-color "orange")
-;;   ;; (if (equal my-theme-shade "dark")
-;;   ;;       (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
-;;   ;;   (setq boon-default-cursor-color my-boon-default-cursor-color-light))
+ (use-package! boon
+   :defer t
+   :init
+   (require 'boon)
+   :config
+   (boon-mode)
+   (setq boon-insert-cursor-color "orange")
+   ;; (if (equal my-theme-shade "dark")
+   ;;       (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
+   ;;   (setq boon-default-cursor-color my-boon-default-cursor-color-light))
 
-;;   (if (equal my-keyboard-variant "colemak")
-;;       ;; we are using Colemak
-;;       (progn
-;;         (define-key boon-moves-map "ø" 'move-end-of-line)
-;;         (require 'boon-colemak)
-;;         (define-key boon-moves-map "l" 'move-beginning-of-line)
-;;         (define-key boon-moves-map ";" 'move-end-of-line)
-;;         (define-key boon-moves-map "E" 'backward-sentence)
-;;         (define-key boon-moves-map "I" 'forward-sentence))
-;;     ;; we are using Qwerty
-;;     (progn
-;;       (define-key boon-moves-map "æ" 'boon-smarter-forward)
-;;       (require 'boon-qwerty)
-;;       (define-key boon-moves-map "u" 'move-beginning-of-line)
-;;       (define-key boon-moves-map "p" 'move-end-of-line)
-;;       (define-key boon-moves-map "K" 'backward-sentence)
-;;       (define-key boon-moves-map "L" 'forward-sentence)))
+   (if (equal my-keyboard-variant "colemak")
+       ;; we are using Colemak
+       (progn
+         (define-key boon-moves-map "ø" 'move-end-of-line)
+         (require 'boon-colemak)
+         (define-key boon-moves-map "l" 'move-beginning-of-line)
+         (define-key boon-moves-map ";" 'move-end-of-line)
+         (define-key boon-moves-map "E" 'backward-sentence)
+         (define-key boon-moves-map "I" 'forward-sentence))
+     ;; we are using Qwerty
+     (progn
+       (define-key boon-moves-map "æ" 'boon-smarter-forward)
+       (require 'boon-qwerty)
+       (define-key boon-moves-map "u" 'move-beginning-of-line)
+       (define-key boon-moves-map "p" 'move-end-of-line)
+       (define-key boon-moves-map "K" 'backward-sentence)
+       (define-key boon-moves-map "L" 'forward-sentence)))
 
-;;   ;; turn off Boon in the following modes
-;;   (add-hook 'ibuffer-hook 'turn-off-boon-mode)
-;;   (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
-;;   (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
-;;   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
-;;   :bind
-;;   ("<f6>" . turn-on-boon-mode)
-;;   ("<f7>" . turn-off-boon-mode))
+   ;; turn off Boon in the following modes
+   (add-hook 'ibuffer-hook 'turn-off-boon-mode)
+   (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
+   (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
+   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
+   :bind
+   ("<f6>" . turn-on-boon-mode)
+   ("<f7>" . turn-off-boon-mode))
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Meow                                                                             ;;
-;;                                                                                  ;;
-;; https://github.com/meow-edit/meow                                                ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defun meow-setup ()
-  (setq meow-cheatsheet-layout meow-cheatsheet-layout-colemak)
-  (meow-motion-overwrite-define-key
-   ;; Use e to move up, n to move down.
-   ;; Since special modes usually use n to move down, we only overwrite e here.
-   '("e" . meow-prev)
-   '("<escape>" . ignore))
-  (meow-leader-define-key
-   '("?" . meow-cheatsheet)
-   ;; To execute the originally e in MOTION state, use SPC e.
-   '("e" . "H-e")
-   '("1" . meow-digit-argument)
-   '("2" . meow-digit-argument)
-   '("3" . meow-digit-argument)
-   '("4" . meow-digit-argument)
-   '("5" . meow-digit-argument)
-   '("6" . meow-digit-argument)
-   '("7" . meow-digit-argument)
-   '("8" . meow-digit-argument)
-   '("9" . meow-digit-argument)
-   '("0" . meow-digit-argument))
-  (meow-normal-define-key
-   '("0" . meow-expand-0)
-   '("1" . meow-expand-1)
-   '("2" . meow-expand-2)
-   '("3" . meow-expand-3)
-   '("4" . meow-expand-4)
-   '("5" . meow-expand-5)
-   '("6" . meow-expand-6)
-   '("7" . meow-expand-7)
-   '("8" . meow-expand-8)
-   '("9" . meow-expand-9)
-   '("-" . negative-argument)
-   '(";" . meow-reverse)
-   '("," . meow-inner-of-thing)
-   '("." . meow-bounds-of-thing)
-   '("[" . meow-beginning-of-thing)
-   '("]" . meow-end-of-thing)
-   '("/" . meow-visit)
-   '("a" . meow-append)
-   '("A" . meow-open-below)
-   '("b" . meow-back-word)
-   '("B" . meow-back-symbol)
-   '("c" . meow-change)
-   '("d" . meow-delete)
-   '("e" . meow-prev)
-   '("E" . meow-prev-expand)
-   '("f" . meow-find)
-   '("g" . meow-cancel-selection)
-   '("G" . meow-grab)
-   '("h" . meow-left)
-   '("H" . meow-left-expand)
-   '("i" . meow-right)
-   '("I" . meow-right-expand)
-   '("j" . meow-join)
-   '("k" . meow-kill)
-   '("l" . meow-line)
-   '("L" . meow-goto-line)
-   '("m" . meow-mark-word)
-   '("M" . meow-mark-symbol)
-   '("n" . meow-next)
-   '("N" . meow-next-expand)
-   '("o" . meow-block)
-   '("O" . meow-to-block)
-   '("p" . meow-yank)
-   '("q" . meow-quit)
-   '("r" . meow-replace)
-   '("s" . meow-insert)
-   '("S" . meow-open-above)
-   '("t" . meow-till)
-   '("u" . meow-undo)
-   '("U" . meow-undo-in-selection)
-   '("v" . meow-search)
-   '("w" . meow-next-word)
-   '("W" . meow-next-symbol)
-   '("x" . meow-delete)
-   '("X" . meow-backward-delete)
-   '("y" . meow-save)
-   '("z" . meow-pop-selection)
-   '("'" . repeat)
-   '("<escape>" . ignore)))
-(use-package! meow
-  :init
-    (require 'meow)
-    (meow-setup)
-    (meow-global-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -1195,7 +1101,6 @@ comment box."
 ;; turn on dark theme
 (defun go-dark-theme ()
   (interactive)
-  (setq boon-default-cursor-color my-boon-default-cursor-color-dark)
   (setq my-theme-shade "dark")
   (ef-themes--load-theme my-dark-theme))
   
@@ -1203,8 +1108,6 @@ comment box."
 ;; turn on light theme
 (defun go-light-theme ()
   (interactive)
-  (setq boon-default-cursor-color my-boon-default-cursor-color-light)
-
   (setq my-theme-shade "light")
   (ef-themes--load-theme my-light-theme))
   
