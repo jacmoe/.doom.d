@@ -34,13 +34,9 @@
   ],
   [
     {
-      "y": 0.5,
-      "c": "#f8d615"
+      "y": 0.5
     },
     "~\n`",
-    {
-      "c": "#cccccc"
-    },
     "!\n1",
     "@\n2",
     "#\n3",
@@ -75,7 +71,8 @@
     },
     "Tab",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "Q\nQuotes",
     "W\nWord",
@@ -87,12 +84,13 @@
     },
     "J\nJump",
     {
-      "c": "#1db63a"
+      "c": "#1db63a",
+      "f": 3
     },
-    "L\n\n\n\n\n\n⇤",
-    "U\n\n\n\n\n\n↑",
-    "Y\n\n\n\n\n\n↓",
-    ":\n;\n\n\n\n\n⇥",
+    "L\n\n\n\n\n\n<i class='kb kb-Line-Start'></i>",
+    "U\n\n\n\n\n\n<i class='kb kb-Arrows-Left'></i>",
+    "Y\n\n\n\n\n\n<i class='kb kb-Arrows-Right'></i>",
+    ":\n;\n\n\n\n\n<i class='kb kb-Line-End'></i>",
     {
       "c": "#cccccc"
     },
@@ -130,7 +128,8 @@
     },
     "Back Space",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "A\nAround",
     "R\nRow",
@@ -138,18 +137,21 @@
     "T\nSelect\n\n\n\n\nTree",
     "D\nDocument",
     {
-      "c": "#8ed7b0"
+      "c": "#1db63a",
+      "f": 3
     },
-    "H\nHop",
+    "H\n<i class='kb kb-Arrows-Left'></i>",
+    "N\n<i class='kb kb-Arrows-Down'></i>",
+    "E\n<i class='kb kb-Arrows-Up'></i>",
+    "I\n<i class='kb kb-Arrows-Right'></i>",
     {
-      "c": "#1db63a"
+      "c": "#8ed7b0",
+      "f": 2
     },
-    "N\n\n\n\n\n\n⇠",
-    "E\n←",
-    "I\n→",
-    "O\n\n\n\n\n\n⇢",
+    "O\nHop",
     {
-      "c": "#cccccc"
+      "c": "#cccccc",
+      "f": 3
     },
     "\"\n'",
     {
@@ -165,17 +167,20 @@
     },
     "Shift",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "Z\nInZide",
     "X\nPairs  Outside",
     "C\nPairs i\n\n\n\n\nComment",
     {
-      "c": "#5eb1e7"
+      "c": "#5eb1e7",
+      "f": 3
     },
     "V",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "B\nBlock",
     "K\nBlanks",
@@ -185,17 +190,18 @@
     "M\nPrev",
     {
       "c": "#1db63a",
-      "a": 0
+      "f": 3
     },
-    "<\n,\n\n\n↜",
-    ">\n.\n\n\n↝",
+    "<\n,\n\n\n\n\n\n<i class='kb kb-Arrows-Up-Circle-Filled'></i>",
+    ">\n.\n\n\n\n\n\n<i class='kb kb-Arrows-Down-Circle-Filled'></i>",
     {
       "c": "#8ed7b0",
-      "a": 4
+      "f": 2
     },
     "?\n/ Next",
     {
       "c": "#cccccc",
+      "f": 3,
       "w": 2.75
     },
     "Shift",

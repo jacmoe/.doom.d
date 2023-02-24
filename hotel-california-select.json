@@ -29,13 +29,9 @@
   ],
   [
     {
-      "y": 0.5,
-      "c": "#f8d615"
+      "y": 0.5
     },
     "~\n`",
-    {
-      "c": "#cccccc"
-    },
     "!\n1",
     "@\n2",
     "#\n3",
@@ -57,27 +53,31 @@
     },
     "Tab",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "Q\nQuotes outside",
     "W\nWord",
     {
-      "c": "#d0ccc0"
+      "c": "#d0ccc0",
+      "f": 3
     },
     "E",
     "R",
     "T",
     {
-      "c": "#8ed7b0"
+      "c": "#8ed7b0",
+      "f": 2
     },
     "Y\nfYnd",
     {
-      "c": "#1db63a"
+      "c": "#1db63a",
+      "f": 3
     },
-    "U\n\n\n\n\n\n<i class='fa fa-fast-backward'></i>",
-    "I\n\n\n\n\n\n<i class='fa fa-arrow-up'></i>",
-    "O\n\n\n\n\n\n<i class='fa fa-arrow-down'></i>",
-    "P\n\n\n\n\n\n<i class='fa fa-fast-forward'></i>",
+    "U\n\n\n\n\n\n<i class='kb kb-Line-Start'></i>",
+    "I\n\n\n\n\n\n<i class='kb kb-Arrows-Left'></i>",
+    "O\n\n\n\n\n\n<i class='kb kb-Arrows-Right'></i>",
+    "P\n\n\n\n\n\n<i class='kb kb-Line-End'></i>",
     {
       "c": "#cccccc"
     },
@@ -99,33 +99,41 @@
     },
     "Caps Lock",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "A\nAround",
     "S\nSymbol",
     "D\nDocument",
     {
-      "c": "#d0ccc0"
+      "c": "#d0ccc0",
+      "f": 3
     },
     "F",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "G\nParagraph",
     {
-      "c": "#8ed7b0"
-    },
-    "H\nHop",
-    {
       "c": "#1db63a",
+      "f": 3
+    },
+    "H\n<i class='kb kb-Arrows-Left'></i>",
+    {
       "n": true
     },
-    "J\n\n\n\n\n\n<i class='fa fa-arrow-left'></i>",
-    "K\n\n\n\n\n\n<i class='fa fa-arrow-left'></i>",
-    "L\n\n\n\n\n\n<i class='fa fa-arrow-right'></i>",
-    ":\n;\n\n\n\n\n<i class='fa fa-arrow-right'></i>",
+    "J\n<i class='kb kb-Arrows-Down'></i>",
+    "K\n<i class='kb kb-Arrows-Up'></i>",
+    "L\n<i class='kb kb-Arrows-Right'></i>",
     {
-      "c": "#cccccc"
+      "c": "#8ed7b0",
+      "f": 2
+    },
+    ":\n;\n\n\n\n\nHop",
+    {
+      "c": "#cccccc",
+      "f": 3
     },
     "\"\n'"
   ],
@@ -135,7 +143,8 @@
     },
     "Shift",
     {
-      "c": "#fbbbc9"
+      "c": "#fbbbc9",
+      "f": 2
     },
     "Z\nContent",
     "X\nPairs Outside",
@@ -147,14 +156,15 @@
     },
     "N\nNoon Walk",
     {
-      "c": "#cccccc"
+      "c": "#cccccc",
+      "f": 3
     },
     "M",
     {
       "c": "#1db63a"
     },
-    "<\n,\n\n\n\n\n<i class='fa fa-hand-o-up'></i>",
-    ">\n.\n\n\n\n\n<i class='fa fa-hand-o-down'></i>",
+    "<\n,\n\n<i class='kb kb-Arrows-Up-Circle-Filled'></i>",
+    ">\n.\n\n<i class='kb kb-Arrows-Down-Circle-Filled'></i>",
     {
       "c": "#cccccc"
     },

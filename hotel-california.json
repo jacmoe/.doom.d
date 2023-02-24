@@ -1,7 +1,10 @@
 [
   {
     "name": "Hotel California",
-    "author": "Jacob Moena"
+    "author": "Jacob Moena",
+    "switchMount": "cherry",
+    "switchBrand": "razor",
+    "switchType": "Orange"
   },
   [
     "Esc",
@@ -57,7 +60,8 @@
     },
     "Tab",
     {
-      "c": "#f8d615"
+      "c": "#f8d615",
+      "f": 2
     },
     "Q\nQuote",
     "W\nS-Forward\n\n\n\n\nS-Prev",
@@ -69,12 +73,13 @@
     },
     "Y\nfYnd",
     {
-      "c": "#1db63a"
+      "c": "#1db63a",
+      "f": 3
     },
-    "U\n\n\n\n\n\n<i class='fa fa-fast-backward'></i>",
-    "I\n\n\n\n\n\n<i class='fa fa-arrow-up'></i>",
-    "O\n\n\n\n\n\n<i class='fa fa-arrow-down'></i>",
-    "P\n\n\n\n\n\n<i class='fa fa-fast-forward'></i>",
+    "U\n<i class='kb kb-Line-Start'></i>",
+    "I\n<i class='kb kb-Arrows-Left'></i>",
+    "O\n<i class='kb kb-Arrows-Right'></i>",
+    "P\n<i class='kb kb-Line-End'></i>",
     {
       "c": "#cccccc"
     },
@@ -96,7 +101,8 @@
     },
     "Caps Lock",
     {
-      "c": "#f8d615"
+      "c": "#f8d615",
+      "f": 2
     },
     "A\nAround",
     "S\nSubstitute",
@@ -104,19 +110,24 @@
     "F\nFetch\n\n\n\n\nPop",
     "G\nGoto",
     {
-      "c": "#8ed7b0"
-    },
-    "H\nHop",
-    {
       "c": "#1db63a",
+      "f": 3
+    },
+    "H\n<i class='kb kb-Arrows-Left'></i>",
+    {
       "n": true
     },
-    "J\n\n\n\n\n\n<i class='fa fa-arrow-left'></i>",
-    "K\n\n\n\n\n\n<i class='fa fa-arrow-left'></i>",
-    "L\n\n\n\n\n\n<i class='fa fa-arrow-right'></i>",
-    ":\n;\n\n\n\n\n<i class='fa fa-arrow-right'></i>",
+    "J\n<i class='kb kb-Arrows-Down'></i>",
+    "K\n<i class='kb kb-Arrows-Up'></i>",
+    "L\n<i class='kb kb-Arrows-Right'></i>",
     {
-      "c": "#cccccc"
+      "c": "#8ed7b0",
+      "f": 2
+    },
+    ":\n;\n\n\n\n\nHop",
+    {
+      "c": "#cccccc",
+      "f": 3
     },
     "\"\n'"
   ],
@@ -126,17 +137,20 @@
     },
     "Shift",
     {
-      "c": "#f8d615"
+      "c": "#f8d615",
+      "f": 2
     },
     "Z\nRepeat",
     {
-      "c": "#5eb1e7"
+      "c": "#5eb1e7",
+      "f": 3
     },
     "X",
     "C",
     "V",
     {
-      "c": "#f8d615"
+      "c": "#f8d615",
+      "f": 2
     },
     "B\nBank",
     {
@@ -144,14 +158,15 @@
     },
     "N\nNoon Walk",
     {
-      "c": "#cccccc"
+      "c": "#cccccc",
+      "f": 3
     },
     "M",
     {
       "c": "#1db63a"
     },
-    "<\n,\n\n\n\n\n<i class='fa fa-hand-o-up'></i>",
-    ">\n.\n\n\n\n\n<i class='fa fa-hand-o-down'></i>",
+    "<\n,\n\n\n\n\n\n<i class='kb kb-Arrows-Up-Circle-Filled'></i>",
+    ">\n.\n\n\n\n\n\n<i class='kb kb-Arrows-Down-Circle-Filled'></i>",
     {
       "c": "#cccccc"
     },
