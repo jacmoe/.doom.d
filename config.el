@@ -27,10 +27,10 @@
 (defvar my-theme-shade "dark")                        ; can be light or dark.
 
 (defvar my-monospace-font "Overpass Mono")            ; Font to use for code
-(defvar my-variablespace-font "Overpass")             ; Font to use for writing
+(defvar my-variablespace-font "Alegreya")             ; Font to use for writing
 
 (defvar my-org-tracktable-daily-goal 500)             ; How many words do I want to write per day?
-(defvar my-line-spacing 0.4)                          ; how much space between the lines?
+(defvar my-line-spacing 12)                          ; how much space between the lines?
 (defvar my-day-end 5)                                 ; when does my day end?
 
 (defvar my-org-pomodoro-play-sounds nil) ; don't play sounds
