@@ -35,8 +35,6 @@
 
 (package! engine-mode)
 
-(package! ef-themes)
-
 (package! anki-editor)
 
 (package! org-wc)

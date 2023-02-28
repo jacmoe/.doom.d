@@ -20,15 +20,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
 
-;; (defvar my-dark-theme 'ef-night)
-(defvar my-dark-theme 'ef-cherie)
-;; (defvar my-dark-theme 'ef-winter)
-;; (defvar my-dark-theme 'ef-autumn)
-;; (defvar my-dark-theme 'ef-duo-dark)
-;; (defvar my-dark-theme 'ef-tritanopia-dark)
-
-;; (defvar my-light-theme 'ef-day)
-(defvar my-light-theme 'ef-tritanopia-light)
+(defvar my-dark-theme 'doom-one)
+(defvar my-light-theme 'doom-earl-grey)
 
 (defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark")                        ; can be light or dark.
@@ -117,8 +110,20 @@
 (setq custom-safe-themes t)
 ;; Fancy splash screen
 (setq fancy-splash-image (expand-file-name "splash/emacs.png" doom-user-dir))
-;; Remove all but the first menu entry on the splash screen
-(setq +doom-dashboard-menu-sections (cl-subseq +doom-dashboard-menu-sections 0 1))
+
+(setq +doom-dashboard-menu-sections
+  '(
+    ("Recently opened files"
+    :icon (all-the-icons-octicon "file-text" :face 'doom-dashboard-menu-title)
+    :action recentf-open-files)
+    ("Jump to bookmark"
+    :icon (all-the-icons-octicon "bookmark" :face 'doom-dashboard-menu-title)
+    :action bookmark-jump)
+    ("Open private configuration"
+    :icon (all-the-icons-octicon "tools" :face 'doom-dashboard-menu-title)
+    :when (file-directory-p doom-private-dir)
+    :action doom/open-private-config)))
+
 ;; Set the title
 (setq frame-title-format '("%b – Hotel California of Creative Writing"))
 ;; Add to the dashboard
@@ -271,7 +276,6 @@
 ;; Emacs-everywhere
 ;; Atomic-chrome
 ;; Engine-mode
-;; EF-Themes
 ;; Mastodon
 ;; Smtpmail
 ;; Keycast
@@ -899,19 +903,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; EF-Themes                                                                        ;;
-;;                                                                                  ;;
-;; https://github.com/prot/ef-themes                                                ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(after! ef-themes
-  (setq ef-themes-mixed-fonts 1)
-  (ef-themes--load-theme my-main-theme))
-  ;; (turn-off-boon-mode)
-  ;; (turn-on-boon-mode))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
 ;; Mastodon                                                                         ;;
 ;;                                                                                  ;;
 ;; https://codeberg.org/martianh/mastodon.el                                        ;;
@@ -1106,14 +1097,14 @@ comment box."
 (defun go-dark-theme ()
   (interactive)
   (setq my-theme-shade "dark")
-  (ef-themes--load-theme my-dark-theme))
+  (load-theme my-dark-theme))
   
 
 ;; turn on light theme
 (defun go-light-theme ()
   (interactive)
   (setq my-theme-shade "light")
-  (ef-themes--load-theme my-light-theme))
+  (load-theme my-light-theme))
   
 
 ;; switch between light and dark theme
