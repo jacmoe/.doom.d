@@ -60,3 +60,5 @@
 (package! keycast)
 
 (package! gif-screencast)
+
+(package! olivetti)

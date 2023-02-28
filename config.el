@@ -180,8 +180,7 @@
 (map! "C-c h b" #'org-pomodoro)
 
 (map! "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
-(map! "<f9>" #'+zen/toggle)                      ; Toggle Zen mode
-(map! "C-<f9>" #'writeroom-toggle-mode-line)     ; Toggle Zen mode-line
+(map! "C-<f9>" #'hide-mode-line-mode)             ; Toggle mode-line
 (map!"C-<down>" #'enlarge-window)
 (map!"C-<up>" #'shrink-window)
 (map!"C-<left>" #'enlarge-window-horizontally)
@@ -280,6 +279,7 @@
 ;; Smtpmail
 ;; Keycast
 ;; Gif-screencast
+;; Olivetti-mode
 ;; Miscellaneous
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -979,6 +979,33 @@
         gif-screencast-optimize-args '("--batch" "--optimize=3" "--colors=256"))
 )
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Olivetti-mode                                                                    ;;
+;;                                                                                  ;;
+;; https://github.com/rnkn/olivetti                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Distraction-free screen
+(use-package! olivetti
+  :init
+  (setq olivetti-body-width .67)
+  :config
+  (defun distraction-free ()
+    "Distraction-free writing environment"
+    (interactive)
+    (if (equal olivetti-mode nil)
+        (progn
+          (window-configuration-to-register 1)
+          (delete-other-windows)
+          (text-scale-increase 2)
+          (olivetti-mode t))
+      (progn
+        (jump-to-register 1)
+        (olivetti-mode 0)
+        (text-scale-decrease 2))))
+  :bind
+  (("<f9>" . distraction-free)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
