@@ -24,14 +24,14 @@
 (defvar my-light-theme 'doom-plain)
 
 (defvar my-main-theme my-dark-theme)
-(defvar my-theme-shade "dark")                        ; can be light or dark.
+(defvar my-theme-shade "dark")                       ; can be light or dark.
 
-(defvar my-monospace-font "Overpass Mono")            ; Font to use for code
-(defvar my-variablespace-font "Alegreya")             ; Font to use for writing
+(defvar my-monospace-font "Overpass Mono")      ; Font to use for code
+(defvar my-variablespace-font "Carlito")             ; Font to use for writing
 
-(defvar my-org-tracktable-daily-goal 500)             ; How many words do I want to write per day?
+(defvar my-org-tracktable-daily-goal 500)            ; How many words do I want to write per day?
 (defvar my-line-spacing 12)                          ; how much space between the lines?
-(defvar my-day-end 5)                                 ; when does my day end?
+(defvar my-day-end 5)                                ; when does my day end?
 
 (defvar my-org-pomodoro-play-sounds nil) ; don't play sounds
 (defvar my-org-pomodoro-length 20)       ; 20 minutes are great for word-sprints
