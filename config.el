@@ -113,12 +113,15 @@
 
 (setq +doom-dashboard-menu-sections
   '(
-    ("Recently opened files"
+    ("View open buffers"
     :icon (all-the-icons-octicon "file-text" :face 'doom-dashboard-menu-title)
-    :action recentf-open-files)
+    :action ibuffer)
     ("Jump to bookmark"
     :icon (all-the-icons-octicon "bookmark" :face 'doom-dashboard-menu-title)
     :action bookmark-jump)
+    ("Recently opened files"
+    :icon (all-the-icons-octicon "file-text" :face 'doom-dashboard-menu-title)
+    :action recentf-open-files)
     ("Open private configuration"
     :icon (all-the-icons-octicon "tools" :face 'doom-dashboard-menu-title)
     :when (file-directory-p doom-private-dir)
