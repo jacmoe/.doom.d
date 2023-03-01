@@ -307,7 +307,8 @@
            #'solaire-mode
            #'typopunct-mode
            #'flymake-vale-load
-           #'variable-pitch-mode)
+           #'mixed-pitch-mode
+           #'solaire-mode)
 
 ;; Org-habit
 (use-package! org-habit
