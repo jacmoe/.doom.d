@@ -709,11 +709,13 @@
          (require 'boon-colemak)
 
          (define-key boon-moves-map "l" 'move-beginning-of-line)
+         ;; (define-key boon-moves-map "l"  '("⇤" . boon-beginning-of-line))
          (define-key boon-moves-map "u" 'backward-sentence)
          (define-key boon-moves-map "U" 'ignore)
          (define-key boon-moves-map "y" 'forward-sentence)
          (define-key boon-moves-map "Y" 'ignore)
          (define-key boon-moves-map ";" 'move-end-of-line)
+         ;; (define-key boon-moves-map ";"  '("⇥" . boon-end-of-line))
 
          (define-key boon-moves-map "H"  '("⇠" . boon-smarter-backward))        ;word
          (define-key boon-moves-map "h"  '("←" . backward-char))                ;character
@@ -724,7 +726,7 @@
          (define-key boon-moves-map "i"  '("→" . forward-char))                 ;character
          (define-key boon-moves-map "I"  '("→" . boon-smarter-forward))         ;word
 
-         (define-key boon-moves-map "o"  '("hop" . avy-goto-word-1))
+         (define-key boon-moves-map "o"  '("hOp" . avy-goto-word-1))
          (define-key boon-moves-map "O"  'avy-goto-char))
 
      ;; we are using Qwerty
