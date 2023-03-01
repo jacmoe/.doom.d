@@ -705,38 +705,17 @@
    (if (equal my-keyboard-variant "colemak")
        ;; we are using Colemak
        (progn
-        (define-key boon-moves-map "ø" 'move-end-of-line)
-         (require 'boon-colemak)
-
+         (define-key boon-moves-map "ø" 'move-end-of-line)
+         (require 'boon-colemak-hnei)
          (define-key boon-moves-map "l" 'move-beginning-of-line)
-         ;; (define-key boon-moves-map "l"  '("⇤" . boon-beginning-of-line))
-         (define-key boon-moves-map "u" 'backward-sentence)
-         (define-key boon-moves-map "U" 'ignore)
-         (define-key boon-moves-map "y" 'forward-sentence)
-         (define-key boon-moves-map "Y" 'ignore)
-         (define-key boon-moves-map ";" 'move-end-of-line)
-         ;; (define-key boon-moves-map ";"  '("⇥" . boon-end-of-line))
-
-         (define-key boon-moves-map "H"  '("⇠" . boon-smarter-backward))        ;word
-         (define-key boon-moves-map "h"  '("←" . backward-char))                ;character
-         (define-key boon-moves-map "N"  'forward-paragraph)                    ;faster down
-         (define-key boon-moves-map "n"  '("↓" . next-line))                    ;down
-         (define-key boon-moves-map "e"  '("↑" . previous-line))                ;up
-         (define-key boon-moves-map "E"  'backward-paragraph)                   ;faster up
-         (define-key boon-moves-map "i"  '("→" . forward-char))                 ;character
-         (define-key boon-moves-map "I"  '("→" . boon-smarter-forward))         ;word
-
-         (define-key boon-moves-map "o"  '("hOp" . avy-goto-word-1))
-         (define-key boon-moves-map "O"  'avy-goto-char))
+         (define-key boon-moves-map ";" 'move-end-of-line))
 
      ;; we are using Qwerty
      (progn
        (define-key boon-moves-map "æ" 'boon-smarter-forward)
-       (require 'boon-qwerty)
+       (require 'boon-qwerty-hjkl)
        (define-key boon-moves-map "u" 'move-beginning-of-line)
-       (define-key boon-moves-map "p" 'move-end-of-line)
-       (define-key boon-moves-map "K" 'backward-sentence)
-       (define-key boon-moves-map "L" 'forward-sentence)))
+       (define-key boon-moves-map "p" 'move-end-of-line)))
 
    ;; turn off Boon in the following modes
    (add-hook 'ibuffer-hook 'turn-off-boon-mode)
