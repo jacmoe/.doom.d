@@ -122,6 +122,12 @@
     ("Recently opened files"
     :icon (all-the-icons-octicon "file-text" :face 'doom-dashboard-menu-title)
     :action recentf-open-files)
+    ("Org-journal"
+    :icon (all-the-icons-octicon "book" :face 'doom-dashboard-menu-title)
+    :action org-journal-new-entry)
+    ("Org-roam"
+    :icon (all-the-icons-octicon "book" :face 'doom-dashboard-menu-title)
+    :action org-roam-node-find)
     ("Open private configuration"
     :icon (all-the-icons-octicon "tools" :face 'doom-dashboard-menu-title)
     :when (file-directory-p doom-private-dir)
