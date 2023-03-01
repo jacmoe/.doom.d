@@ -63,3 +63,5 @@
 (package! gif-screencast)
 
 (package! olivetti)
+
+(package! org-habit-stats)

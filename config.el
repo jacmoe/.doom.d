@@ -54,7 +54,7 @@
       org-archive-location (concat org-directory ".archive/%s::")
       org-agenda-files (list org-directory
                              "~/enestaaende/enestaaende.org"
-                             "~/habits/habits.org"))
+                             "~/Dropbox/skriv/habits/habits.org"))
                              
 (defvar my-notmuch-address-command "/home/moena/notmuch-addrlookup-c/notmuch-addrlookup")
 (defvar my-puppeteer-config-file "/home/moena/puppeteerConfigFile.json")
@@ -263,6 +263,7 @@
 ;; Org-tracktable
 ;; Org-appear
 ;; Org-pomodoro
+;; Org-habit-stats
 ;; Citar
 ;; Ox-Hugo
 ;; Org-journal
@@ -314,6 +315,7 @@
   :config
   (setq org-habit-following-days 7
         org-habit-preceding-days 35
+        org-habit-show-habits-only-for-today nil
         org-habit-show-habits t))
   
 (use-package! org-super-agenda
@@ -467,10 +469,10 @@
         '(("h" "Daily habits"
            ((agenda ""))
            ((org-agenda-show-log t)
-            (org-agenda-ndays 7)
+            (org-agenda-ndays 30)
             (org-agenda-log-mode-items '(state))
             (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":daily:")))))))
-          
+
 (after! ox-latex
  (add-to-list 'org-latex-classes
               '("org-plain-latex"
@@ -581,6 +583,18 @@
    ;; use libnotify
    alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil)))))
    
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-habit-stats                                                                  ;;
+;;                                                                                  ;;
+;; https://github.com/ml729/org-habit-stats/                                        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! org-habit-stats
+:after org
+:init
+(add-hook 'org-after-todo-state-change-hook 'org-habit-stats-update-properties))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -1017,44 +1031,6 @@
   (let (indent-tabs-mode align-to-tab-stop)
     (align-regexp beginning end (concat "\\(\\s-*\\)"
                                         (regexp-quote comment-start)))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Layout switching                                                                 ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; switch to Danish keyboard layout
-(defun my/kbdk ()
-  (interactive)
-  (if (equal my-keyboard-variant "colemak")
-      ;; we are using Colemak
-      (progn
-        (call-process-shell-command "setxkbmap" nil nil nil "-layout no -variant colemak")
-        ;; (call-process-shell-command "xmodmap" nil nil nil "-e \"keycode 32 = j J\"")
-        ;; (call-process-shell-command "xmodmap" nil nil nil "-e \"keycode 29 = y Y\"")
-        (message "Norwegian Colemak"))
-        
-    (progn
-      (call-process-shell-command "setxkbmap" nil nil nil "dk")
-      (message "Danish Qwerty"))))
-      
-  
-(map! "C-c k" #'my/kbdk)
-
-;; switch to American keyboard layout
-(defun my/kbus ()
-  (interactive)
-  (if (equal my-keyboard-variant "colemak")
-      ;; we are using Colemak
-      (progn
-        (call-process-shell-command "setxkbmap" nil nil nil "-layout us -variant colemak")
-        (message "US Colemak"))
-        
-    (progn
-      (call-process-shell-command "setxkbmap" nil nil nil "us")
-      (message "US Qwerty"))))
-      
-  
-(map! "C-c u" #'my/kbus)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; better comment box                                                               ;;
