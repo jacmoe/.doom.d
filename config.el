@@ -25,8 +25,8 @@
 (defvar my-dark-theme 'doom-xcode)
 ;; (defvar my-light-theme 'doom-plain)
 
-(defvar my-main-theme my-light-theme)
-(defvar my-theme-shade "light")                       ; can be light or dark.
+(defvar my-main-theme my-dark-theme)
+(defvar my-theme-shade "dark")                       ; can be light or dark.
 
 (defvar my-monospace-font "Overpass Mono")      ; Font to use for code
 (defvar my-variablespace-font "Carlito")             ; Font to use for writing ;Carlito;Alegreya
