@@ -20,16 +20,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
 
-(defvar my-dark-theme 'poet-dark)
+;; (defvar my-dark-theme 'poet-dark)
 (defvar my-light-theme 'poet)
-;; (defvar my-dark-theme 'doom-xcode)
+(defvar my-dark-theme 'doom-xcode)
 ;; (defvar my-light-theme 'doom-plain)
 
 (defvar my-main-theme my-light-theme)
 (defvar my-theme-shade "light")                       ; can be light or dark.
 
 (defvar my-monospace-font "Overpass Mono")      ; Font to use for code
-(defvar my-variablespace-font "Carlito")             ; Font to use for writing
+(defvar my-variablespace-font "Alegreya")             ; Font to use for writing ;Carlito
+(defvar my-monospace-font-size 24)
+(defvar my-variablespace-font-size 32)
 
 (defvar my-org-tracktable-daily-goal 500)            ; How many words do I want to write per day?
 (defvar my-line-spacing 12)                          ; how much space between the lines?
@@ -142,9 +144,9 @@
   (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Hotel California of Creative Writing")))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family my-monospace-font :size 24)
+(setq doom-font (font-spec :family my-monospace-font :size my-monospace-font-size)
       doom-big-font-increment 5
-      doom-variable-pitch-font (font-spec :family my-variablespace-font :size 28))
+      doom-variable-pitch-font (font-spec :family my-variablespace-font :size my-variablespace-font-size))
 
 ;; Theme
 (setq doom-theme my-main-theme)
@@ -309,7 +311,7 @@
            #'solaire-mode
            #'typopunct-mode
            #'flymake-vale-load
-           #'mixed-pitch-mode
+           #'variable-pitch-mode
            #'solaire-mode)
 
 ;; Org-habit
