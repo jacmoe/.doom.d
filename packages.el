@@ -67,3 +67,5 @@
 (package! org-habit-stats)
 
 (package! poet-theme)
+
+(package! mixed-pitch)

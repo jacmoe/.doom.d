@@ -29,9 +29,9 @@
 (defvar my-theme-shade "light")                       ; can be light or dark.
 
 (defvar my-monospace-font "Overpass Mono")      ; Font to use for code
-(defvar my-variablespace-font "Alegreya")             ; Font to use for writing ;Carlito
-(defvar my-monospace-font-size 24)
-(defvar my-variablespace-font-size 32)
+(defvar my-variablespace-font "Carlito")             ; Font to use for writing ;Carlito;Alegreya
+(defvar my-monospace-font-size 30)
+(defvar my-variablespace-font-size 36)
 
 (defvar my-org-tracktable-daily-goal 500)            ; How many words do I want to write per day?
 (defvar my-line-spacing 12)                          ; how much space between the lines?
@@ -144,8 +144,7 @@
   (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Hotel California of Creative Writing")))
 
 ;; Fonts - ordinary and variable pitch
-(setq doom-font (font-spec :family my-monospace-font :size my-monospace-font-size)
-      doom-big-font-increment 5
+(setq doom-font (font-spec :family my-monospace-font :size my-monospace-font-size :weight 'semi-light)
       doom-variable-pitch-font (font-spec :family my-variablespace-font :size my-variablespace-font-size))
 
 ;; Theme
@@ -311,8 +310,10 @@
            #'solaire-mode
            #'typopunct-mode
            #'flymake-vale-load
-           #'variable-pitch-mode
+           #'mixed-pitch-mode
            #'solaire-mode)
+
+(add-hook! 'mixed-pitch-mode-hook #'solaire-mode-reset)
 
 ;; Org-habit
 (use-package! org-habit
