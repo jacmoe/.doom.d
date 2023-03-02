@@ -20,11 +20,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
 
-(defvar my-dark-theme 'doom-xcode)
-(defvar my-light-theme 'doom-plain)
+(defvar my-dark-theme 'poet-dark)
+(defvar my-light-theme 'poet)
+;; (defvar my-dark-theme 'doom-xcode)
+;; (defvar my-light-theme 'doom-plain)
 
-(defvar my-main-theme my-dark-theme)
-(defvar my-theme-shade "dark")                       ; can be light or dark.
+(defvar my-main-theme my-light-theme)
+(defvar my-theme-shade "light")                       ; can be light or dark.
 
 (defvar my-monospace-font "Overpass Mono")      ; Font to use for code
 (defvar my-variablespace-font "Carlito")             ; Font to use for writing
