@@ -1,8 +1,7 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; (package! boon)
-(package! boon :recipe (:host github :repo "jacmoe/boon"))
+(package! boon)
 
 (package! ctrlf)
 
