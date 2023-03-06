@@ -183,24 +183,24 @@
 ;; Global keybindings                                                               ;;
 ;;                                                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(map! "C-c h w" #'org-tracktable-status)
-(map! "C-c h W" #'org-tracktable-write)
-(map! "C-c h g" #'grab-x-link)
-(map! "C-c h e" #'last-edit)
-(map! "C-c h s" #'prot/scroll-center-cursor-mode)
-(map! "C-c h t" #'toggle-transparency)
-(map! "C-c h b" #'org-pomodoro)
+(map! :desc "Show TrackTable status" "C-c h w" #'org-tracktable-status)
+(map! :desc "Write to TrackTable" "C-c h W" #'org-tracktable-write)
+(map! :desc "Grab link from browser" "C-c h g" #'grab-x-link)
+(map! :desc "Go to last edit" "C-c h e" #'last-edit)
+(map! :desc "Center cursor mode" "C-c h s" #'prot/scroll-center-cursor-mode)
+(map! :desc "Toggle transparency" "C-c h t" #'toggle-transparency)
+(map! :desc "Start Pomodoro" "C-c h b" #'org-pomodoro)
 
-(map! "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
-(map! "C-<f9>" #'hide-mode-line-mode)             ; Toggle mode-line
-(map!"C-<down>" #'enlarge-window)
-(map!"C-<up>" #'shrink-window)
-(map!"C-<left>" #'enlarge-window-horizontally)
-(map!"C-<right>" #'shrink-window-horizontally)
+(map! :desc "Look up word in dictionary" "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
+(map! :desc "Toggle mode-line" "C-<f9>" #'hide-mode-line-mode)             ; Toggle mode-line
+(map! :desc "Enlarge window" "C-<down>" #'enlarge-window)
+(map! :desc "Shrink window" "C-<up>" #'shrink-window)
+(map! :desc "Enlarge window horizontally" "C-<left>" #'enlarge-window-horizontally)
+(map! :desc "Shrink window horizontally" "C-<right>" #'shrink-window-horizontally)
 ;; (map! "C-d" #'diff-buffer-with-file)             ; view what is modified
-(map! "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
-(map! "C-c t d" #'switch-theme)                  ; switch theme light/dark
-(map! "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
+(map! :desc "Toggle mode-line" "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
+(map! :desc "Toggle light/dark theme" "C-c t d" #'switch-theme)                  ; switch theme light/dark
+(map! :desc "Capture to this buffer" "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
 (map! "M-1" (lambda() (interactive) (org-shifttab 1)))
 (map! "M-2" (lambda() (interactive) (org-shifttab 2)))
 (map! "M-3" (lambda() (interactive) (org-shifttab 3)))
