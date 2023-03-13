@@ -29,7 +29,7 @@
 (defvar my-theme-shade "dark")                       ; can be light or dark.
 
 (defvar my-monospace-font "Overpass Mono")      ; Font to use for code
-(defvar my-variablespace-font "Carlito")             ; Font to use for writing ;Carlito;Alegreya
+(defvar my-variablespace-font "Overpass")             ; Font to use for writing ;Carlito;Alegreya
 (defvar my-monospace-font-size 26)
 (defvar my-variablespace-font-size 36)
 
