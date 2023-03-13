@@ -14,6 +14,20 @@ For a very detailed walk-through of what this configuration provides, see
 
 /The walk-through is currently a work in progress. This notice will be removed once it gets finished./
 
+** Design Decisions
+*** Boon instead of EVIL
+Boon is much more ergonomic than EVIL-mode (Emacs VI Emulation Layer), especially for people (like me) who are not a former VIM-user.
+
+This configuration uses the ~boon-qwerty-hjkl~ or the ~boon-colemak-hnei~ layout for Boon, making it intuitive to use when you’re used to the VIM navigation keys.
+
+Boon allows us to, unlike EVIL, use the regular Emacs keyboard commands, which is great.
+
+*** No Workspaces
+This configuration is designed to be playing nice with running Emacs in a server / client setup.
+*** Olivetti instead of Zen-mode (Writeroom)
+*** Vale instead of Lang checker
+*** Flyspell turned off
+
 ** Prerequisites
 
 First, make sure that you have at least Emacs 28.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
