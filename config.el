@@ -309,9 +309,10 @@
            #'visual-line-mode
            #'solaire-mode
            #'typopunct-mode
+           #'variable-pitch-mode
            #'flymake-vale-load
-           #'mixed-pitch-mode
            #'solaire-mode)
+;;           #'mixed-pitch-mode
 
 (add-hook! 'mixed-pitch-mode-hook #'solaire-mode-reset)
 
@@ -1016,6 +1017,19 @@
         (text-scale-decrease 2))))
   :bind
   (("<f9>" . distraction-free)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Gemini-write                                                                     ;;
+;;                                                                                  ;;
+;; https://alexschroeder.ch/cgit/gemini-write                                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Distraction-free screen
+(use-package! gemini-write
+  :after elpher
+  :init
+  (gemini-write-mode))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

@@ -68,3 +68,7 @@
 (package! poet-theme)
 
 (package! mixed-pitch)
+
+(package! elpher)
+
+(package! gemini-write)
