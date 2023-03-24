@@ -23,10 +23,19 @@ This configuration uses the ~boon-qwerty-hjkl~ or the ~boon-colemak-hnei~ layout
 Boon allows us to, unlike EVIL, use the regular Emacs keyboard commands, which is great.
 
 *** No Workspaces
-This configuration is designed to be playing nice with running Emacs in a server / client setup.
+This configuration is designed to be playing nice with running Emacs in a server / client setup, and workspaces does not work correctly when Emacs is run as a client.
+
+Recently opened files, and the fact that the session continues between each Emacs client, I don’t miss workspaces.
+
 *** Olivetti instead of Zen-mode (Writeroom)
+Writeroom is very heavy-handed, and it interfered with variable-width fonts, so I switched to Olivetti-mode which is more light-weight and doesn’t mess with font rendering.
+
 *** Vale instead of Lang checker
+The Doom-Emacs Lang checker relies on a third-party Java-application server which communicates with a commercial service. The few times I could get it to work, I was not impressed.
+
+Vale, on the other hand, is a binary file that you download to your machine, is run locally, and can be configured in detail on a per project basis. Depending on how many “styles” you download, it is also much more useful than Lang-server. And it can be toggled on and off at will.
 *** Flyspell turned off
+I haven’t found a way to configure/tell Flyspell to not hi-jack the ~C-;~ key combo that I rely on for switching to command mode in Boon (as an alternative to ~Esc~), and I also think that red squiggly lines are too intrusive, considering that a spellcheck is just a ~F12~ key press away. Flycheck is better, IMO, because it does not insist on reserving the ~C-;~ key combo, and because it can be easily toggled.
 
 ** Prerequisites
 
