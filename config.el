@@ -1024,12 +1024,10 @@
 ;;                                                                                  ;;
 ;; https://alexschroeder.ch/cgit/gemini-write                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Distraction-free screen
 (use-package! gemini-write
   :after elpher
   :init
   (gemini-write-mode))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
