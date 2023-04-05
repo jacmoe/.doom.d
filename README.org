@@ -135,7 +135,7 @@ sudo pacman -S texlive-bibtexextra texlive-latexextra
 #+end_src
 
 *** Fonts
-This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpass Mono]] font for code, and the [[https://www.1001fonts.com/carlito-font.html][Carlito]] font for writing. Install both on your system so that Emacs can use them.
+This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpass]] font. Mono for code, and the regular font for writing. Install both (~Overpass Mono~ and ~Overpass~) on your system so that Emacs can use them.
 
 For Unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/segoe-ui-emoji][Segoe UI Emoji]]
 
