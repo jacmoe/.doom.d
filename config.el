@@ -502,7 +502,7 @@
           (let* ((this-file buffer-file-name)
                  (org-capture-templates
                   `(("n" "Note" entry (file+headline ,this-file "Captured")
-                     "** %?\n%t\n %a"))))
+                     "** %?\n"))))
             (org-capture nil "n")))))
 
 (defun jethro/org-capture-slipbox ()
@@ -1016,7 +1016,7 @@
         (olivetti-mode 0)
         (text-scale-decrease 2))))
   :bind
-  (("<f9>" . distraction-free)))
+  (("<f9>" . olivetti-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
