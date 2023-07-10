@@ -665,6 +665,7 @@
 (use-package! ispell
   :defer t
   :config
+  (setq ispell-program-name "aspell")
   (setq ispell-dictionary "en")
   (setq ispell-personal-dictionary my-personal-dictionary)
   (add-to-list 'ispell-skip-region-alist '(org-property-drawer-re))
