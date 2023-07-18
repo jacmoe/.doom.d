@@ -49,6 +49,7 @@
 (setq annotate-file (concat my-storage-directory "annotations"))
 (setq bib-file (concat my-storage-directory "jacmoe.bib"))
 (defvar my-journal-directory (concat my-storage-directory "journal/"))
+(defvar org-heatmap-db-location (concat my-storage-directory "org-heatmap.db"))
 
 ;; Org Directories
 (setq +org-roam-auto-backlinks-buffer t
@@ -270,6 +271,7 @@
 ;; Citar
 ;; Ox-Hugo
 ;; Org-journal
+;; Org-heatmap
 ;; Annotate
 ;; ISpell
 ;; Abbrev
@@ -323,8 +325,9 @@
   (setq org-habit-following-days 7
         org-habit-preceding-days 35
         org-habit-show-habits-only-for-today nil
+        org-habit-graph-column 1
         org-habit-show-habits t))
-  
+
 (use-package! org-super-agenda
   :after org-agenda
   :init
@@ -642,6 +645,19 @@
         org-journal-file-type 'monthly
         org-extend-today-until my-day-end
         org-journal-date-format "%A, %d %B %Y"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;; Org-heatmap                                                                      ;;
+;;                                                                                  ;;
+;; https://github.com/Elilif/org-heatmap                                            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! org-heatmap
+  :defer t
+  :after org
+  :config
+  (org-heatmap-mode)
+ )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
