@@ -325,9 +325,9 @@
   (setq org-habit-following-days 7
         org-habit-preceding-days 35
         org-habit-show-habits-only-for-today nil
-        org-habit-graph-column 1)
-        org-habit-show-habits t)
-  
+        org-habit-graph-column 1
+        org-habit-show-habits t))
+
 (use-package! org-super-agenda
   :after org-agenda
   :init
