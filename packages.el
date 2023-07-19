@@ -63,7 +63,7 @@
 
 (package! olivetti)
 
-(package! org-habit-stats)
+;; (package! org-habit-stats)
 
 (package! poet-theme)
 

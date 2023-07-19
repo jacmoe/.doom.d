@@ -600,10 +600,10 @@
 ;;                                                                                  ;;
 ;; https://github.com/ml729/org-habit-stats/                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! org-habit-stats
-:after org
-:init
-(add-hook 'org-after-todo-state-change-hook 'org-habit-stats-update-properties))
+;; (use-package! org-habit-stats
+;; :after org
+;; :init
+;; (add-hook 'org-after-todo-state-change-hook 'org-habit-stats-update-properties))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
