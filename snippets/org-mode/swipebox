@@ -1,0 +1,5 @@
+# name: swipebox
+# key: swipebox
+# --
+#+hugo: {{< swipebox image="$1" ext="${2:png}" rel="$3" title="$4">}}
+$0

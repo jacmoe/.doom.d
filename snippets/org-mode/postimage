@@ -1,0 +1,8 @@
+# name: postimage
+# key: postimage
+# --
+#+attr_shortcode: :image $1 :alt $2
+#+begin_postmedia
+$0
+#+end_postmedia
+

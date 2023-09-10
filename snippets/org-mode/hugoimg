@@ -1,6 +1,5 @@
 # name: hugoimg
 # key: hugoimg
 # --
-#+attr_html: :alt $1 :title $2 :width 100%
-[[/images/$4]]
+#+hugo: {{< figure src="/images/$1" alt="$2">}}
 $0
