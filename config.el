@@ -146,7 +146,8 @@
 
 ;; Fonts - ordinary and variable pitch
 (setq doom-font (font-spec :family my-monospace-font :size my-monospace-font-size :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family my-variablespace-font :size my-variablespace-font-size))
+      doom-variable-pitch-font (font-spec :family my-variablespace-font :size my-variablespace-font-size)
+      doom-big-font (font-spec :family my-monospace-font :size (+ my-monospace-font-size 2) :weight 'semi-light))
 
 ;; Theme
 (setq doom-theme my-main-theme)
@@ -1024,16 +1025,13 @@
     (interactive)
     (if (equal olivetti-mode nil)
         (progn
-          (window-configuration-to-register 1)
-          (delete-other-windows)
-          (text-scale-increase 2)
+          (text-scale-increase 1)
           (olivetti-mode t))
       (progn
-        (jump-to-register 1)
         (olivetti-mode 0)
-        (text-scale-decrease 2))))
+        (text-scale-decrease 1))))
   :bind
-  (("<f9>" . olivetti-mode)))
+  (("<f9>" . distraction-free)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
