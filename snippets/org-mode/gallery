@@ -1,0 +1,7 @@
+# name: gallery
+# key: gallery
+# --
+#+attr_shortcode: :gallery_dir $1
+#+begin_gallery
+$0
+#+end_gallery
