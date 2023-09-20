@@ -119,22 +119,22 @@
 (setq +doom-dashboard-menu-sections
   '(
     ("View open buffers"
-    :icon (all-the-icons-octicon "file-text" :face 'doom-dashboard-menu-title)
+    :icon (nerd-icons-octicon "nf-oct-stack" :face 'doom-dashboard-menu-title)
     :action ibuffer)
     ("Jump to bookmark"
-    :icon (all-the-icons-octicon "bookmark" :face 'doom-dashboard-menu-title)
+    :icon (nerd-icons-octicon "nf-oct-bookmark_fill" :face 'doom-dashboard-menu-title)
     :action bookmark-jump)
     ("Recently opened files"
-    :icon (all-the-icons-octicon "file-text" :face 'doom-dashboard-menu-title)
+    :icon (nerd-icons-octicon "nf-oct-file_directory_fill" :face 'doom-dashboard-menu-title)
     :action recentf-open-files)
     ("Org-journal"
-    :icon (all-the-icons-octicon "book" :face 'doom-dashboard-menu-title)
+    :icon (nerd-icons-octicon "nf-oct-book" :face 'doom-dashboard-menu-title)
     :action org-journal-new-entry)
     ("Org-roam"
-    :icon (all-the-icons-octicon "book" :face 'doom-dashboard-menu-title)
+    :icon (nerd-icons-octicon "nf-oct-book" :face 'doom-dashboard-menu-title)
     :action org-roam-node-find)
     ("Open private configuration"
-    :icon (all-the-icons-octicon "tools" :face 'doom-dashboard-menu-title)
+    :icon (nerd-icons-octicon "nf-oct-tools" :face 'doom-dashboard-menu-title)
     :when (file-directory-p doom-private-dir)
     :action doom/open-private-config)))
 
