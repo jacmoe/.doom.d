@@ -628,9 +628,9 @@
 ;; https://ox-hugo.scripter.co/                                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org exporter backend that exports Org to Hugo-compatible Markdown
-(after! ox-hugo
-  (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography"))
-  
+;; (after! ox-hugo
+;;   (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography"))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
