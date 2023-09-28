@@ -77,3 +77,5 @@
 (package! gemini-write)
 
 (package! org-heatmap :recipe (:host github :repo "Elilif/org-heatmap"))
+
+(package! sandcastle-theme :recipe (:host github :repo "habamax/sandcastle-theme"))
