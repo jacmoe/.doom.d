@@ -106,6 +106,7 @@
 (setq undo-fu-session-linear t)                        ; tell Undo-fu to only store linear history, not the full history
 (map! "C-;" nil)                                       ; Don't steal my C-; !
 (setq emojify-download-emojis-p t)                     ; Force Doom-Emacs to download emojis without asking
+(setq flycheck-emacs-lisp-load-path 'inherit)          ; Flycheck fix
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
