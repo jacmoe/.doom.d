@@ -43,7 +43,7 @@
 #+HTML_HEAD: body {
 #+HTML_HEAD:     padding:  20px;
 #+HTML_HEAD:     font-family:  Menlo, Monaco, monospace;
-#+HTML_HEAD:     font-size:  14px;
+#+HTML_HEAD:     font-size:  16px;
 #+HTML_HEAD:     line-height:  1.5;
 #+HTML_HEAD:     color:  #666;
 #+HTML_HEAD:     background-color:  #fff;
@@ -54,7 +54,7 @@
 #+HTML_HEAD: h1, h2, h3 {
 #+HTML_HEAD:     position:  relative;
 #+HTML_HEAD:     margin:  30px 0 20px;
-#+HTML_HEAD:     font-size:  18px;
+#+HTML_HEAD:     font-size:  20px;
 #+HTML_HEAD:     font-weight:  bold;
 #+HTML_HEAD:     line-height:  1.1;
 #+HTML_HEAD:     color:  #111;
@@ -372,7 +372,7 @@
 #+HTML_HEAD:     /* Increase body padding and font-sizes */
 #+HTML_HEAD:     body {
 #+HTML_HEAD:         padding:  30px;
-#+HTML_HEAD:         font-size:  18px;
+#+HTML_HEAD:         font-size:  20px;
 #+HTML_HEAD:         line-height:  1.75;
 #+HTML_HEAD:     }
 #+HTML_HEAD:     h1:before, h2:before, h3:before {
