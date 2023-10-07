@@ -50,8 +50,6 @@
 
 (package! mastodon)
 
-(package! flymake-vale :recipe (:host github :repo "tpeacock19/flymake-vale"))
-
 (package! define-word)
 
 (package! mermaid-mode)
@@ -79,3 +77,5 @@
 (package! org-heatmap :recipe (:host github :repo "Elilif/org-heatmap"))
 
 (package! sandcastle-theme :recipe (:host github :repo "habamax/sandcastle-theme"))
+
+(package! flycheck-org-vale :recipe (:host github :repo "grettke/flycheck-org-vale"))

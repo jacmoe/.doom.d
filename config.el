@@ -297,7 +297,7 @@
 ;; Boon
 ;; CtrlF
 ;; Transparency
-;; Flymake-vale
+;; Flycheck-org-vale
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Browse-kill-ring
@@ -326,14 +326,8 @@
 
 (add-hook! org-mode :append
            #'visual-line-mode
-           #'solaire-mode
            #'typopunct-mode
-           #'variable-pitch-mode
-           #'flymake-vale-load
            #'solaire-mode)
-;;           #'mixed-pitch-mode
-
-(add-hook! 'mixed-pitch-mode-hook #'solaire-mode-reset)
 
 ;; Org-habit
 (use-package! org-habit
@@ -815,11 +809,12 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;; Flymake-vale                                                                     ;;
+;; Flycheck-org-vale                                                                ;;
 ;;                                                                                  ;;
-;; https://github.com/tpeacock19/flymake-vale                                       ;;
+;; https://github.com/grettke/flycheck-org-vale                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! flymake-vale)
+(use-package! flycheck-org-vale)
+(setq flycheck-org-vale-executable "/home/moena/bin/vale")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
