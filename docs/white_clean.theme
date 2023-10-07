@@ -177,7 +177,7 @@
 #+HTML_HEAD: /* body */
 #+HTML_HEAD: body {
 #+HTML_HEAD:     margin:  0 auto;
-#+HTML_HEAD:     max-width:  770px;
+#+HTML_HEAD:     max-width:  1270px;
 #+HTML_HEAD: }
 #+HTML_HEAD: /* head */
 #+HTML_HEAD: .masthead {
@@ -368,7 +368,7 @@
 #+HTML_HEAD: /* Responsive
 #+HTML_HEAD:    -------------------------------------------------- */
 #+HTML_HEAD: 
-#+HTML_HEAD: @media (min-width:  768px) {
+#+HTML_HEAD: @media (min-width:  1268px) {
 #+HTML_HEAD:     /* Increase body padding and font-sizes */
 #+HTML_HEAD:     body {
 #+HTML_HEAD:         padding:  30px;
