@@ -64,6 +64,7 @@
                              
 (defvar my-notmuch-address-command "/home/moena/notmuch-addrlookup-c/notmuch-addrlookup")
 (defvar my-puppeteer-config-file "/home/moena/puppeteerConfigFile.json")
+(defvar my-flycheck-org-vale-executable "/home/moena/bin/vale")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -814,7 +815,7 @@
 ;; https://github.com/grettke/flycheck-org-vale                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! flycheck-org-vale)
-(setq flycheck-org-vale-executable "/home/moena/bin/vale")
+(setq flycheck-org-vale-executable my-flycheck-org-vale-executable)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
