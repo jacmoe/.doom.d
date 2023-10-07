@@ -159,8 +159,22 @@
   '(doom-modeline-buffer-modified :foreground "orange"))
 
 ;; Make the Doom modeline occupy a more comfortable amount of space
-(setq doom-modeline-height 45)
+(setq doom-modeline-height 35)
+(setq doom-modeline-bar-width 4)
+(custom-set-faces
+  '(mode-line ((t (:family "Noto Sans" :height 0.9))))
+  '(mode-line-active ((t (:family "Noto Sans" :height 0.9)))) ; For 29+
+  '(mode-line-inactive ((t (:family "Noto Sans" :height 0.9)))))
+(after! doom-modeline
+;;   (doom-modeline-def-modeline 'main
+;;     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+;;     '(misc-info minor-modes checker input-method buffer-encoding major-mode vcs "  "))) ; <-- added padding here
+  (doom-modeline-def-modeline 'main
+    '(eldoc bar workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
+    '(compilation objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode vcs checker time "   ")))
 
+;; Remove annoying system load number after time
+(setq display-time-default-load-average nil)
 ;; Because Emacs do not render italics at all when markup is hidden force it to render it differently
 (custom-set-faces!
   '(italic :slant oblique :foreground "teal"))
