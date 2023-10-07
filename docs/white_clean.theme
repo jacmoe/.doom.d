@@ -1,0 +1,405 @@
+#+OPTIONS: org-html-head-include-default-style:nil
+
+#+HTML_HEAD:  <style type="text/css">
+
+#+HTML_HEAD:/******************************************************
+#+HTML_HEAD: * I copied these styles from markdotto.com, who is
+#+HTML_HEAD: * the creator of bootstrap, and I also did some
+#+HTML_HEAD: * modification. Thanks Mark for the beautiful theme,
+#+HTML_HEAD: * so I reserved the @mdo sign below.
+#+HTML_HEAD: *****************************************************/
+#+HTML_HEAD:
+#+HTML_HEAD:/*
+#+HTML_HEAD:  __
+#+HTML_HEAD:  __                  /\ \
+#+HTML_HEAD:  /'_`\_    ___ ___    \_\ \    ___
+#+HTML_HEAD:  /'/'_` \ /' __` __`\  /'_` \  / __`\
+#+HTML_HEAD:  /\ \ \L\ \/\ \/\ \/\ \/\ \L\ \/\ \L\ \
+#+HTML_HEAD:  \ \ `\__,_\ \_\ \_\ \_\ \___,_\ \____/
+#+HTML_HEAD:  \ `\_____\\/_/\/_/\/_/\/__,_ /\/___/
+#+HTML_HEAD:  `\/_____/
+#+HTML_HEAD:
+#+HTML_HEAD:*/
+#+HTML_HEAD:
+#+HTML_HEAD:
+#+HTML_HEAD:
+#+HTML_HEAD:/* Body resets
+#+HTML_HEAD:   -------------------------------------------------- */
+
+
+#+HTML_HEAD: 
+#+HTML_HEAD: * {
+#+HTML_HEAD:     -webkit-box-sizing:  border-box;
+#+HTML_HEAD:        -moz-box-sizing:  border-box;
+#+HTML_HEAD:             box-sizing:  border-box;
+#+HTML_HEAD: }
+#+HTML_HEAD: html, body {
+#+HTML_HEAD:     margin:  0;
+#+HTML_HEAD:     padding:  0;
+#+HTML_HEAD: }
+#+HTML_HEAD: html {
+#+HTML_HEAD:     font-size:  62.5%;
+#+HTML_HEAD: }
+#+HTML_HEAD: body {
+#+HTML_HEAD:     padding:  20px;
+#+HTML_HEAD:     font-family:  Menlo, Monaco, monospace;
+#+HTML_HEAD:     font-size:  14px;
+#+HTML_HEAD:     line-height:  1.5;
+#+HTML_HEAD:     color:  #666;
+#+HTML_HEAD:     background-color:  #fff;
+#+HTML_HEAD: }
+#+HTML_HEAD: p {
+#+HTML_HEAD:     margin:  0 0 20px;
+#+HTML_HEAD: }
+#+HTML_HEAD: h1, h2, h3 {
+#+HTML_HEAD:     position:  relative;
+#+HTML_HEAD:     margin:  30px 0 20px;
+#+HTML_HEAD:     font-size:  18px;
+#+HTML_HEAD:     font-weight:  bold;
+#+HTML_HEAD:     line-height:  1.1;
+#+HTML_HEAD:     color:  #111;
+#+HTML_HEAD:     text-rendering:  optimizeLegibility;
+#+HTML_HEAD: }
+#+HTML_HEAD: h1:before, h2:before, h3:before {
+#+HTML_HEAD:     position:  absolute;
+#+HTML_HEAD:     top:  auto;
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD:     display:  none;
+#+HTML_HEAD: }
+#+HTML_HEAD: h1:before {
+#+HTML_HEAD:     content:  "";
+#+HTML_HEAD:     left:  -1.25em;
+#+HTML_HEAD: }
+#+HTML_HEAD: h2:before {
+#+HTML_HEAD:     content:  "*";
+#+HTML_HEAD:     left:  -2em;
+#+HTML_HEAD: }
+#+HTML_HEAD: h3:before {
+#+HTML_HEAD:     content:  "**";
+#+HTML_HEAD:     left:  -2.5em;
+#+HTML_HEAD: }
+#+HTML_HEAD: i, em, b, strong {
+#+HTML_HEAD:     padding-left:  .1em;
+#+HTML_HEAD:     padding-right:  .1em;
+#+HTML_HEAD: }
+#+HTML_HEAD: b, strong {
+#+HTML_HEAD:     font-weight:  bold;
+#+HTML_HEAD:     color:  #333;
+#+HTML_HEAD: }
+#+HTML_HEAD: b:before, b: after, strong:before, strong: after {
+#+HTML_HEAD:     content:  "*";
+#+HTML_HEAD: }
+#+HTML_HEAD: i:before, i: after, em:before, em: after {
+#+HTML_HEAD:     content:  "/";
+#+HTML_HEAD: }
+#+HTML_HEAD: hr {
+#+HTML_HEAD:     margin:  0;
+#+HTML_HEAD:     border:  0;
+#+HTML_HEAD: }
+#+HTML_HEAD: hr: after {
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     margin:  20px 0;
+#+HTML_HEAD:     content:  "----------------------------------------------------------------";
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: ul, ol {
+#+HTML_HEAD:     padding:  0;
+#+HTML_HEAD:     margin:  0 0 20px;
+#+HTML_HEAD: }
+#+HTML_HEAD: code, pre {
+#+HTML_HEAD:     font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
+#+HTML_HEAD: }
+#+HTML_HEAD: code {
+#+HTML_HEAD:     color:  #d14;
+#+HTML_HEAD: }
+#+HTML_HEAD: code:before, code: after {
+#+HTML_HEAD:     content:  "=";
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: pre {
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     margin:  0 0 14px;
+#+HTML_HEAD:     padding:  15px;
+#+HTML_HEAD:     border-radius:  3px 3px 3px 3px;
+#+HTML_HEAD:     font-size:  18px;
+#+HTML_HEAD:     line-height:  28px;
+#+HTML_HEAD:     background-color:  #f5f5f5;
+#+HTML_HEAD:     white-space:  pre;
+#+HTML_HEAD:     white-space:  pre-wrap;
+#+HTML_HEAD:     word-break:  break-all;
+#+HTML_HEAD:     word-wrap:  break-word;
+#+HTML_HEAD: }
+#+HTML_HEAD: blockquote {
+#+HTML_HEAD:     padding:  0 0 0 20px;
+#+HTML_HEAD:     margin:  0 30px 20px -22.5px;
+#+HTML_HEAD:     color:  #999;
+#+HTML_HEAD:     border-left:  8px solid #e5e5e5;
+#+HTML_HEAD: }
+#+HTML_HEAD: blockquote p: last-child {
+#+HTML_HEAD:     margin-bottom:  0;
+#+HTML_HEAD: }
+#+HTML_HEAD: img {
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     margin:  0;
+#+HTML_HEAD:     border-radius:  5px;
+#+HTML_HEAD: }
+#+HTML_HEAD: a {
+#+HTML_HEAD:     font-weight:  inherit;
+#+HTML_HEAD:     line-height:  inherit;
+#+HTML_HEAD:     color:  #000;
+#+HTML_HEAD:     text-decoration:  none;
+#+HTML_HEAD: }
+#+HTML_HEAD: sup a:before {
+#+HTML_HEAD:     content:  "[";
+#+HTML_HEAD: }
+#+HTML_HEAD: sup a: after {
+#+HTML_HEAD:     content:  "]";
+#+HTML_HEAD: }
+#+HTML_HEAD: a: hover {
+#+HTML_HEAD:     text-decoration:  underline;
+#+HTML_HEAD: }
+#+HTML_HEAD: table {
+#+HTML_HEAD:     line-height:  2.5;
+#+HTML_HEAD:     margin-bottom:  15px;
+#+HTML_HEAD:     max-width:  100%;
+#+HTML_HEAD:     width:  100%;
+#+HTML_HEAD: }
+#+HTML_HEAD: table td, table th {
+#+HTML_HEAD:     padding:  0 15px;
+#+HTML_HEAD: }
+#+HTML_HEAD: table th.left, table td.left {
+#+HTML_HEAD:     text-align:  left;
+#+HTML_HEAD: }
+#+HTML_HEAD: table th.right, table td.right {
+#+HTML_HEAD:     text-align:  right;
+#+HTML_HEAD: }
+#+HTML_HEAD: /******************************************************/
+#+HTML_HEAD: /* body */
+#+HTML_HEAD: body {
+#+HTML_HEAD:     margin:  0 auto;
+#+HTML_HEAD:     max-width:  770px;
+#+HTML_HEAD: }
+#+HTML_HEAD: /* head */
+#+HTML_HEAD: .masthead {
+#+HTML_HEAD:     color:  #888;
+#+HTML_HEAD: }
+#+HTML_HEAD: .masthead: after {
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     content:  '----------------------------------------------------------------';
+#+HTML_HEAD:     margin:  10px 0;
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: .masthead a {
+#+HTML_HEAD:     color:  #333;
+#+HTML_HEAD: }
+#+HTML_HEAD: .masthead ul {
+#+HTML_HEAD:     list-style:  none;
+#+HTML_HEAD: }
+#+HTML_HEAD: .masthead li {
+#+HTML_HEAD:     display:  inline-block;
+#+HTML_HEAD: }
+#+HTML_HEAD: .masthead li + li:before {
+#+HTML_HEAD:     display:  inline-block;
+#+HTML_HEAD:     content:  "\00B7 \00a0";
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: /* searchform*/
+#+HTML_HEAD: #searchform {
+#+HTML_HEAD:     position:  absolute;
+#+HTML_HEAD:     top:  54px;
+#+HTML_HEAD:     right:  30.4%;
+#+HTML_HEAD: }
+#+HTML_HEAD: #searchform #s {
+#+HTML_HEAD:     background:  url("/media/img/search.png") no-repeat 5px 6px;
+#+HTML_HEAD:     box-shadow:  inset 0 1px 1px rgba(0,0,0,0.1);
+#+HTML_HEAD:     border:  1px solid #ddd;
+#+HTML_HEAD:     border-radius:  2px;
+#+HTML_HEAD:     -moz-border-radius:  2px;
+#+HTML_HEAD:     width:  90px;
+#+HTML_HEAD:     height:  30px;
+#+HTML_HEAD:     line-height:  12px;
+#+HTML_HEAD:     padding:  4px 10px 4px 28px;
+#+HTML_HEAD: 
+#+HTML_HEAD:     -webkit-transition-duration:  400ms;
+#+HTML_HEAD:     -webkit-transition-property:  width, background;
+#+HTML_HEAD:     -webkit-transition-timing-function:  ease;
+#+HTML_HEAD:     -moz-transition-duration:  400ms;
+#+HTML_HEAD:     -moz-transition-property:  width, background;
+#+HTML_HEAD:     -moz-transition-timing-function:  ease;
+#+HTML_HEAD:     -o-transition-duration:  400ms;
+#+HTML_HEAD:     -o-transition-property:  width, background;
+#+HTML_HEAD:     -o-transition-timing-function:  ease;
+#+HTML_HEAD: }
+#+HTML_HEAD: #searchform #s: focus {
+#+HTML_HEAD:     background-color:  #f9f9f9;
+#+HTML_HEAD:     width:  160px;
+#+HTML_HEAD: }
+#+HTML_HEAD: .masthead img.avatar {
+#+HTML_HEAD:     position:  relative;
+#+HTML_HEAD:     float:  right;
+#+HTML_HEAD:     margin-top:  -100px;
+#+HTML_HEAD:     margin-bottom:  -100%;
+#+HTML_HEAD:     margin-right:  10%;
+#+HTML_HEAD:     width:  200px;
+#+HTML_HEAD:     background-color:  #fff;
+#+HTML_HEAD: }
+#+HTML_HEAD: /* post */
+#+HTML_HEAD: .post {
+#+HTML_HEAD:     position:  relative;
+#+HTML_HEAD: }
+#+HTML_HEAD: .post: after {
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     content:  "----------------------------------------------------------------";
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: .post img {
+#+HTML_HEAD:     max-width:  100%;
+#+HTML_HEAD: }
+#+HTML_HEAD: .post li {
+#+HTML_HEAD:     list-style:  none outside none;
+#+HTML_HEAD: }
+#+HTML_HEAD: .post ul > li:before {
+#+HTML_HEAD:     content:  "- ";
+#+HTML_HEAD:     margin-left:  -1.25em;
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: .post ol {
+#+HTML_HEAD:     counter-reset:  o-list;
+#+HTML_HEAD: }
+#+HTML_HEAD: .post ol > li:before {
+#+HTML_HEAD:     content:  counter(o-list) ") ";
+#+HTML_HEAD:     counter-increment:  o-list;
+#+HTML_HEAD:     margin-left:  -1.85em;
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* special for li in pre */
+#+HTML_HEAD: .post pre li {
+#+HTML_HEAD:     list-style-type:  decimal;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: .post pre li:before {
+#+HTML_HEAD:     display:  none;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* meta info */
+#+HTML_HEAD: .post-info {
+#+HTML_HEAD:     display:  inline-block;
+#+HTML_HEAD:     margin:  -10px 0 -10px;
+#+HTML_HEAD:     color:  #999;
+#+HTML_HEAD: }
+#+HTML_HEAD: .post-info + .post-info:before {
+#+HTML_HEAD:     content:  "\2223 \00a0";
+#+HTML_HEAD: }
+#+HTML_HEAD: .post-meta: after {
+#+HTML_HEAD:     content:  "----------------------------------------------------------------";
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     margin-top:  -1px;
+#+HTML_HEAD:     color:  #ccc;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* table of content */
+#+HTML_HEAD: #table-of-contents {
+#+HTML_HEAD:     position:  fixed;
+#+HTML_HEAD:     right:  0em;
+#+HTML_HEAD:     top:  0em;
+#+HTML_HEAD:     border: 1px solid #e1e1e8;
+#+HTML_HEAD:     -webkit-box-shadow:  0 0 1em #777777;
+#+HTML_HEAD:     -moz-box-shadow:  0 0 1em #777777;
+#+HTML_HEAD:     -webkit-border-bottom-left-radius:  5px;
+#+HTML_HEAD:     -moz-border-radius-bottomleft:  5px;
+#+HTML_HEAD:     text-align:  center;
+#+HTML_HEAD:     /* ensure doesn't flow off the screen when expanded */
+#+HTML_HEAD:     max-height:  80%;
+#+HTML_HEAD:     overflow:  auto;
+#+HTML_HEAD:     z-index:  200;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents h2 {
+#+HTML_HEAD:     max-width:  20em;
+#+HTML_HEAD:     font-weight:  normal;
+#+HTML_HEAD:     padding-left:  0.5em;
+#+HTML_HEAD:     padding-top:  0.05em;
+#+HTML_HEAD:     padding-bottom:  0.05em;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents ul {
+#+HTML_HEAD:     margin-left:  14pt;
+#+HTML_HEAD:     margin-bottom:  10pt;
+#+HTML_HEAD:     padding:  0
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents li {
+#+HTML_HEAD:     padding:  0;
+#+HTML_HEAD:     margin:  1px;
+#+HTML_HEAD:     list-style:  none;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents ul>: first-child {
+#+HTML_HEAD:     color:  blue;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents #text-table-of-contents {
+#+HTML_HEAD:     display:  none;
+#+HTML_HEAD:     text-align:  left;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents: hover #text-table-of-contents {
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     padding:  0.5em;
+#+HTML_HEAD:     margin-top:  -1.5em;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* footer */
+#+HTML_HEAD: .footer {
+#+HTML_HEAD:     margin:  80px 0 0;
+#+HTML_HEAD:     text-align:  center;
+#+HTML_HEAD:     font-size:  15px;
+#+HTML_HEAD:     color:  #999;
+#+HTML_HEAD: }
+#+HTML_HEAD: .footer > p {
+#+HTML_HEAD:     margin:  0;
+#+HTML_HEAD:     line-height:  1.5;
+#+HTML_HEAD: }
+#+HTML_HEAD: .footpara {
+#+HTML_HEAD:     display:  inline;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Responsive
+#+HTML_HEAD:    -------------------------------------------------- */
+#+HTML_HEAD: 
+#+HTML_HEAD: @media (min-width:  768px) {
+#+HTML_HEAD:     /* Increase body padding and font-sizes */
+#+HTML_HEAD:     body {
+#+HTML_HEAD:         padding:  30px;
+#+HTML_HEAD:         font-size:  18px;
+#+HTML_HEAD:         line-height:  1.75;
+#+HTML_HEAD:     }
+#+HTML_HEAD:     h1:before, h2:before, h3:before {
+#+HTML_HEAD:         display:  inline;
+#+HTML_HEAD:     }
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: @media (min-width:  1024px) {
+#+HTML_HEAD:     body {
+#+HTML_HEAD:         padding:  30px;
+#+HTML_HEAD:     }
+#+HTML_HEAD: }
+
+
+#+HTML_HEAD:  </style>
+
+#+HTML_HEAD:<script type="text/javascript">
+#+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
+#+HTML_HEAD:      document.getElementById("table-of-contents").onclick = function() {
+#+HTML_HEAD:          var elem = document.getElementById("text-table-of-contents");
+#+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
+#+HTML_HEAD:      }
+#+HTML_HEAD:  });
+#+HTML_HEAD:
+#+HTML_HEAD:  var url = document.location.href;
+#+HTML_HEAD:  var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
+#+HTML_HEAD:  function show_org_source(){
+#+HTML_HEAD:      document.location.href = orgsource;
+#+HTML_HEAD:  }
+#+HTML_HEAD:</script>

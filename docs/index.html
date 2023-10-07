@@ -3,18 +3,593 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-03-19 søn 19:07 -->
+<!-- 2023-10-07 Sat 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hotel California of Creative Writing</title>
 <meta name="author" content="Jacob Moena" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="readtheorg_theme/css/readtheorg.css"/>
-<script type="text/javascript" src="lib/js/jquery.min.js"></script>
-<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="readtheorg_theme/js/readtheorg.js"></script>
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+/******************************************************
+* I copied these styles from markdotto.com, who is
+* the creator of bootstrap, and I also did some
+* modification. Thanks Mark for the beautiful theme,
+* so I reserved the @mdo sign below.
+*****************************************************/
+
+/*
+__
+__                  /\ \
+/'_`\_    ___ ___    \_\ \    ___
+/'/'_` \ /' __` __`\  /'_` \  / __`\
+/\ \ \L\ \/\ \/\ \/\ \/\ \L\ \/\ \L\ \
+\ \ `\__,_\ \_\ \_\ \_\ \___,_\ \____/
+\ `\_____\\/_/\/_/\/_/\/__,_ /\/___/
+`\/_____/
+
+*/
+
+
+
+/* Body resets
+-------------------------------------------------- */
+
+* {
+-webkit-box-sizing:  border-box;
+-moz-box-sizing:  border-box;
+box-sizing:  border-box;
+}
+html, body {
+margin:  0;
+padding:  0;
+}
+html {
+font-size:  62.5%;
+}
+body {
+padding:  20px;
+font-family:  Menlo, Monaco, monospace;
+font-size:  14px;
+line-height:  1.5;
+color:  #666;
+background-color:  #fff;
+}
+p {
+margin:  0 0 20px;
+}
+h1, h2, h3 {
+position:  relative;
+margin:  30px 0 20px;
+font-size:  18px;
+font-weight:  bold;
+line-height:  1.1;
+color:  #111;
+text-rendering:  optimizeLegibility;
+}
+h1:before, h2:before, h3:before {
+position:  absolute;
+top:  auto;
+color:  #ccc;
+display:  none;
+}
+h1:before {
+content:  "";
+left:  -1.25em;
+}
+h2:before {
+content:  "*";
+left:  -2em;
+}
+h3:before {
+content:  "**";
+left:  -2.5em;
+}
+i, em, b, strong {
+padding-left:  .1em;
+padding-right:  .1em;
+}
+b, strong {
+font-weight:  bold;
+color:  #333;
+}
+b:before, b: after, strong:before, strong: after {
+content:  "*";
+}
+i:before, i: after, em:before, em: after {
+content:  "/";
+}
+hr {
+margin:  0;
+border:  0;
+}
+hr: after {
+display:  block;
+margin:  20px 0;
+content:  "----------------------------------------------------------------";
+color:  #ccc;
+}
+ul, ol {
+padding:  0;
+margin:  0 0 20px;
+}
+code, pre {
+font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+code {
+color:  #d14;
+}
+code:before, code: after {
+content:  "=";
+color:  #ccc;
+}
+pre {
+display:  block;
+margin:  0 0 14px;
+padding:  15px;
+border-radius:  3px 3px 3px 3px;
+font-size:  18px;
+line-height:  28px;
+background-color:  #f5f5f5;
+white-space:  pre;
+white-space:  pre-wrap;
+word-break:  break-all;
+word-wrap:  break-word;
+}
+blockquote {
+padding:  0 0 0 20px;
+margin:  0 30px 20px -22.5px;
+color:  #999;
+border-left:  8px solid #e5e5e5;
+}
+blockquote p: last-child {
+margin-bottom:  0;
+}
+img {
+display:  block;
+margin:  0;
+border-radius:  5px;
+}
+a {
+font-weight:  inherit;
+line-height:  inherit;
+color:  #000;
+text-decoration:  none;
+}
+sup a:before {
+content:  "[";
+}
+sup a: after {
+content:  "]";
+}
+a: hover {
+text-decoration:  underline;
+}
+table {
+line-height:  2.5;
+margin-bottom:  15px;
+max-width:  100%;
+width:  100%;
+}
+table td, table th {
+padding:  0 15px;
+}
+table th.left, table td.left {
+text-align:  left;
+}
+table th.right, table td.right {
+text-align:  right;
+}
+/******************************************************/
+/* body */
+body {
+margin:  0 auto;
+max-width:  770px;
+}
+/* head */
+.masthead {
+color:  #888;
+}
+.masthead: after {
+display:  block;
+content:  '----------------------------------------------------------------';
+margin:  10px 0;
+color:  #ccc;
+}
+.masthead a {
+color:  #333;
+}
+.masthead ul {
+list-style:  none;
+}
+.masthead li {
+display:  inline-block;
+}
+.masthead li + li:before {
+display:  inline-block;
+content:  "\00B7 \00a0";
+color:  #ccc;
+}
+/* searchform*/
+#searchform {
+position:  absolute;
+top:  54px;
+right:  30.4%;
+}
+#searchform #s {
+background:  url("/media/img/search.png") no-repeat 5px 6px;
+box-shadow:  inset 0 1px 1px rgba(0,0,0,0.1);
+border:  1px solid #ddd;
+border-radius:  2px;
+-moz-border-radius:  2px;
+width:  90px;
+height:  30px;
+line-height:  12px;
+padding:  4px 10px 4px 28px;
+
+-webkit-transition-duration:  400ms;
+-webkit-transition-property:  width, background;
+-webkit-transition-timing-function:  ease;
+-moz-transition-duration:  400ms;
+-moz-transition-property:  width, background;
+-moz-transition-timing-function:  ease;
+-o-transition-duration:  400ms;
+-o-transition-property:  width, background;
+-o-transition-timing-function:  ease;
+}
+#searchform #s: focus {
+background-color:  #f9f9f9;
+width:  160px;
+}
+.masthead img.avatar {
+position:  relative;
+float:  right;
+margin-top:  -100px;
+margin-bottom:  -100%;
+margin-right:  10%;
+width:  200px;
+background-color:  #fff;
+}
+/* post */
+.post {
+position:  relative;
+}
+.post: after {
+display:  block;
+content:  "----------------------------------------------------------------";
+color:  #ccc;
+}
+.post img {
+max-width:  100%;
+}
+.post li {
+list-style:  none outside none;
+}
+.post ul > li:before {
+content:  "- ";
+margin-left:  -1.25em;
+color:  #ccc;
+}
+.post ol {
+counter-reset:  o-list;
+}
+.post ol > li:before {
+content:  counter(o-list) ") ";
+counter-increment:  o-list;
+margin-left:  -1.85em;
+color:  #ccc;
+}
+
+/* special for li in pre */
+.post pre li {
+list-style-type:  decimal;
+}
+
+.post pre li:before {
+display:  none;
+}
+
+/* meta info */
+.post-info {
+display:  inline-block;
+margin:  -10px 0 -10px;
+color:  #999;
+}
+.post-info + .post-info:before {
+content:  "\2223 \00a0";
+}
+.post-meta: after {
+content:  "----------------------------------------------------------------";
+display:  block;
+margin-top:  -1px;
+color:  #ccc;
+}
+
+/* table of content */
+#table-of-contents {
+position:  fixed;
+right:  0em;
+top:  0em;
+border: 1px solid #e1e1e8;
+-webkit-box-shadow:  0 0 1em #777777;
+-moz-box-shadow:  0 0 1em #777777;
+-webkit-border-bottom-left-radius:  5px;
+-moz-border-radius-bottomleft:  5px;
+text-align:  center;
+/* ensure doesn't flow off the screen when expanded */
+max-height:  80%;
+overflow:  auto;
+z-index:  200;
+}
+
+#table-of-contents h2 {
+max-width:  20em;
+font-weight:  normal;
+padding-left:  0.5em;
+padding-top:  0.05em;
+padding-bottom:  0.05em;
+}
+
+#table-of-contents ul {
+margin-left:  14pt;
+margin-bottom:  10pt;
+padding:  0
+}
+
+#table-of-contents li {
+padding:  0;
+margin:  1px;
+list-style:  none;
+}
+
+#table-of-contents ul>: first-child {
+color:  blue;
+}
+
+#table-of-contents #text-table-of-contents {
+display:  none;
+text-align:  left;
+}
+
+#table-of-contents: hover #text-table-of-contents {
+display:  block;
+padding:  0.5em;
+margin-top:  -1.5em;
+}
+
+/* footer */
+.footer {
+margin:  80px 0 0;
+text-align:  center;
+font-size:  15px;
+color:  #999;
+}
+.footer > p {
+margin:  0;
+line-height:  1.5;
+}
+.footpara {
+display:  inline;
+}
+
+/* Responsive
+-------------------------------------------------- */
+
+@media (min-width:  768px) {
+/* Increase body padding and font-sizes */
+body {
+padding:  30px;
+font-size:  18px;
+line-height:  1.75;
+}
+h1:before, h2:before, h3:before {
+display:  inline;
+}
+}
+
+@media (min-width:  1024px) {
+body {
+padding:  30px;
+}
+}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',function() {
+document.getElementById("table-of-contents").onclick = function() {
+var elem = document.getElementById("text-table-of-contents");
+elem.style.display = elem.style.display == "block" ? "none" : "block";
+}
+});
+
+var url = document.location.href;
+var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
+function show_org_source(){
+document.location.href = orgsource;
+}
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -162,7 +737,7 @@ This is currently a work in progress
 <h2 id="introduction"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-introduction">
 
-<div id="org3946c80" class="figure">
+<div id="org01f94af" class="figure">
 <p><img src="images/hotel-california.png" alt="Emacs - my Hotel California" title="Emacs - my Hotel California" />
 </p>
 </div>
@@ -202,7 +777,7 @@ It is my hope that, after reading this article, that  you start thinking of it a
 I can make Emacs fit my workflow rather than the other way around.
 </p>
 
-<div id="org9c72dbe" class="figure">
+<div id="orgdbf6303" class="figure">
 <p><img src="images/hackerman1.jpg" alt="Hackerman" title="Hackerman" width="40%" />
 </p>
 </div>
@@ -296,7 +871,7 @@ If you feel that you need to have at least a menu-bar, then you can turn it on/o
 <h3 id="org-mode-introduction"><span class="section-number-3">3.1.</span> Introduction</h3>
 <div class="outline-text-3" id="text-org-mode-introduction">
 
-<div id="orgcdb073c" class="figure">
+<div id="org547b7b0" class="figure">
 <p><img src="images/org-mode-unicorn.svg" alt="Org-mode" class="org-svg" title="Org-mode" width="20%" />
 </p>
 </div>
@@ -476,11 +1051,10 @@ In addition to the standard markup, Org-mode has special blocks. Use <code>C-c C
 <img src="images/orgmode-blocks.png" alt="Special blocks" title="Special blocks" />
 For example, choosing “comment” as a block type will result in the following being inserted in the document:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">#+begin_comment
+<pre class="example">
+#+begin_comment
 #+end_comment
 </pre>
-</div>
 <p>
 The “verse” block is useful for when you want to have a piece of poetry and not have Emacs mess with the formatting.
 </p>
@@ -570,7 +1144,7 @@ Not all commands work as you would expect, however, so if we wanted to run <code
 Here’s how the keyboard layout looks like for Command mode using Boon:
 </p>
 
-<div id="org558ed5d" class="figure">
+<div id="org492d679" class="figure">
 <p><img src="images/keyboard-layout.png" alt="The Hotel California layout" title="The Hotel California layout" />
 </p>
 </div>
@@ -612,7 +1186,7 @@ The largest jumps are provided by <code>&lt;</code> and <code>&gt;</code> and wi
 For convenient navigation we can use <code>h</code> to jump (hop) to a character. For example, if we wanted to navigate to the word <i>”character”</i>, we could enter <code>h c</code> and all occurrences of <i>c</i> is highlighted:
 </p>
 
-<div id="org403c634" class="figure">
+<div id="org7bbf9b7" class="figure">
 <p><img src="images/boon-hop.png" alt="Hop to a character" title="Hop to a character" width="60%" />
 </p>
 </div>
@@ -682,7 +1256,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-define-word"><span class="section-number-3">5.1.</span> Define-word</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-define-word">
 
-<div id="org4c7ec7b" class="figure">
+<div id="orgfa62e39" class="figure">
 <p><img src="images/define-word.png" alt="Quick word definition" title="Quick word definition" />
 </p>
 </div>
@@ -692,7 +1266,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-dictionary-server"><span class="section-number-3">5.2.</span> Dictionary server</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-dictionary-server">
 
-<div id="org83f9008" class="figure">
+<div id="org70963d7" class="figure">
 <p><img src="images/dictionary.png" alt="Dictionary server lookup" title="Dictionary server lookup" />
 </p>
 </div>
@@ -702,7 +1276,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-webster"><span class="section-number-3">5.3.</span> Webster</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-webster">
 
-<div id="org1f91abf" class="figure">
+<div id="org22d8355" class="figure">
 <p><img src="images/webster.png" alt="Look up word in Merriam-Webster" title="Look up word in Merriam-Webster" />
 </p>
 </div>
@@ -712,12 +1286,12 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-powertheraurus"><span class="section-number-3">5.4.</span> Powerthesaurus</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-powertheraurus">
 
-<div id="orgac42d96" class="figure">
+<div id="org978c62e" class="figure">
 <p><img src="images/synonyms.png" alt="Synonym lookup" title="Synonym lookup" />
 </p>
 </div>
 
-<div id="org6c3a4dd" class="figure">
+<div id="orgc06d73e" class="figure">
 <p><img src="images/sentences.png" alt="Sentences lookup" title="Sentences lookup" />
 </p>
 </div>
@@ -727,7 +1301,7 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-prose-linting"><span class="section-number-3">5.5.</span> Prose linting</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-prose-linting">
 
-<div id="orgcf0584f" class="figure">
+<div id="orge029b02" class="figure">
 <p><img src="images/vale.png" alt="Prose linting with Vale" title="Prose linting with Vale" />
 </p>
 </div>
@@ -737,12 +1311,12 @@ Another typical character replacement is change of case. The <code>`</code> key 
 <h3 id="dictionaries-etc-mermaid"><span class="section-number-3">5.6.</span> Mermaid</h3>
 <div class="outline-text-3" id="text-dictionaries-etc-mermaid">
 
-<div id="orgf559280" class="figure">
+<div id="orgb4f0271" class="figure">
 <p><img src="images/gantt.png" alt="Mermaid script can be used to define diagrams in code blocks" title="Mermaid script can be used to define diagrams in code blocks" />
 </p>
 </div>
 
-<div id="org99f7651" class="figure">
+<div id="org92a786a" class="figure">
 <p><img src="images/gantt_out.png" alt="Gantt diagram generated by Mermaid script" title="Gantt diagram generated by Mermaid script" />
 </p>
 </div>
@@ -1075,7 +1649,7 @@ Use <code>q</code> to close the bookmark list buffer.
 <h3 id="tracking-progress-track-table"><span class="section-number-3">6.1.</span> Track-table</h3>
 <div class="outline-text-3" id="text-tracking-progress-track-table">
 
-<div id="org7cf82b2" class="figure">
+<div id="orgc7b4ff7" class="figure">
 <p><img src="images/tracktable.png" alt="Track-table keeps track of words written per day" title="Track-table keeps track of words written per day" />
 </p>
 </div>
@@ -1092,20 +1666,19 @@ There is also the option of starting a 20 minute Pomodoro session, by pressing <
 <img src="images/pomodoro.png" alt="Pomodoro session" title="Pomodoro session" />
 Clocking is tied to the heading you are working under, and will add a <code>:LOGBOOK:</code> section to it, like this:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">:LOGBOOK:
+<pre class="example">
+:LOGBOOK:
 CLOCK: [2017-04-10 Mon 15:16]--[2017-04-10 Mon 15:17] =&gt;  0:01
 CLOCK: [2017-04-07 Fri 16:05]--[2017-04-07 Fri 16:35] =&gt;  0:30
 CLOCK: [2017-04-05 Wed 16:42]--[2017-04-05 Wed 16:52] =&gt;  0:10
 :END:
 </pre>
-</div>
 <p>
 We can generate clock report table by executing <code>C-c l c R</code> or <code>M-x org-clock-report</code>.
 The following will be inserted at point, depending on the logbooks in the current document:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">#+BEGIN: clocktable :scope subtree :maxlevel 2
+<pre class="example">
+#+BEGIN: clocktable :scope subtree :maxlevel 2
 #+CAPTION: Clock summary at [2022-10-23 søn 09:56]
 | Headline   | Time |
 |------------+------|
@@ -1113,29 +1686,25 @@ The following will be inserted at point, depending on the logbooks in the curren
 |------------+------|
 #+END:
 </pre>
-</div>
 <p>
 A clocktable can be configured, for example, to show time clocked until now, like this:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">#+BEGIN: clocktable :maxlevel 3 :scope file :block untilnow
+<pre class="example">
+#+BEGIN: clocktable :maxlevel 3 :scope file :block untilnow
 </pre>
-</div>
 <p alt="Time clocked in total" title="Time clocked in total">
 <img src="images/clocktable-master.png" alt="Time clocked in total" title="Time clocked in total" />
 Time clocked today:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">#+BEGIN: clocktable :maxlevel 3 :scope file :block today
+<pre class="example">
+#+BEGIN: clocktable :maxlevel 3 :scope file :block today
 </pre>
-</div>
 <p>
 Time clocked yesterday:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">#+BEGIN: clocktable :maxlevel 3 :scope file :block yesterday
+<pre class="example">
+#+BEGIN: clocktable :maxlevel 3 :scope file :block yesterday
 </pre>
-</div>
 <p>
 To update a clocktable, simply place the point somewhere in the <code>BEGIN</code> line, and press <code>c c</code>.
 </p>
@@ -1167,7 +1736,7 @@ Using <code>org-wc</code>.
 </p>
 
 
-<div id="org30eac7c" class="figure">
+<div id="org4168dd4" class="figure">
 <p><img src="images/org-wc.png" alt="Running M-x org-wc-display shows word count per heading" title="Running M-x org-wc-display shows word count per heading" />
 </p>
 </div>
@@ -1182,7 +1751,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 </p>
 
 
-<div id="org5605528" class="figure">
+<div id="orgc4b99b4" class="figure">
 <p><img src="images/properties-actions.png" alt="Adding properties to a heading" title="Adding properties to a heading" />
 </p>
 </div>
@@ -1191,7 +1760,7 @@ We can easily add properties to a heading by running <code>C-c C-x p</code>:
 Now we can configure the <code>COLUMNS</code> special property, which will be inherited by child headings:
 </p>
 
-<div id="org42f1417" class="figure">
+<div id="orgb6ed11c" class="figure">
 <p><img src="images/columns-source.png" alt="Setting up columns with properties" title="Setting up columns with properties" />
 </p>
 </div>
@@ -1204,7 +1773,7 @@ See <a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.htm
 Having set it all up, we can now run <code>org-columns</code> by pressing <code>c x c</code>:
 </p>
 
-<div id="org222b795" class="figure">
+<div id="orgfe053f3" class="figure">
 <p><img src="images/columns.png" alt="Column view" title="Column view" />
 </p>
 </div>
@@ -1250,7 +1819,7 @@ Transclusion.
 <h3 id="saving-the-work-magit"><span class="section-number-3">9.1.</span> Magit</h3>
 <div class="outline-text-3" id="text-saving-the-work-magit">
 
-<div id="orgf8f2fa1" class="figure">
+<div id="orgbe8f0f1" class="figure">
 <p><img src="images/magit.png" alt="Prose linting with Vale" title="Prose linting with Vale" />
 </p>
 </div>
@@ -1263,7 +1832,7 @@ Transclusion.
 Sometimes you want to know what changes you have made to a buffer since your last save. Since you haven’t saved the file yet, Magit can’t help you, so you need something else. Fortunately, we can use Emacs’ <code>diff-buffer-with-file</code>, mapped to <code>C-d</code>.
 </p>
 
-<div id="org9c4cc0b" class="figure">
+<div id="org8ac1bd7" class="figure">
 <p><img src="images/diff.png" alt="Using diff to see the difference between buffer and file" title="Using diff to see the difference between buffer and file" />
 </p>
 </div>
@@ -1313,7 +1882,7 @@ Emacs will ask you for the file on disk, and then open a diff buffer where you c
 <h3 id="creature-comforts-zen-mode-and-transparency"><span class="section-number-3">11.2.</span> Zen-mode and transparency</h3>
 <div class="outline-text-3" id="text-creature-comforts-zen-mode-and-transparency">
 
-<div id="org18f5bab" class="figure">
+<div id="org5af9b90" class="figure">
 <p><img src="images/zen-mode.png" alt="Zen-mode with transparency turned on" title="Zen-mode with transparency turned on" />
 </p>
 </div>
@@ -1384,35 +1953,33 @@ To actually populate the bibliography library, I am using the Zotero Firefox con
 After all the work with Zotero, we are now ready to use the bibliography from within Emacs.
 In the file where we want to insert citations, we configure the bibliography file to be used, and configure the export of the citations to use the CSL format:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">#+bibliography: ~/Dropbox/skriv/jacmoe.bib
+<pre class="example">
+#+bibliography: ~/Dropbox/skriv/jacmoe.bib
 #+cite_export: csl
 </pre>
-</div>
 <p>
 Then, we set a placeholder for where the generated bibliography list will be rendered in the document:
 </p>
-<div class="org-src-container">
-<pre class="src src-nil">#+print_bibliography:
+<pre class="example">
+#+print_bibliography:
 </pre>
-</div>
 <p>
 Now that we’re all set up, we can now insert citations into our document by running <code>org-cite-insert</code> (bound to <code>C-c l @</code>)
 </p>
 
-<div id="org7c53b6d" class="figure">
+<div id="org6bf157b" class="figure">
 <p><img src="images/citation-insert.png" alt="Inserting a citation in Emacs" title="Inserting a citation in Emacs" />
 </p>
 </div>
 
 
-<div id="orge0814bd" class="figure">
+<div id="orgcf9efeb" class="figure">
 <p><img src="images/bibliography-source.png" alt="Bibliography source code" title="Bibliography source code" />
 </p>
 </div>
 
 
-<div id="orga317c3c" class="figure">
+<div id="orgddd15f0" class="figure">
 <p><img src="images/bibliography-test.png" alt="Bibliography test rendering" title="Bibliography test rendering" />
 </p>
 </div>
@@ -1502,7 +2069,7 @@ When your InitFile gets so large that you really need to start over, then you ha
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Jacob Moena</p>
-<p class="date">Created: 2023-03-19 søn 19:07</p>
+<p class="date">Created: 2023-10-07 Sat 21:40</p>
 </div>
 </body>
 </html>

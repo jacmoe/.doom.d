@@ -1,5 +1,5 @@
 #+TITLE: Hotel California of Creative Writing
-#+SETUPFILE: theme-readtheorg-local.setup
+#+SETUPFILE: white_clean.theme
 This is currently a work in progress
 
 ** Introduction
