@@ -159,7 +159,7 @@
   '(doom-modeline-buffer-modified :foreground "orange"))
 
 ;; Make the Doom modeline occupy a more comfortable amount of space
-(setq doom-modeline-height 35)
+(setq doom-modeline-height 65)
 (setq doom-modeline-bar-width 4)
 (custom-set-faces
   '(mode-line ((t (:family "Noto Sans" :height 0.9))))
