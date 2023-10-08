@@ -79,3 +79,5 @@
 (package! sandcastle-theme :recipe (:host github :repo "habamax/sandcastle-theme"))
 
 (package! flycheck-org-vale :recipe (:host github :repo "grettke/flycheck-org-vale"))
+
+(package! org-side-tree)
