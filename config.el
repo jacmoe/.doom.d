@@ -207,8 +207,6 @@
 (map! :desc "Grab link from browser" "C-c h g" #'grab-x-link)
 (map! :desc "Go to last edit" "C-c h e" #'last-edit)
 (map! :desc "Center cursor mode" "C-c h s" #'prot/scroll-center-cursor-mode)
-(map! :desc "Toggle transparency" "C-c h t" #'toggle-transparency)
-(map! :desc "Start Pomodoro" "C-c h b" #'org-pomodoro)
 
 (map! :desc "Look up word in dictionary" "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
 (map! :desc "Toggle mode-line" "C-<f9>" #'hide-mode-line-mode)             ; Toggle mode-line
@@ -249,7 +247,9 @@
 ;; ("<f7>" . turn-off-boon-mode)
 ;; ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
 ;; ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
-;; ("C-c s n" . yas-new-snippet))
+;; ("C-c s n" . yas-new-snippet)
+;; ("C-c h o" . org-side-tree)
+;; ("C-c h O" . org-side-tree-toggle)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -832,7 +832,10 @@
 (use-package! org-side-tree
   :init
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq-local outline-regexp ";;;\\(;* [^   \t\n]\\)")))
-  (add-hook 'emacs-lisp-mode-hook 'outline-minor-mode))
+  (add-hook 'emacs-lisp-mode-hook 'outline-minor-mode)
+  :bind
+  ("C-c h o" . org-side-tree)
+  ("C-c h O" . org-side-tree-toggle))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
