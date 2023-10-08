@@ -411,6 +411,26 @@ Another typical character replacement is change of case. The =`= key toggles bet
 :END:
 #+attr_html: :alt Prose linting with Vale :title Prose linting with Vale
 [[file:images/vale.png]]
+
+Use ~C-c t f~ to toggle =flycheck=.
+
+The =Vale= syntax checker will not check inside headings tagged with /noexport/. Outside of the /noexport/ sections we can use these comments to turn Vale off and on:
+#+begin_src
+This is checked by Vale.
+# vale off
+This is not going to be checked by Vale.
+# vale on
+This is checked by Vale.
+#+end_src
+If we are working with an org-mode file that we don’t want to be checked by Vale we can write a configuration file that does not use any styles, called =.vale.ini= and place it at project root:
+#+begin_src ini
+StylesPath = /path/to/vale-styles
+MinAlertLevel = warning
+
+[*]
+BasedOnStyles =
+#+end_src
+
 *** Mermaid
 :PROPERTIES:
 :CUSTOM_ID: dictionaries-etc-mermaid
