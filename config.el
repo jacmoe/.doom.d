@@ -855,9 +855,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;;; Flycheck-hl-todo                                                                         ;;
+;;; Flycheck-hl-todo                                                                ;;
 ;;                                                                                  ;;
-;; https://github.com/tarsius/flycheck-hl-todo                                               ;;
+;; https://github.com/tarsius/flycheck-hl-todo                                      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! flycheck-hl-todo
   :config
