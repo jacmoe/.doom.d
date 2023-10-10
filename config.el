@@ -829,6 +829,11 @@
 (use-package! hl-todo
   :config
   (add-hook 'org-mode-hook 'hl-todo-mode)
+(setq hl-todo-keyword-faces
+      '(("ADD"   . "Palegreen4")
+        ("FIX"  . "goldenrod2")
+        ("IDEA"   . "Palegreen4")
+        ("NOTE"  .  "DarkOrchid3")))
 (keymap-set hl-todo-mode-map "C-c h p" #'hl-todo-previous)
 (keymap-set hl-todo-mode-map "C-c h n" #'hl-todo-next))
 
