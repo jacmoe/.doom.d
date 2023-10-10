@@ -81,3 +81,7 @@
 (package! flycheck-org-vale :recipe (:host github :repo "grettke/flycheck-org-vale"))
 
 (package! org-side-tree)
+
+(package! hl-todo)
+
+(package! flycheck-hl-todo)

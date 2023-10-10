@@ -208,6 +208,8 @@
 (map! :desc "Grab link from browser" "C-c h g" #'grab-x-link)
 (map! :desc "Go to last edit" "C-c h e" #'last-edit)
 (map! :desc "Center cursor mode" "C-c h s" #'prot/scroll-center-cursor-mode)
+(map! :desc "List Flycheck errors" "C-c h f" #'flycheck-list-errors)
+(map! :desc "Diff buffer with file" "C-c h d" #'diff-buffer-with-file)
 
 (map! :desc "Look up word in dictionary" "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
 (map! :desc "Toggle mode-line" "C-<f9>" #'hide-mode-line-mode)             ; Toggle mode-line
@@ -215,7 +217,6 @@
 (map! :desc "Shrink window" "C-<up>" #'shrink-window)
 (map! :desc "Enlarge window horizontally" "C-<left>" #'enlarge-window-horizontally)
 (map! :desc "Shrink window horizontally" "C-<right>" #'shrink-window-horizontally)
-;; (map! "C-d" #'diff-buffer-with-file)             ; view what is modified
 (map! :desc "Toggle mode-line" "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
 (map! :desc "Toggle light/dark theme" "C-c t d" #'switch-theme)                  ; switch theme light/dark
 (map! :desc "Capture to this buffer" "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
@@ -301,6 +302,7 @@
 ;; Transparency
 ;; Flycheck-org-vale
 ;; Org-side-tree
+;; Hl-todo
 ;; Mw-thesaurus
 ;; Emacs-powerthesaurus
 ;; Browse-kill-ring
@@ -838,6 +840,28 @@
   :bind
   ("C-c h o" . org-side-tree)
   ("C-c h O" . org-side-tree-toggle))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;;; Hl-todo                                                                         ;;
+;;                                                                                  ;;
+;; https://github.com/tarsius/hl-todo                                               ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! hl-todo
+  :config
+(global-hl-todo-mode t)
+(keymap-set hl-todo-mode-map "C-c h p" #'hl-todo-previous)
+(keymap-set hl-todo-mode-map "C-c h n" #'hl-todo-next))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;;; Flycheck-hl-todo                                                                         ;;
+;;                                                                                  ;;
+;; https://github.com/tarsius/flycheck-hl-todo                                               ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! flycheck-hl-todo
+  :config
+(flycheck-hl-todo-setup))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
