@@ -1060,18 +1060,18 @@
 ;; Distraction-free screen
 (use-package! olivetti
   :init
-  (setq olivetti-body-width .67)
+  (setq olivetti-body-width .54)
   :config
   (defun distraction-free ()
     "Distraction-free writing environment"
     (interactive)
     (if (equal olivetti-mode nil)
         (progn
-          (text-scale-increase 1)
+          (text-scale-increase 1.6)
           (olivetti-mode t))
       (progn
         (olivetti-mode 0)
-        (text-scale-decrease 1))))
+        (text-scale-decrease 1.6))))
   :bind
   (("<f9>" . distraction-free)))
 
