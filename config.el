@@ -849,7 +849,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package! hl-todo
   :config
-(global-hl-todo-mode t)
+  (add-hook 'org-mode-hook 'hl-todo-mode)
 (keymap-set hl-todo-mode-map "C-c h p" #'hl-todo-previous)
 (keymap-set hl-todo-mode-map "C-c h n" #'hl-todo-next))
 
