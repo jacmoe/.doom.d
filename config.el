@@ -64,7 +64,7 @@
                              
 (defvar my-notmuch-address-command "/home/moena/notmuch-addrlookup-c/notmuch-addrlookup")
 (defvar my-puppeteer-config-file "/home/moena/puppeteerConfigFile.json")
-(defvar my-flycheck-org-vale-executable "/home/moena/bin/vale")
+(defvar my-flymake-vale-executable "/home/moena/bin/vale")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -209,6 +209,8 @@
 (map! :desc "Go to last edit" "C-c h e" #'last-edit)
 (map! :desc "Center cursor mode" "C-c h s" #'prot/scroll-center-cursor-mode)
 (map! :desc "List Flycheck errors" "C-c h f" #'flycheck-list-errors)
+(map! :desc "Toggle Flymake (Vale)" "C-c h v" #'flymake-mode)
+(map! :desc "List Flymake errors" "C-c h V" #'flymake-show-buffer-diagnostics)
 (map! :desc "Diff buffer with file" "C-c h d" #'diff-buffer-with-file)
 
 (map! :desc "Look up word in dictionary" "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
@@ -337,6 +339,7 @@
 (add-hook! org-mode :append
            #'visual-line-mode
            #'typopunct-mode
+           #'flymake-vale-load
            #'variable-pitch-mode
            #'solaire-mode)
 
@@ -799,12 +802,13 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;;; Flycheck-org-vale                                                               ;;
+;; Flymake-vale                                                                     ;;
 ;;                                                                                  ;;
-;; https://github.com/grettke/flycheck-org-vale                                     ;;
+;; https://github.com/tpeacock19/flymake-vale                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! flycheck-org-vale)
-(setq flycheck-org-vale-executable my-flycheck-org-vale-executable)
+(use-package! flymake-vale
+:config
+(setq flymake-vale-program my-flymake-vale-executable))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
