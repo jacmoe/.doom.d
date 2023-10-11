@@ -48,8 +48,6 @@
 
 (package! org-analyzer)
 
-(package! mastodon)
-
 (package! define-word)
 
 (package! mermaid-mode)
@@ -65,8 +63,6 @@
 (package! olivetti)
 
 ;; (package! org-habit-stats)
-
-(package! poet-theme)
 
 (package! mixed-pitch)
 

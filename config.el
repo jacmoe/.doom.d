@@ -62,7 +62,6 @@
                              "~/enestaaende/enestaaende.org"
                              "~/Dropbox/skriv/habits/habits.org"))
                              
-(defvar my-notmuch-address-command "/home/moena/notmuch-addrlookup-c/notmuch-addrlookup")
 (defvar my-puppeteer-config-file "/home/moena/puppeteerConfigFile.json")
 (defvar my-flymake-vale-executable "/home/moena/bin/vale")
 
@@ -73,9 +72,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq user-full-name "Jacob Moena"
       user-mail-address "jacmoe.dk@gmail.com"
-      user-mail-domain "gmail.com"
-      user-instance-url "https://writing.exchange"
-      mastodon-username "@jacmoe"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -195,7 +191,6 @@
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode) ; Do not highlight current line
 (setq global-page-break-lines-mode t)                       ; Pretty page breaks everywhere
 (setq confirm-kill-processes nil)                           ; Don't ask to kill running processes when exiting Emacs.
-(setq +notmuch-sync-backend 'offlineimap)
 (add-hook 'text-mode-hook (lambda () (setq-local line-spacing 0.1))) ; Setting a more comfortable line spacing for prose
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -314,8 +309,6 @@
 ;; Emacs-everywhere
 ;; Atomic-chrome
 ;; Engine-mode
-;; Mastodon
-;; Smtpmail
 ;; Keycast
 ;; Gif-screencast
 ;; Olivetti-mode
@@ -975,39 +968,6 @@
  (defengine github
   "https://github.com/search?ref=simplesearch&q=%s"
   :keybinding "g"))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;;; Mastodon                                                                        ;;
-;;                                                                                  ;;
-;; https://codeberg.org/martianh/mastodon.el                                        ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq mastodon-instance-url user-instance-url
-      mastodon-active-user mastodon-username
-      mastodon-toot--download-custom-emoji t
-      mastodon-toot--enable-custom-emoji t
-      mastodon-toot--enable-completion t)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;;; Smtpmail                                                                        ;;
-;;                                                                                  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq mail-host-address user-mail-domain)
-(setq user-full-name user-full-name)
-(setq user-mail-adress user-mail-address)
-(setq mail-user-agent 'message-user-agent)
-(setq message-send-mail-function 'message-send-mail-with-sendmail)
-(setq message-kill-buffer-on-exit t)
-(setq mail-specify-envelope-from t)
-(setq sendmail-program "/usr/bin/msmtp"
-  mail-specify-envelope-from t
-  mail-envelope-from 'header
-  message-sendmail-envelope-from 'header)
-
-(require 'notmuch-address)
-(setq notmuch-address-command my-notmuch-address-command)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
