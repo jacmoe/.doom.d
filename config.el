@@ -207,16 +207,18 @@
 (map! :desc "Toggle Flymake (Vale)" "C-c h v" #'flymake-mode)
 (map! :desc "List Flymake errors" "C-c h V" #'flymake-show-buffer-diagnostics)
 (map! :desc "Diff buffer with file" "C-c h d" #'diff-buffer-with-file)
+(map! :desc "Look up word in dictionary" "C-c h l" #'dictionary-lookup-definition)     ; Look up word in the dictionary
 
 (map! :desc "Look up word in dictionary" "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
-(map! :desc "Toggle mode-line" "C-<f9>" #'hide-mode-line-mode)             ; Toggle mode-line
+(map! :desc "Toggle mode-line" "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
+(map! :desc "Toggle light/dark theme" "C-c t d" #'switch-theme)                  ; switch theme light/dark
+
+(map! :desc "Capture to this buffer" "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
+
 (map! :desc "Enlarge window" "C-<up>" #'enlarge-window)
 (map! :desc "Shrink window" "C-<down>" #'shrink-window)
 (map! :desc "Enlarge window horizontally" "C-<left>" #'enlarge-window-horizontally)
 (map! :desc "Shrink window horizontally" "C-<right>" #'shrink-window-horizontally)
-(map! :desc "Toggle mode-line" "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
-(map! :desc "Toggle light/dark theme" "C-c t d" #'switch-theme)                  ; switch theme light/dark
-(map! :desc "Capture to this buffer" "C-c n q" #'tb/capture-to-this-buffer)     ; quick capture to this buffer
 (map! "M-1" (lambda() (interactive) (org-shifttab 1)))
 (map! "M-2" (lambda() (interactive) (org-shifttab 2)))
 (map! "M-3" (lambda() (interactive) (org-shifttab 3)))
@@ -235,20 +237,21 @@
      (map! "C-;" #'boon-set-command-state); used to quit insert mode
      (map! "C-æ" #'boon-set-command-state))); used to quit insert mode - Danish version
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Keybindings defined elsewhere:                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (map! "C-c h t" #'toggle-transparency)
-;; (map! "C-c k" #'my/kbdk)
-;; (map! "C-c u" #'my/kbus)
+;; ("C-c h o" . org-side-tree)
+;; ("C-c h O" . org-side-tree-toggle)
+;; ("C-c h z" . distraction-free)
 ;; ("<f6>" . turn-on-boon-mode)
 ;; ("<f7>" . turn-off-boon-mode)
 ;; ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
 ;; ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
+;; ("<F9>" . distraction-free)
+;; (map! "C-c k" #'my/kbdk)
+;; (map! "C-c u" #'my/kbus)
 ;; ("C-c s n" . yas-new-snippet)
-;; ("C-c h o" . org-side-tree)
-;; ("C-c h O" . org-side-tree-toggle)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -1037,7 +1040,8 @@
         (olivetti-mode 0)
         (text-scale-decrease 1.6))))
   :bind
-  (("<f9>" . distraction-free)))
+  (("<f9>" . distraction-free))
+  (("C-c h z" . distraction-free)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
