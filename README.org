@@ -44,9 +44,9 @@ Vale, on the other hand, is a binary file that you download to your machine, is 
 First, make sure that you have at least Emacs 28.1 installed, and have made sure that Git and the other prerequisites of Doom-Emacs are satisfied:
 [[https://github.com/hlissner/doom-emacs#prerequisites][Doom-Emacs - Prerequisites]]
 
-On my Arch (EndeavourOS) system, that was accomplished by installing =emacs-nativecomp=:
+On my Fedora system, that was accomplished by installing:
 #+begin_src bash
-sudo pacman -S emacs-nativecomp
+sudo dnf install emacs fd-find ripgrep
 #+end_src
 
 ———————————
@@ -62,7 +62,7 @@ On Linux, there is likely to be a C compiler installed.
 We use =Aspell= for spellchecking:
 
 #+begin_src bash
-sudo pacman -S aspell-en
+sudo dnf install aspell aspell-en
 #+end_src
 
 *** Vale
@@ -108,7 +108,7 @@ To make Emacs actually check your document, run =M-x flymake-mode=. Run =M-x fly
 
 Install =npm= if not already installed:
 #+begin_src bash
-sudo pacman -S npm
+sudo dnf install npm
 #+end_src
 
 Then, install [[https://github.com/mermaid-js/mermaid-cli][mermaid-cli]]:
@@ -133,7 +133,7 @@ In order to be able to export excellent PDFs using LaTeX, we need to install TeX
 
 Installing the following satisfies the requirements of the Org-mode LaTeX / PDF exporter on my system:
 #+begin_src bash
-sudo pacman -S texlive-bibtexextra texlive-latexextra
+sudo dnf install texlive-collection-bibtexextra texlive-collection-latexextra
 #+end_src
 
 *** Fonts
@@ -146,7 +146,7 @@ If you want to use your own fonts, do change the configuration, around line 90 i
 *** Maim and Gifsicle
 For creating gif screencasts, we use Maim and Gifsicle. Install =maim= and =gifsicle= using your package manager of choice.
 #+begin_src bash
-sudo pacman -S maim gifsicle
+sudo dnf install maim gifsicle
 #+end_src
 
 ** Installation
