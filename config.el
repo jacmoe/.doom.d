@@ -215,8 +215,8 @@
 
 (map! :desc "Look up word in dictionary" "<f8>" #'dictionary-lookup-definition)     ; Look up word in the dictionary
 (map! :desc "Toggle mode-line" "C-<f9>" #'hide-mode-line-mode)             ; Toggle mode-line
-(map! :desc "Enlarge window" "C-<down>" #'enlarge-window)
-(map! :desc "Shrink window" "C-<up>" #'shrink-window)
+(map! :desc "Enlarge window" "C-<up>" #'enlarge-window)
+(map! :desc "Shrink window" "C-<down>" #'shrink-window)
 (map! :desc "Enlarge window horizontally" "C-<left>" #'enlarge-window-horizontally)
 (map! :desc "Shrink window horizontally" "C-<right>" #'shrink-window-horizontally)
 (map! :desc "Toggle mode-line" "C-c t m" #'hide-mode-line-mode)           ; hide the mode-line
