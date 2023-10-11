@@ -22,6 +22,10 @@ For a very detailed walk-through of what this configuration provides, see
 
 This configuration uses the ~boon-qwerty-hjkl~ or the ~boon-colemak-hnei~ layout for Boon, making it intuitive to use when you’re used to the VIM navigation keys.
 
+The following image shows the main Boon layout in command mode. The right hand side deals with movement, and the left hand side is for issuing commands:
+
+[[file:keyboard-layout.png]]
+
 *** No Workspaces
 This configuration is designed to be playing nice with running Emacs in a server / client setup, and workspaces does not work correctly when Emacs is run as a client.
 
