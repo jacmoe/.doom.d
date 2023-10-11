@@ -9,6 +9,8 @@ This is my Emacs configuration, my Hotel California of Creative Writing.
 
 It features all the bells and whistles that I could ever want from a writing environment, and nothing else.
 
+This configuration, like most (if not all) Emacs configurations, is highly opinionated. Unlike most, I think, it is also highly focused, and does very few things outside of writing prose.
+
 For a very detailed walk-through of what this configuration provides, see
 [[https://jacmoe.github.io/.doom.d/][https://jacmoe.github.io/.doom.d/]]
 
@@ -16,11 +18,9 @@ For a very detailed walk-through of what this configuration provides, see
 
 ** Design Decisions
 *** Boon instead of EVIL
-Boon is much more ergonomic than EVIL-mode (Emacs VI Emulation Layer), especially for people (like me) who are not a former VIM-user.
+[[https://github.com/jyp/boon][Boon]] is much more ergonomic than EVIL-mode (Emacs VI Emulation Layer), especially for people (like me) who are not a former VIM-user.
 
 This configuration uses the ~boon-qwerty-hjkl~ or the ~boon-colemak-hnei~ layout for Boon, making it intuitive to use when you’re used to the VIM navigation keys.
-
-Boon allows us to, unlike EVIL, use the regular Emacs keyboard commands, which is great.
 
 *** No Workspaces
 This configuration is designed to be playing nice with running Emacs in a server / client setup, and workspaces does not work correctly when Emacs is run as a client.
@@ -33,9 +33,7 @@ Writeroom is very heavy-handed, and it interfered with variable-width fonts, so 
 *** Vale instead of Lang checker
 The Doom-Emacs Lang checker relies on a third-party Java-application server which communicates with a commercial service. The few times I could get it to work, I was not impressed.
 
-Vale, on the other hand, is a binary file that you download to your machine, is run locally, and can be configured in detail on a per project basis. Depending on how many “styles” you download, it is also much more useful than Lang-server. And it can be toggled on and off at will.
-*** Flyspell turned off
-I haven’t found a way to configure/tell Flyspell to not hi-jack the ~C-;~ key combo that I rely on for switching to command mode in Boon (as an alternative to ~Esc~), and I also think that red squiggly lines are too intrusive, considering that a spellcheck is just a ~F12~ key press away. Flycheck is better, IMO, because it does not insist on reserving the ~C-;~ key combo, and because it can be easily toggled.
+Vale, on the other hand, is a binary file that you download to your machine, is run locally, and can be configured in detail on a per project basis. Depending on how many “styles” you download, it is also much more useful than Lang-server. And it can be toggled on and off at will. Vale also have a way to exclude passages, which is great.
 
 ** Prerequisites
 
