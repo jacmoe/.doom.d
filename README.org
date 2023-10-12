@@ -128,6 +128,11 @@ Create a configuration file in your home directory, called =puppeteerConfigFile.
 *** Hugo
 I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]]. Choose the ‘extended’ version.
 
+On my Fedora, the extended version of Hugo is in the main repository:
+#+begin_src bash
+sudo dnf install hugo
+#+end_src
+
 *** PDF diff and export
 In order to be able to export excellent PDFs using LaTeX, we need to install TeX Live.
 
@@ -141,7 +146,7 @@ This configuration uses the [[https://github.com/RedHatOfficial/Overpass][Overpa
 
 For Unicode emojis, install an emoji font like [[http://legionfonts.com/fonts/segoe-ui-emoji][Segoe UI Emoji]]
 
-If you want to use your own fonts, do change the configuration, around line 90 in ~config.el~.
+If you want to use your own fonts, do change the configuration, around line 32 in ~config.el~ or in ~.secret.el~ (recommended).
 
 *** Maim and Gifsicle
 For creating gif screencasts, we use Maim and Gifsicle. Install =maim= and =gifsicle= using your package manager of choice.
