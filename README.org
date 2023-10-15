@@ -103,12 +103,11 @@ Create a configuration file in your home directory, called =puppeteerConfigFile.
 #+end_src
 
 *** Hugo
-I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]]. Choose the ‘extended’ version.
+I use [[https://ox-hugo.scripter.co/][Ox-Hugo]] to export and generate an Epub, and to write blog posts, and if you want that, you need to install [[https://gohugo.io/][Hugo]].
 
-On my Fedora, the extended version of Hugo is in the main repository:
-#+begin_src bash
-sudo dnf install hugo
-#+end_src
+Get the latest version from https://github.com/gohugoio/hugo/releases/latest - choose the Extended version.
+
+While you can find Hugo in the software repositories for your particular operating system it is often an older version, and many newer Hugo themes requires a very recent Hugo.
 
 *** PDF diff and export
 In order to be able to export excellent PDFs using LaTeX, we need to install TeX Live.
