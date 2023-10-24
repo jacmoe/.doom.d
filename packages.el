@@ -36,8 +36,6 @@
 
 (package! atomic-chrome)
 
-(package! engine-mode)
-
 (package! anki-editor)
 
 (package! org-wc)
