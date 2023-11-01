@@ -35,8 +35,9 @@
 (defvar my-variablespace-font-size 36)
 
 (defvar my-org-tracktable-daily-goal 500)            ; How many words do I want to write per day?
-(defvar my-line-spacing 12)                          ; how much space between the lines?
 (defvar my-day-end 5)                                ; when does my day end?
+
+(defvar my-line-spacing 12)                          ; how much space between the lines?
 
 (defvar my-org-pomodoro-play-sounds nil) ; don't play sounds
 (defvar my-org-pomodoro-length 20)       ; 20 minutes are great for word-sprints
