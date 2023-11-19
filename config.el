@@ -20,11 +20,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar my-keyboard-variant "qwerty")                 ; colemak or qwerty
 
-;; (defvar my-dark-theme 'poet-dark)
-;; (defvar my-light-theme 'poet)
 (defvar my-light-theme 'sandcastle)
 (defvar my-dark-theme 'doom-xcode)
-;; (defvar my-light-theme 'doom-plain)
 
 (defvar my-main-theme my-dark-theme)
 (defvar my-theme-shade "dark")                       ; can be light or dark.
