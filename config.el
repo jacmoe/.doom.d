@@ -1030,7 +1030,11 @@
 ;;                                                                                  ;;
 ;; https://github.com/rnkn/freeze-it
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! freeze-it)
+(use-package! freeze-it
+  :config
+        (setq freeze-it-delay 1) ; delay in seconds
+        (setq freeze-it-go-back 'line) ;one of word, line, visible-line, and paragragh
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
