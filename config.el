@@ -312,6 +312,7 @@
 ;; Keycast
 ;; Gif-screencast
 ;; Olivetti-mode
+;; Freeze-it
 ;; Gemini-write
 ;; Miscellaneous
 ;; Better comment box
@@ -1022,6 +1023,14 @@
   :bind
   (("<f9>" . distraction-free))
   (("C-c h z" . distraction-free)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;;; Freeze-it
+;;                                                                                  ;;
+;; https://github.com/rnkn/freeze-it
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! freeze-it)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

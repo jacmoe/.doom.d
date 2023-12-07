@@ -79,3 +79,5 @@
 (package! hl-todo)
 
 (package! flycheck-hl-todo)
+
+(package! freeze-it)
