@@ -273,6 +273,8 @@
 (defalias 'tm 'text-mode)
 (defalias 'kcast 'keycast-tab-bar-mode)
 (defalias 'gcast 'gif-screencast)
+(defalias 'free 'freeze-it-mode)
+(defalias 'fro 'freeze-it-show)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
