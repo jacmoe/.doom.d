@@ -47,7 +47,6 @@
 (setq bookmark-default-file (concat my-storage-directory "bookmarks")) ; Where to save the bookmarks file
 (setq annotate-file (concat my-storage-directory "annotations"))
 (setq bib-file (concat my-storage-directory "jacmoe.bib"))
-(defvar my-journal-directory (concat my-storage-directory "journal/"))
 (defvar org-heatmap-db-location (concat my-storage-directory "org-heatmap.db"))
 
 ;; Org Directories
@@ -124,9 +123,6 @@
     ("Recently opened files"
     :icon (nerd-icons-octicon "nf-oct-file_directory_fill" :face 'doom-dashboard-menu-title)
     :action recentf-open-files)
-    ("Org-journal"
-    :icon (nerd-icons-octicon "nf-oct-book" :face 'doom-dashboard-menu-title)
-    :action org-journal-new-entry)
     ("Org-roam"
     :icon (nerd-icons-octicon "nf-oct-book" :face 'doom-dashboard-menu-title)
     :action org-roam-node-find)
@@ -290,7 +286,6 @@
 ;; Org-habit-stats
 ;; Citar
 ;; Ox-Hugo
-;; Org-journal
 ;; Org-heatmap
 ;; Annotate
 ;; ISpell
@@ -651,21 +646,6 @@
 ;; (after! ox-hugo
 ;;   (plist-put org-hugo-citations-plist :bibliography-section-heading "Bibliography"))
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;;; Org-journal                                                                     ;;
-;;                                                                                  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! org-journal
-  :defer t
-  :after org
-  :config
-  (setq org-journal-dir my-journal-directory
-        org-journal-file-format "%Y%m%d.org"
-        org-journal-file-type 'monthly
-        org-extend-today-until my-day-end
-        org-journal-date-format "%A, %d %B %Y"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
