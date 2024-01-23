@@ -81,3 +81,5 @@
 (package! flycheck-hl-todo)
 
 (package! freeze-it)
+
+(package! monkeytype)
