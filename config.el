@@ -289,6 +289,7 @@
 ;; Org-heatmap
 ;; Annotate
 ;; ISpell
+;; Magit
 ;; Abbrev
 ;; Typopunct
 ;; Smart-quotes
@@ -694,6 +695,14 @@
   (add-to-list 'ispell-skip-region-alist '("^# {{{" . "^# }}}"))
   :bind (("<f12>" . ispell-buffer)
          ("S-<f12>" . ispell-word)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;;; Magit                                                                           ;;
+;;                                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(after! magit
+  (setq magit-diff-refine-hunk 'all))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -1164,6 +1173,7 @@ comment box."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Center scroll minor mode                                                        ;;
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-minor-mode prot/scroll-center-cursor-mode
   "Toggle centred cursor scrolling behavior"
@@ -1179,7 +1189,6 @@ comment box."
                      maximum-scroll-margin
                      scroll-margin))
       (kill-local-variable `,local))))
-  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Theme functions                                                                 ;;
