@@ -162,7 +162,7 @@
 ;;     '(misc-info minor-modes checker input-method buffer-encoding major-mode vcs "  "))) ; <-- added padding here
   (doom-modeline-def-modeline 'main
     '(eldoc bar workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
-    '(compilation objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode vcs checker time "   ")))
+    '(compilation objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode vcs time "   ")))
 
 ;; Remove annoying system load number after time
 (setq display-time-default-load-average nil)
