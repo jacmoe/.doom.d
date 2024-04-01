@@ -156,13 +156,6 @@
   '(mode-line ((t (:family "Noto Sans" :height 0.9))))
   '(mode-line-active ((t (:family "Noto Sans" :height 0.9)))) ; For 29+
   '(mode-line-inactive ((t (:family "Noto Sans" :height 0.9)))))
-(after! doom-modeline
-;;   (doom-modeline-def-modeline 'main
-;;     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-;;     '(misc-info minor-modes checker input-method buffer-encoding major-mode vcs "  "))) ; <-- added padding here
-  (doom-modeline-def-modeline 'main
-    '(eldoc bar workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
-    '(compilation objed-state misc-info persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding major-mode vcs time "   ")))
 
 ;; Remove annoying system load number after time
 (setq display-time-default-load-average nil)
@@ -177,7 +170,6 @@
 ;; Misc settings
 (setq display-line-numbers-type nil)                        ; Do not show line numbers
 (display-time-mode 1)                                       ; Display time in modeline
-(setq display-time-format "%H:%M")                          ; Set format of clock (Hours:Minutes)
 (setq display-time-24hr-format 1)                           ; Clock is using 24 hour format
 (fringe-mode '(80 . 80))                                    ; Show vertical fringes
 (blink-cursor-mode t)                                       ; The cursor should blink
