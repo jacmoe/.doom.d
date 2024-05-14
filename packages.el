@@ -66,7 +66,7 @@
 
 (package! elpher)
 
-(package! gemini-write)
+;; (package! gemini-write)
 
 (package! org-heatmap :recipe (:host github :repo "Elilif/org-heatmap"))
 

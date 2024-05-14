@@ -1026,10 +1026,10 @@
 ;;                                                                                  ;;
 ;; https://alexschroeder.ch/cgit/gemini-write                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! gemini-write
-  :after elpher
-  :init
-  (gemini-write-mode))
+;;(use-package! gemini-write
+;;  :after elpher
+;;  :init
+;;  (gemini-write-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
