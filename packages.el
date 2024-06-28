@@ -2,7 +2,7 @@
 ;;; $DOOMDIR/packages.el
 
 ;; Fix for org-roam link issue
-(package! org :pin "ca873f7")
+;; (package! org :pin "ca873f7")
 
 (package! boon)
 
