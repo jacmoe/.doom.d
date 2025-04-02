@@ -60,7 +60,6 @@
                              "~/Dropbox/skriv/habits/habits.org"))
                              
 (defvar my-puppeteer-config-file "/home/moena/puppeteerConfigFile.json")
-(defvar my-flymake-vale-executable "/home/moena/bin/vale")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -189,9 +188,6 @@
 (map! :desc "Grab link from browser" "C-c h g" #'grab-x-link)
 (map! :desc "Go to last edit" "C-c h e" #'last-edit)
 (map! :desc "Center cursor mode" "C-c h s" #'prot/scroll-center-cursor-mode)
-(map! :desc "List Flycheck errors" "C-c h f" #'flycheck-list-errors)
-(map! :desc "Toggle Flymake (Vale)" "C-c h v" #'flymake-mode)
-(map! :desc "List Flymake errors" "C-c h V" #'flymake-show-buffer-diagnostics)
 (map! :desc "Diff buffer with file" "C-c h d" #'diff-buffer-with-file)
 (map! :desc "Look up word in dictionary" "C-c h l" #'dictionary-lookup-definition)     ; Look up word in the dictionary
 
@@ -288,7 +284,6 @@
 ;; Boon
 ;; CtrlF
 ;; Transparency
-;; Flycheck-org-vale
 ;; Org-side-tree
 ;; Hl-todo
 ;; Mw-thesaurus
@@ -324,7 +319,6 @@
 (add-hook! org-mode :append
            #'visual-line-mode
            #'typopunct-mode
-           #'flymake-vale-load
            #'variable-pitch-mode
            #'solaire-mode)
 
@@ -778,15 +772,6 @@
   :config
   (ctrlf-mode t))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;; Flymake-vale                                                                     ;;
-;;                                                                                  ;;
-;; https://github.com/tpeacock19/flymake-vale                                       ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! flymake-vale
-:config
-(setq flymake-vale-program my-flymake-vale-executable))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

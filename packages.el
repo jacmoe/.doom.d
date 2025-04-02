@@ -69,8 +69,6 @@
 
 (package! sandcastle-theme :recipe (:host github :repo "habamax/sandcastle-theme"))
 
-(package! flymake-vale :recipe (:host github :repo "tpeacock19/flymake-vale"))
-
 (package! org-side-tree)
 
 (package! hl-todo)
