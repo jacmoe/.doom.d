@@ -42,44 +42,6 @@ We use =Aspell= for spellchecking:
 sudo dnf install aspell aspell-en
 #+end_src
 
-*** Vale
-[[https://vale.sh/][Vale.sh]] is used for prose linting.
-
-
-The easiest way to install Vale is to download a binary release from [[https://github.com/errata-ai/vale/releases][Vale Github Releases]] and put the binary in your PATH. Emacs needs to be able to find the Vale binary.
-
-
-Now you need to download some Vale style checkers. There is a list of the available styles here: [[https://github.com/errata-ai/packages][errata-ai/packages]].
-
-I installed the following styles:
-- proselint : [[https://github.com/errata-ai/proselint/releases][Releases · errata-ai/proselint]]
-  - “proselint places the world’s greatest writers and editors by your side, where they whisper suggestions on how to improve your prose.”
-- write-good : [[https://github.com/errata-ai/write-good/releases][Releases · errata-ai/write-good]]
-  - “Naive linter for English prose for developers who can't write good and wanna learn to do other stuff good too.”
-- alex : [[https://github.com/errata-ai/alex/releases][Releases · errata-ai/alex]]
-  - “Helps you find gender favoring, polarizing, race related, or other unequal phrasing in text.”
-- joblint : [[https://github.com/errata-ai/Joblint/releases][Releases · errata-ai/Joblint]]
-  - “Test tech job posts for issues with sexism, culture, expectations, and recruiter fails.”
-- readability: [[https://github.com/errata-ai/readability/releases][Releases · errata-ai/readability]]
-  - “implementation of many popular ‘readability’ metrics.”
-
-Download and extract into a place where they can easily be found, like in =~/vale-styles= for instance.
-
-Now you can place a =.vale.ini= file in any top level directory where you want Vale to check your prose.
-
-An example:
-#+begin_src ini
-StylesPath = /path/to/vale-styles
-MinAlertLevel = warning
-
-[*]
-BasedOnStyles = proselint, write-good, alex, joblint, readability
-#+end_src
-
-See the Vale home page for more information.
-
-To make Emacs actually check your document, run =M-x flymake-mode=. Run =M-x flymake-mode= to turn it off again.
-
 *** Mermaid
 [[https://mermaid-js.github.io/mermaid/#/][Mermaid]] is used to generate Gantt charts and other diagrams.
 
