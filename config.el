@@ -319,8 +319,8 @@
 (add-hook! org-mode :append
            #'visual-line-mode
            #'typopunct-mode
-           #'variable-pitch-mode
-           #'solaire-mode)
+           #'variable-pitch-mode)
+           ;; #'solaire-mode)
 
 ;; Org-habit
 (use-package! org-habit
