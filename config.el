@@ -150,11 +150,16 @@
 
 ;; Make the Doom modeline occupy a more comfortable amount of space
 (setq doom-modeline-height 65)
-(setq doom-modeline-bar-width 4)
+
 (custom-set-faces
   '(mode-line ((t (:family "Noto Sans" :height 0.9))))
   '(mode-line-active ((t (:family "Noto Sans" :height 0.9)))) ; For 29+
   '(mode-line-inactive ((t (:family "Noto Sans" :height 0.9)))))
+
+(after! doom-modeline
+  (doom-modeline-def-modeline 'main
+    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+    '(misc-info minor-modes check input-method buffer-encoding major-mode process vcs "           "))) ; <-- added padding here
 
 ;; Remove annoying system load number after time
 (setq display-time-default-load-average nil)
@@ -1191,3 +1196,7 @@ comment box."
   (if (equal my-theme-shade "light")
       (go-dark-theme)
     (go-light-theme)))
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(text-mode . ("harper-ls" "--stdio"))))
