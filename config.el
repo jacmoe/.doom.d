@@ -295,7 +295,8 @@
 ;; Emacs-powerthesaurus
 ;; Browse-kill-ring
 ;; Dimmer
-;; Yasnippet
+;; Harper
+;;;; Yasnippet
 ;; Nov.el
 ;; Emacs-everywhere
 ;; Atomic-chrome
@@ -871,6 +872,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
+;;; Harper                                                                          ;;
+;;                                                                                  ;;
+;; https://github.com/automattic/harper
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! eglot
+  :hook
+  (org-mode . eglot-ensure)
+  :config
+  (add-to-list 'eglot-server-programs
+               '(org-mode . ("/home/moena/bin/harper-ls" "--stdio"))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
 ;;; Yasnippet                                                                       ;;
 ;;                                                                                  ;;
 ;; https://github.com/joaotavora/yasnippet                                          ;;
@@ -1196,7 +1210,3 @@ comment box."
   (if (equal my-theme-shade "light")
       (go-dark-theme)
     (go-light-theme)))
-
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               '(text-mode . ("harper-ls" "--stdio"))))
