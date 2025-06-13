@@ -883,7 +883,7 @@
   (add-to-list 'eglot-server-programs
                '(org-mode . ("/home/moena/bin/harper-ls" "--stdio"))))
 (setq-default eglot-workspace-configuration
-              '(:harper-ls (:userDictPath "~/Dropbox/skriv/harper-ls/user_dictionaries/"
+              '(:harper-ls (:userDictPath "~/Dropbox/skriv/harper-ls/dictionary.txt"
                             :fileDictPath "~/Dropbox/skriv/harper-ls/file_dictionaries/"
                             :ignoredLintsPath "~/Dropbox/skriv/harper-ls/ignored_lints/")))
 
