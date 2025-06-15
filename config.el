@@ -229,12 +229,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ("C-c h o" . org-side-tree)
 ;; ("C-c h O" . org-side-tree-toggle)
+;; ("<F9>" . distraction-free)
 ;; ("C-c h z" . distraction-free)
-;; ("<f6>" . turn-on-boon-mode)
-;; ("<f7>" . turn-off-boon-mode)
+;; ("<f6>" . eglot-code-actions) ; Deal with Harper errors
+;; ("<f7>" . +default/diagnostics) ; list Harper errors
 ;; ("<f5>" . powerthesaurus-lookup-synonyms-dwim)
 ;; ("S-<f5>" . powerthesaurus-lookup-antonyms-dwim)
-;; ("<F9>" . distraction-free)
 ;; (map! "C-c k" #'my/kbdk)
 ;; (map! "C-c u" #'my/kbus)
 ;; ("C-c s n" . yas-new-snippet)
@@ -731,10 +731,7 @@
    (add-hook 'ibuffer-hook 'turn-off-boon-mode)
    (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
    (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
-   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
-   :bind
-   ("<f6>" . turn-on-boon-mode)
-   ("<f7>" . turn-off-boon-mode))
+   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -850,12 +847,15 @@
   (org-mode . eglot-ensure)
   :config
   (add-to-list 'eglot-server-programs
-               '(org-mode . ("/home/moena/bin/harper-ls" "--stdio"))))
+               '(org-mode . ("/home/moena/bin/harper-ls" "--stdio")))
+   :bind
+   ("<f6>" . eglot-code-actions)
+   ("<f7>" . +default/diagnostics))
+
 (setq-default eglot-workspace-configuration
               '(:harper-ls (:userDictPath "~/Dropbox/skriv/harper-ls/dictionary.txt"
                             :fileDictPath "~/Dropbox/skriv/harper-ls/file_dictionaries/"
                             :ignoredLintsPath "~/Dropbox/skriv/harper-ls/ignored_lints/")))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Yasnippet                                                                       ;;
