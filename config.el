@@ -275,6 +275,7 @@
 ;; Org-Roam-UI
 ;; Org-tracktable
 ;; Org-appear
+;; Org-modern
 ;; Org-pomodoro
 ;; Org-habit-stats
 ;; Citar
@@ -545,6 +546,18 @@
   ;; for proper first-time setup, `org-appear--set-elements'
   ;; needs to be run after other hooks have acted.
   (run-at-time nil nil #'org-appear--set-elements))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;;; Org-modern                                                                      ;;
+;;                                                                                  ;;
+;; https://github.com/minad/org-modern                                             ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Modern style for your Org buffers
+(use-package! org-modern
+  :defer t
+  :hook (org-mode . org-modern-mode)
+  :hook (org-agenda-finalize . org-modern-agenda))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
