@@ -61,6 +61,13 @@
                              
 (defvar my-puppeteer-config-file "/home/moena/puppeteerConfigFile.json")
 
+;; Harper configuration
+(setq-default eglot-workspace-configuration
+              '(:harper-ls (:userDictPath "~/Dropbox/skriv/harper-ls/dictionary.txt"
+                            :fileDictPath "~/Dropbox/skriv/harper-ls/file_dictionaries/"
+                            :ignoredLintsPath "~/Dropbox/skriv/harper-ls/ignored_lints/")))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Personal Information                                                            ;;
@@ -852,10 +859,6 @@
    ("<f6>" . eglot-code-actions)
    ("<f7>" . +default/diagnostics))
 
-(setq-default eglot-workspace-configuration
-              '(:harper-ls (:userDictPath "~/Dropbox/skriv/harper-ls/dictionary.txt"
-                            :fileDictPath "~/Dropbox/skriv/harper-ls/file_dictionaries/"
-                            :ignoredLintsPath "~/Dropbox/skriv/harper-ls/ignored_lints/")))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Yasnippet                                                                       ;;
