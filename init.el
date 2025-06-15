@@ -153,7 +153,7 @@
        (org +roam2
             +hugo
             +pomodoro
-            +pretty
+            ;;+pretty
             +dragndrop
             +noter
             +present

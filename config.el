@@ -338,60 +338,12 @@
         org-habit-graph-column 1
         org-habit-show-habits t))
 
-(use-package! org-super-agenda
-  :after org-agenda
-  :init
-  (setq org-agenda-skip-scheduled-if-done t
-      org-agenda-skip-deadline-if-done t
-      org-agenda-include-deadlines t
-      org-agenda-block-separator nil
-      org-agenda-compact-blocks t
-      org-agenda-start-day nil ;; i.e. today
-      org-agenda-span 1
-      org-agenda-start-on-weekday nil)
-  (setq org-agenda-custom-commands
-        '(("c" "Super view"
-           ((agenda "" ((org-agenda-overriding-header "")
-                        (org-super-agenda-groups
-                         '((:name "Today"
-                                  :time-grid t
-                                  :date today
-                                  :order 1)))))
-            (alltodo "" ((org-agenda-overriding-header "")
-                         (org-super-agenda-groups
-                          '((:log t)
-                            (:name "To refile"
-                                   :file-path "refile\\.org")
-                            (:name "Next to do"
-                                   :todo "NEXT"
-                                   :order 1)
-                            (:name "Important"
-                                   :priority "A"
-                                   :order 6)
-                            (:name "Today's tasks"
-                                   :file-path "journal/")
-                            (:name "Due Today"
-                                   :deadline today
-                                   :order 2)
-                            (:name "Scheduled Soon"
-                                   :scheduled future
-                                   :order 8)
-                            (:name "Overdue"
-                                   :deadline past
-                                   :order 7)
-                            (:name "Meetings"
-                                   :and (:todo "MEET" :scheduled future)
-                                   :order 10)
-                            (:discard (:not (:todo "TODO")))))))))))
-  :config
-  (org-super-agenda-mode))
-
 ;; use :ignore: tags to ignore the heading, but keep the content
 (use-package! ox-extra
   :after org
   :config
   (ox-extras-activate '(ignore-headlines)))
-  
+
 (setq
  ;; Edit settings
  org-auto-align-tags nil
@@ -419,6 +371,7 @@
 
 (after! org
   (setq mermaid-flags (concat "-w 1810 --puppeteerConfigFile " my-puppeteer-config-file))
+
   (setq org-enforce-todo-dependencies t
         org-hierarchical-todo-statistics nil ; I want org-mode to cascade done statistics up through the tree
         org-todo-keyword-faces
@@ -434,24 +387,30 @@
           ("noexport" . (:foreground "#606060" :weight normal))
           ("nowc" . (:foreground "#606060" :weight normal))
           ("ignore" . (:foreground "#606060" :weight normal)))
-          
+
         org-return-follows-link t ; hitting RETURN follows the link
+
         ;; We want to log the time when the TODO is closed
         org-log-done "time" org-log-done-with-time 't
         ;; If idle for more than 10 minutes, resolve the things
         ;; by asking what to do with the clock time
         org-clock-idle-time 10
+
         org-html-htmlize-output-type nil ; do not use inline css for HTML export
+
         org-latex-toc-command "\\tableofcontents \\clearpage" ; Force page break after TOC for PDF exports
         org-latex-image-default-width ""
         org-latex-image-default-scale "0.4"
         org-latex-images-centered nil
         org-latex-toc-command "\\clearpage \\tableofcontents \\clearpage"
         org-fontify-done-headline nil ; don't color the headline grey when done
-        org-capture-templates
+
+       org-capture-templates
         '(("s" "Slipbox" entry  (file "inbox.org")
-           "* %?\n%t\n%i\n%a")))
-)
+           "* %?\n%t\n%i\n%a"))
+  ) ; setq
+) ; after org
+
 (after! org
 (defun my/link-export (destination description backend)
   (let* ((link (concat "https://www.youtube.com/embed/" destination))
