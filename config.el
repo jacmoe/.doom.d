@@ -227,7 +227,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Keybindings defined elsewhere:                                                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (map! "C-c h t" #'toggle-transparency)
 ;; ("C-c h o" . org-side-tree)
 ;; ("C-c h O" . org-side-tree-toggle)
 ;; ("C-c h z" . distraction-free)
@@ -289,7 +288,6 @@
 ;; Smart-quotes
 ;; Boon
 ;; CtrlF
-;; Transparency
 ;; Org-side-tree
 ;; Hl-todo
 ;; Mw-thesaurus
@@ -297,7 +295,7 @@
 ;; Browse-kill-ring
 ;; Dimmer
 ;; Harper
-;;;; Yasnippet
+;; Yasnippet
 ;; Nov.el
 ;; Emacs-everywhere
 ;; Atomic-chrome
@@ -305,7 +303,6 @@
 ;; Gif-screencast
 ;; Olivetti-mode
 ;; Freeze-it
-;; Gemini-write
 ;; Monkeytype
 ;; Miscellaneous
 ;; Better comment box
@@ -1002,17 +999,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
-;;; Gemini-write                                                                    ;;
-;;                                                                                  ;;
-;; https://alexschroeder.ch/cgit/gemini-write                                       ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;(use-package! gemini-write
-;;  :after elpher
-;;  :init
-;;  (gemini-write-mode))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
 ;;; Monkeytype
 ;;                                                                                  ;;
 ;; https://github.com/jpablobr/emacs-monkeytype
@@ -1091,26 +1077,6 @@
   (let (indent-tabs-mode align-to-tab-stop)
     (align-regexp beginning end (concat "\\(\\s-*\\)"
                                         (regexp-quote comment-start)))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                                  ;;
-;;; Transparency                                                                    ;;
-;;                                                                                  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Toggles background transparency
-(defun toggle-transparency ()
-  (interactive)
-  (let ((alpha (frame-parameter nil 'alpha)))
-    (set-frame-parameter
-     nil 'alpha
-     (if (eql (cond ((numberp alpha) alpha)
-                    ((numberp (cdr alpha)) (cdr alpha))
-                    ;; Also handle undocumented (<active> <inactive>) form.
-                    ((numberp (cadr alpha)) (cadr alpha)))
-              100)
-         '(86 . 50) '(100 . 100)))))
-
-(map! "C-c h t" #'toggle-transparency)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Better comment box                                                              ;;
