@@ -292,6 +292,7 @@
 ;; Magit
 ;; Abbrev
 ;; Typopunct
+;; Colorful-mode
 ;; Smart-quotes
 ;; Boon
 ;; CtrlF
@@ -693,6 +694,22 @@
 (use-package! typopunct
   :config
   (typopunct-change-language 'english t))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                                  ;;
+;;; Colorful-mode                                                                   ;;
+;;                                                                                  ;;
+;; https://github.com/DevelopmentCool2449/colorful-mode                             ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Preview any color in your buffer in real time.
+(use-package! colorful-mode
+  :custom
+  ;; (colorful-use-prefix t)
+  (colorful-only-strings 'only-prog)
+  (css-fontify-colors nil)
+  :config
+  (global-colorful-mode t)
+  (add-to-list 'global-colorful-modes 'org-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;

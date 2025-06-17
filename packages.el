@@ -15,6 +15,8 @@
 
 (package! typopunct)
 
+(package! colorful-mode)
+
 (package! smart-quotes)
 
 (package! mw-thesaurus)
