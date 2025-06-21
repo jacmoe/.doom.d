@@ -98,14 +98,11 @@
 (setq confirm-kill-emacs nil)                          ; Yes, I really want to quit.
 (setq inhibit-compacting-font-caches t)                ; for performance reasons
 (setq bookmark-save-flag 1)                            ; Save bookmarks each time it changes, not only on exit
-;; (require 'zone)                                        ; Emacs "screensaver"
-;; (zone-when-idle 300)                                   ; Zone out when idle for five minutes.
 (setq enable-local-eval t)                             ; Define safe local variables
 (unless (eq system-type 'windows-nt)                   ; Mouse-avoidance makes the frame "jump" on Windows...
-  (mouse-avoidance-mode 'banish))  ; Shove the mouse pointer out of  the way
+  (mouse-avoidance-mode 'banish))                      ; Shove the mouse pointer out of  the way
 (setq undo-fu-session-linear t)                        ; tell Undo-fu to only store linear history, not the full history
 (map! "C-;" nil)                                       ; Don't steal my C-; !
-;;(setq emojify-download-emojis-p t)                     ; Force Doom-Emacs to download emojis without asking
 (setq flycheck-emacs-lisp-load-path 'inherit)          ; Flycheck fix
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -332,7 +329,6 @@
            #'visual-line-mode
            #'typopunct-mode
            #'variable-pitch-mode)
-           ;; #'solaire-mode)
 
 ;; Org-habit
 (use-package! org-habit
@@ -665,6 +661,7 @@
   :bind (("<f12>" . ispell-buffer)
          ("S-<f12>" . ispell-word)))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Magit                                                                           ;;
@@ -672,6 +669,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (after! magit
   (setq magit-diff-refine-hunk 'all))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -682,6 +680,7 @@
 (setq save-abbrevs 'silently)   ; stop asking whether to save newly added abbrev when quitting emacs
 (setq abbrev-file-name (expand-file-name "abbrev_defs.el" doom-private-dir)) ; where to load abbrevs from
 (setq-default abbrev-mode t)    ; Abbrev mode always on
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -694,6 +693,7 @@
 (use-package! typopunct
   :config
   (typopunct-change-language 'english t))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -711,6 +711,7 @@
   (global-colorful-mode t)
   (add-to-list 'global-colorful-modes 'org-mode))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Smart-quotes                                                                    ;;
@@ -720,6 +721,7 @@
 ;; Only used for the "smart-quotes-smarten" function
 (use-package! smart-quotes
   :defer t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -783,6 +785,7 @@
   ("C-c h o" . org-side-tree)
   ("C-c h O" . org-side-tree-toggle))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Hl-todo                                                                         ;;
@@ -800,6 +803,7 @@
 (keymap-set hl-todo-mode-map "C-c h p" #'hl-todo-previous)
 (keymap-set hl-todo-mode-map "C-c h n" #'hl-todo-next))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Flycheck-hl-todo                                                                ;;
@@ -809,6 +813,7 @@
 (use-package! flycheck-hl-todo
   :config
 (flycheck-hl-todo-setup))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -860,6 +865,7 @@
   (setq dimmer-adjustment-mode :foreground)
   (setq dimmer-fraction 0.30))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Harper                                                                          ;;
@@ -876,6 +882,7 @@
    ("<f6>" . eglot-code-actions)
    ("<f7>" . +default/diagnostics))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Yasnippet                                                                       ;;
@@ -887,6 +894,7 @@
   :bind
   ("C-c s n" . yas-new-snippet))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Nov.el                                                                          ;;
@@ -897,6 +905,7 @@
   :defer t
   :config
   (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -923,6 +932,7 @@
                           (+ x (/ width 2) (- (/ width 2)))
                           (+ y (/ height 2))))))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Atomic-chrome                                                                   ;;
@@ -933,6 +943,7 @@
  :defer t
  :init
  (add-transient-hook! 'focus-out-hook (atomic-chrome-start-server)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -1005,6 +1016,7 @@
   (("<f9>" . distraction-free))
   (("C-c h z" . distraction-free)))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Freeze-it
@@ -1016,6 +1028,7 @@
         (setq freeze-it-delay 1) ; delay in seconds
         (setq freeze-it-go-back 'line) ;one of word, line, visible-line, and paragragh
 )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
@@ -1077,6 +1090,7 @@
         (monkeytype-buffer)))
   )
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                                  ;;
 ;;; Miscellaneous                                                                   ;;
@@ -1098,6 +1112,7 @@
     (align-regexp beginning end (concat "\\(\\s-*\\)"
                                         (regexp-quote comment-start)))))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Better comment box                                                              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1114,6 +1129,7 @@ comment box."
     (goto-char e)
     (set-marker e nil)))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Last Edit                                                                       ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1128,6 +1144,7 @@ comment box."
      ((stringp beg) (goto-char (abs end))
       (message "DEL-> %s" (substring-no-properties beg)))
      (t (message "No add/delete edit occurred")))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Center scroll minor mode                                                        ;;
@@ -1147,6 +1164,7 @@ comment box."
                      maximum-scroll-margin
                      scroll-margin))
       (kill-local-variable `,local))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Theme functions                                                                 ;;
