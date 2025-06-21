@@ -130,9 +130,6 @@
     ("Recently opened files"
     :icon (nerd-icons-octicon "nf-oct-file_directory_fill" :face 'doom-dashboard-menu-title)
     :action recentf-open-files)
-    ("Open directory (project)"
-     :icon (nerd-icons-octicon "nf-oct-briefcase" :face 'doom-dashboard-menu-title)
-     :action projectile-switch-project)
     ("View open buffers"
     :icon (nerd-icons-octicon "nf-oct-stack" :face 'doom-dashboard-menu-title)
     :action ibuffer)
