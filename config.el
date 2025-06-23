@@ -765,7 +765,8 @@
    (add-hook 'ibuffer-hook 'turn-off-boon-mode)
    (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
    (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
-   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode))
+   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
+   (load-file "~/.doom.d/booon/boon-tutorial.el"))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
