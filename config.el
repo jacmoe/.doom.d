@@ -28,8 +28,8 @@
 
 (defvar my-monospace-font "Overpass Mono")      ; Font to use for code
 (defvar my-variablespace-font "Overpass")             ; Font to use for writing ;Carlito;Alegreya
-(defvar my-monospace-font-size 26)
-(defvar my-variablespace-font-size 36)
+(defvar my-monospace-font-size 16)
+(defvar my-variablespace-font-size 26)
 
 (defvar my-org-tracktable-daily-goal 500)            ; How many words do I want to write per day?
 (defvar my-day-end 5)                                ; when does my day end?
