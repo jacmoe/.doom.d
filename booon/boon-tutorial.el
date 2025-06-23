@@ -490,7 +490,7 @@ We extend this definition with the insert command.
 
 >> Type another word as a replacement.
 
->> Return to command state with: '<ESC>'
+>> Return to command state with: '\\[boon-set-command-state]'
 
 >> Move the cursor to another word and type: '\\[boon-repeat-command]'
    (the word was substituted with the same replacement text).
@@ -636,7 +636,7 @@ replace all occurrences.
 
 >> Type the replacement text.
 
->> Exit \"multiple-cursors\" by typing '<ESC>' repeatedly.
+>> Exit \"multiple-cursors\" by typing '\\[boon-set-command-state]' repeatedly.
 
 Boon has special support for multiple cursors, which means that all
 commands described in this tutorial should work out of the box with
