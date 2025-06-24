@@ -419,7 +419,7 @@ space to the region.
 
 >> Move the cursor to a word you wish to kill (Cut).
 
->> Type '\\[boon-take-region] \\<boon-select-map>\\[boon-select-with-spaces] \\[boon-select-word]\\<boon-command-map>' to remove the word and its surrounding spaces.
+>> Type 't \\<boon-select-map>\\[boon-select-with-spaces] \\[boon-select-word]\\<boon-command-map>' to remove the word and its surrounding spaces.
 
 
 
@@ -535,16 +535,16 @@ last word (ending with a period).
 
 Boon provides help with manipulating enclosures.
 
-The command '\\[boon-enclose]' " (boon-mnemonic 'boon-enclose) " adds enclosures around a region.
+The command 'a' " (boon-mnemonic 'boon-enclose) " adds enclosures around a region.
 
 It takes two arguments:
 
 1. The kind of enclosure to use ('p' for regular parentheses)
 
 2. The region to surround.  This region is specified by the same
-   language as the arguments to '\\[boon-take-region]' or '\\[boon-drop-mark]' commands.
+   language as the arguments to 't' or 'SPC' commands.
 
->> With the cursor over a word, type '\\[boon-enclose] p \\<boon-select-map>\\[boon-select-wim]\\<boon-command-map>' to enclose it in parens.
+>> With the cursor over a word, type 'a p \\<boon-select-map>\\[boon-select-wim]\\<boon-command-map>' to enclose it in parens.
 
 It is often useful to put enclosures around what has just been pasted.
 The just pasted region is accessible with: '\\[boon-toggle-mark]' (single quote).
