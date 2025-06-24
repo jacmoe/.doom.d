@@ -97,7 +97,7 @@
     (cl-flet ((selector (sel) (boon-keymap-rev-look sel boon-select-map)))
   (insert (substitute-command-keys (concat
 
-"Modified Boon tutorial.  See end for copying conditions.
+"Modified Boon tutorial for qwerty.  See end for copying conditions.
 
 
 * PREAMBLE
@@ -689,5 +689,5 @@ from the standard Emacs tutorial,
 ")))))
 (goto-char 1))
 
-(provide 'boon-tutorial)
+(provide 'qwerty-boon-tutorial)
 ;;; boon-tutorial.el ends here

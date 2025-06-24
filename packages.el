@@ -79,3 +79,5 @@
 (package! freeze-it)
 
 (package! monkeytype)
+
+(package! boon-tuts :recipe (:local-repo "boon-tuts"))

@@ -746,7 +746,7 @@
    :config
    (boon-mode)
 
-   (if (equal my-keyboard-variant "colemak")
+    (if (equal my-keyboard-variant "colemak")
        ;; we are using Colemak
        (progn
          (define-key boon-moves-map "ø" 'move-end-of-line)
@@ -765,8 +765,15 @@
    (add-hook 'ibuffer-hook 'turn-off-boon-mode)
    (add-hook 'doom-dashboard-mode 'turn-off-boon-mode)
    (add-hook 'org-capture-mode-hook 'turn-off-boon-mode)
-   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode)
-   (load-file "~/.doom.d/booon/boon-tutorial.el"))
+   (add-hook 'speed-type-mode-hook 'turn-off-boon-mode))
+
+(use-package! boon-tuts
+  :after boon
+  :config
+  (if (equal my-keyboard-variant "colemak")
+       (require 'colemak-boon-tutorial)
+    ;; qwerty
+    (require 'qwerty-boon-tutorial)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -786,7 +793,7 @@
 ;;                                                                                  ;;
 ;; https://github.com/localauthor/org-side-tree                                     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package! org-side-tree
+ (use-package! org-side-tree
   :init
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq-local outline-regexp ";;;\\(;* [^   \t\n]\\)")))
   (add-hook 'emacs-lisp-mode-hook 'outline-minor-mode)
