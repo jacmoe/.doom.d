@@ -97,7 +97,7 @@ sudo dnf install maim gifsicle
 Clone the Hotel California repository into =~/.doom.d=, like this:
 
 #+begin_src bash
-git clone https://github.com/jacmoe/.doom.d ~/.doom.d
+git clone https://github.com/jacmoe/hotel-california-of-creative-writing ~/.doom.d
 #+end_src
 
 *** Doom-Emacs
