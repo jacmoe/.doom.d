@@ -193,6 +193,7 @@
 (setq global-page-break-lines-mode t)                       ; Pretty page breaks everywhere
 (setq confirm-kill-processes nil)                           ; Don't ask to kill running processes when exiting Emacs.
 (add-hook 'text-mode-hook (lambda () (setq-local line-spacing 0.1))) ; Setting a more comfortable line spacing for prose
+(setq emojify-download-emojis-p t)                       ; Force Doom to download emojis without asking
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
